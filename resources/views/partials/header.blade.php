@@ -21,12 +21,12 @@
       <div id="nav-menu-mobile" >
         <nav id="nav-components">
            <ul>
-             <li class="nav-component"><a class="" href="blog.html">Blog</a></li>
-             <li class="nav-component"><a class="" href="animation.html">Animation</a></li>
-             <li class="nav-component"><a class="" href="illustration.html">Illustration</a></li>
-             <li class="nav-component"><a class="" href="software-development.html">Software Development</a></li>
-             <li class="nav-component"><a class="" href="weird-stuff.html">Weird Stuff</a></li>
-             <li class="nav-component"><a class="" href="contact.html">Contact</a></li>
+            <a class="" href="{{ route('blog')}}"><li class="nav-component">Blog</li></a>
+            <a class="" href="{{ route('animation')}}"><li class="nav-component">Animation</li></a>
+            <a class="" href="{{ route('illustration')}}"><li class="nav-component">Illustration</li></a>
+            <a class="" href="{{ route('software')}}"><li class="nav-component">Software Development</li></a>
+            <a class="" href="{{ route('weird-stuff')}}"><li class="nav-component">Weird Stuff</li></a>
+            <a class="" href="{{ route('contact')}}"><li class="nav-component">Contact</li></a>
           </ul>
         </nav>
         <nav id="nav-social">

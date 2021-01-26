@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap');
 
 /* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
- 
+
 <!-- =================== G E N E R A L   B O D Y   R U L E S =================== --> */
 .hidden{
   display: none;
@@ -11,7 +11,7 @@ html, body{
   font-family: 'Pragati', 'Helvetica', sans-serif;
   height: 100%;
   min-width: 320px;
-  
+
   background-color: #E5F0FC;
 }
 /* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
@@ -39,7 +39,7 @@ html, body{
 
 <!-- =================== S I T E   H E A D E R =================== --> */
 
-#header-container{              
+#header-container{
   position: sticky;
   top:0;
   background: linear-gradient(0.2turn,#0E1C27, #0A1C47);
@@ -99,9 +99,9 @@ html, body{
 .nav-component:active{
   transform:scaleX(1.2);
 }
-.nav-component > a{
+#nav-components > ul > a{
   position: static;
-  margin-left: 15%;
+  /* margin-left: 15%; */
   font-weight: bold;
   text-decoration: none;
   color: #FEFEFE
@@ -124,7 +124,7 @@ html, body{
   background-color: #FEFEFE;
   box-shadow: rgb(0, 0, 0,.5) 0px 0px 30px 1px;
   padding: 20px;
-} 
+}
 #back-button-container{
   display:none
 }
@@ -230,7 +230,7 @@ html, body{
 .f_field{
   display: block;
   width: 100%;
-  height: 1.5em; 
+  height: 1.5em;
   margin: 0 0 20px 0;
   padding: 0 0 0 0;
 }
@@ -315,14 +315,14 @@ html, body{
   #logo-type{
     font-size: 2em;
     letter-spacing: 2px;
-    margin: 10px 
+    margin: 10px
   }
   #nav-icon{
     display: none;
   }
   #header-container{
     grid-area: nav;
-    position: sticky; 
+    position: sticky;
     left:0;
     min-width: 270px;
     height: 100%;
@@ -343,7 +343,7 @@ html, body{
     grid-area: body;
     overflow-y: scroll;
     margin: 0 0 0 40px;
-    padding: 50px 50px 50px 100px; 
+    padding: 50px 50px 50px 100px;
   }
   #main{
     width: 95%;
@@ -384,9 +384,9 @@ html, body{
   }
   #p_body{
     display:grid;
-    grid-template: 'img content' 
+    grid-template: 'img content'
                    'img button';
-    grid-gap:20px 30px;    
+    grid-gap:20px 30px;
   }
   #p_img-container{
     grid-area:img;

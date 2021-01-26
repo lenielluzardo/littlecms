@@ -1,5 +1,5 @@
 @extends('layouts.master')
 
 @section('content')
-<h1>some content</h1>
+<h1>Welcome</h1>
 @endsection

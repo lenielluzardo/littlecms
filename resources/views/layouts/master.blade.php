@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../css/app.css" type="text/css">
+  <link rel="stylesheet" href="{{URL::to('./css/app.css')}}" type="text/css">
   <title>Leniel Luzardo</title>
 </head>
 <body>
@@ -32,12 +32,7 @@
 
 <!--  ====================== R E L A T E D   P U B L I C A T I O N  ====================== -->
 
-
   </main>
-
-
-@include('partials.footer')
-
 </div>
 
   <script src="./js/index.js"></script>
