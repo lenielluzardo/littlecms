@@ -16,4 +16,19 @@ class PostController extends Controller
 
         return view('blog.index', ['posts' => $posts]);
     }
+
+    public function getPostById($id, Store $session){
+
+        $postModel = new Post();
+        $session->flush();
+        $posts = $postModel->getPosts($session);
+
+        if($posts[0]['id'] === 1){
+            $post = $posts[0];
+            return view('blog.post', ['post' => $post]);
+        }else {
+            return 'Incorrect ID';
+        }
+
+    }
 }

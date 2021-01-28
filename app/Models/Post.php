@@ -15,7 +15,7 @@ class Post
     private function createDummyData($session)
     {
         $posts= [
-            [
+            [   'id' => 1,
                 'title' => 'THIS IS THE TITLE FROM DUMMY',
                 'content' => [
                     'paragraph1' => 'Lorem ipsum dolor sit amet consectetur adipisicing

@@ -27,21 +27,24 @@ Route::group(['prefix' => 'blog'], function(){
     //     return view('blog.index');
     // })->name('blog');
 
-    Route::get('/posts/{id}', function ($id) {
-    if($id == 1){
-        $post = [
-            'title' => 'My Awesome TITLE',
-            'content' => 'AJAJAJAJAJ'
-        ];
-    }else {
-        $post = [
-            'title' => 'Something Else',
-            'content' => 'AJAJAJAJAJ'
-        ];
-    }
+    Route::get('/posts/{id}', 'App\Http\Controllers\PostController@getPostById')
+    ->name('post');
 
-        return view('blog.post', ['post' => $post]);
-    })->name('post');
+    // Route::get('/posts/{id}', function ($id) {
+    // if($id == 1){
+    //     $post = [
+    //         'title' => 'My Awesome TITLE',
+    //         'content' => 'AJAJAJAJAJ'
+    //     ];
+    // }else {
+    //     $post = [
+    //         'title' => 'Something Else',
+    //         'content' => 'AJAJAJAJAJ'
+    //     ];
+    // }
+
+    //     return view('blog.post', ['post' => $post]);
+    // })->name('post');
 });
 
 

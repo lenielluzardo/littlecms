@@ -1,175 +1,77 @@
 @extends('layouts.master')
+
 @section('content')
 
-<section class="section-container">
+    <section class="section-container">
 
-    <!-- <h2 class="section-title">Most Recent Post:</h2> -->
-    <hr class="section-separator">
+        <hr class="section-separator">
 
-    <article class="p_container">
-      <section id="p_header">
+        <article class="p_container">
 
-        <h2 id="p_title">
-          {{$post['title']}}
-        </h2>
+            <section id="p_header">
 
-        <div id="p_meta">
+                <h2 id="p_title"> {{$post['title']}} </h2>
 
-          <h3 id="p_author">Author: Leniel Luzardo</h3>
+                <div id="p_meta">
 
-          <h4 id="p_date">December 20th, 2020</h4>
+                    <h3 id="p_author">Author: {{$post['author']}}</h3>
 
-          <div id="p_rating">
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-          </div>
+                    <h4 id="p_date">Date: {{$post['created']}}</h4>
 
-          <div id="p_tags">
-            <span class="tag"><a href="">.NET Core</a></span>
-            <span class="tag"><a href="">.NET Core</a></span>
-            <span class="tag"><a href="">Software Development</a></span>
-          </div>
+                    <div id="p_rating">
+                        @for($i = 0; $i < 5; $i++)
+                            @if($i < $post['rating'])
+                                <span class="fas fa-star rate"></span>
+                            @else
+                                <span class="fas fa-star"></span>
+                            @endif
+                        @endfor
+                    </div>
 
-        </div>
+                    <div id="p_tags">
+                        @foreach($post['tags'] as $tag)
+                            <span class="tag"><a href="">{{$tag}}</a></span>
+                        @endforeach
+                    </div>
 
-      </section>
+                </div>
 
-      <section class="p_body">
+            </section>
 
-        <div class="p_img-container">
-          <img id="p_img" src="https://via.placeholder.com/500x400" alt="publication_img">
-        </div>
+            <section class="p_body">
 
-        <div class="p_paragraphs">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos!
-            Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos!
-          </p>
-        </div>
+                <div class="p_img-container">
+                    <img id="p_img" src="{{$post['images']['url_1']}}" alt="publication_img">
+                </div>
 
-        <div class="p_img-container">
-          <img id="p_img" src="https://via.placeholder.com/500x400" alt="publication_img">
-        </div>
+                <div class="p_paragraphs">
+                    <p> {{ $post['content']['paragraph1'] }} </p>
 
-        <div class="p_paragraphs">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos!
-            Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos!
-          </p>
-        </div>
-      </section>
-    </article>
-    <hr class="section-separator">
-    <!--  ==================== R A T I N G   A N D   A B O U T   A U T H O R  ====================== -->
-    <section class="about_post-container section-container" >
-      <div class="rating-container">
-        <h3 class="section-title">Rate this post</h3>
-        <div class="star-widget">
-          <input type="radio" name="rate" id="rate-5">
-          <label for="rate-5" class="fas fa-star"></label>
-          <input type="radio" name="rate" id="rate-4">
-          <label for="rate-4" class="fas fa-star"></label>
-          <input type="radio" name="rate" id="rate-3">
-          <label for="rate-3" class="fas fa-star"></label>
-          <input type="radio" name="rate" id="rate-2">
-          <label for="rate-2" class="fas fa-star"></label>
-          <input type="radio" name="rate" id="rate-1">
-          <label for="rate-1" class="fas fa-star"></label>
-        </div>
-      </div>
+                    <p> {{ $post['content']['paragraph2'] }} </p>
+                </div>
 
-      <div class="about_author-container">
+                <div class="p_img-container">
+                    <img id="p_img" src="{{$post['images']['url_2']}}" alt="publication_img">
+                </div>
 
-        <div class="author_img-container">
-          <img class="author_img" src="https://via.placeholder.com/150" alt="author">
-        </div>
+                <div class="p_paragraphs">
+                    <p> {{ $post['content']['paragraph3'] }} </p>
 
-        <div class="about_author">
-          <h3 class="section-title">About the author</h3>
-            <p class="p_paragraphs">
-              Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. A voluptates tenetur quibusdam explicabo nobis
-              eum aperiam impedit, libero architecto consequuntur
-              laborum dolor nam autem. Ullam cumque quas ipsam
-              facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. A voluptates tenetur quibusdam explicabo nobis
-              eum aperiam impedit, libero architecto consequuntur
-              laborum dolor nam autem. Ullam cumque quas ipsam
-              facilis eos!
-            </p>
-        </div>
+                    <p> {{ $post['content']['paragraph4'] }} </p>
+                </div>
 
-      </div>
+            </section>
+
+        </article>
+
+        <hr class="section-separator">
+
+        @include('partials.rating-about')
+
 
 
     </section>
 
-  </section>
+@include('blog.related')
 
-  @include('blog.related')
-  @endsection
+@endsection
