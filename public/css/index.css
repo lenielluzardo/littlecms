@@ -194,6 +194,7 @@ html, body{
 .button:hover{
     cursor: pointer;
 }
+
 /*<!-- =================== R E L A T E D   S E C T I O N =================== --> */
 #related{
   overflow: hidden;
@@ -206,8 +207,12 @@ html, body{
   scroll-snap-type: x mandatory
 }
 .related-item{
-  width: 200px;
-  margin: 20px;
+    margin: 20px;
+}
+.related-item > img{
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
 }
 .related-title{
   text-align: center;
@@ -391,6 +396,8 @@ html, body{
     width: 60%;
     font-size: 1.3em;
   }
+  #p_description, .p_paragraphs{
+    font-size: 1.2em;
 }
 @media screen and (min-width:1300px){
     .about_author-container{

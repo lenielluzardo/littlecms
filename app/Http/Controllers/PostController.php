@@ -13,8 +13,11 @@ class PostController extends Controller
         $postModel = new Post();
         $session->flush();
         $posts = $postModel->getPosts($session);
+        $post = array_shift($posts);
+        $relatedPosts = array_slice($posts, 1, 10);
+        unset($posts);
 
-        return view('blog.index', ['posts' => $posts]);
+        return view('blog.index', ['post' => $post, 'relatedPosts' => $relatedPosts]);
     }
 
     public function getPostById($id, Store $session){
@@ -22,13 +25,10 @@ class PostController extends Controller
         $postModel = new Post();
         $session->flush();
         $posts = $postModel->getPosts($session);
+        $post = array_shift($posts);
+        $relatedPosts = array_slice($posts, 1, 10);
+        unset($posts);
 
-        if($posts[0]['id'] === 1){
-            $post = $posts[0];
-            return view('blog.post', ['post' => $post]);
-        }else {
-            return 'Incorrect ID';
-        }
-
+        return view('blog.post', ['post' => $post, 'relatedPosts' => $relatedPosts]);
     }
 }

@@ -10,21 +10,26 @@
       <div class="post_list-container" >
 
         <ul class="post_list">
-          <li>
-            <div class="post_item-container">
-              <img class="post_item-img" src="https://via.placeholder.com/80" alt="post image">
-              <h3 class="post_item-title">How to deal with IT recruiters</h3>
-              <h4 class="post_item-date">2020-12-01</h3>
-              <div id="post_item-rating">
-                  <span class="fas fa-star rate"></span>
-                  <span class="fas fa-star rate"></span>
-                  <span class="fas fa-star rate"></span>
-                  <span class="fas fa-star"></span>
-                  <span class="fas fa-star"></span>
-               </div>
-               <button class="post_item-remove"><span class="trash fas fa-trash"></span></button>
-            </div>
-           </li>
+            @foreach($posts as $post)
+                <li>
+                    <div class="post_item-container">
+                        <img class="post_item-img" src="{{$post['images']['url_1']}}" alt="post_image">
+                        <h3 class="post_item-title">{{$post['title']}}</h3>
+                        <h4 class="post_item-date">{{$post['created']}}</h3>
+
+                        <div id="post_item-rating">
+                            @for($i = 0; $i < 5; $i++)
+                                @if($i < $post['rating'])
+                                    <span class="fas fa-star rate"></span>
+                                 @else
+                                    <span class="fas fa-star"></span>
+                                @endif
+                             @endfor
+                        </div>
+                        <button class="post_item-remove"><span class="trash fas fa-trash"></span></button>
+                    </div>
+                </li>
+           @endforeach
         </ul>
 
       </div>

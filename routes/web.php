@@ -47,18 +47,16 @@ Route::group(['prefix' => 'blog'], function(){
     // })->name('post');
 });
 
+Route::group(['prefix' => 'portfolio'], function(){
+    Route::get('/animation', 'App\Http\Controllers\PortfolioController@getAnimationIndex')
+    ->name('portfolio.ani');
 
-Route::get('/animation', function () {
-    return view('animation.portfolio');
-})->name('animation');
+    Route::get('/illustration', 'App\Http\Controllers\PortfolioController@getIllustrationIndex')
+    ->name('portfolio.ill');
 
-Route::get('/illustration', function () {
-    return view('illustration.portfolio');
-})->name('illustration');
-
-Route::get('/software', function () {
-    return view('software.portfolio');
-})->name('software');
+    Route::get('/software', 'App\Http\Controllers\PortfolioController@getSoftwareIndex')
+    ->name('portfolio.sof');
+});
 
 Route::get('/weird-stuff', function () {
     return view('weird-stuff.weird-stuff');
@@ -83,35 +81,38 @@ Route::group(['prefix' => 'contact'], function () {
            if($validation->fails()){
                return redirect()->back()->withErrors($validation);
            }
-
-
     })->name('contact');
 
 });
 
-
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('', function (){
-        return view('admin.index');
-    })->name('admin.index');
+    Route::get('', 'App\Http\Controllers\AdminController@getIndex')
+    ->name('admin.index');
 
-    Route::post('', function (\Illuminate\Http\Request $request,
-    \Illuminate\Validation\Factory $validator){
+    // Route::get('', function (){
+    //     return view('admin.index');
+    // })->name('admin.index');
 
-        $validation = $validator->make($request->all(),[
-             'title' => 'required|min:10',
-             'paragraph1' => 'required| min:100',
-             'paragraph2' => 'required| min:100',
-             'paragraph3' => 'required| min:100',
-             'paragraph4' => 'required| min:100'
-            ]);
+    Route::post('', 'App\Http\Controllers\AdminController@savePost')
+    ->name('admin.save');
 
-            if($validation->fails()){
-                return redirect()->back()->withErrors($validation);
-            }
+    // Route::post('', function (\Illuminate\Http\Request $request,
+    // \Illuminate\Validation\Factory $validator){
 
-         return redirect()
-         ->route('admin.index')
-         ->with('info', 'Post created', 'Title: '. $request->input('title'));
-    })->name('admin.save');
+    //     $validation = $validator->make($request->all(),[
+    //          'title' => 'required|min:10',
+    //          'paragraph1' => 'required| min:100',
+    //          'paragraph2' => 'required| min:100',
+    //          'paragraph3' => 'required| min:100',
+    //          'paragraph4' => 'required| min:100'
+    //         ]);
+
+    //         if($validation->fails()){
+    //             return redirect()->back()->withErrors($validation);
+    //         }
+
+    //      return redirect()
+    //      ->route('admin.index')
+    //      ->with('info', 'Post created', 'Title: '. $request->input('title'));
+    // })->name('admin.save');
 });

@@ -1,16 +1,16 @@
 <section class="section-container related">
 
-    <h2 class="section_title">Related Posts:</h2>
+    <h2 class="section_title">Related Projects:</h2>
     <hr class="section-separator">
 
     <ul class="related-list">
 
-        @foreach($relatedPosts as $post)
+        @foreach($relatedProjects as $project)
 
         <li>
             <article class="related-item">
-                <h3 class="related-title">{{$post['title']}}</h3>
-                <img class="related-img" src="{{$post['images']['url_1']}}" alt="post_image">
+                <h3 class="related-title">{{$project['title']}}</h3>
+                <img class="related-img" src="{{$project['images']['url_1']}}" alt="post_image">
             </article>
 
         </li>

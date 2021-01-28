@@ -14,10 +14,9 @@
   height: 400px;
 }
 .post_list-container{
-  grid-row: 1 /5;
+  grid-row: 1 / 5;
   overflow: hidden;
   background-color: #004564;
-  /* background-color: #71E7F5; */
   background-image: url('../assets/bg_graphics.png');
   padding: 10px;
   border-radius: 5px;
@@ -35,18 +34,18 @@
 }
 .post_item-container{
   display: grid;
-  grid-template: repeat(3, 22px) / 80px 1fr auto;
+  grid-template: auto 20px 20px / 80px auto auto;
   grid-column-gap: 20px;
-  grid-row-gap: 5px;
+  grid-row-gap: 2px;
   padding: 10px;
   max-height: 90px;
   margin:10px 0;
-  /* background-color: #004564; */
   background-color: #71E7F5;
   background-image: url('../assets/bg_graphics.png');
   background-size: 200px ;
   color:#004564;
   border-radius: 10px;
+  font-size: .9em;
 }
 .post_item-container:hover{
   cursor: pointer;
@@ -107,7 +106,6 @@
   overflow-y:scroll;
   color: #71E7F5;
   background-color: #004564;
-  /* background-color: #71E7F5; */
   background-image: url('../assets/bg_graphics.png');
   border-radius: 5px;
   padding: 10px;
@@ -131,11 +129,7 @@
   width: 95%;
 }
 .submit-container > input {
-  /* background-color: #71E7F5; */
-  /* background-color: #004564; */
   box-shadow: none;
-  /* box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 5px 0px; */
-  /* color: #fefefe; */
 }
 .submit-container > input:hover,
 .new_button:hover{

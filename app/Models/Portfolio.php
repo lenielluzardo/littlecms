@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Portfolio extends Model
 {
-    public function getPosts($session)
+    public function getProjects($session)
     {
-        if(!$session->has('posts')){
+        if(!$session->has('project')){
             $this->createDummyData($session);
         }
-        return $session->get('posts');
+        return $session->get('project');
     }
 
     private function createDummyData($session)
     {
-        $posts= [
+        $project= [
             1 =>[
                 'id' => 1,
                 'title' => 'THIS IS THE TITLE FROM DUMMY',
@@ -1017,6 +1017,6 @@ class Post extends Model
 
         ];
 
-        $session->put('posts', $posts);
+        $session->put('project', $project);
     }
 }
