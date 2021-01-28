@@ -14,33 +14,49 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    // $section=[
+    //   'title' => 'Home Page'
+    // ];
 
-Route::get('/blog', function () {
-    return view('blog.blog');
-})->name('blog');
+    return view('welcome'/*, ['section' => $section]*/);
+
+})->name('welcome');
+Route::group(['prefix' => 'blog'], function(){
+    Route::get('', function () {
+        return view('blog.index');
+    })->name('blog');
+    Route::get('/posts/{id}', function () {
+        return view('blog.post');
+    })->name('blog.posts');
+});
+
 
 Route::get('/animation', function () {
-    return view('blog.blog');
+    return view('animation.portfolio');
 })->name('animation');
 
-Route::get('/blog', function () {
-    return view('blog.blog');
-})->name('blog');
-
 Route::get('/illustration', function () {
-    return view('blog.blog');
+    return view('illustration.portfolio');
 })->name('illustration');
 
-Route::get('/software-development', function () {
-    return view('blog.blog');
+Route::get('/software', function () {
+    return view('software.portfolio');
 })->name('software');
 
 Route::get('/weird-stuff', function () {
-    return view('blog.blog');
+    return view('weird-stuff.weird-stuff');
 })->name('weird-stuff');
 
 Route::get('/contact', function () {
     return view('contact.contact');
 })->name('contact');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('', function (){
+        return view('admin.index');
+    })->name('admin.index');
+
+    Route::post('save', function (){
+        return redirect('admin.save');
+    })->name('admin.save');
+});

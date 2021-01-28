@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{URL::to('./css/app.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{URL::to('./css/index.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{URL::to('./css/all.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{URL::to('./css/admin.css')}}" type="text/css">
   <title>Leniel Luzardo</title>
 </head>
 <body>
@@ -17,22 +19,15 @@
 
 <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
 
+<main id="main-container">
 
-<div id="body-container">
+    <div id="back-button-container">
+      <img id="back-button" src="{{URL::to('./assets/back_button.svg')}}" alt="backward">
+    </div>
 
-  <div id="back-button-container">
-    <img id="back-button" src="./assets/back_button.svg" alt="backward">
-  </div>
-
-  <main id="main">
-
-<!-- ====================== M O S T   R E C E N T   P U B L I C A T I O N ====================== -->
-
-    @yield('content')
-
-<!--  ====================== R E L A T E D   P U B L I C A T I O N  ====================== -->
-
-  </main>
+    <div class="sections-container">
+        @yield('content')
+    </div>
 </div>
 
   <script src="./js/index.js"></script>

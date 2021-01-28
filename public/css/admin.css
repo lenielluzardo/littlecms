@@ -1,0 +1,132 @@
+/* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
+<!-- =================== A D M I N   B L O G  =================== --> */
+
+.admin-container{
+  width: 100%;
+  max-height: 800px;
+  display:grid;
+  grid-template: repeat(5, 1fr) 60px / repeat(6, 1fr);
+  grid-column-gap: 30px;
+}
+.admin-post_list-container{
+  grid-column: 1 / 4;
+  grid-row: 1 /5;
+  height: 400px;
+}
+.post_list-container{
+  grid-row: 1 /5;
+  overflow: hidden;
+  background: #71E7F5;
+  padding: 10px;
+  border-radius: 5px;
+}
+.post_list{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  overflow-y: scroll;
+  height:  620px;
+  max-height:  620px;
+  padding: 10px;
+  background: #FEFEFE;
+}
+.post_item-container{
+  display: grid;
+  grid-template: repeat(3, 22px) / 80px 1fr auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 5px;
+  padding: 10px;
+  max-height: 90px;
+  margin:10px 0;
+  border: 2px  solid rgba(0, 68, 100, 0.8);
+  border-radius: 10px;
+}
+.post_item-container:hover{
+  cursor: pointer;
+}
+.post_item-img{
+  grid-row: 1 / 4;
+  grid-column: 1 /2;
+  max-width: 80px;
+  max-height: 80px;
+}
+.post_item-title{
+  grid-row: 1 / 2;
+  grid-column: 2 /3;
+  margin: 0;
+}
+.post_item-date{
+  grid-row: 2 / 3;
+  grid-column: 2 /3;
+  margin:0;
+}
+.post_item-rating{
+  grid-row: 3 / 4;
+  grid-column: 2 /3;
+}
+.rate{
+  color: #fd4
+}
+.post_item-remove{
+  grid-row: 1 / 4;
+  grid-column: 3 / 4;
+  background-color: #df4040;
+  border:none;
+  height: 60px;
+  border-radius: 5px;
+  text-align: center;
+
+}
+.post_item-remove{
+  cursor:pointer;
+}
+.trash{
+  display: block;
+  padding: 20px;
+  color: #FEFEFE
+}
+.new_post-container{
+  width: 100%;
+  grid-column: 1/ 4;
+  grid-row: 6/ 8;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.post_detail-container{
+  /* visibility: collapse; */
+  grid-column: 4 / 8;
+  grid-row: 1 /8;
+  overflow-y:scroll;
+  background: #71E7F5;
+  border-radius: 5px;
+  padding: 10px;
+}
+.post_form{
+  padding:20px;
+}
+.post_form > textarea{
+  height: 150px;
+}
+.p_field{
+  display:block;
+  width: 95%;
+  margin: 10px 0;
+  padding: 10px;
+  resize: none;
+  border: none;
+  border-radius: 5px;
+}
+.p_tags{
+  width: 95%;
+}
+.submit-container > input {
+  background: #004564;
+  box-shadow: none;
+  /* box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 5px 0px; */
+  color: #fefefe;
+}
+#footer{
+  width: 100%;
+  margin-top: 20px;
+}

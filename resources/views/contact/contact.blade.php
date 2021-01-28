@@ -1,8 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<div id="contact-container">
-      <form id="contact" action="contact.php" method="POST">
+<section class="section-container">
+
+    <div class="contact_form-container">
+      <form class="contact_form" action="" method="POST">
 
         <label class="f_lbl" for="fullname">Fullname</label>
         <input class="f_field" id="fullname" name="fullname" type="text">
@@ -45,4 +47,6 @@
 
       </form>
     </div>
+
+  </section>
     @endsection

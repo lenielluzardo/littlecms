@@ -1,55 +1,66 @@
-<section id="related" class="section">
+<section class="section-container related">
 
     <h2 class="section_title">Related Posts:</h2>
     <hr class="section-separator">
 
-    <section id="p_related-list">
+    <ul class="related-list">
+      <li>
+       <article class="related-item">
+         <h3 class="related-title">How to deal with IT recruiters</h3>
+         <img class="related-img" src="https://via.placeholder.com/200" alt="post image">
+       </article>
+      </li>
 
-      <div class="p_related">
-        <h3 class="p_related-title">Other post</h3>
-        <img class="p_related-img" src="https://via.placeholder.com/150" alt="post image">
-      </div>
+      <li>
+        <article class="related-item">
+          <h3 class="related-title">How to deal with IT recruiters</h3>
+          <img class="related-img" src="https://via.placeholder.com/200" alt="post image">
+        </article>
+       </li>
 
-      <div class="p_related">
-        <h3 class="p_related-title">Other post</h3>
-        <img class="p_related-img" src="https://via.placeholder.com/150" alt="post image">
-      </div>
+       <li>
+        <article class="related-item">
+          <h3 class="related-title">How to deal with IT recruiters</h3>
+          <img class="related-img" src="https://via.placeholder.com/200" alt="post image">
+        </article>
+       </li>
 
-      <div class="p_related">
-        <h3 class="p_related-title">Other post</h3>
-        <img class="p_related-img" src="https://via.placeholder.com/150" alt="post image">
-      </div>
+       <li>
+        <article class="related-item">
+          <h3 class="related-title">How to deal with IT recruiters</h3>
+          <img class="related-img" src="https://via.placeholder.com/200" alt="post image">
+        </article>
+       </li>
 
-      <div class="p_related">
-        <h3 class="p_related-title">Other post</h3>
-        <img class="" src="https://via.placeholder.com/150" alt="post image">
-      </div>
+       <li>
+        <article class="related-item">
+          <h3 class="related-title">How to deal with IT recruiters</h3>
+          <img class="related-img" src="https://via.placeholder.com/200" alt="post image">
+        </article>
+       </li>
 
-      <div class="p_related">
-        <h3 class="p_related-title">Other post</h3>
-        <img class="p_related-img" src="https://via.placeholder.com/150" alt="post image">
-      </div>
+       <li>
+        <article class="related-item">
+          <h3 class="related-title">How to deal with IT recruiters</h3>
+          <img class="related-img" src="https://via.placeholder.com/200" alt="post image">
+        </article>
+       </li>
 
-      <div class="p_related">
-        <h3 class="p_related-title">Other post</h3>
-        <img class="p_related-img" src="https://via.placeholder.com/150" alt="post image">
-      </div>
+       <li>
+        <article class="related-item">
+          <h3 class="related-title">How to deal with IT recruiters</h3>
+          <img class="related-img" src="https://via.placeholder.com/200" alt="post image">
+        </article>
+       </li>
 
-      <div class="p_related">
-        <h3 class="p_related-title">Other post</h3>
-        <img class="p_related-img" src="https://via.placeholder.com/150" alt="post image">
-      </div>
+       <li>
+        <article class="related-item">
+          <h3 class="related-title">How to deal with IT recruiters</h3>
+          <img class="related-img" src="https://via.placeholder.com/200" alt="post image">
+        </article>
+       </li>
 
-      <div class="p_related">
-        <h3 class="p_related-title">Other post</h3>
-        <img class="p_related-img" src="https://via.placeholder.com/150" alt="post image">
-      </div>
-
-      <div class="p_related">
-        <h3 class="p_related-title">Other post</h3>
-        <img class="p_related-img" src="https://via.placeholder.com/150" alt="post image">
-      </div>
-
-   </section>
+    </ul>
   </section>
+
   <hr class="section-separator">
