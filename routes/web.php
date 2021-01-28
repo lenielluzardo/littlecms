@@ -25,9 +25,22 @@ Route::group(['prefix' => 'blog'], function(){
     Route::get('', function () {
         return view('blog.index');
     })->name('blog');
-    Route::get('/posts/{id}', function () {
-        return view('blog.post');
-    })->name('blog.posts');
+    Route::get('/posts/{id}', function ($id) {
+
+    if($id == 1){
+        $post = [
+            'title' => 'My Awesome TITLE',
+            'content' => 'AJAJAJAJAJ'
+        ];
+    }else {
+        $post = [
+            'title' => 'Something Else',
+            'content' => 'AJAJAJAJAJ'
+        ];
+    }
+
+        return view('blog.post', ['post' => $post]);
+    })->name('post');
 });
 
 
@@ -56,7 +69,8 @@ Route::group(['prefix' => 'admin'], function () {
         return view('admin.index');
     })->name('admin.index');
 
-    Route::post('save', function (){
-        return redirect('admin.save');
+    Route::post('', function (\Illuminate\Http\Request $request){
+
+         return view('admin.save');
     })->name('admin.save');
 });

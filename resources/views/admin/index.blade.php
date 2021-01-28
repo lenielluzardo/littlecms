@@ -30,7 +30,7 @@
 
     </div>
     <div class="new_post-container">
-      <button class="new_post button">New Post</button>
+      <button class="new_button button">New Post</button>
     </div>
 
     <div class="post_detail-container">
@@ -73,7 +73,8 @@
          </select>
 
          <div class="submit-container">
-           <input type="submit" name="f_button" id="f_button" class="button" value="Save">
+             {{ csrf_field()}}
+           <input type="submit" name="save_button" class="button" value="Save">
          </div>
 
       </form>

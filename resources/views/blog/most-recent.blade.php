@@ -61,7 +61,7 @@
           </p>
 
           <div class="button-container">
-            <a href="{{route('blog.posts', ['id' => 1])}}" type="button" class="button">¡Read it!</a>
+            <a href="{{route('post', ['id' => 1])}}" type="button" class="button">¡Read it!</a>
           </div>
 
       </div>

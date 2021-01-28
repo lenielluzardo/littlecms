@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap');
 
 /* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
- 
+
 <!-- =================== G E N E R A L   B O D Y   R U L E S =================== --> */
 .hidden{
   display: none;
@@ -36,7 +36,7 @@ html, body{
 /* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
 
 <!-- =================== S I T E   H E A D E R =================== --> */
-#header-container{              
+#header-container{
   position: sticky;
   top:0;
   min-width: 320px;
@@ -119,7 +119,7 @@ html, body{
   background-color: #FEFEFE;
   box-shadow: rgb(0, 0, 0,.5) 0px 0px 30px 1px;
   padding: 15px;
-} 
+}
 #back-button-container{
   display:none
 }
@@ -186,7 +186,9 @@ html, body{
   padding: 1em;
   width: 80%;
 }
-
+.button:hover{
+    cursor: pointer;
+}
 /*<!-- =================== R E L A T E D   S E C T I O N =================== --> */
 #related{
   overflow: hidden;
@@ -285,7 +287,7 @@ html, body{
 .f_field{
   display: block;
   width: 100%;
-  height: 1.5em; 
+  height: 1.5em;
   margin: 0 0 20px 0;
   padding: 0 0 0 0;
 }
@@ -408,14 +410,14 @@ html, body{
   #logo-type{
     font-size: 2em;
     letter-spacing: 2px;
-    margin: 10px 
+    margin: 10px
   }
   #nav-icon{
     display: none;
   }
   #header-container{
     grid-column: 1;
-    position: sticky; 
+    position: sticky;
     left:0;
     overflow: hidden;
     font-size: 1.1em;

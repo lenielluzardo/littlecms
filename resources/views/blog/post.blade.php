@@ -10,7 +10,7 @@
       <section id="p_header">
 
         <h2 id="p_title">
-          All you must know about software development
+          {{$post['title']}}
         </h2>
 
         <div id="p_meta">
