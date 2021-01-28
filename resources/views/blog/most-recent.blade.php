@@ -1,72 +1,66 @@
 <section class="section-container">
 
     <h2 class="section-title">Most Recent Post:</h2>
+
     <hr class="section-separator">
 
-    <article class="p_container">
-      <section id="p_header">
+    @foreach($posts as $post)
 
-        <h2 id="p_title">
-          All you must know about software development
-        </h2>
+        <article class="p_container">
 
-        <div id="p_meta">
+            <section id="p_header">
 
-          <h3 id="p_author">Author: Leniel Luzardo</h3>
+                <h2 id="p_title">{{$post['title']}}</h2>
 
-          <h4 id="p_date">December 20th, 2020</h4>
+                <div id="p_meta">
 
-          <div id="p_rating">
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-          </div>
+                    <h3 id="p_author">Author: {{$post['author']}}</h3>
 
-          <div id="p_tags">
-            <span class="tag"><a href="">.NET Core</a></span>
-            <span class="tag"><a href="">.NET Core</a></span>
-            <span class="tag"><a href="">Software Development</a></span>
-          </div>
+                    <h4 id="p_date">Date: {{$post['created']}}</h4>
 
-        </div>
+                    <div id="p_rating">
 
-      </section>
+                        @for($i = 0; $i < 5; $i++)
+                        @if($i < $post['rating'])
+                            <span class="fas fa-star rate"></span>
+                        @else
+                            <span class="fas fa-star"></span>
+                        @endif
+                        @endfor
 
-      <section class="p_body mr">
+                    </div>
 
-        <div class="p_img-container">
-          <img id="p_img" src="https://via.placeholder.com/500x400" alt="publication_img">
-        </div>
+                    <div id="p_tags">
 
-        <div id="p_description">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. A voluptates tenetur quibusdam explicabo nobis
-            eum aperiam impedit, libero architecto consequuntur
-            laborum dolor nam autem. Ullam cumque quas ipsam
-            facilis eos!
-          </p>
+                        @foreach($post['tags'] as $tag)
+                            <span class="tag"><a href="">{{$tag}}</a></span>
+                        @endforeach
 
-          <div class="button-container">
-            <a href="{{route('post', ['id' => 1])}}" type="button" class="button">¡Read it!</a>
-          </div>
+                    </div>
 
-      </div>
-      </section>
-    </article>
+                </div>
 
+            </section>
 
-  </section>
+            <section class="p_body mr">
+
+                <div class="p_img-container">
+                  <img id="p_img" src="{{$post['images']['url_1']}}" alt="publication_img">
+                </div>
+
+                <div id="p_description">
+
+                    <p>{{$post['content']['paragraph1']}}</p>
+                    <div class="button-container">
+                        <a href="{{route('post', ['id' => 1])}}" type="button" class="button">¡Read it!</a>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </article>
+
+    @endforeach
+
+</section>

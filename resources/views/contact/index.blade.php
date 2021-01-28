@@ -1,10 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
+
+@include('partials.errors')
+
 <section class="section-container">
 
     <div class="contact_form-container">
-      <form class="contact_form" action="" method="POST">
+      <form class="contact_form" action="{{route('contact')}}" method="post">
 
         <label class="f_lbl" for="fullname">Fullname</label>
         <input class="f_field" id="fullname" name="fullname" type="text">
@@ -13,7 +16,7 @@
         <input class="f_field" id="email" name="email" type="text">
 
         <label class="f_lbl" for="subject">Subject</label>
-        <select class="f_field" id="subject" type="select" name="subject[]">
+        <select class="f_field" id="subject" type="select" name="subject">
 
           <option value="">- - Please Select - -</option>
           <option value="Job Proposal">Job Proposal</option>
@@ -23,7 +26,7 @@
         </select>
 
         <label class="f_lbl" for="discipline">Discipline</label>
-        <select class="f_field" id="discipline" type="select" name="discipline[]">
+        <select class="f_field" id="discipline" type="select" name="discipline">
 
           <option value="">- - Please Select - -</option>
           <option value="Software / Game Development">Software / Game Development</option>
@@ -42,6 +45,7 @@
         <label for="not_a_robot" > I'm not a robot</label> <br>
 
         <div class="submit-container">
+            {{ csrf_field() }}
           <input type="submit" name="f_button" id="f_button" class="button" value="¡Send!">
         </div>
 

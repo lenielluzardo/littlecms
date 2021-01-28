@@ -149,6 +149,9 @@ html, body{
 #p_rating{
   margin: 10px 0;
 }
+.rate{
+    color: #fd4;
+}
 .tag > a{
   display: inline-block;
   padding: 5px 10px;
