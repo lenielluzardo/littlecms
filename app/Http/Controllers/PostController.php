@@ -8,27 +8,23 @@ use Illuminate\Session\Store;
 
 class PostController extends Controller
 {
-    public function getIndex(Store $session){
+    public function getIndex(Store $session, Post $postModel){
 
-        $postModel = new Post();
-        $session->flush();
-        $posts = $postModel->getPosts($session);
-        $post = array_shift($posts);
-        $relatedPosts = array_slice($posts, 1, 10);
-        unset($posts);
+        $posts = $postModel->getPosts();
+        // $posts->;
 
-        return view('blog.index', ['post' => $post, 'relatedPosts' => $relatedPosts]);
+        // return view('blog.index', ['post' => $post, 'relatedPosts' => $relatedPosts]);
     }
 
     public function getPostById($id, Store $session){
 
-        $postModel = new Post();
-        $session->flush();
-        $posts = $postModel->getPosts($session);
-        $post = array_shift($posts);
-        $relatedPosts = array_slice($posts, 1, 10);
-        unset($posts);
+        // $postModel = new Post();
+        // $session->flush();
+        // $posts = $postModel->getPosts($session);
+        // $post = array_shift($posts);
+        // $relatedPosts = array_slice($posts, 1, 10);
+        // unset($posts);
 
-        return view('blog.post', ['post' => $post, 'relatedPosts' => $relatedPosts]);
+        // return view('blog.post', ['post' => $post, 'relatedPosts' => $relatedPosts]);
     }
 }

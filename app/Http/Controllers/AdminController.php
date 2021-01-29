@@ -9,27 +9,30 @@ use \Illuminate\Validation\Factory;
 
 class AdminController extends Controller
 {
-    public function getIndex( Store $session){
-        $postModel = new Post();
-        $posts = $postModel->getPosts($session);
+    public function getIndex(Post $postModel){
+
+        $posts = $postModel->getPosts();
 
         return view('admin.index', ['posts'=> $posts]);
     }
 
-    public function savePost(Request $request, Factory $validator, Store $session){
+    public function savePost(Post $postModel, Request $request){
 
-        $validation = $validator->make($request->all(),[
-                    'title' => 'required',
-                    'paragraph1' => 'required| min:100',
-                    'paragraph2' => 'required| min:100',
-                    'paragraph3' => 'required| min:100',
-                    'paragraph4' => 'required| min:100'
-                   ]);
+        $postModel->savePost($request);
 
-        if($validation->fails()){
-            return redirect()->back()->withErrors($validation);
-        }
 
-        return view('admin.save');
+        // $validation = $validator->make($request->all(),[
+        //             'title' => 'required',
+        //             'paragraph1' => 'required| min:100',
+        //             'paragraph2' => 'required| min:100',
+        //             'paragraph3' => 'required| min:100',
+        //             'paragraph4' => 'required| min:100'
+        //            ]);
+
+        // if($validation->fails()){
+        //     return redirect()->back()->withErrors($validation);
+        // }
+
+        return redirect()->back();
     }
 }

@@ -24,13 +24,13 @@
             <a class="" href="{{ route('blog')}}">
                 <li class="nav-component">Blog</li>
             </a>
-            <a class="" href="{{ route('portfolio.ani')}}">
+            <a class="" href="{{ route('portfolio.animation')}}">
                 <li class="nav-component">Animation</li>
             </a>
-            <a class="" href="{{ route('portfolio.ill')}}">
+            <a class="" href="{{ route('portfolio.illustration')}}">
                 <li class="nav-component">Illustration</li>
             </a>
-            <a class="" href="{{ route('portfolio.sof')}}">
+            <a class="" href="{{ route('portfolio.software')}}">
                 <li class="nav-component">Software Development</li>
             </a>
             <a class="" href="{{ route('weird-stuff')}}">

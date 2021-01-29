@@ -2,55 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Portfolio;
+use App\Models\Project;
 use Illuminate\Session\Store;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
-    public function getAnimationIndex(Store $session){
+    public function getIndex(Store $session, Project $projectModel){
+        $discipline = 'animation';
 
-        $projectModel = new Portfolio();
+        $projects = $projectModel->getProjects($discipline, $session);
         $session->flush();
-        $projects = $projectModel->getAnimationProjects($session);
-        $project = array_shift($projects);
-        $relatedProjects = array_slice($projects, 1, 10);
+
+        // $mostRecentProject = array_shift($projects);
+        // $relatedProjects = array_slice($projects, 1, 10);
         unset($projects);
 
-        return view('portfolio.index', ['project' => $project, 'relatedProjects' => $relatedProjects]);
-    }
-    public function getIllustrationIndex(Store $session){
-
-        $projectModel = new Portfolio();
-        $session->flush();
-        $projects = $projectModel->getIllustrationProjects($session);
-        $project = array_shift($projects);
-        $relatedProjects = array_slice($projects, 1, 10);
-        unset($projects);
-
-        return view('portfolio.index', ['project' => $project, 'relatedProjects' => $relatedProjects]);
-    }
-    public function getSoftwareIndex(Store $session){
-
-        $projectModel = new Portfolio();
-        $session->flush();
-        $projects = $projectModel->getSoftwareProjects($session);
-        $project = array_shift($projects);
-        $relatedProjects = array_slice($projects, 1, 10);
-        unset($projects);
-
-        return view('portfolio.index', ['project' => $project, 'relatedProjects' => $relatedProjects]);
-    }
-
-    public function getPostById($id, Store $session){
-
-        $projectModel = new Portfolio();
-        $session->flush();
-        $projects = $projectModel->getProjects($session);
-        $project = array_shift($projects);
-        $relatedProjects = array_slice($projects, 1, 10);
-        unset($posts);
-
-        return view('portfolio.project', ['project' => $project, 'relatedProjects' => $relatedProjects]);
+        return view('portfolio.index', ['project' => $mostRecentProject, 'relatedProjects' => $relatedProjects]);
     }
 }

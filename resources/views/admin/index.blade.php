@@ -13,13 +13,13 @@
             @foreach($posts as $post)
                 <li>
                     <div class="post_item-container">
-                        <img class="post_item-img" src="{{$post['images']['url_1']}}" alt="post_image">
-                        <h3 class="post_item-title">{{$post['title']}}</h3>
-                        <h4 class="post_item-date">{{$post['created']}}</h3>
+                        <img class="post_item-img" src="https://via.placeholder.com/80" alt="post_image">
+                        <h3 class="post_item-title">{{$post->title}}</h3>
+                        <h4 class="post_item-date">{{$post->created_at}}</h3>
 
                         <div id="post_item-rating">
                             @for($i = 0; $i < 5; $i++)
-                                @if($i < $post['rating'])
+                                @if($i < $post->rating)
                                     <span class="fas fa-star rate"></span>
                                  @else
                                     <span class="fas fa-star"></span>
