@@ -13,7 +13,7 @@
             @foreach($posts as $post)
                 <li>
                     <div class="post_item-container">
-                        <img class="post_item-img" src="https://via.placeholder.com/80" alt="post_image">
+                        <img class="post_item-img" src="{{$post->image1}}" alt="post_image">
                         <h3 class="post_item-title">{{$post->title}}</h3>
                         <h4 class="post_item-date">{{$post->created_at}}</h3>
 
@@ -70,13 +70,10 @@
 
 
          <label class="f_lbl" for="post_tags">Post Tags</label>
-         <select multiple class="p_tags" id="post_tags" type="select" name="subject[]">
-
-           <option value="">- - Please Select - -</option>
-           <option value="Programming">Job Proposal</option>
-           <option value="Illustration">Request a Commission</option>
-           <option value="Life">Make a Collaboration</option>
-
+         <select multiple class="p_tags" type="select" name="tags[]">
+            @foreach($tags as $tag)
+                <option value="{{$tag->id}}">{{$tag->name}}</option>
+            @endforeach
          </select>
 
          <div class="submit-container">

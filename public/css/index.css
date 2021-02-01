@@ -167,14 +167,25 @@ html, body{
   text-align: center;
   margin: 20px 0;
 }
-.p_img{
-  object-fit: cover;
- }
+.p_img-container > img{
+    height: 400px;
+    width: 600px;
+    object-fit: fill;
+}
+#p_img{
+    height:500px;
+    width:800px;
+}
 #p_description, .p_paragraphs{
   text-align: justify;
   letter-spacing: .2px;
   font-stretch: wider;
 }
+.p_body{
+    text-align:center;
+    justify-content: center;
+}
+
 .button-container{
   text-align: center;
 }
@@ -389,6 +400,11 @@ html, body{
     grid-gap: 80px;
     align-items: flex-start;
   }
+  .pc{
+    margin: auto;
+    width:800px;
+    margin-bottom: 30px;
+}
   .p_img-container{
     margin:40px 0;
   }

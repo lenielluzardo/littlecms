@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    protected $fillable = ['title', 'content'];
+
     public function links(){
-        return $this->belongsToMany('App\Models\Link');
+        return $this->belongsToMany('App\Models\Link', 'post_link');
     }
 
     public function tags(){
-        return $this->belongsToMany('App\Models\Tag');
+        return $this->belongsToMany('App\Models\Tag', 'post_tag', 'post_id', 'tag_id')
+        ->withTimestamps();
     }
 
-    protected $fillable = ['title', 'content'];
 
     public function getAllPosts(){
         $posts = Post::all();
@@ -23,7 +24,7 @@ class Post extends Model
     }
 
     public function getLatestPost(){
-        $post = Post::latest()->first();
+        $post = Post::latest()->with('tags')->first();
         return $post;
     }
     public function getRelatedPosts($id){
@@ -56,29 +57,14 @@ class Post extends Model
     {
         $post = new Post();
         $post->user_id = 1;
+
         $post->title = $request->input('title');
         $post->paragraph1 = $request->input('paragraph1');
         $post->paragraph2 = $request->input('paragraph2');
         $post->paragraph3 = $request->input('paragraph3');
         $post->paragraph4 = $request->input('paragraph4');
-        $post->active = true;
-        $post->rating = 0.0;
+        $post->save();
 
-        return $post->save();
+        $post->tags()->attach($request->input('tags') === null ? [] : $request->input('tags'));
     }
-
-    // private function getPostById($discipline, $projectId, $session){
-
-    //     return Project::where( 'discipline', "$discipline")->where('id', $projectId)->get();
-
-    // }
-    private function removeProject($projectId){}
-
-    // public function getPosts($session)
-    // {
-    //     if(!$session->has('posts')){
-    //         $this->createDummyData($session);
-    //     }
-    //     return $session->get('posts');
-    // }
 }

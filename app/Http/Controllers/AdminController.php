@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
-use Illuminate\Session\Store;
-use \Illuminate\Validation\Factory;
 
 class AdminController extends Controller
 {
-    public function getIndex(Post $postModel){
+    public function getIndex(Post $postModel, Tag $tagModel){
 
         $posts = $postModel->getAllPosts();
+        $tags = $tagModel->getAllTags();
 
-        return view('admin.index', ['posts'=> $posts]);
+        return view('admin.index', ['posts'=> $posts, 'tags' => $tags]);
     }
 
     public function savePost(Post $postModel, Request $request){

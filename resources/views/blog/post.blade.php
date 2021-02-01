@@ -29,9 +29,9 @@
                     </div>
 
                     <div id="p_tags">
-                        {{-- @foreach($post->tags as $tag) --}}
-                            {{-- <span class="tag"><a href="">{{$tag}}</a></span> --}}
-                        {{-- @endforeach --}}
+                        @foreach($post->tags as $tag)
+                            <span class="tag"><a href="">{{$tag->name}}</a></span>
+                        @endforeach
                     </div>
 
                 </div>
@@ -41,20 +41,20 @@
             <section class="p_body">
 
                 <div class="p_img-container">
-                    {{-- <img id="p_img" src="{{$post['images']['url_1']}}" alt="publication_img"> --}}
+                    <img id="p_img" src="{{$post->image1}}" alt="publication_img">
                 </div>
 
-                <div class="p_paragraphs">
+                <div class="p_paragraphs pc">
                     <p> {{ $post->paragraph1 }} </p>
 
                     <p> {{ $post->paragraph2 }} </p>
                 </div>
 
                 <div class="p_img-container">
-                    {{-- <img id="p_img" src="{{$post['images']['url_2']}}" alt="publication_img"> --}}
+                    <img id="p_img" src="{{$post->image2}}" alt="publication_img">
                 </div>
 
-                <div class="p_paragraphs">
+                <div class="p_paragraphs pc">
                     <p> {{ $post->paragraph3}} </p>
 
                     <p> {{ $post->paragraph4}} </p>

@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Session\Store;
 
 class PostController extends Controller
 {
-    public function getIndex(Store $session, Post $postModel){
+    public function getIndex(Post $postModel){
 
         $post = $postModel->getLatestPost();
         $relateds = $postModel->getRelatedPosts($post->id);
@@ -16,7 +15,7 @@ class PostController extends Controller
         return view('blog.index', ['post' => $post, 'relateds' => $relateds]);
     }
 
-    public function getPostById($id, Post $postModel, Store $session){
+    public function getPostById($id, Post $postModel){
 
         $post = $postModel->getPostById($id);
         $relateds = $postModel->getRelatedPosts($post->id);

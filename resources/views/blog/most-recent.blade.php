@@ -20,15 +20,15 @@
                      @endfor
                </div>
                <div id="p_tags">
-                   {{-- @foreach($post['tags'] as $tag) --}}
-                         {{-- <span class="tag"><a href="">{{$tag}}</a></span> --}}
-                     {{-- @endforeach --}}
+                   @foreach($post->tags as $tag)
+                         <span class="tag"><a href="">{{$tag->name}}</a></span>
+                     @endforeach
                </div>
            </div>
        </section>
        <section class="p_body mr">
            <div class="p_img-container">
-               {{-- <img id="p_img" src="{{$post['images']['url_1']}}" alt="publication_img"> --}}
+               <img src="{{$post->image1}}" alt="publication_img">
              </div>
            <div id="p_description">
                <p>{{$post->paragraph1}}</p>

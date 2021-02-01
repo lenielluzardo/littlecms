@@ -10,7 +10,7 @@
         <li>
             <article class="related-item">
                 <h3 class="related-title">{{$post->title}}</h3>
-                {{-- <img class="related-img" src="{{$post['images']['url_1']}}" alt="post_image"> --}}
+                <img class="related-img" src="{{$post->image1}}" alt="post_image">
             </article>
 
         </li>
