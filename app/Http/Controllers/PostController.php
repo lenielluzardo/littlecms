@@ -10,21 +10,17 @@ class PostController extends Controller
 {
     public function getIndex(Store $session, Post $postModel){
 
-        $posts = $postModel->getPosts();
-        // $posts->;
+        $post = $postModel->getLatestPost();
+        $relateds = $postModel->getRelatedPosts($post->id);
 
-        // return view('blog.index', ['post' => $post, 'relatedPosts' => $relatedPosts]);
+        return view('blog.index', ['post' => $post, 'relateds' => $relateds]);
     }
 
-    public function getPostById($id, Store $session){
+    public function getPostById($id, Post $postModel, Store $session){
 
-        // $postModel = new Post();
-        // $session->flush();
-        // $posts = $postModel->getPosts($session);
-        // $post = array_shift($posts);
-        // $relatedPosts = array_slice($posts, 1, 10);
-        // unset($posts);
+        $post = $postModel->getPostById($id);
+        $relateds = $postModel->getRelatedPosts($post->id);
 
-        // return view('blog.post', ['post' => $post, 'relatedPosts' => $relatedPosts]);
+        return view('blog.post', ['post' => $post, 'relateds' => $relateds]);
     }
 }

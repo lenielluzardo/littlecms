@@ -26,7 +26,7 @@ class CreateProjectsTable extends Migration
             $table->timestamp('created_at')->useCurrent();;
             $table->timestamp('updated_at')->useCurrent();;
             $table->boolean('visible');
-            $table->foreignId('user_id');
+            $table->integer('user_id')->default(1);
         });
     }
 

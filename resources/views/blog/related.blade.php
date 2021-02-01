@@ -5,12 +5,12 @@
 
     <ul class="related-list">
 
-        @foreach($relatedPosts as $post)
+        @foreach($relateds as $post)
 
         <li>
             <article class="related-item">
-                <h3 class="related-title">{{$post['title']}}</h3>
-                <img class="related-img" src="{{$post['images']['url_1']}}" alt="post_image">
+                <h3 class="related-title">{{$post->title}}</h3>
+                {{-- <img class="related-img" src="{{$post['images']['url_1']}}" alt="post_image"> --}}
             </article>
 
         </li>

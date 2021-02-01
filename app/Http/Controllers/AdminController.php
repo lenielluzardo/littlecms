@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
     public function getIndex(Post $postModel){
 
-        $posts = $postModel->getPosts();
+        $posts = $postModel->getAllPosts();
 
         return view('admin.index', ['posts'=> $posts]);
     }

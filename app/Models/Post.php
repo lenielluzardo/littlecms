@@ -7,12 +7,48 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    public function images(){
+        return $this->hasMany('App\Models\Link');
+    }
+
+    public function tags(){
+        return $this->hasMany('App\Models\Tag');
+    }
     protected $fillable = ['title', 'content'];
 
-    public function getPosts()
-    {
+    public function getAllPosts(){
         $posts = Post::all();
         return $posts;
+    }
+
+    public function getLatestPost(){
+        $post = Post::latest()->first();
+        return $post;
+    }
+    public function getRelatedPosts($id){
+        $relateds = Post::all()->where('id', '!=', $id);
+        return $relateds;
+    }
+
+    public function getPostById($id){
+        $post = Post::find($id);
+        return $post;
+    }
+
+    public function updatePost($request){
+
+        $post = Post::find($request->input('id'));
+        $post->title =  $request->input('title');
+        $post->paragraph1 =  $request->input('paragraph1');
+        $post->paragraph2 =  $request->input('paragraph2');
+        $post->paragraph3 =  $request->input('paragraph3');
+        $post->paragraph4 =  $request->input('paragraph4');
+        $post->save();
+    }
+
+    public function deletePost($id){
+        $post = Post::find($id);
+        $post->delete();
     }
 
     public function savePost($request)
@@ -30,10 +66,6 @@ class Post extends Model
         return $post->save();
     }
 
-    private function updatePost($projectId)
-    {
-
-    }
     // private function getPostById($discipline, $projectId, $session){
 
     //     return Project::where( 'discipline', "$discipline")->where('id', $projectId)->get();

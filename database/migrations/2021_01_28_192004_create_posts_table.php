@@ -20,11 +20,11 @@ class CreatePostsTable extends Migration
             $table->text('paragraph2');
             $table->text('paragraph3');
             $table->text('paragraph4');
-            $table->float('rating', 2, 2);
+            $table->float('rating', 5,1)->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
             $table->boolean('active')->default(true);
-            $table->foreignId('user_id');
+            $table->integer('user_id')->default(1);
         });
     }
 
