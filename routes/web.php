@@ -86,6 +86,9 @@ Route::group(['prefix' => 'contact'], function () {
 });
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('/login', 'App\Http\Controllers\AdminController@login')
+    ->name('login');
+
     Route::get('', 'App\Http\Controllers\AdminController@getIndex')
     ->name('admin.index');
 

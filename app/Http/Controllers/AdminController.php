@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
+    public function login(){
+
+
+        return view('admin.login');
+    }
+
     public function getIndex(Post $postModel, Tag $tagModel){
 
         $posts = $postModel->getAllPosts();
