@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    public function images(){
-        return $this->hasMany('App\Models\Link');
+    public function links(){
+        return $this->belongsToMany('App\Models\Link');
     }
 
     public function tags(){
-        return $this->hasMany('App\Models\Tag');
+        return $this->belongsToMany('App\Models\Tag');
     }
+
     protected $fillable = ['title', 'content'];
 
     public function getAllPosts(){

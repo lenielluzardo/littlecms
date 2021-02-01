@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLinksTable extends Migration
+class CreatePostTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('links', function (Blueprint $table) {
-            $table->id();
-            $table->text('url');
-            $table->string('format')->default('');
+        Schema::create('post_tag', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('post_id');
+            $table->integer('tag_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateLinksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('links');
+        Schema::dropIfExists('post_tag');
     }
 }
