@@ -22,8 +22,11 @@
 
 <main id="main-container">
 
+
     <div id="back-button-container">
-      <img id="back-button" src="{{URL::to('./assets/back_button.svg')}}" alt="backward">
+        <a href="{{URL::previous()}}">
+            <img id="back-button" src="{{URL::to('./assets/back_button.svg')}}" alt="backward">
+        </a>
     </div>
 
     <div class="sections-container">
