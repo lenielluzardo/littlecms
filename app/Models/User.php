@@ -9,6 +9,13 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+
+    public function posts(){
+        return $this->hasMany('App\Models\Post');
+    }
+    public function projects(){
+        return $this->hasMany('App\Models\Projects');
+    }
     use HasFactory, Notifiable;
 
     /**

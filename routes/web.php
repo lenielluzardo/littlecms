@@ -48,14 +48,17 @@ Route::group(['prefix' => 'blog'], function(){
 });
 
 Route::group(['prefix' => 'portfolio'], function(){
-    Route::get('/animation', 'App\Http\Controllers\PortfolioController@getIndex')
-    ->name('portfolio.animation');
+    Route::get('/{section}', 'App\Http\Controllers\PortfolioController@getIndex')
+    ->name('portfolio.section');
 
-    Route::get('/illustration', 'App\Http\Controllers\PortfolioController@getIndex')
-    ->name('portfolio.illustration');
+    // Route::get('/illustration', 'App\Http\Controllers\PortfolioController@getIndex')
+    // ->name('portfolio.illustration');
 
-    Route::get('/software', 'App\Http\Controllers\PortfolioController@getIndex')
-    ->name('portfolio.software');
+    // Route::get('/software', 'App\Http\Controllers\PortfolioController@getIndex')
+    // ->name('portfolio.software');
+
+    Route::get('/project/{section}/{id}', 'App\Http\Controllers\PortfolioController@getProjectById')
+    ->name('project');
 });
 
 Route::get('/weird-stuff', function () {

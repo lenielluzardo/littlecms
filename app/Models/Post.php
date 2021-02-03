@@ -8,15 +8,14 @@ class Post extends Model
 {
     protected $fillable = ['title', 'content'];
 
-    public function links(){
-        return $this->belongsToMany('App\Models\Link', 'post_link');
-    }
-
     public function tags(){
         return $this->belongsToMany('App\Models\Tag', 'post_tag', 'post_id', 'tag_id')
         ->withTimestamps();
     }
 
+    public function user(){
+        return $this->belongsTo('App\Models\User', 'user_id');
+    }
 
     public function getAllPosts(){
         $posts = Post::all();

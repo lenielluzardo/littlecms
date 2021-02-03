@@ -14,7 +14,7 @@ class TagTableSeeder extends Seeder
     public function run()
     {
         $tag = new \App\Models\Tag([
-            'name' => 'Software Development',
+            'name' => 'Animation',
             'color' => 'gray',
         ]);
         $tag->save();
@@ -26,13 +26,13 @@ class TagTableSeeder extends Seeder
         $tag->save();
 
         $tag = new \App\Models\Tag([
-            'name' => 'Animation',
+            'name' => 'Software Development',
             'color' => 'green'
         ]);
         $tag->save();
 
         $tag = new \App\Models\Tag([
-            'name' => 'Laravel',
+            'name' => 'Weird',
             'color' => 'orange'
         ]);
         $tag->save();

@@ -20,10 +20,12 @@ class PostTableSeeder extends Seeder
         'paragraph3' => 'Irure eiusmod voluptate amet Lorem cupidatat do aliqua do do proident. Commodo voluptate sint tempor ut consequat. Anim sit deserunt irure sunt. Lorem cupidatat amet reprehenderit duis culpa laborum reprehenderit Lorem sunt. Duis sunt culpa adipisicing incididunt est veniam do eiusmod proident do. Sunt excepteur labore consequat proident exercitation eiusmod enim.',
         'paragraph4' => 'Nisi officia eu irure exercitation aute laborum do ea. Esse incididunt ex ex minim exercitation magna non elit nisi. Consequat excepteur cillum duis sint exercitation duis enim enim sit sunt esse officia enim. Ad eiusmod minim ad quis labore. Veniam nostrud proident ad cupidatat Lorem do dolore veniam deserunt tempor nisi.',
         'image1' => 'https://via.placeholder.com/600',
-        'image2' => 'https://via.placeholder.com/600'
+        'image2' => 'https://via.placeholder.com/600',
+        'user_id' => 1
         ]);
         $post->save();
         $post->tags()->attach([1,2,3]);
+
 
         $post = new \App\Models\Post([
             'title' => 'Post Title From Seeder #2',
@@ -32,7 +34,8 @@ class PostTableSeeder extends Seeder
         'paragraph3' => 'Irure eiusmod voluptate amet Lorem cupidatat do aliqua do do proident. Commodo voluptate sint tempor ut consequat. Anim sit deserunt irure sunt. Lorem cupidatat amet reprehenderit duis culpa laborum reprehenderit Lorem sunt. Duis sunt culpa adipisicing incididunt est veniam do eiusmod proident do. Sunt excepteur labore consequat proident exercitation eiusmod enim.',
         'paragraph4' => 'Nisi officia eu irure exercitation aute laborum do ea. Esse incididunt ex ex minim exercitation magna non elit nisi. Consequat excepteur cillum duis sint exercitation duis enim enim sit sunt esse officia enim. Ad eiusmod minim ad quis labore. Veniam nostrud proident ad cupidatat Lorem do dolore veniam deserunt tempor nisi.',
         'image1' => 'https://via.placeholder.com/600',
-        'image2' => 'https://via.placeholder.com/600'
+        'image2' => 'https://via.placeholder.com/600',
+        'user_id' => 1
         ]);
         $post->save();
         $post->tags()->attach([1,2,3]);
@@ -44,7 +47,8 @@ class PostTableSeeder extends Seeder
         'paragraph3' => 'Irure eiusmod voluptate amet Lorem cupidatat do aliqua do do proident. Commodo voluptate sint tempor ut consequat. Anim sit deserunt irure sunt. Lorem cupidatat amet reprehenderit duis culpa laborum reprehenderit Lorem sunt. Duis sunt culpa adipisicing incididunt est veniam do eiusmod proident do. Sunt excepteur labore consequat proident exercitation eiusmod enim.',
         'paragraph4' => 'Nisi officia eu irure exercitation aute laborum do ea. Esse incididunt ex ex minim exercitation magna non elit nisi. Consequat excepteur cillum duis sint exercitation duis enim enim sit sunt esse officia enim. Ad eiusmod minim ad quis labore. Veniam nostrud proident ad cupidatat Lorem do dolore veniam deserunt tempor nisi.',
         'image1' => 'https://via.placeholder.com/600',
-        'image2' => 'https://via.placeholder.com/600'
+        'image2' => 'https://via.placeholder.com/600',
+        'user_id' => 1
         ]);
         $post->save();
         $post->tags()->attach([1,2,3]);
@@ -56,7 +60,8 @@ class PostTableSeeder extends Seeder
         'paragraph3' => 'Irure eiusmod voluptate amet Lorem cupidatat do aliqua do do proident. Commodo voluptate sint tempor ut consequat. Anim sit deserunt irure sunt. Lorem cupidatat amet reprehenderit duis culpa laborum reprehenderit Lorem sunt. Duis sunt culpa adipisicing incididunt est veniam do eiusmod proident do. Sunt excepteur labore consequat proident exercitation eiusmod enim.',
         'paragraph4' => 'Nisi officia eu irure exercitation aute laborum do ea. Esse incididunt ex ex minim exercitation magna non elit nisi. Consequat excepteur cillum duis sint exercitation duis enim enim sit sunt esse officia enim. Ad eiusmod minim ad quis labore. Veniam nostrud proident ad cupidatat Lorem do dolore veniam deserunt tempor nisi.',
         'image1' => 'https://via.placeholder.com/600',
-        'image2' => 'https://via.placeholder.com/600'
+        'image2' => 'https://via.placeholder.com/600',
+        'user_id' => 1
         ]);
         $post->save();
         $post->tags()->attach([1,2,3]);
@@ -68,10 +73,10 @@ class PostTableSeeder extends Seeder
         'paragraph3' => 'Irure eiusmod voluptate amet Lorem cupidatat do aliqua do do proident. Commodo voluptate sint tempor ut consequat. Anim sit deserunt irure sunt. Lorem cupidatat amet reprehenderit duis culpa laborum reprehenderit Lorem sunt. Duis sunt culpa adipisicing incididunt est veniam do eiusmod proident do. Sunt excepteur labore consequat proident exercitation eiusmod enim.',
         'paragraph4' => 'Nisi officia eu irure exercitation aute laborum do ea. Esse incididunt ex ex minim exercitation magna non elit nisi. Consequat excepteur cillum duis sint exercitation duis enim enim sit sunt esse officia enim. Ad eiusmod minim ad quis labore. Veniam nostrud proident ad cupidatat Lorem do dolore veniam deserunt tempor nisi.',
         'image1' => 'https://via.placeholder.com/600',
-        'image2' => 'https://via.placeholder.com/600'
+        'image2' => 'https://via.placeholder.com/600',
+        'user_id' => 1
         ]);
         $post->save();
         $post->tags()->attach([1,2,3]);
-
     }
 }

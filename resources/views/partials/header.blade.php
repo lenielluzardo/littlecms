@@ -7,7 +7,7 @@
 
   <!-- ====================== L O G O T Y P E   &   N A V   I C O N ====================== -->
   <div id="header-mobile">
-    <a id="homepage-link" href="index.html">
+    <a id="homepage-link" href="{{ route('welcome')}}">
      <div id="logotype-container">
         <img id="logo-icon" src="{{URL::to('./assets/logo.svg')}}" alt="logo">
         <h1 id="logo-type">Leniel Luzardo</h1>
@@ -24,13 +24,13 @@
             <a class="" href="{{ route('blog')}}">
                 <li class="nav-component">Blog</li>
             </a>
-            <a class="" href="{{ route('portfolio.animation')}}">
+            <a class="" href="{{ route('portfolio.section', ['section' => 'Animation'])}}">
                 <li class="nav-component">Animation</li>
             </a>
-            <a class="" href="{{ route('portfolio.illustration')}}">
+            <a class="" href="{{ route('portfolio.section', ['section' => 'Illustration'])}}">
                 <li class="nav-component">Illustration</li>
             </a>
-            <a class="" href="{{ route('portfolio.software')}}">
+            <a class="" href="{{ route('portfolio.section', ['section' => 'Software'])}}">
                 <li class="nav-component">Software Development</li>
             </a>
             <a class="" href="{{ route('weird-stuff')}}">

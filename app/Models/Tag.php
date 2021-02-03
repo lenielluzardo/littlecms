@@ -12,6 +12,10 @@ class Tag extends Model
         ->withTimestamps();
     }
 
+    public function projects(){
+        return $this->hasMany('\App\Models\Project');
+    }
+
     public function getAllTags(){
         $tags = Tag::all();
         return $tags;

@@ -3,21 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use Illuminate\Session\Store;
-use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
-    public function getIndex(Store $session, Project $projectModel){
-        $discipline = 'animation';
+    public function getIndex($section){
+        $projectModel = new Project();
 
-        $projects = $projectModel->getProjects($discipline, $session);
-        $session->flush();
+        $latest = $projectModel->getLatestProject($section);
+        if($latest->id)
+        {
+            $relateds = $projectModel->getRelatedProjects( $section, $latest->id);
+            return view('portfolio.index', ['project' => $latest, 'relateds' => $relateds]);
+        }
+        return 'Try Again';
+    }
 
-        // $mostRecentProject = array_shift($projects);
-        // $relatedProjects = array_slice($projects, 1, 10);
-        unset($projects);
+    public function getProjectById($section, $id, Project $projectModel){
 
-        return view('portfolio.index', ['project' => $mostRecentProject, 'relatedProjects' => $relatedProjects]);
+        $latest = $projectModel->getProjectById($id);
+        if($latest->id)
+        {
+            $relateds = $projectModel->getRelatedProjects($section, $latest->id, );
+
+            return view('portfolio.project', ['project' => $latest, 'relateds' => $relateds]);
+        }
+
+        return 'Try Again';
     }
 }

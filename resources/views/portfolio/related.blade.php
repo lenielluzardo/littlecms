@@ -5,12 +5,12 @@
 
     <ul class="related-list">
 
-        @foreach($relatedProjects as $project)
+        @foreach($relateds as $project)
 
         <li>
             <article class="related-item">
-                <h3 class="related-title">{{$project['title']}}</h3>
-                <img class="related-img" src="{{$project['images']['url_1']}}" alt="post_image">
+                <h3 class="related-title">{{ $project->title }} </h3>
+                <img class="related-img" src="{{ $project->image1}}" alt="post_image">
             </article>
 
         </li>

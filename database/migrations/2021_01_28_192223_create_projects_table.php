@@ -14,18 +14,20 @@ class CreateProjectsTable extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('title');
             $table->string('company');
             $table->text('description');
             $table->text('paragraph1');
             $table->text('paragraph2');
-            $table->string('discipline');
-            $table->text('project_url');
+            $table->text('image1');
+            $table->text('image2');
+            $table->text('url');
             $table->timestamp('released_at')->useCurrent();;
             $table->timestamp('created_at')->useCurrent();;
             $table->timestamp('updated_at')->useCurrent();;
             $table->boolean('visible');
+            $table->integer('tag_id');
             $table->integer('user_id')->default(1);
         });
     }
