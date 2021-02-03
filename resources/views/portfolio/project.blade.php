@@ -28,11 +28,9 @@
                         @endfor
                     </div>
 
-                    {{-- <div id="p_tags">
-                        @foreach($project->tags as $tag)
-                            <span class="tag"><a href="">{{ $tag }}</a></span>
-                        @endforeach
-                    </div> --}}
+                    <div id="p_tags">
+                            <span class="tag"><a href="">{{ $project->tag->name }}</a></span>
+                    </div>
 
                 </div>
 

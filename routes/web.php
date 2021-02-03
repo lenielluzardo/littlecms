@@ -84,30 +84,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('', 'App\Http\Controllers\AdminController@getIndex')
     ->name('admin.index');
 
-    // Route::get('', function (){
-    //     return view('admin.index');
-    // })->name('admin.index');
-
     Route::post('', 'App\Http\Controllers\AdminController@savePost')
     ->name('admin.save');
 
-    // Route::post('', function (\Illuminate\Http\Request $request,
-    // \Illuminate\Validation\Factory $validator){
+    Route::post('', 'App\Http\Controllers\AdminController@deletePost')
+    ->name('admin.delete');
 
-    //     $validation = $validator->make($request->all(),[
-    //          'title' => 'required|min:10',
-    //          'paragraph1' => 'required| min:100',
-    //          'paragraph2' => 'required| min:100',
-    //          'paragraph3' => 'required| min:100',
-    //          'paragraph4' => 'required| min:100'
-    //         ]);
 
-    //         if($validation->fails()){
-    //             return redirect()->back()->withErrors($validation);
-    //         }
-
-    //      return redirect()
-    //      ->route('admin.index')
-    //      ->with('info', 'Post created', 'Title: '. $request->input('title'));
-    // })->name('admin.save');
+    // Route::get('', function (){
+    //     return view('admin.index');
+    // })->name('admin.index');
 });

@@ -23,6 +23,11 @@ class AdminController extends Controller
         return view('admin.index', ['posts'=> $posts, 'tags' => $tags]);
     }
 
+    public function deletePost($id, Post $postModel){
+        $postModel->deletePost($id);
+        return redirect()->back();
+    }
+
     public function savePost(Post $postModel, Request $request){
 
         $postModel->savePost($request);

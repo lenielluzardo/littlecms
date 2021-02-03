@@ -26,12 +26,12 @@
                                 @endif
                              @endfor
                         </div>
-                        <button class="post_item-remove"><span class="trash fas fa-trash"></span></button>
+                        <button  class="post_item-remove"><span class="trash fas fa-trash"></span></button>
                     </div>
                 </li>
            @endforeach
         </ul>
-
+        {{-- href="{{ route('admin.delete', ['id' => $post->id ]) }}" --}}
       </div>
 
 
@@ -41,7 +41,7 @@
     </div>
 
     <div class="post_detail-container">
-      <form class="post_form" action="{{route('admin.save')}}" method="post">
+      <form class="post_form" action="{{ route('admin.save') }}" method="post">
 
          <label class="f_lbl" for="post_title">Post Title</label>
          <input class="p_field" id="post_title" name="title" type="text" >

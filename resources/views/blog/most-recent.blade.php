@@ -8,7 +8,7 @@
        <section id="p_header">
            <h2 id="p_title">{{$post->title}}</h2>
            <div id="p_meta">
-               <h3 id="p_author">Author: {{$post->author}}</h3>
+               <h3 id="p_author">Author: {{$post->user->nickname}}</h3>
                <h4 id="p_date">Date: {{$post->created_at}}</h4>
                <div id="p_rating">
                    @for($i = 0; $i < 5; $i++)

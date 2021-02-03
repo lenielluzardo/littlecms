@@ -23,7 +23,7 @@ class Post extends Model
     }
 
     public function getLatestPost(){
-        $post = Post::latest()->with('tags')->first();
+        $post = Post::latest()->with('user')->with('tags')->first();
         return $post;
     }
     public function getRelatedPosts($id){
@@ -32,7 +32,7 @@ class Post extends Model
     }
 
     public function getPostById($id){
-        $post = Post::find($id);
+        $post = Post::with('user')->with('tags')->find($id);
         return $post;
     }
 
@@ -49,6 +49,8 @@ class Post extends Model
 
     public function deletePost($id){
         $post = Post::find($id);
+        $post->user->detach();
+        $post->tags->detach();
         $post->delete();
     }
 
