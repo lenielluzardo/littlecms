@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id()->autoIncrement();
             $table->string('fullname');
             $table->string('nickname')->unique();
-            $table->string('about');
+            $table->text('about');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('recovery_email')->unique();

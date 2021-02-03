@@ -14,7 +14,7 @@
 
                 <div id="p_meta">
 
-                    <h3 id="p_author">Author: {{ $project->user }}</h3>
+                    <h3 id="p_author">Author: {{ $project->user->nickname }}</h3>
 
                     <h4 id="p_date">Date: {{ $project->created_at }}</h4>
 

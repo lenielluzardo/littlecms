@@ -22,12 +22,13 @@ class Project extends Model
     }
 
     public function getLatestProject($section){
+
         //TODO: Query that uses section name to bring project that matches the tag name
 
         $sectionId = $this->getSectionId($section);
 
         $project = Project::where('tag_id', '=', $sectionId )
-        ->with('tag')->orderBy('created_at','desc')->first();
+        ->with('tag')->with('user')->orderBy('created_at','desc')->first();
 
 
         return $project;
