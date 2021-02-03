@@ -55,31 +55,35 @@ Route::get('/weird-stuff', function () {
 })->name('weird-stuff');
 
 Route::group(['prefix' => 'contact'], function () {
-    Route::get('', function () {
+    Route::get('', 'App\Http\Controllers\ContactController@getIndex')
+    ->name('contact.index');
+
+    Route::get('', function(){
         return view('contact.index');
-    })->name('contact');
+    })
+    ->name('contact.index');
 
-    Route::post('', function(\Illuminate\Http\Request $request,
-    \Illuminate\Validation\Factory $validator){
-        $validation = $validator->make($request->all(),[
-            'fullname' => 'required',
-            'email' => 'required',
-            'subject' => 'required',
-            'discipline' => 'required',
-            'comments' => 'required',
-            'not_a_robot' => 'required'
-           ]);
+    Route::post('', 'App\Http\Controllers\ContactController@sendEmail')
+    ->name('contact.send');
+    // Route::post('', function(\Illuminate\Http\Request $request,
+    // \Illuminate\Validation\Factory $validator){
+    //     $validation = $validator->make($request->all(),[
+    //         'fullname' => 'required',
+    //         'email' => 'required',
+    //         'subject' => 'required',
+    //         'discipline' => 'required',
+    //         'comments' => 'required',
+    //         'not_a_robot' => 'required'
+    //        ]);
 
-           if($validation->fails()){
-               return redirect()->back()->withErrors($validation);
-           }
-    })->name('contact');
+    //        if($validation->fails()){
+    //            return redirect()->back()->withErrors($validation);
+    //        }
+    // })->name('contact');
 
 });
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/login', 'App\Http\Controllers\AdminController@login')
-    ->name('login');
 
     Route::get('', 'App\Http\Controllers\AdminController@getIndex')
     ->name('admin.index');
@@ -87,9 +91,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('', 'App\Http\Controllers\AdminController@savePost')
     ->name('admin.save');
 
-    Route::post('', 'App\Http\Controllers\AdminController@deletePost')
-    ->name('admin.delete');
+    Route::get('/{id}', 'App\Http\Controllers\AdminController@deletePost')
+    ->name('admin.remove');
 
+    Route::get('/login', 'App\Http\Controllers\AdminController@login')
+    ->name('login');
 
     // Route::get('', function (){
     //     return view('admin.index');

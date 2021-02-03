@@ -7,7 +7,7 @@
 <section class="section-container">
 
     <div class="contact_form-container">
-      <form class="contact_form" action="{{route('contact')}}" method="post">
+      <form class="contact_form" action="{{route('contact.send')}}" method="post">
 
         <label class="f_lbl" for="fullname">Fullname</label>
         <input class="f_field" id="fullname" name="fullname" type="text">

@@ -49,10 +49,14 @@ class Post extends Model
 
     public function deletePost($id){
         $post = Post::find($id);
-        $post->user->detach();
-        $post->tags->detach();
+        // $post->tags()->detach($post->tags);
         $post->delete();
     }
+    // public function deletePost($request){
+    //     $post = Post::find($request->input('id'));
+    //     // $post->tags()->detach($post->tags);
+    //     $post->delete();
+    // }
 
     public function savePost($request)
     {

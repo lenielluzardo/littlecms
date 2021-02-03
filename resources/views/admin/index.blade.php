@@ -26,12 +26,13 @@
                                 @endif
                              @endfor
                         </div>
-                        <button  class="post_item-remove"><span class="trash fas fa-trash"></span></button>
-                    </div>
+                            <form class="post_item-remove" method="get" action="{{ route('admin.remove', $post->id ) }}">
+                                <button type="submit" class="post_item-remove"><span class="trash fas fa-trash"></span></a>
+                            </form>
+                        </div>
                 </li>
            @endforeach
         </ul>
-        {{-- href="{{ route('admin.delete', ['id' => $post->id ]) }}" --}}
       </div>
 
 
@@ -41,7 +42,7 @@
     </div>
 
     <div class="post_detail-container">
-      <form class="post_form" action="{{ route('admin.save') }}" method="post">
+      <form class="post_form" action="" method="post">
 
          <label class="f_lbl" for="post_title">Post Title</label>
          <input class="p_field" id="post_title" name="title" type="text" >
@@ -77,8 +78,10 @@
          </select>
 
          <div class="submit-container">
-             {{ csrf_field()}}
-           <input type="submit" name="save_button" class="button" value="Save">
+           <form method="post" action="{{ route('admin.save') }}">
+               {{ csrf_field()}}
+               <input type="submit" name="save_button" class="button" value="Save">
+            </form>
          </div>
 
       </form>

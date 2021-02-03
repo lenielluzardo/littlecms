@@ -36,7 +36,7 @@
             <a class="" href="{{ route('weird-stuff')}}">
                 <li class="nav-component">Weird Stuff</li>
             </a>
-            <a class="" href="{{ route('contact')}}">
+            <a class="" href="{{ route('contact.index')}}">
                 <li class="nav-component">Contact</li>
             </a>
           </ul>

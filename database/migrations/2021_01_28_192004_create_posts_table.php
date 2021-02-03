@@ -20,8 +20,8 @@ class CreatePostsTable extends Migration
             $table->text('paragraph2');
             $table->text('paragraph3')->nullable();
             $table->text('paragraph4')->nullable();
-            $table->text('image1');
-            $table->text('image2');
+            $table->text('image1')->nullable();;
+            $table->text('image2')->nullable();;
             $table->text('image3')->nullable();
             $table->text('image4')->nullable();
             $table->integer('rating')->default(0);

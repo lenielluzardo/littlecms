@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -23,9 +24,14 @@ class AdminController extends Controller
         return view('admin.index', ['posts'=> $posts, 'tags' => $tags]);
     }
 
+    // public function deletePost(Request $request, Post $postModel){
+    //     $postModel->deletePost($request);
+    //     return redirect()->route('admin.index');
+    // }
+
     public function deletePost($id, Post $postModel){
         $postModel->deletePost($id);
-        return redirect()->back();
+        return redirect()->route('admin.index');
     }
 
     public function savePost(Post $postModel, Request $request){
@@ -33,17 +39,17 @@ class AdminController extends Controller
         $postModel->savePost($request);
 
 
-        // $validation = $validator->make($request->all(),[
-        //             'title' => 'required',
-        //             'paragraph1' => 'required| min:100',
-        //             'paragraph2' => 'required| min:100',
-        //             'paragraph3' => 'required| min:100',
-        //             'paragraph4' => 'required| min:100'
-        //            ]);
+        $validation = Validator::make($request->all(), [
+                    'title' => 'required',
+                    'paragraph1' => 'required',
+                    'paragraph2' => 'required',
+                    'paragraph3' => 'required',
+                    'paragraph4' => 'required'
+                   ]);
 
-        // if($validation->fails()){
-        //     return redirect()->back()->withErrors($validation);
-        // }
+        if($validation->fails()){
+            return redirect()->back()->withErrors($validation);
+        }
 
         return redirect()->back();
     }
