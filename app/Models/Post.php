@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -14,7 +15,7 @@ class Post extends Model
     }
 
     public function user(){
-        return $this->belongsTo('App\Models\User', 'user_id');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function getAllPosts(){
@@ -50,7 +51,7 @@ class Post extends Model
     public function deletePost($id){
         $post = Post::find($id);
         // $post->tags()->detach($post->tags);
-        $post->delete();
+        // $post->delete();
     }
     // public function deletePost($request){
     //     $post = Post::find($request->input('id'));
@@ -58,16 +59,19 @@ class Post extends Model
     //     $post->delete();
     // }
 
-    public function savePost($request)
+    public function savePost($request, $user)
     {
+
+
         $post = new Post();
-        $post->user_id = 1;
 
         $post->title = $request->input('title');
         $post->paragraph1 = $request->input('paragraph1');
         $post->paragraph2 = $request->input('paragraph2');
         $post->paragraph3 = $request->input('paragraph3');
         $post->paragraph4 = $request->input('paragraph4');
+        // $user->posts()->save($post);
+        $post->user->attach($user);
         $post->save();
 
         $post->tags()->attach($request->input('tags') === null ? [] : $request->input('tags'));

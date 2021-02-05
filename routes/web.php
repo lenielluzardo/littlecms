@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome'/*, ['section' => $section]*/);
@@ -94,10 +95,26 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/{id}', 'App\Http\Controllers\AdminController@deletePost')
     ->name('admin.remove');
 
-    Route::get('/login', 'App\Http\Controllers\AdminController@login')
-    ->name('login');
+
 
     // Route::get('', function (){
     //     return view('admin.index');
     // })->name('admin.index');
 });
+Auth::routes();
+
+
+
+// Route::get('/login', function(){
+//     return view('admin.login');
+// })->name('auth.login');
+
+Route::post('login', [
+    'uses' => 'App\Http\Controllers\SigninController@signin',
+    'as' => 'auth.signin'
+]);
+// 'App\Http\Controllers\SigninController@signin')
+// ->name('login');
+
+// Route::get('/register', 'App\Http\Controllers\LoginController@login')
+// ->name('register');

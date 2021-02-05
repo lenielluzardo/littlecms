@@ -5,9 +5,13 @@
 @include('partials.errors')
 
 <section class="section-container">
-
+@if(Session::has('fail'))
+    <div>
+   {{Session::get('fail')}}
+    </div>
+    @endif
     <div class="contact_form-container">
-      <form class="contact_form" action="{{route('contact')}}" method="post">
+      <form class="contact_form" action="{{url('/login')}}" method="post">
 
         <label class="f_lbl" for="email">Email</label>
         <input class="f_field" id="email" name="email" type="text">

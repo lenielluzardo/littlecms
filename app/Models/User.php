@@ -9,6 +9,10 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    use HasFactory, Notifiable;
+    protected $fillable = [ 'name', 'nickname','email', 'password'];
+    protected $hidden = ['password', 'remember_token'];
+    protected $casts = [ 'email_verified_at' => 'datetime'];
 
     public function posts(){
         return $this->hasMany('App\Models\Post');
@@ -16,35 +20,4 @@ class User extends Authenticatable
     public function projects(){
         return $this->hasMany('App\Models\Projects');
     }
-    use HasFactory, Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 }

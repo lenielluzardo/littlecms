@@ -16,6 +16,9 @@
     <img id="nav-icon" src="./assets/nav-icon.svg" alt="navigation">
   </div>
 
+
+  @include('partials.login')
+
 <!-- ====================== N A V I G A T I O N   M E N U ====================== -->
     <nav id="nav-menu" class="hidden">
       <div id="nav-menu-mobile" >
