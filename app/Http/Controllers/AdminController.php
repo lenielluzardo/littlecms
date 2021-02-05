@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
     public function getIndex(Post $postModel, Tag $tagModel){
+        if(!Auth::check()){
+            return redirect()->back();
+        }
 
         $posts = $postModel->getAllPosts();
         $tags = $tagModel->getAllTags();
@@ -17,12 +22,18 @@ class AdminController extends Controller
     }
 
     public function deletePost($id, Post $postModel){
+        if(!Auth::check()){
+            return redirect('/');
+        }
         $postModel->deletePost($id);
         return redirect()->back();
     }
 
     public function savePost(Post $postModel, Request $request){
 
+        if(!Auth::check()){
+            return redirect()->back();
+        }
         // $validation = Validator::make($request->all(), [
         //             'title' => 'required',
         //             'paragraph1' => 'required',

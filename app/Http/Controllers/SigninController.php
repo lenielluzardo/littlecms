@@ -10,14 +10,15 @@ class SigninController extends Controller
     public function signin(Request $request)
     {
         // dd('Our own auth');
-        $this->validate($request, [
+
+        $validated = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
         if(Auth::attempt([
             'email' => $request->input('email'),
-            'passwor' => $request->input('password')
+            'password' => $request->input('password')
             ],$request->has('remember')))
         {
             return redirect()->route('admin.index');

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Auth;
+use Gate;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -51,7 +52,7 @@ class Post extends Model
     public function deletePost($id){
         $post = Post::find($id);
         // $post->tags()->detach($post->tags);
-        // $post->delete();
+        $post->delete();
     }
     // public function deletePost($request){
     //     $post = Post::find($request->input('id'));
@@ -61,16 +62,18 @@ class Post extends Model
 
     public function savePost($request, $user)
     {
-
+        //TODO: Divide Create and Update Ops to each Method
 
         $post = new Post();
-
         $post->title = $request->input('title');
         $post->paragraph1 = $request->input('paragraph1');
         $post->paragraph2 = $request->input('paragraph2');
         $post->paragraph3 = $request->input('paragraph3');
         $post->paragraph4 = $request->input('paragraph4');
         // $user->posts()->save($post);
+        if(Auth::denies('save-post', $post)){
+            return redirect()->back();
+        }
         $post->user->attach($user);
         $post->save();
 
