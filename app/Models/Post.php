@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Auth;
-use Gate;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -51,14 +51,14 @@ class Post extends Model
 
     public function deletePost($id){
         $post = Post::find($id);
-        // $post->tags()->detach($post->tags);
+
+         if(Gate::denies('auth-crud-post', $post)){
+            return redirect()->back();
+        }
+
+        $post->tags()->detach();
         $post->delete();
     }
-    // public function deletePost($request){
-    //     $post = Post::find($request->input('id'));
-    //     // $post->tags()->detach($post->tags);
-    //     $post->delete();
-    // }
 
     public function savePost($request, $user)
     {
@@ -71,7 +71,7 @@ class Post extends Model
         $post->paragraph3 = $request->input('paragraph3');
         $post->paragraph4 = $request->input('paragraph4');
         // $user->posts()->save($post);
-        if(Auth::denies('save-post', $post)){
+        if(Gate::denies('save-post', $post)){
             return redirect()->back();
         }
         $post->user->attach($user);

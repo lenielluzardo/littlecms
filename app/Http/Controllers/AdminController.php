@@ -23,14 +23,13 @@ class AdminController extends Controller
 
     public function deletePost($id, Post $postModel){
         if(!Auth::check()){
-            return redirect('/');
+            return redirect()->back();
         }
         $postModel->deletePost($id);
-        return redirect()->back();
+        return redirect('/admin');
     }
 
     public function savePost(Post $postModel, Request $request){
-
         if(!Auth::check()){
             return redirect()->back();
         }

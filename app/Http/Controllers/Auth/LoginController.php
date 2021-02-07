@@ -28,8 +28,6 @@ class LoginController extends Controller
         if(Auth::atttempt($credentials)){
             return redirect()->intended('welcome');
         }
-
-
         return view('admin.login');
     }
 }

@@ -36,8 +36,8 @@
             <a class="" href="{{ route('portfolio.section', ['section' => 'Software'])}}">
                 <li class="nav-component">Software Development</li>
             </a>
-            <a class="" href="{{ route('weird-stuff')}}">
-                <li class="nav-component">Weird Stuff</li>
+            <a class="" href="{{ route('about')}}">
+                <li class="nav-component">About</li>
             </a>
             <a class="" href="{{ route('contact.index')}}">
                 <li class="nav-component">Contact</li>
