@@ -3,10 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('welcome'/*, ['section' => $section]*/);
-
-})->name('welcome');
+Route::get('/', 'App\Http\Controllers\HomeController@getIndex')
+->name('welcome');
 
 Route::group(['prefix' => 'blog'], function(){
 
@@ -39,30 +37,31 @@ Route::group(['prefix' => 'blog'], function(){
 
 Route::group(['prefix' => 'portfolio'], function(){
     Route::get('/{section}', 'App\Http\Controllers\PortfolioController@getIndex')
-    ->name('portfolio.section');
+    ->name('portfolio');
+
+    Route::get('/project/{section}/{id}', 'App\Http\Controllers\PortfolioController@getProjectById')
+    ->name('project');
 
     // Route::get('/illustration', 'App\Http\Controllers\PortfolioController@getIndex')
     // ->name('portfolio.illustration');
 
     // Route::get('/software', 'App\Http\Controllers\PortfolioController@getIndex')
     // ->name('portfolio.software');
-
-    Route::get('/project/{section}/{id}', 'App\Http\Controllers\PortfolioController@getProjectById')
-    ->name('project');
 });
 
-Route::get('/weird-stuff', function () {
-    return view('weird-stuff.weird-stuff');
-})->name('weird-stuff');
+Route::get('/about', function () {
+    return 'ABOUT';
+})->name('about');
 
 Route::group(['prefix' => 'contact'], function () {
+
     Route::get('', 'App\Http\Controllers\ContactController@getIndex')
     ->name('contact.index');
 
-    Route::get('', function(){
-        return view('contact.index');
-    })
-    ->name('contact.index');
+    // Route::get('', function(){
+    //     return view('contact.index');
+    // })
+    // ->name('contact.index');
 
     Route::post('', 'App\Http\Controllers\ContactController@sendEmail')
     ->name('contact.send');

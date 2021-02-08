@@ -10,11 +10,11 @@ class PortfolioController extends Controller
         $projectModel = new Project();
 
         $latest = $projectModel->getLatestProject($section);
-        if($latest->id)
-        {
+        // if($latest->id)
+        // {
             $relateds = $projectModel->getRelatedProjects( $section, $latest->id);
             return view('portfolio.index', ['project' => $latest, 'relateds' => $relateds]);
-        }
+        // }
         return 'Try Again';
     }
 

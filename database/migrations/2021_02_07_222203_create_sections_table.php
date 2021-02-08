@@ -17,6 +17,7 @@ class CreateSectionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('category');
+            $table->string('route')->nullable();
             $table->text('url')->nullable();
             $table->timestamps();
         });

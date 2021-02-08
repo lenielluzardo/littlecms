@@ -10,7 +10,7 @@
     <a id="homepage-link" href="{{ route('welcome')}}">
      <div id="logotype-container">
         <img id="logo-icon" src="{{URL::to('./assets/logo.svg')}}" alt="logo">
-        <h1 id="logo-type">Leniel Luzardo</h1>
+        <h1 id="logo-type">{{env('APP_NAME')}}</h1>
      </div>
     </a>
     <img id="nav-icon" src="./assets/nav-icon.svg" alt="navigation">
@@ -23,37 +23,26 @@
     <nav id="nav-menu" class="hidden">
       <div id="nav-menu-mobile" >
         <nav id="nav-components">
-           <ul>
-            <a class="" href="{{ route('blog')}}">
-                <li class="nav-component">Blog</li>
-            </a>
-            <a class="" href="{{ route('portfolio.section', ['section' => 'Animation'])}}">
-                <li class="nav-component">Animation</li>
-            </a>
-            <a class="" href="{{ route('portfolio.section', ['section' => 'Illustration'])}}">
-                <li class="nav-component">Illustration</li>
-            </a>
-            <a class="" href="{{ route('portfolio.section', ['section' => 'Software'])}}">
-                <li class="nav-component">Software Development</li>
-            </a>
-            <a class="" href="{{ route('about')}}">
-                <li class="nav-component">About</li>
-            </a>
-            <a class="" href="{{ route('contact.index')}}">
-                <li class="nav-component">Contact</li>
-            </a>
+            <ul>
+                @foreach($sections as $section)
+                @if($section->category === 'web')
+                    <a class="" href="{{ route($section->route, [$section->name])}}">
+                        <li class="nav-component">{{$section->name}}</li>
+                    </a>
+                @endif
+                @endforeach
           </ul>
         </nav>
 
         <nav id="nav-social">
            <ul>
-             <li class="nav-item" ><a target="_blank" href="https://www.linkedin.com/in/lenielluzardo/">LinkedIn</a></li>
-             <li class="nav-item" ><a target="_blank" href="https://www.behance.net/lenielluzardo">Behance</a></li>
-             <li class="nav-item" ><a target="_blank" href="https://github.com/lenielluzardo">GitHub</a></li>
-             <li class="nav-item" ><a target="_blank" href="">Yotube</a></li>
-             <li class="nav-item" ><a target="_blank" href="https://www.instagram.com/lenielluzardo/">Instagram</a></li>
-             <li class="nav-item" ><a target="_blank" href="https://twitter.com/LenielLuzardo">Twitter</a></li>
-           </ul>
+                @foreach($sections as $section)
+                @if($section->category === 'social')
+
+                    <li class="nav-item" ><a target="_blank" href="{{$section->url}}">{{$section->name}}</a></li>
+                @endif
+                @endforeach
+            </ul>
         </nav>
      </div>
     </nav>

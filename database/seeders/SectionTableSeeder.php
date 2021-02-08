@@ -6,47 +6,42 @@ use Illuminate\Database\Seeder;
 
 class SectionTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $section = new \App\Models\Section([
             'name' => 'Blog',
             'category' => 'web',
-            'url' => '',
+            'route' => 'blog',
         ]);
         $section->save();
         $section = new \App\Models\Section([
             'name' => 'Software Devlopment',
             'category' => 'web',
-            'url' => '',
+            'route' => 'portfolio',
         ]);
         $section->save();
         $section = new \App\Models\Section([
             'name' => 'Animation',
             'category' => 'web',
-            'url' => '',
+            'route' => 'portfolio',
         ]);
         $section->save();
         $section = new \App\Models\Section([
             'name' => 'Illustration',
             'category' => 'web',
-            'url' => '',
+            'route' => 'portfolio',
         ]);
         $section->save();
         $section = new \App\Models\Section([
             'name' => 'About',
             'category' => 'web',
-            'url' => '',
+            'route' => 'about',
         ]);
         $section->save();
         $section = new \App\Models\Section([
             'name' => 'Contact',
             'category' => 'web',
-            'url' => '',
+            'route' => 'contact.index',
         ]);
         $section->save();
 
