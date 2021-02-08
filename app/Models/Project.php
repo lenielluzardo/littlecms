@@ -77,13 +77,13 @@ class Project extends Model
     private function getSectionId($section){
         switch($section)
         {
-            case 'Animation':
+            case 'animation':
                 return 1;
             break;
-            case 'Illustration':
+            case 'illustration':
                 return 2;
             break;
-            case 'Software':
+            case 'software':
                 return 3;
             break;
                 default:

@@ -15,7 +15,7 @@ class SectionTableSeeder extends Seeder
         ]);
         $section->save();
         $section = new \App\Models\Section([
-            'name' => 'Software Devlopment',
+            'name' => 'Software',
             'category' => 'web',
             'route' => 'portfolio',
         ]);

@@ -20,7 +20,7 @@
                      @endfor
                </div>
                <div id="p_tags">
-                    <span class="tag"><a href="">{{ $project->tag->name }}</a></span>
+                    <span class="tag"><a style="background-color:{{$project->tag->color}};" href="">{{ $project->tag->name }}</a></span>
                </div>
            </div>
        </section>
@@ -31,7 +31,7 @@
            <div id="p_description">
                <p>{{ $project->description }}</p>
                  <div class="button-container">
-                     <a href="{{route('project', ['section' => $project->tag->name, 'id' => "$project->id"])}}" type="button" class="button">¡Check it!</a>
+                     <a href="{{route('project', ['section' => strtolower($project->tag->name), 'id' => "$project->id"])}}" type="button" class="button">¡Check it!</a>
                  </div>
            </div>
        </section>

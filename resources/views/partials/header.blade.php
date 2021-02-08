@@ -17,7 +17,7 @@
   </div>
 
 
-  @include('partials.login')
+  {{-- @include('partials.login') --}}
 
 <!-- ====================== N A V I G A T I O N   M E N U ====================== -->
     <nav id="nav-menu" class="hidden">
@@ -26,7 +26,7 @@
             <ul>
                 @foreach($sections as $section)
                 @if($section->category === 'web')
-                    <a class="" href="{{ route($section->route, [$section->name])}}">
+                    <a class="" href="{{ route($section->route, [strtolower($section->name)])}}">
                         <li class="nav-component">{{$section->name}}</li>
                     </a>
                 @endif

@@ -29,7 +29,7 @@
                     </div>
 
                     <div id="p_tags">
-                            <span class="tag"><a href="">{{ $project->tag->name }}</a></span>
+                            <span class="tag"><a style="background-color:{{$project->tag->color}};" href="">{{ $project->tag->name }}</a></span>
                     </div>
 
                 </div>

@@ -26,7 +26,7 @@ class TagTableSeeder extends Seeder
         $tag->save();
 
         $tag = new \App\Models\Tag([
-            'name' => 'Software Development',
+            'name' => 'Software',
             'color' => 'green'
         ]);
         $tag->save();
