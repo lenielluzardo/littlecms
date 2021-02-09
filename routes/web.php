@@ -23,9 +23,8 @@ Route::group(['prefix' => 'portfolio'], function(){
     ->name('project');
 });
 
-Route::get('/about', function () {
-    return 'ABOUT';
-})->name('about');
+Route::get('/about', 'App\Http\Controllers\AboutController@getIndex')
+->name('about');
 
 Route::group(['prefix' => 'contact'], function () {
 

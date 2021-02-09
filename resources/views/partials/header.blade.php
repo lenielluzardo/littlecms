@@ -17,7 +17,7 @@
   </div>
 
 
-  {{-- @include('partials.login') --}}
+  @include('partials.login')
 
 <!-- ====================== N A V I G A T I O N   M E N U ====================== -->
     <nav id="nav-menu" class="hidden">

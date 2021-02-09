@@ -21,7 +21,7 @@
                </div>
                <div id="p_tags">
                    @foreach($post->tags as $tag)
-                         <span class="tag"><a style="background-color:{{$project->tag->color}};" href="">{{$tag->name}}</a></span>
+                         <span class="tag"><a style="background-color:{{$tag->color}};" href="">{{$tag->name}}</a></span>
                      @endforeach
                </div>
            </div>

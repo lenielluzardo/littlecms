@@ -17,9 +17,12 @@ class CreateUsersTable extends Migration
             $table->id()->autoIncrement();
             $table->string('name');
             $table->string('nickname')->unique();
-            $table->text('about')->default('');
             $table->string('email')->unique();
             $table->string('password');
+            $table->text('about1')->default('');
+            $table->text('about2')->default('');
+            $table->text('url1')->default('');
+            $table->text('url2')->default('');
             $table->string('recovery_email')->unique()->default('');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
