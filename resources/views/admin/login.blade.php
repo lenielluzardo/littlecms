@@ -2,8 +2,6 @@
 
 @section('content')
 
-@include('partials.errors')
-
 <section class="section-container">
 
     @if(Session::has('fail'))
@@ -12,8 +10,8 @@
          </div>
     @endif
 
-    <div class="contact_form-container">
-      <form class="contact_form" action="{{url('/login')}}" method="post">
+    <div class="form-container">
+      <form class="ll_form" action="{{url('/login')}}" method="post">
 
         <label class="f_lbl" for="email">Email</label>
         <input class="f_field" id="email" name="email" type="text" value="{{old('email')}}">
@@ -32,15 +30,24 @@
             <strong>{{ $message }}</strong>
         </span>
          @enderror
-
-        <input id="not_a_robot" class="f_chk" type="checkbox" name="is_human" value="on">
-        <label for="not_a_robot" > I'm not a robot</label> <br>
-
+        <div>
+            <input id="remember" class="f_chk" type="checkbox" name="remember"  {{ old('remember') ? 'checked' : '' }}>
+            <label class="form-check-label" for="remember">Remember me</label>
+        </div>
+        <div>
+            <input id="notrobot" class="f_chk" type="checkbox" name="notrobot">
+            <label for="notrobot" > I'm not a robot</label> <br>
+        </div>
         <div class="submit-container">
             {{ csrf_field() }}
           <input type="submit" name="f_button" id="f_button" class="button" value="Login">
         </div>
 
+        @if (Route::has('password.request'))
+        <a class="forgot-pass" href="{{ route('password.request') }}">
+            {{ __('Forgot Your Password?') }}
+        </a>
+    @endif
       </form>
     </div>
 

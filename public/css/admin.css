@@ -139,3 +139,34 @@
   width: 100%;
   margin-top: 20px;
 }
+/* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
+<!-- =================== NAVIGATION REGISTER/LOGIN ITEMS =================== --> */
+.admin-nav-list{
+    display:flex;
+    position: relative;
+    left: -30px;
+    margin: 10px 0;
+    opacity: 0;
+    list-style: none;
+}
+.admin-nav-list:hover{
+    cursor: default;
+}
+.admin-nav-link{
+    font-size: 1em;
+    margin:0 5px;
+    color: #FEFEFE;
+    text-decoration: none;
+}
+.admin-nav-link:hover{
+    cursor:default;
+}
+.invalid-feedback{
+    display:block;
+    margin: 0;
+    color: #ff4848;
+    font-size: 15px;
+}
+.forgot-pass{
+    font-size: 15px;
+}

@@ -9,8 +9,6 @@ class SigninController extends Controller
 {
     public function signin(Request $request)
     {
-        // dd('Our own auth');
-
         $validated = $request->validate([
             'email' => 'required|email',
             'password' => 'required'

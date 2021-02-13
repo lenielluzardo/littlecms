@@ -1,4 +1,5 @@
 @import './normalize.css';
+@import './admin.css';
 @import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap');
 
 /* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
@@ -291,13 +292,13 @@ html, body{
 
 /* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
  /*<!-- =================== C O N T A C T   F O R M =================== --> */
-.contact_form-container{
+.form-container{
   display: flex;
   justify-content: center;
   margin:0;
   height: 100%;
 }
-.contact_form{
+.ll_form{
   width: 100%;
 }
 .f_lbl{
@@ -312,7 +313,7 @@ html, body{
   margin: 0 0 20px 0;
   padding: 0 0 0 0;
 }
-#comments{
+.comments{
   resize: none;
   height: 100px;
   width: 100%;
@@ -360,7 +361,7 @@ html, body{
     font-size: 1.5em;
   }
   .nav-item{
-    font-size: 1.4em ;
+    font-size: 1.1fem ;
   }
   #p_title{
     margin: 30px 0;
@@ -408,7 +409,7 @@ html, body{
   .p_img-container{
     margin:40px 0;
   }
-  .contact_form{
+  .ll_form{
     width: 60%;
     font-size: 1.3em;
   }
@@ -422,7 +423,7 @@ html, body{
       grid-gap: 20px;
       align-items: flex-start;
     }
-    .contact_form{
+    .ll_form{
       width: 50%;
     }
 }

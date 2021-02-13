@@ -6,8 +6,8 @@
 
 <section class="section-container">
 
-    <div class="contact_form-container">
-      <form class="contact_form" action="{{route('contact.send')}}" method="post">
+    <div class="form-container">
+      <form class="ll_form" action="{{route('contact.send')}}" method="post">
 
         <label class="f_lbl" for="fullname">Fullname</label>
         <input class="f_field" id="fullname" name="fullname" type="text">
@@ -36,7 +36,7 @@
 
         </select>
 
-        <textarea id="comments" name="comments" value="" placeholder="Leave a datailed message please..."></textarea>
+        <textarea class="comments" name="comments" value="" placeholder="Leave a datailed message please..."></textarea>
 
         <input id="news" class="f_chk" type="checkbox" name="newsletter" value="on" checked="true">
         <label for="news">Subscribe to newsletter</label> <br>

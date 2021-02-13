@@ -7,7 +7,6 @@
   <link rel="icon" type="image/svg" width="16px" height="16px" href="{{URL::to('./assets/logo.svg')}}" type="text/css">
   <link rel="stylesheet" href="{{URL::to('./css/index.css')}}" type="text/css">
   <link rel="stylesheet" href="{{URL::to('./css/all.css')}}" type="text/css">
-  <link rel="stylesheet" href="{{URL::to('./css/admin.css')}}" type="text/css">
   <title>{{env('APP_NAME')}}</title>
 </head>
 <body>
