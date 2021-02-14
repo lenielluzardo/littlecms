@@ -34,8 +34,6 @@
           </ul>
         </nav>
 
-
-
         <nav id="nav-social">
            <ul>
                 @foreach($sections as $section)

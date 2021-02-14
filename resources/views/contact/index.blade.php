@@ -5,6 +5,11 @@
 @include('partials.errors')
 
 <section class="section-container">
+@if($notification = Session::get('success'))
+    <div >
+        <strong>{{$notification}}</strong>
+    </div>
+@endif
 
     <div class="form-container">
       <form class="ll_form" action="{{route('contact.send')}}" method="post">
@@ -16,7 +21,7 @@
         <input class="f_field" id="email" name="email" type="text">
 
         <label class="f_lbl" for="subject">Subject</label>
-        <select class="f_field" id="subject" type="select" name="subject">
+        <select class="f_field" id="subject" type="select" name="subject[]">
 
           <option value="">- - Please Select - -</option>
           <option value="Job Proposal">Job Proposal</option>
@@ -26,7 +31,7 @@
         </select>
 
         <label class="f_lbl" for="discipline">Discipline</label>
-        <select class="f_field" id="discipline" type="select" name="discipline">
+        <select class="f_field" id="discipline" type="select" name="discipline[]">
 
           <option value="">- - Please Select - -</option>
           <option value="Software / Game Development">Software / Game Development</option>

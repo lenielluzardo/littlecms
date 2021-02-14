@@ -31,7 +31,7 @@ Route::group(['prefix' => 'contact'], function () {
     Route::get('', 'App\Http\Controllers\ContactController@getIndex')
     ->name('contact.index');
 
-    Route::post('', 'App\Http\Controllers\ContactController@sendEmail')
+    Route::post('', 'App\Http\Controllers\ContactController@contactFromWeb')
     ->name('contact.send');
 });
 
