@@ -39,7 +39,7 @@
         </select>
 
         <label class="f_lbl" for="discipline">Discipline</label>
-        <select class="f_field" id="discipline" type="select" name="discipline>
+        <select class="f_field" id="discipline" type="select" name="discipline">
 
           <option value="">- - Please Select - -</option>
           <option value="Software / Game Development">Software / Game Development</option>

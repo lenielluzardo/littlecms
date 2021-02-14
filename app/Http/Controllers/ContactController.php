@@ -9,20 +9,23 @@ use App\Mail\WebContact;
 
 class ContactController extends Controller
 {
-    public function getIndex(){
+    public function getIndex()
+    {
         return view('contact.index');
     }
-    public function contactFromWeb(Request $request){
+
+    public function contactFromWeb(Request $request)
+    {
         //TODO: Implement newsletter feature
 
         $messages = [
-            'g-recaptcha-response.required' => 'You must check the reCAPTCHA',
-            'g-recaptacha-response.captcha' => 'Captcha error! try again later or contact site administrator'
+            'g-recaptcha-response.required' => env('NOCAPTCHA_RESPONSE_REQUIRED'),
+            'g-recaptacha-response.captcha' => env('NOCAPTCHA_RESPONSE_CAPTCHA')
         ];
 
         $validator = Validator::make($request->all(), [
             'fullname' => 'required',
-            'email' => 'required',
+            'email' => 'required | email',
             'subject' => 'required',
             'discipline' => 'required',
             'g-recaptcha-response' => 'required | captcha'
@@ -31,14 +34,13 @@ class ContactController extends Controller
         if($validator->fails()){
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        //TODO: Implement Request Data Validation
-        //---
+
         //TODO: Implement Abstraction for Request Mapper
         //---
 
         $data = array(
             'name' => $request->input('fullname'),
-            'from' => $request->input('email'),
+            'email' => $request->input('email'),
             'subject' => $request->input('subject'),
             'discipline' => $request->input('discipline'),
             'message' => $request->input('comments'),
