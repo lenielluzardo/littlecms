@@ -25,11 +25,16 @@
         <nav id="nav-components">
             <ul>
                 @foreach($sections as $section)
-                @if($section->category === 'web')
-                    <a class="" href="{{ route($section->route, [strtolower($section->name)])}}">
+                    @if($section->category === 'web' && $section->route != 'portfolio')
+                    <a class="nav-component-link" href="{{ route($section->route)}}">
                         <li class="nav-component">{{$section->name}}</li>
                     </a>
-                @endif
+                    @endif
+                    @if($section->category === 'web' && $section->route === 'portfolio')
+                    <a class="nav-component-link" href="{{ route($section->route, strtolower($section->name))}}">
+                        <li class="nav-component">{{$section->name}}</li>
+                    </a>
+                    @endif
                 @endforeach
           </ul>
         </nav>
@@ -38,7 +43,6 @@
            <ul>
                 @foreach($sections as $section)
                 @if($section->category === 'social')
-
                     <li class="nav-item" ><a target="_blank" href="{{$section->url}}">{{$section->name}}</a></li>
                 @endif
                 @endforeach

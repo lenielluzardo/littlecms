@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Project extends Model
 {
     protected $fillable = ['title', 'content'];
 
-    public function tag(){
-        return $this->belongsTo('App\Models\Tag');
+    public function section(){
+        return $this->belongsTo('App\Models\Section', 'section_id');
     }
 
     public function user(){
@@ -21,32 +22,32 @@ class Project extends Model
         return $posts;
     }
 
-    public function getLatestProject($section){
+    public function getLatestProject($section)
+    {
+        $_section = Section::where('name', ucfirst($section))->first();
 
-        //TODO: Query that uses section name to bring project that matches the tag name
-
-        $sectionId = $this->getSectionId($section);
-
-        $project = Project::where('tag_id', '=', $sectionId )
-        ->with('tag')->with('user')->orderBy('created_at','desc')->first();
-
+        $project = Project::where('section_id', $_section->id)->orderBy('created_at', 'desc')
+                ->with('user')->with('section')->first();
 
         return $project;
     }
-    public function getRelatedProjects($section, $id){
 
-        $sectionId = $this->getSectionId($section);
-        $relateds = Project::all()->where('tag_id', $sectionId)->where('id', '<>', $id);
+    public function getRelatedProjects($section, $id)
+    {
+        $_section = Section::where('name', ucfirst($section))->first();
+        $relateds = Project::where('section_id', $_section->id)->where('id', '!=', $id)->get();
+
         return $relateds;
     }
 
-    public function getProjectById($id){
+    public function getProjectById($id)
+    {
         $project = Project::find($id);
         return $project;
     }
 
-    public function updateProject($request){
-
+    public function updateProject($request)
+    {
         $post = Post::find($request->input('id'));
         $post->title =  $request->input('title');
         $post->paragraph1 =  $request->input('paragraph1');
@@ -56,7 +57,8 @@ class Project extends Model
         $post->save();
     }
 
-    public function deleteProject($id){
+    public function deleteProject($id)
+    {
         $post = Post::find($id);
         $post->delete();
     }
@@ -64,8 +66,6 @@ class Project extends Model
     public function saveProject($request)
     {
         $post = new Post();
-        // $post->user_id = 1;
-
         $post->title = $request->input('title');
         $post->paragraph1 = $request->input('paragraph1');
         $post->paragraph2 = $request->input('paragraph2');
@@ -74,21 +74,4 @@ class Project extends Model
         $post->save();
 
     }
-    private function getSectionId($section){
-        switch($section)
-        {
-            case 'animation':
-                return 1;
-            break;
-            case 'illustration':
-                return 2;
-            break;
-            case 'software':
-                return 3;
-            break;
-                default:
-                return null;
-        }
-    }
-
 }

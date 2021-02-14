@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
-    public function getIndex(Post $postModel, Tag $tagModel){
-
+    public function getIndex(Post $postModel, Tag $tagModel)
+    {
         $posts = $postModel->getAllPosts();
         $tags = $tagModel->getAllTags();
 
@@ -25,8 +25,8 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
-    public function savePost(Post $postModel, Request $request){
-
+    public function savePost(Post $postModel, Request $request)
+    {
         $validation = Validator::make($request->all(), [
                     'title' => 'required',
                     'paragraph1' => 'required',

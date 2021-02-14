@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Section extends Model
 {
-    protected $fillable = ['name', 'url'];
     use HasFactory;
+    protected $table = 'sections';
+    protected $fillable = ['name', 'url'];
+
+    public function projects(){
+        return $this->hasMany('App\Models\Project', 'section_id', 'id');
+    }
 }

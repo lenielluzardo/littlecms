@@ -28,9 +28,9 @@
                         @endfor
                     </div>
 
-                    <div id="p_tags">
+                    {{-- <div id="p_tags">
                             <span class="tag"><a style="background-color:{{$project->tag->color}};" href="">{{ $project->tag->name }}</a></span>
-                    </div>
+                    </div> --}}
 
                 </div>
 

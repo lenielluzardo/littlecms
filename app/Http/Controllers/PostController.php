@@ -7,17 +7,19 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function getIndex(Post $postModel){
-
+    public function getIndex(Post $postModel)
+    {
         $post = $postModel->getLatestPost();
+
         $relateds = $postModel->getRelatedPosts($post->id);
 
         return view('blog.index', ['post' => $post, 'relateds' => $relateds]);
     }
 
-    public function getPostById($id, Post $postModel){
-
+    public function getPostById($id, Post $postModel)
+    {
         $post = $postModel->getPostById($id);
+
         $relateds = $postModel->getRelatedPosts($post->id);
 
         return view('blog.post', ['post' => $post, 'relateds' => $relateds]);
