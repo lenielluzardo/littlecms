@@ -1,0 +1,69 @@
+/* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
+ /*<!-- =================== C O N T A C T   F O R M =================== --> */
+.form-container{
+    display: flex;
+    justify-content: center;
+    margin:0;
+    height: 100%;
+}
+.ll_form{
+  width: 100%;
+}
+.f_lbl{
+  display: block;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+.f_field{
+  display: block;
+  width: 100%;
+  height: 1.5em;
+  margin: 0 0 20px 0;
+  padding: 0 0 0 0;
+}
+.comments{
+  resize: none;
+  height: 100px;
+  width: 100%;
+  margin: 10px 0;
+}
+.f_chk{
+  width: 1em;
+  height: 1em;
+  margin: 10px 0 ;
+}
+.submit-container{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.submit-container > input {
+  width: 100%;
+}
+@media screen and (min-width:1024px){
+  .ll_form{
+    width: 60%;
+    font-size: 1.3em;
+  }
+}
+@media screen and (min-width:1300px){
+    .ll_form{
+      width: 50%;
+    }
+}
+@media screen and (min-width: 1280px)  {
+
+  .button{
+    font-size: 1.2em;
+    grid-area:button;
+    width: 60%;
+  }
+ }
+
+@media screen and (min-width: 1500px){
+  .mr{
+    display:grid;
+    grid-template: 1fr / 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+}

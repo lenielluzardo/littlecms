@@ -1,0 +1,111 @@
+/* =================== M O S T   R E C E N T   S E C T I O N ==================  */
+#p_title{
+  margin: 0 0 10px 0;
+}
+#p_author{
+  margin: 0;
+}
+#p_date{
+  font-weight: normal;
+  margin: 0;
+}
+#p_rating{
+  margin: 10px 0;
+}
+.rate{
+    color: #fd4;
+}
+.tag > a{
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 10px 10px 0;
+  border: #0E1C27 solid 1px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #0E1C27;
+}
+.p_img-container{
+  overflow: hidden;
+  text-align: center;
+  margin: 20px 0;
+}
+.p_img-container > img{
+    height: 400px;
+    width: 600px;
+    object-fit: fill;
+}
+#p_img{
+    height:500px;
+    width:800px;
+}
+#p_description, .p_paragraphs{
+  text-align: justify;
+  letter-spacing: .2px;
+  font-stretch: wider;
+}
+.p_body{
+    text-align:center;
+    justify-content: center;
+}.button-container{
+  text-align: center;
+}
+.button {
+  display: inline-block;
+  border: none;
+  color:#0E1C27;
+  text-decoration: none;
+  background-color: #71E7F5;
+  box-shadow: lightgray 0px 5px 5px;
+  font-size: 15pt;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 1em;
+  width: 80%;
+}
+.button:hover{
+    cursor: pointer;
+}
+@media screen and (min-width:700px){
+  #p_title{
+    margin: 30px 0;
+  }
+  #p_meta{
+    display: grid;
+    grid-template: "author rating"
+                   "date   tags";
+  }
+  #p_author{
+    grid-area: author;
+  }
+  #p_date{
+    grid-area: date;
+  }
+  #p_rating{
+    text-align: end;
+    grid-area: rating;
+  }
+  #p_tags{
+    text-align: end;
+    grid-area:tags;
+  }
+}
+@media screen and (min-width:1024px){
+  .about_post-container{
+    display: grid;
+    grid-template: auto / auto auto;
+    grid-gap: 80px;
+    align-items: flex-start;
+  }
+  .pc{
+    margin: auto;
+    width:800px;
+    margin-bottom: 30px;
+    }
+  .p_img-container{
+    margin:40px 0;
+  }
+  #p_description, .p_paragraphs{
+    font-size: 1.2em;
+    }
+}

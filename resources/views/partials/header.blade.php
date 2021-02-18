@@ -6,14 +6,14 @@
 <header id="header-container">
 
   <!-- ====================== L O G O T Y P E   &   N A V   I C O N ====================== -->
-  <div id="header-mobile">
-    <a id="homepage-link" href="{{ route('welcome')}}">
+  <div id="header-mobile-container">
+    <a id="home-link" href="{{ route('welcome')}}">
      <div id="logotype-container">
-        <img id="logo-icon" src="{{URL::to('./assets/logo.svg')}}" alt="logo">
-        <h1 id="logo-type">{{env('APP_NAME')}}</h1>
+        <img id="logo" src="{{URL::to('./assets/logo.svg')}}" alt="logo">
+        <h1 id="type">{{env('APP_NAME')}}</h1>
      </div>
     </a>
-    <img id="nav-icon" src="./assets/nav-icon.svg" alt="navigation">
+    <img id="nav-icon" src="{{URL::to('./assets/nav-icon.svg')}}" alt="navigation">
   </div>
 
 

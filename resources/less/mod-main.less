@@ -1,0 +1,73 @@
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+========================= M A I N   C O N T E N T ============================ */
+
+#main-container{
+    color: #0E1C27;
+    background-color: #FEFEFE;
+    box-shadow: rgb(0, 0, 0,.5) 0px 0px 30px 1px;
+    padding: 15px;
+}
+ #back-button-container{
+    display:none
+}
+.sections-container{
+    width: 100%;
+}
+.section-container{
+  margin: 25px 0;
+}
+.section-title{
+  margin: 0;
+}
+.section-separator{
+  margin:10px 0;
+}
+@media screen and (min-width:500px){
+    .sections-container{
+       width: 90%;
+       height: 100%;
+    }
+    #main-container{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       font-size: 1.2em;
+       padding: 50px;
+    }
+}
+@media screen and (min-width:700px){
+  .sections-container{
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1280px){
+  body{
+    display: grid;
+    grid-template: 1fr / 350px repeat(5, 1fr);
+    overflow-x: hidden;
+  }
+  .hidden{
+    display: block;
+  }
+  #main-container{
+    grid-column: 2 / 7;
+    overflow-y: scroll;
+    margin: 0 0 0 40px;
+  }
+  #back-button-container{
+    display: block;
+    width:100%;
+    text-align: left;
+    position: sticky;
+    left:0;
+    top:0;
+  }
+  .sections-container{
+    width: 75%;
+  }
+  .button{
+    font-size: 1.2em;
+    grid-area:button;
+    width: 60%;
+    }
+}
