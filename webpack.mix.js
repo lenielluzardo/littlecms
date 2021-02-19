@@ -10,8 +10,12 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
+mix.options({
+    processCssUrls: false
+});
 mix.js('resources/js/app.js', 'public/js')
     .less('resources/less/index.less', 'public/css')
     .copy('resources/css/all.css', 'public/css')
-    .copyDirectory('resources/assets', 'public/assets');
+    .copyDirectory('resources/assets/images', 'public/assets/images')
+    .copyDirectory('resources/assets/icons', 'public/assets/icons')
+    .copyDirectory('resources/assets/webfonts', 'public/assets/webfonts');

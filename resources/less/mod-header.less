@@ -5,8 +5,8 @@
     top:0;
     min-width: 320px;
     background: linear-gradient(0.2turn, @complement-color, @third-color);
-    color: #E5F0FC;
-    box-shadow: rgb(0, 0, 0, .5) 0px 1px 5px 2px;
+    color: @fg-color;
+    .box-shadow;
 }
 #header-mobile-container{
   display:flex;
@@ -14,7 +14,7 @@
   padding: 20px;
 }
 #home-link{
-    color:inherit;
+    color:@fg-color;
 }
 #logotype-container{
     display: flex;
@@ -32,7 +32,7 @@
   height: 90vh;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url("@{src}bg-graphics.png");
+  background-image: url("@{images}bg-graphics.png");
   background-size: 80%;
 }
 #nav-menu-mobile{
@@ -99,7 +99,7 @@
     letter-spacing: 2px;
     margin: 10px
   }
-  #nav-icon{
+  #mobile-nav-icon{
     display: none;
   }
   #header-container{

@@ -9,11 +9,11 @@
   <div id="header-mobile-container">
     <a id="home-link" href="{{ route('welcome')}}">
      <div id="logotype-container">
-        <img id="logo" src="{{URL::to('./assets/logo.svg')}}" alt="logo">
+        <img id="logo" src="{{URL::to('./assets/icons/web-icon.svg')}}" alt="web-icon">
         <h1 id="type">{{env('APP_NAME')}}</h1>
      </div>
     </a>
-    <img id="nav-icon" src="{{URL::to('./assets/nav-icon.svg')}}" alt="navigation">
+    <img id="mobile-nav-icon" src="{{URL::to('./assets/icons/mobile-nav-icon.svg')}}" alt="navigation-icon">
   </div>
 
 

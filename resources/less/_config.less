@@ -1,28 +1,32 @@
 
 // -------- FONTS --------
-
 @font : 'Pragati';
-@base-font: 15px;
+@base-font-size: 15px;
 
 // -------- COLORS --------
-
 @fg-color:#FEFEFE;
 @bg-color:#E5F0FC;
 @prime-color:#71E7F5;
 @second-color: #004564;
 @third-color: #0A1C47;
 @complement-color: #0E1C27;
-@warning-color: #FFCF4B;
+@warning-prevent-color: #FFCF4B;
+@warning-fail-color: #df4040;
 @inactive-color: #C2C2C2;
 
 // -------- ASSETS --------
-@src : "../assets/";
+@images : "../assets/images/";
+@icons : "../assets/icons/";
+@webfonts : "../assets/webfonts/";
+
+
 // -------- MIXIN --------
 .init(){
     html, body {
         font-family: @font;
-        font-size: 15px;
+        font-size: @base-font-size;
         min-width: 320px;
+        height: 100%;
         background-color: @bg-color;
 
     }

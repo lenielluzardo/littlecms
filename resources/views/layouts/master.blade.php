@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link rel="icon" type="image/svg" width="16px" height="16px" href="{{URL::to('./assets/logo.svg')}}" type="text/css">
+  <link rel="icon" type="image/svg" width="16px" height="16px" href="{{URL::to('./assets/icons/web-icon.svg')}}" type="text/css">
   <link rel="stylesheet" href="{{URL::to('./css/index.css')}}" type="text/css">
   <link rel="stylesheet" href="{{URL::to('./css/all.css')}}" type="text/css">
   <title>{{env('APP_NAME')}}</title>
@@ -25,7 +25,7 @@
 
     <div id="back-button-container">
         <a href="{{URL::previous()}}">
-            <img id="back-button" src="{{URL::to('./assets/back_button.svg')}}" alt="backward">
+            <img id="web-back-icon" src="{{URL::to('./assets/icons/web-back-icon.svg')}}" alt="go-back">
         </a>
     </div>
 
@@ -34,6 +34,6 @@
     </div>
 </div>
 
-  <script src="./js/index.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>

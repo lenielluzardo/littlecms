@@ -1,6 +1,5 @@
-/* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
-<!-- =================== A D M I N   B L O G  =================== --> */
-
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+============================ A D M I N   B L O G ============================== */
 .admin-container{
     width: 100%;
     max-height: 800px;
@@ -17,7 +16,7 @@
     grid-row: 1 / 5;
     overflow: hidden;
     background-color: #004564;
-    background-image: url('../assets/bg_graphics.png');
+    background-image: url('@{images}bg-graphics.png');
     padding: 10px;
     border-radius: 5px;
   }
@@ -41,7 +40,7 @@
     max-height: 90px;
     margin:10px 0;
     background-color: #71E7F5;
-    background-image: url('../assets/bg_graphics.png');
+    background-image: url('@{images}bg-graphics.png');
     background-size: 200px ;
     color:#004564;
     border-radius: 10px;
@@ -76,7 +75,7 @@
   .post_item-remove{
     grid-row: 1 / 4;
     grid-column: 3 / 4;
-    background-color: #df4040;
+    background-color: @warning-fail-color;
     border:none;
     height: 60px;
     border-radius: 5px;
@@ -106,7 +105,7 @@
     overflow-y:scroll;
     color: #71E7F5;
     background-color: #004564;
-    background-image: url('../assets/bg_graphics.png');
+    background-image: url('@{images}bg-graphics.png');
     border-radius: 5px;
     padding: 10px;
   }
@@ -139,8 +138,7 @@
     width: 100%;
     margin-top: 20px;
   }
-  /* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
-  <!-- =================== NAVIGATION REGISTER/LOGIN ITEMS =================== --> */
+/* =================== N A V   R E G I S T E R / L O G I N ======================= */
   .admin-nav-list{
       display:flex;
       position: relative;
@@ -164,181 +162,9 @@
   .invalid-feedback{
       display:block;
       margin: 0;
-      color: #ff4848;
+      color: @warning-fail-color;
       font-size: 15px;
   }
   .forgot-pass{
       font-size: 15px;
   }
-
-  /* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
- /*<!-- =================== M E D I A   Q U E R I E S =================== --> */
- @media screen and (min-width:280px){
-    #type{
-      font-size: 20pt;
-     }
-   }
-   @media screen and (min-width:500px){
-     .sections-container{
-       width: 90%;
-       height: 100%;
-     }
-     #main-container{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       font-size: 1.2em;
-       padding: 50px;
-     }
-   }
-   @media screen and (min-width:700px){
-     #nav-menu{
-       height: 100vh;
-     }
-     .nav-component{
-       font-size: 1.5em;
-     }
-     .nav-item{
-       font-size: 1.1fem ;
-     }
-     #p_title{
-       margin: 30px 0;
-     }
-     #p_meta{
-       display: grid;
-       grid-template: "author rating"
-                      "date   tags";
-     }
-     #p_author{
-       grid-area: author;
-     }
-     #p_date{
-       grid-area: date;
-     }
-     #p_rating{
-       text-align: end;
-       grid-area: rating;
-     }
-     #p_tags{
-       text-align: end;
-       grid-area:tags;
-     }
-     .sections-container{
-       width: 80%;
-     }
-     .about_author-container{
-       display: grid;
-       grid-template: auto / auto 1fr;
-       grid-gap: 50px;
-     }
-   }
-   @media screen and (min-width:1024px){
-     .about_post-container{
-       display: grid;
-       grid-template: auto / auto auto;
-       grid-gap: 80px;
-       align-items: flex-start;
-     }
-     .pc{
-       margin: auto;
-       width:800px;
-       margin-bottom: 30px;
-       }
-     .p_img-container{
-       margin:40px 0;
-     }
-     .ll_form{
-       width: 60%;
-       font-size: 1.3em;
-     }
-     #p_description, .p_paragraphs{
-       font-size: 1.2em;
-       }
-   }
-   @media screen and (min-width:1300px){
-       .about_author-container{
-         display: grid;
-         grid-template: auto / auto auto;
-         grid-gap: 20px;
-         align-items: flex-start;
-       }
-       .ll_form{
-         width: 50%;
-       }
-   }
-   @media screen and (min-width: 1280px)  {
-     body{
-       display: grid;
-       grid-template: 1fr / 350px repeat(5, 1fr);
-       overflow-x: hidden;
-     }
-     .hidden{
-       display: block;
-     }
-     #type{
-       font-size: 2em;
-       letter-spacing: 2px;
-       margin: 10px
-     }
-     #nav-icon{
-       display: none;
-     }
-     #header-container{
-       grid-column: 1;
-       position: sticky;
-       left:0;
-       overflow: hidden;
-       font-size: 1.1em;
-     }
-     #header-mobile-container{
-       justify-content: center;
-     }
-     #logotype-container{
-       align-items: center;
-       flex-direction: column;
-     }
-     #nav-menu{
-       height: 90%;
-     }
-     #main-container{
-       grid-column: 2 / 7;
-       overflow-y: scroll;
-       margin: 0 0 0 40px;
-     }
-     #back-button-container{
-       display: block;
-       width:100%;
-       text-align: left;
-       position: sticky;
-       left:0;
-       top:0;
-     }
-     .sections-container{
-       width: 75%;
-     }
-     .button{
-       font-size: 1.2em;
-       grid-area:button;
-       width: 60%;
-     }
-     .related-list{
-       overflow:initial;
-       scroll-snap-type:none;
-       flex-wrap: wrap;
-       justify-content: center;
-     }
-   }
-   @media screen and (min-width: 1500px){
-     .mr{
-       display:grid;
-       grid-template: 1fr / 1fr 1fr;
-       grid-column-gap: 40px;
-     }
-   }
-   @media screen and (min-width: 1600px){
-     .about_author-container{
-       display: grid;
-       grid-template: auto / auto 1fr;
-       grid-gap: 50px;
-     }
-   }
