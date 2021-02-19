@@ -1,42 +1,12 @@
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ==================== M O S T   R E C E N T   S E C T I O N ====================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
-
-#latest-title {
-    .title;
-}
-
-#latest-author {
-   .subtitle;
-}
-
-#latest-date {
-    .quote;
-}
-
-#latest-rating {
-    margin: 10px 0;
-}
-
-.rate {
-    color: #fd4;
-}
-
-.tag {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 0 5px;
-    .tag-corners;
-    .paragraph;
-    font-weight: bold;
-}
-
-.latest-body {
+#latest-body {
     display: flex;
     flex-direction: column;
 }
 
-.latest-img-container {
+#latest-img-container {
     display: flex;
     justify-content: justify;
     text-align: center;
@@ -44,8 +14,7 @@
     margin: 10px 0;
 
     img {
-        width: 100%;
-        object-fit: contain;
+       .image-disposition(100%, 100%);
     }
 }
 
@@ -53,66 +22,40 @@
     margin: 10px 0;
     .paragraph;
 }
+
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ======================== M E D I A   Q U E R I E S ============================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 
 @media screen and (min-width:700px) {
-    #latest-meta {
-        display: grid;
-        grid-template: "author rating" "date   tags";
-    }
-
-    #latest-author {
-        grid-area: author;
-    }
-
-    #latest-date {
-        grid-area: date;
-    }
-
-    #latest-rating {
-        text-align: end;
-        grid-area: rating;
-    }
-
-    #latest-tags {
-        text-align: end;
-        grid-area: tags;
-    }
-    .latest-img-container > img {
-        max-height: 600px;
+    #latest-img-container>img {
+        .image-disposition(100%, 400px);
     }
 }
-// @media screen and (min-width:1024px) {
-//     .latest-img-container > img {
-//         height: initial;
-//     }
-//     #latest-description-container {
-//         font-size: @base-font-size + 5px;
-//     }
-// }
 
 @media screen and (min-width: 1500px) {
-    .latest-body {
+    #latest-body {
         display: grid;
         grid-template: auto auto auto / auto 1fr;
         grid-column-gap: 40px;
     }
-    .latest-img-container{
+
+    #latest-img-container {
         grid-row: 1 / 4;
         grid-column: 1 / 2;
         text-align: center;
-        img{
-            width: 500px;
-            height: 400px;
+
+        img {
+            .image-disposition(500px, 400px);
         }
     }
-    .latest-description-container{
+
+    #latest-description-container {
         grid-row: 1 / 3;
         grid-column: 2 / 3;
     }
-    .latest-button-container {
+
+    #latest-button-container {
         grid-row: 3 / 4;
         grid-column: 2/ 3;
     }

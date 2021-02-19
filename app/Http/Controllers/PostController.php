@@ -22,6 +22,6 @@ class PostController extends Controller
 
         $relateds = $postModel->getRelatedPosts($post->id);
 
-        return view('blog.post', ['latest' => $post, 'relateds' => $relateds]);
+        return view('blog.post', ['item' => $post, 'relateds' => $relateds]);
     }
 }

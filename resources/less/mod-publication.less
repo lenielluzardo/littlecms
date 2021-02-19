@@ -1,0 +1,90 @@
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+============================== P U B L I C A T I O N ===========================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+.publication-container{
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+}
+.publication-title {
+    .title;
+}
+
+.publication-author {
+    .subtitle;
+}
+
+.publication-date {
+    .quote;
+}
+
+.publication-rating {
+    margin: 10px 0;
+}
+
+.rate {
+    color: #fd4;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    .tag-corners;
+    .paragraph;
+    font-weight: bold;
+}
+.publication-body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.publication-img-container{
+    overflow: hidden;
+    margin:10px auto;
+    img{
+        .image-disposition(100%, 300px);
+    }
+}
+.publication-paragraph{
+    margin: 20px 0;
+    .paragraph;
+}
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+======================== M E D I A   Q U E R I E S ============================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+
+@media screen and (min-width:700px) {
+    .publication-meta {
+        display: grid;
+        grid-template: "author rating" "date tags";
+    }
+
+    .publication-author {
+        grid-area: author;
+    }
+
+    .publication-date {
+        grid-area: date;
+    }
+
+    .publication-rating {
+        text-align: end;
+        grid-area: rating;
+    }
+
+    .tags-container {
+        text-align: end;
+        grid-area: tags;
+    }
+    .publication-img-container > img{
+        .image-disposition(600px, 400px);
+    }
+}
+@media screen and (min-width:1500px) {
+    .publication-img-container > img{
+        .image-disposition(100%, 500px);
+    }
+}
+
