@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    @include('blog.most-recent')
+    @include('blog.latest')
     @include('blog.related')
     @include('partials.footer')
 @endsection

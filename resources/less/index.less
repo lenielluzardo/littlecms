@@ -1,9 +1,5 @@
-@import 'normalize.css';
 @import '_config';
-@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap');
 
-/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-=================== G E N E R A L   B O D Y   R U L E S ======================= */
 .init;
 @import 'mod-header.less';
 @import 'mod-main.less';
@@ -13,5 +9,35 @@
 @import 'mod-footer.less';
 @import 'mod-admin.less';
 
-// @import 'media-queries.less';
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
 
+.button {
+
+    display: block;
+    border: none;
+    color: @complement-color;
+    text-decoration: none;
+    background-color: @prime-color;
+    .button-shadow;
+    font-size: @base-font-size + 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 10px;
+    width: 95%;
+    margin: 10px 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+// @media screen and (min-width:1024px) {
+//     .button {
+//         width: 70%;
+//     }
+// }

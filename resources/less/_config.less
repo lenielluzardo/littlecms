@@ -1,12 +1,18 @@
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+========== G E N E R A L   B O D Y   R U L E S / V A R I A B L E S ============
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 
 // -------- FONTS --------
 @base-font-family : 'Pragati';
 @base-font-size: 15px;
+@title-font-size: @base-font-size + 10px;
+@subtitle-font-size: @base-font-size + 5px;
+@paragraph-font-size: @base-font-size + 3px;
 
 // -------- COLORS --------
-@fg-color:#FEFEFE;
-@bg-color:#E5F0FC;
-@prime-color:#71E7F5;
+@fg-color: #FEFEFE;
+@bg-color: #E5F0FC;
+@prime-color: #71E7F5;
 @second-color: #004564;
 @third-color: #0A1C47;
 @complement-color: #0E1C27;
@@ -21,40 +27,89 @@
 
 
 // -------- MIXINS --------
-.init(){
-    html, body {
+.init() {
+
+    @import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap');
+    @import 'normalize.css';
+
+    html,
+    body {
         font-family: @base-font-family;
         font-size: @base-font-size;
         min-width: 320px;
         height: 100%;
         background-color: @bg-color;
-
     }
+
     a {
         text-decoration: none;
         color: @fg-color;
     }
-    .hidden{
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .hidden {
         display: none;
     }
-    .button {
-        font-size: 1.2em;
-        grid-area: button;
-        width: 60%;
-    }
 }
-.box-shadow(){
+
+.section-shadow() {
     box-shadow: fade(@complement-color, 50%) 0px 1px 5px 2px;
 }
-.icon-size(@size:40px){
+
+.button-shadow() {
+    box-shadow: fade(@complement-color, 50%) 0px 3px 2px 0px;
+}
+
+.icon-size(@size: 40px) {
     width: @size;
-    height:@size;
+    height: @size;
 }
-.rounded-corners(@size:50px){
-  border-radius: 0 @size @size 0;
+
+.section-corners(@size: 50px) {
+    border-radius: 0 @size @size 0;
 }
-.web-font-size(@size){
+
+.tag-corners(@size: 25px) {
+    border-radius: @size;
+}
+
+.web-font-size(@size) {
     font-size: @base-font-size + @size;
 }
 
+.title {
+    margin: 5px 0;
+    font-size: @title-font-size;
+    font-weight: bold;
+    color: @complement-color;
+}
 
+.subtitle {
+    font-size: @subtitle-font-size;
+    font-weight: bold;
+    color: @complement-color;
+}
+
+.paragraph {
+    font-size: @paragraph-font-size;
+    color: @complement-color;
+    letter-spacing: .2px;
+    text-align: justify;
+    font-stretch: wider;
+}
+
+.quote {
+    font-weight: normal;
+    margin: 0;
+    color: @complement-color;
+}
