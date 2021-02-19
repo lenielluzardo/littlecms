@@ -60,6 +60,33 @@
     .hidden {
         display: none;
     }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .button {
+
+        display: block;
+        border: none;
+        color: @complement-color;
+        text-decoration: none;
+        background-color: @prime-color;
+        .button-shadow;
+        font-size: @title-font-size;
+        font-weight: bold;
+        letter-spacing: 2px;
+        padding: 10px;
+        width: 95%;
+        margin: 10px 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .section-shadow() {
@@ -114,7 +141,7 @@
     color: @complement-color;
 }
 
-.image-disposition(@width: 250px, @height: 250px){
+.image-disposition(@width: 250px, @height: 250px) {
     width: @width;
     height: @height;
     max-height: 500px;

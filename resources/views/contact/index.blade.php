@@ -20,47 +20,57 @@
 @endif --}}
 
     <div class="form-container">
-      <form class="ll_form" action="{{route('contact.send')}}" method="post">
+      <form class="form" action="{{route('contact.send')}}" method="post">
 
-        <label class="f_lbl" for="fullname">Fullname</label>
-        <input class="f_field" id="fullname" name="fullname" type="text">
+        <div class="form-group">
+            <label class="form-label" for="fullname">Fullname</label>
+            <input class="form-input" id="fullname" name="fullname" type="text">
+        </div>
 
-        <label class="f_lbl" for="email">Email</label>
-        <input class="f_field" id="email" name="email" type="text">
+        <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" id="email" name="email" type="text">
+        </div>
 
-        <label class="f_lbl" for="subject">Subject</label>
-        <select class="f_field" id="subject" type="select" name="subject">
+        <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <select class="form-input" id="subject" type="select" name="subject">
 
-          <option value="">- - Please Select - -</option>
-          <option value="Job Proposal">Job Proposal</option>
-          <option value="Request a Commission">Request a Commission</option>
-          <option value="Make a Collaboration">Make a Collaboration</option>
+              <option value="">- - Please Select - -</option>
+              <option value="Job Proposal">Job Proposal</option>
+              <option value="Request a Commission">Request a Commission</option>
+              <option value="Make a Collaboration">Make a Collaboration</option>
 
-        </select>
+            </select>
+        </div>
 
-        <label class="f_lbl" for="discipline">Discipline</label>
-        <select class="f_field" id="discipline" type="select" name="discipline">
+        <div class="form-group">
+            <label class="form-label" for="discipline">Discipline</label>
+            <select class="form-input" id="discipline" type="select" name="discipline">
 
-          <option value="">- - Please Select - -</option>
-          <option value="Software / Game Development">Software / Game Development</option>
-          <option value="Animation">Animation</option>
-          <option value="Illustration / Concept Art">Illustration / Concept Art</option>
-          <option value="UI / UX Desing">UI / UX Desing</option>
+              <option value="">- - Please Select - -</option>
+              <option value="Software / Game Development">Software / Game Development</option>
+              <option value="Animation">Animation</option>
+              <option value="Illustration / Concept Art">Illustration / Concept Art</option>
+              <option value="UI / UX Desing">UI / UX Desing</option>
 
-        </select>
+            </select>
+        </div>
 
-        <textarea class="comments" name="comments" value="" placeholder="Leave a datailed message please..."></textarea>
+        <div class="form-group">
+            <textarea class="comments" name="comments" value="" placeholder="Leave a datailed message please..."></textarea>
+        </div>
 
         {{-- <input id="news" class="f_chk" type="checkbox" name="newsletter" value="on" checked="true">
         <label for="news">Subscribe to newsletter</label> <br> --}}
 
-        {!! NoCaptcha::display()!!}
-        {{-- <input id="not_a_robot" class="f_chk" type="checkbox" name="is_human" value="on">
-        <label for="not_a_robot" > I'm not a robot</label> <br> --}}
+        <div class="form-group">
+            {!! NoCaptcha::display()!!}
+        </div>
 
-        <div class="submit-container">
+        <div class="button-container">
             {{ csrf_field() }}
-          <input type="submit" name="f_button" id="f_button" class="button" value="¡Send!">
+            <input id="form-button" class="button" value="Send" type="submit" name="form-button" >
         </div>
 
       </form>
