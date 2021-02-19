@@ -3,13 +3,13 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 
 #main-container {
-    color: #0E1C27;
-    background-color: #FEFEFE;
-    box-shadow: rgb(0, 0, 0, .5) 0px 0px 30px 1px;
-    padding: 15px;
+    color: @complement-color;
+    background-color: @fg-color;
+    .box-shadow;
+    padding: 10px;
 }
 
-#back-button-container {
+#web-back-icon-container {
     display: none
 }
 
@@ -20,33 +20,31 @@
 .section-container {
     margin: 25px 0;
 }
-
 .section-title {
-    margin: 0;
+    margin: 10px 0 0 0;
 }
 
 .section-separator {
     margin: 10px 0;
 }
 
-@media screen and (min-width:500px) {
-    .sections-container {
-        width: 90%;
-        height: 100%;
-    }
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+======================== M E D I A   Q U E R I E S ============================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 
+@media screen and (min-width:500px) {
     #main-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 1.2em;
         padding: 50px;
     }
-}
 
-/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-======================== M E D I A   Q U E R I E S ============================
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+    .sections-container {
+        width: 90%;
+        height: 100%;
+    }
+}
 
 @media screen and (min-width:700px) {
     .sections-container {
@@ -71,7 +69,7 @@
         margin: 0 0 0 40px;
     }
 
-    #back-button-container {
+    #web-back-icon-container {
         display: block;
         width: 100%;
         text-align: left;
@@ -82,11 +80,5 @@
 
     .sections-container {
         width: 75%;
-    }
-
-    .button {
-        font-size: 1.2em;
-        grid-area: button;
-        width: 60%;
     }
 }

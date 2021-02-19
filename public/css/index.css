@@ -382,7 +382,7 @@ a {
 }
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ================================= H E A D E R =================================
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 #header-container {
   position: -webkit-sticky;
   position: sticky;
@@ -422,7 +422,7 @@ a {
   height: 100%;
 }
 #nav-menu {
-  height: 100vh;
+  height: 90vh;
   background-image: url("../assets/images/bg-graphics.png");
   background-size: 80%;
 }
@@ -447,11 +447,9 @@ a {
 .section:active {
   transform: scaleX(1.2);
 }
-@media screen and (min-width: 280px) {
-  #type {
-    font-size: 20pt;
-  }
-}
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+======================== M E D I A   Q U E R I E S ============================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 @media screen and (min-width: 700px) {
   #nav-menu {
     height: 100vh;
@@ -493,10 +491,10 @@ a {
 #main-container {
   color: #0E1C27;
   background-color: #FEFEFE;
-  box-shadow: #000000 0px 0px 30px 1px;
-  padding: 15px;
+  box-shadow: rgba(14, 28, 39, 0.5) 0px 1px 5px 2px;
+  padding: 10px;
 }
-#back-button-container {
+#web-back-icon-container {
   display: none;
 }
 .sections-container {
@@ -506,22 +504,24 @@ a {
   margin: 25px 0;
 }
 .section-title {
-  margin: 0;
+  margin: 10px 0 0 0;
 }
 .section-separator {
   margin: 10px 0;
 }
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+======================== M E D I A   Q U E R I E S ============================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 @media screen and (min-width: 500px) {
-  .sections-container {
-    width: 90%;
-    height: 100%;
-  }
   #main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.2em;
     padding: 50px;
+  }
+  .sections-container {
+    width: 90%;
+    height: 100%;
   }
 }
 @media screen and (min-width: 700px) {
@@ -543,7 +543,7 @@ a {
     overflow-y: scroll;
     margin: 0 0 0 40px;
   }
-  #back-button-container {
+  #web-back-icon-container {
     display: block;
     width: 100%;
     text-align: left;
@@ -554,11 +554,6 @@ a {
   }
   .sections-container {
     width: 75%;
-  }
-  .button {
-    font-size: 1.2em;
-    grid-area: button;
-    width: 60%;
   }
 }
 /* =================== M O S T   R E C E N T   S E C T I O N ==================  */
