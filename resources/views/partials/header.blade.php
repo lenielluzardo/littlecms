@@ -10,7 +10,7 @@
     <a id="home-link" href="{{ route('welcome')}}">
      <div id="logotype-container">
         <img id="logo" src="{{URL::to('./assets/icons/web-icon.svg')}}" alt="web-icon">
-        <h1 id="type">{{env('APP_NAME')}}</h1>
+        <h1 id="type">{{config('app.name')}}</h1>
      </div>
     </a>
     <img id="mobile-nav-icon" src="{{URL::to('./assets/icons/mobile-nav-icon.svg')}}" alt="navigation-icon">
@@ -21,29 +21,29 @@
 
 <!-- ====================== N A V I G A T I O N   M E N U ====================== -->
     <nav id="nav-menu" class="hidden">
-      <div id="nav-menu-mobile" >
-        <nav id="nav-components">
-            <ul>
+      <div id="mobile-nav-menu" >
+        <nav class="nav-components-container">
+            <ul class="nav-components">
                 @foreach($sections as $section)
                     @if($section->category === 'web' && $section->route != 'portfolio')
-                    <a class="nav-component-link" href="{{ route($section->route)}}">
-                        <li class="nav-component">{{$section->name}}</li>
+                    <a href="{{ route($section->route)}}">
+                        <li class="nav-component section">{{$section->name}}</li>
                     </a>
                     @endif
                     @if($section->category === 'web' && $section->route === 'portfolio')
-                    <a class="nav-component-link" href="{{ route($section->route, strtolower($section->name))}}">
-                        <li class="nav-component">{{$section->name}}</li>
+                    <a  href="{{ route($section->route, strtolower($section->name))}}">
+                        <li class="nav-component section">{{$section->name}}</li>
                     </a>
                     @endif
                 @endforeach
           </ul>
         </nav>
 
-        <nav id="nav-social">
-           <ul>
+        <nav class="nav-components-container">
+           <ul class="nav-components">
                 @foreach($sections as $section)
                 @if($section->category === 'social')
-                    <li class="nav-item" ><a target="_blank" href="{{$section->url}}">{{$section->name}}</a></li>
+                <li class="nav-component"><a target="_blank" href="{{$section->url}}">{{$section->name}}</a></li>
                 @endif
                 @endforeach
             </ul>

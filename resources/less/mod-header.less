@@ -1,122 +1,125 @@
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-========================= S I T E   H E A D E R ============================== */
-#header-container{
+================================= H E A D E R =================================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+
+#header-container {
     position: sticky;
-    top:0;
+    top: 0;
     min-width: 320px;
     background: linear-gradient(0.2turn, @complement-color, @third-color);
     color: @fg-color;
     .box-shadow;
 }
-#header-mobile-container{
-  display:flex;
-  justify-content: space-between;
-  padding: 20px;
+
+#header-mobile-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
 }
-#home-link{
-    color:@fg-color;
+
+#home-link {
+    color: @fg-color;
 }
-#logotype-container{
+
+#logotype-container {
     display: flex;
     align-items: center;
 }
-#type{
+
+#type {
     display: inline;
     margin: 0 0 0 20px;
 }
-/* ======================== N A V I G A T I O N   M E N U ========================= */
-#nav-icon{
-    width: 40px;
+
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+======================== N A V I G A T I O N   M E N U =========================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+
+#mobile-nav-icon {
+    .icon-size;
 }
-#nav-menu{
-  height: 90vh;
-  flex-direction: column;
-  justify-content: space-between;
-  background-image: url("@{images}bg-graphics.png");
-  background-size: 80%;
-}
-#nav-menu-mobile{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 90%;
-}
-#nav-components > ul,
-#nav-social > ul {
-  padding: 0;
-  text-align: center;
-}
-.nav-component-link {
-    text-decoration: none;
-    color: @fg-color;
-}
-.nav-component {
-  padding: 5px;
-  width: 85%;
-  border-radius: 0 1em 1em 0;
-  background: linear-gradient(.2turn,@second-color,@prime-color);
-  margin-bottom: 10px;
-}
-.nav-component:hover{
-  cursor: pointer;
-  transform: scaleX(1.1)
-}
-.nav-component:active{
-  transform:scaleX(1.2);
-}
-#nav-components > ul > a{
-  position: static;
-  font-weight: bold;
-  text-decoration: none;
-  color: @fg-color;
-}
-.nav-item{
-  margin:5px;
-}
-.nav-item > a {
-  text-decoration: none;
-  color: inherit;
-}
-@media screen and (min-width:280px){
-  #type{
-    font-size: 20pt;
-   }
-}
-@media screen and (min-width:700px){
-  #nav-menu{
-    height: 100vh;
-  }
-  .nav-component{
-    font-size: 1.5em;
-  }
-  .nav-item{
-    font-size: 1.1fem ;
-  }
-}
-@media screen and (min-width: 1280px)  {
-  #type{
-    font-size: 2em;
-    letter-spacing: 2px;
-    margin: 10px
-  }
-  #mobile-nav-icon{
-    display: none;
-  }
-  #header-container{
-    grid-column: 1;
-    position: sticky;
-    left:0;
-    overflow: hidden;
-    font-size: 1.1em;
-  }
-  #header-mobile-container{
-    justify-content: center;
-  }
-  #logotype-container{
-    align-items: center;
+
+#mobile-nav-menu {
+    display: flex;
     flex-direction: column;
-  }
-  #nav-menu{
-    height: 90%;
-  }
+    justify-content: space-between;
+    height: 100%;
+}
+
+#nav-menu {
+    height: 90vh;
+    background-image: url("@{images}bg-graphics.png");
+    background-size: 80%;
+}
+
+.nav-components {
+    padding: 0;
+    text-align: center;
+}
+
+.nav-component {
+    margin: 5px 0 5px 0;
+}
+
+.section {
+    font-weight: bold;
+    padding: 5px;
+    width: 85%;
+    background: linear-gradient(.2turn, @second-color, @prime-color);
+    .rounded-corners;
+
+    &:hover {
+        cursor: pointer;
+        transform: scaleX(1.1)
+    }
+
+    &:active {
+        transform: scaleX(1.2);
+    }
+}
+
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+======================== M E D I A   Q U E R I E S ============================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+
+@media screen and (min-width:700px) {
+    #nav-menu {
+        height: 100vh;
+    }
+
+    .section {
+        .web-font-size(5px);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #type {
+        .web-font-size(15px);
+        letter-spacing: 2px;
+        margin: 10px auto;
+    }
+
+    #mobile-nav-icon {
+        display: none;
+    }
+
+    #header-container {
+        grid-column: 1;
+        position: sticky;
+        left: 0;
+        overflow: hidden;
+    }
+
+    #header-mobile-container {
+        justify-content: center;
+    }
+
+    #logotype-container {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #nav-menu {
+        height: 100%;
+    }
 }
