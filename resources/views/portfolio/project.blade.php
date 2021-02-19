@@ -6,60 +6,37 @@
 
         <hr class="section-separator">
 
-        <article class="p_container">
+        <article class="publication-container">
 
-            <section id="p_header">
+            <section class="publication-header">
+                <h2 class="publication-title"> {{$item->title}} </h2>
 
-                <h2 id="p_title"> {{ $project->title }} </h2>
+                <div class="publication-meta">
+                    <h3 class="publication-author">Author: {{$item->user->nickname}}</h3>
+                    <h4 class="publication-date">Date: {{$item->created_at}}</h4>
+                </div>
+            </section>
 
-                <div id="p_meta">
+            <section class="publication-body">
+                <div class="publication-img-container">
+                    <img src="{{$item->image1}}" alt="publication_img">
+                </div>
 
-                    <h3 id="p_author">Author: {{ $project->user->nickname }}</h3>
+                <div class="publication-paragraph">
+                    <p> {{ $item->paragraph1 }} </p>
+                    <p> {{ $item->paragraph2 }} </p>
+                </div>
 
-                    <h4 id="p_date">Date: {{ $project->created_at }}</h4>
+                <div class="publication-img-container">
+                    <img src="{{$item->image2}}" alt="publication_img">
+                </div>
 
-                    <div id="p_rating">
-                        @for($i = 0; $i < 5; $i++)
-                            @if($i < $project->rating )
-                                <span class="fas fa-star rate"></span>
-                            @else
-                                <span class="fas fa-star"></span>
-                            @endif
-                        @endfor
-                    </div>
-
-                    {{-- <div id="p_tags">
-                            <span class="tag"><a style="background-color:{{$project->tag->color}};" href="">{{ $project->tag->name }}</a></span>
-                    </div> --}}
-
+                <div class="publication-paragraph">
+                    <p> {{ $item->paragraph3}} </p>
+                    <p> {{ $item->paragraph4}} </p>
                 </div>
 
             </section>
-
-            <section class="p_body">
-
-                <div class="p_img-container">
-                    <img id="p_img" src="{{ $project->image1 }}" alt="publication_img">
-                </div>
-
-                <div class="p_paragraphs">
-                    <p> {{ $project->paragraph1 }} </p>
-
-                    <p> {{ $project->paragraph2 }} </p>
-                </div>
-
-                <div class="p_img-container">
-                    <img id="p_img" src="{{ $project->image2 }}" alt="publication_img">
-                </div>
-
-                <div class="p_paragraphs">
-                    <p> {{ $project->paragraph3 }} </p>
-
-                    <p> {{ $project->paragraph4}} </p>
-                </div>
-
-            </section>
-
         </article>
 
         <hr class="section-separator">

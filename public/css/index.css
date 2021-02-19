@@ -421,7 +421,7 @@ p {
   text-align: center;
 }
 .button {
-  display: block;
+  display: inline-block;
   border: none;
   color: #0E1C27;
   text-decoration: none;
@@ -432,7 +432,6 @@ p {
   letter-spacing: 2px;
   padding: 10px;
   width: 95%;
-  margin: 10px 0;
 }
 .button:hover {
   cursor: pointer;
@@ -631,6 +630,9 @@ p {
   font-weight: bold;
   color: #0E1C27;
 }
+.publication-meta {
+  margin: 0 0 10px 0 ;
+}
 .publication-author {
   font-size: 20px;
   font-weight: bold;
@@ -767,8 +769,8 @@ p {
 @media screen and (min-width: 1500px) {
   #latest-body {
     display: grid;
-    grid-template: auto auto auto / auto 1fr;
-    grid-column-gap: 40px;
+    grid-template: 1fr 1fr auto / auto 1fr;
+    grid-column-gap: 20px;
   }
   #latest-img-container {
     grid-row: 1 / 4;
@@ -789,6 +791,7 @@ p {
   #latest-button-container {
     grid-row: 3 / 4;
     grid-column: 2/3;
+    width: 100%;
   }
 }
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -894,8 +897,9 @@ p {
       scroll-snap-type: x mandatory;
 }
 .related-item {
-  margin: 0 10px;
+  margin: 10px;
   text-align: center;
+  max-width: 250px;
 }
 .related-img {
   width: 200px;
