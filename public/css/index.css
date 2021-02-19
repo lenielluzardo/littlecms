@@ -795,12 +795,12 @@ a {
     justify-content: center;
   }
 }
-/* <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
-/*<!-- =================== F O O T E R =================== --> */
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+=============================== F O O T E R ===================================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 #footer {
   display: block;
   text-align: center;
-  padding: 30px;
 }
 .copyrights {
   display: block;
@@ -974,5 +974,10 @@ a {
 }
 .forgot-pass {
   font-size: 15px;
+}
+.button {
+  font-size: 1.2em;
+  grid-area: button;
+  width: 60%;
 }
 
