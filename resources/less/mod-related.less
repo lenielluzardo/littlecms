@@ -1,34 +1,41 @@
-/*<!-- =================== R E L A T E D   S E C T I O N =================== --> */
-#related{
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+====================== R E L A T E D   S E C T I O N ==========================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+
+.related {
     overflow: hidden;
-  }
-.related-list{
-  display:flex;
-  list-style: none;
-  padding: 0;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory
 }
-.related-item{
-    margin: 20px;
+
+.related-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory
 }
-.related-item > img{
-    width: 250px;
-    height: 250px;
+
+.related-item {
+    margin: 0 10px;
+    text-align: center;
+
+}
+
+.related-img {
+    width: 200px;
+    height: 200px;
     object-fit: contain;
 }
-.related-title{
-  text-align: center;
-  margin: 0 0 10px 0;
+
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+======================== M E D I A   Q U E R I E S ============================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+
+@media screen and (min-width: 1280px) {
+
+    .related-list {
+        overflow: initial;
+        scroll-snap-type: none;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
-@media screen and (min-width: 1280px)  {
-
-  .related-list{
-    overflow:initial;
-    scroll-snap-type:none;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-

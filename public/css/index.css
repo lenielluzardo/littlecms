@@ -761,8 +761,10 @@ a {
     grid-gap: 50px;
   }
 }
-/*<!-- =================== R E L A T E D   S E C T I O N =================== --> */
-#related {
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+====================== R E L A T E D   S E C T I O N ==========================
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+.related {
   overflow: hidden;
 }
 .related-list {
@@ -774,17 +776,14 @@ a {
       scroll-snap-type: x mandatory;
 }
 .related-item {
-  margin: 20px;
+  margin: 0 10px;
+  text-align: center;
 }
-.related-item > img {
-  width: 250px;
-  height: 250px;
+.related-img {
+  width: 200px;
+  height: 200px;
   -o-object-fit: contain;
      object-fit: contain;
-}
-.related-title {
-  text-align: center;
-  margin: 0 0 10px 0;
 }
 @media screen and (min-width: 1280px) {
   .related-list {
