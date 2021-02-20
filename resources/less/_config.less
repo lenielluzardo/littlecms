@@ -139,9 +139,9 @@
     color: @complement-color;
 }
 
-.image-disposition(@width: 250px, @height: 250px) {
+.image-disposition(@width: 250px, @height: 250px, @fit : cover) {
     width: @width;
     height: @height;
     max-height: 500px;
-    object-fit: cover;
+    object-fit: @fit;
 }

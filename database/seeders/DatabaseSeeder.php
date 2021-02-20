@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TagTableSeeder::class);
         $this->call(ProjectTableSeeder::class);
         $this->call(SectionTableSeeder::class);
+        $this->call(NotificationTableSeeder::class);
     }
 }

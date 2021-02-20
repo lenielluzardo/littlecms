@@ -7,7 +7,7 @@
 
     <!-- ====================== L O G O T Y P E   &   N A V   I C O N ====================== -->
     <div id="header-mobile-container">
-        <a id="home-link" href="{{ route('welcome') }}">
+        <a id="home-link" href="{{ url('/') }}">
             <div id="logotype-container">
                 <img id="logo" src="{{ URL::to('./assets/icons/web-icon.svg') }}" alt="web-icon">
                 <h1 id="type">{{ config('app.name') }}</h1>
@@ -35,6 +35,8 @@
                     @endforeach
                 </ul>
             </nav>
+
+@include('partials.navlogin')
 
             <nav class="nav-components-container">
                 <ul class="nav-components">

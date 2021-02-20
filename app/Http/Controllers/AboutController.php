@@ -10,7 +10,7 @@ class AboutController extends Controller
 {
     public function getIndex(User $userModel)
     {
-        $user = $userModel->find(env('AUTHOR_ID'));
+        $user = $userModel->find(4);
         return view('about.index', ['author' => $user]);
     }
 }

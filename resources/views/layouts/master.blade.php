@@ -11,13 +11,11 @@
 </head>
 <body>
 
-@include('partials.notice')
+@include('partials.notification')
 @include('partials.header')
 
 <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
-
 <!--                                 M A I N    C O N T E N T                                      -->
-
 <!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
 
 <main id="main-container">

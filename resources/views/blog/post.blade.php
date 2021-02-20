@@ -53,14 +53,16 @@
             </section>
         </article>
 
+        @include('partials.rating')
+
         <hr class="section-separator">
 
-        @include('partials.rating-about')
-
-
+        @include('about.description')
 
     </section>
 
 @include('blog.related')
+
+@include('partials.footer')
 
 @endsection

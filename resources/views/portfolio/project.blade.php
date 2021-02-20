@@ -38,15 +38,9 @@
 
             </section>
         </article>
-
-        <hr class="section-separator">
-
-        @include('partials.rating-about')
-
-
-
     </section>
 
-@include('blog.related')
+@include('portfolio.related')
+@include('partials.footer')
 
 @endsection

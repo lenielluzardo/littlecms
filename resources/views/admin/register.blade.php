@@ -27,9 +27,9 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label" for="about1">Tell About Yourself</label>
-                <textarea class="comments" id="about1" name="about1" placeholder="Tell something about yourself..." value="{{old('about1')}}"></textarea>
-                      @error('about1')
+                <label class="form-label" for="description">Tell About Yourself</label>
+                <textarea class="comments" id="description" name="description" placeholder="Tell something about yourself..." value="{{old('description')}}"></textarea>
+                      @error('description')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -37,9 +37,9 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label" for="about2">A Little Bit More</label>
-                <textarea class="comments" id="about2" name="about2" placeholder="Tell something about yourself..." value="{{old('about2')}}"></textarea>
-                      @error('about2')
+                <label class="form-label" for="about">A Little Bit More</label>
+                <textarea class="comments" id="about" name="about" placeholder="Tell something about yourself..." value="{{old('about')}}"></textarea>
+                      @error('about')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -47,10 +47,10 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label" for="url1">Profile Image Url</label>
-                <input class="form-input" id="url1" name="url1" type="text" value="{{old('url1')}}">
+                <label class="form-label" for="img_profile">Profile Image Url</label>
+                <input class="form-input" id="img_profile" name="img_profile" type="text" value="{{old('img_profile')}}">
 
-                @error('url1')
+                @error('img_profile')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -58,10 +58,10 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label" for="url2">Secondary Image Url</label>
-                <input class="form-input" id="url2" name="url2" type="text" value="{{old('url2')}}">
+                <label class="form-label" for="img_profile_2">Secondary Image Url</label>
+                <input class="form-input" id="img_profile_2" name="img_profile_2" type="text" value="{{old('img_profile_2')}}">
 
-                @error('url2')
+                @error('img_profile_2')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

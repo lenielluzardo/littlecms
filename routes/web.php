@@ -1,10 +1,9 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'App\Http\Controllers\HomeController@getIndex')
-->name('welcome');
+->name('home');
 
 Route::group(['prefix' => 'blog'], function(){
 

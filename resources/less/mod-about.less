@@ -2,88 +2,28 @@
 ============================ A B O U T   A U T H O R ===========================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 
-/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-================================== R A T I N G ==================================
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
-.about_post-container{
+.about-section {
+    text-align: center;
+}
+
+.author-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
+    margin: 30px auto;
 }
-.rating-container{
-  text-align: center;
-}
-.star-widget{
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 20px 0;
-}
-.star-widget > input{
-  display:none;
-}
-.star-widget > label{
-  font-size: 30px;
-  color: #444;
-  transition: all 0.2s ease;
-}
-.star-widget > input:not(:checked) ~ label:hover,
-.star-widget > input:not(:checked) ~ label:hover ~ label {
-  color:#fd4;
-}
-.star-widget > input:checked ~ label {
-  color: #fd4;
-}
-.about_author-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.about_author{
-  text-align: center ;
-}
-.author_img-container{
-  overflow: hidden;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  margin: 30px 0;
-}
-@media screen and (min-width:700px){
-  .about_author-container{
-    display: grid;
-    grid-template: auto / auto 1fr;
-    grid-gap: 50px;
-  }
-}
-@media screen and (min-width:1024px){
-  .about_post-container{
-    display: grid;
-    grid-template: auto / auto auto;
-    grid-gap: 80px;
-    align-items: flex-start;
-  }
-  .pc{
-    margin: auto;
-    width:800px;
-    margin-bottom: 30px;
-    }
-  #p_description, .p_paragraphs{
-    font-size: 1.2em;
-    }
-}
-@media screen and (min-width:1300px){
-    .about_author-container{
-      display: grid;
-      grid-template: auto / auto auto;
-      grid-gap: 20px;
-      align-items: flex-start;
+
+.author-img-container {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+
+    img {
+        .image-disposition(150px, 150px, 'contain');
     }
 }
 
-@media screen and (min-width: 1600px){
-  .about_author-container{
-    display: grid;
-    grid-template: auto / auto 1fr;
-    grid-gap: 50px;
-  }
+.about-description {
+    max-width: 500px;
+    margin: 0 20px;
 }

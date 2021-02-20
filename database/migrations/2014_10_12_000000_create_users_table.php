@@ -19,10 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('nickname')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->text('about1')->nullable();
-            $table->text('about2')->nullable();
-            $table->text('url1')->nullable();
-            $table->text('url2')->nullable();
+            $table->text('description')->nullable();
+            $table->text('about')->nullable();
+            $table->text('img_profile')->nullable();
+            $table->text('img_profile_2')->nullable();
             $table->string('recovery_email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
