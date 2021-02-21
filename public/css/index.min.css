@@ -436,6 +436,41 @@ p {
 .button:hover {
   cursor: pointer;
 }
+.home-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0E1C27;
+}
+.home-img-container {
+  overflow: hidden;
+}
+.home-img-container img {
+  display: block;
+  margin: 5% 0;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: rgba(14, 28, 39, 0.9);
+  width: 100%;
+  height: 100vh;
+}
+.home-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #71E7F5 !important;
+  font-size: 45px;
+  font-weight: bold;
+  margin: auto;
+}
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ================================= H E A D E R =================================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
@@ -552,16 +587,14 @@ p {
   color: #0E1C27;
   background-color: #FEFEFE;
   box-shadow: rgba(14, 28, 39, 0.5) 0px 1px 5px 2px;
-  padding: 10px;
+  overflow: hidden;
 }
 #web-back-icon-container {
   display: none;
 }
 .sections-container {
-  width: 100%;
-}
-.section-container {
-  margin: 25px 0;
+  max-width: 100%;
+  margin: 0;
 }
 .section-title {
   margin: 10px 0 0 0;
@@ -577,17 +610,13 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
   }
-  .sections-container {
+  .section-container {
     width: 90%;
     height: 100%;
   }
 }
 @media screen and (min-width: 700px) {
-  .sections-container {
-    width: 80%;
-  }
 }
 @media screen and (min-width: 1280px) {
   body {
@@ -600,8 +629,13 @@ p {
   }
   #main-container {
     grid-column: 2 / 7;
+    display: grid;
+    grid-template: auto / repeat(6, 1fr);
     overflow-y: scroll;
     margin: 0 0 0 40px;
+  }
+  .sections-container {
+    grid-column: 2 / 6;
   }
   #web-back-icon-container {
     display: block;
@@ -611,9 +645,6 @@ p {
     position: sticky;
     left: 0;
     top: 0;
-  }
-  .sections-container {
-    width: 75%;
   }
 }
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -731,6 +762,7 @@ p {
 #latest-body {
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 #latest-img-container {
   display: flex;
@@ -1099,7 +1131,6 @@ p {
   color: #0E1C27;
 }
 .warning {
-  color: #FEFEFE !important;
   background-color: rgba(255, 207, 75, 0.5);
 }
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #

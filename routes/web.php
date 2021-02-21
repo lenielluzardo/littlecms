@@ -2,7 +2,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', 'App\Http\Controllers\HomeController@getIndex')
+Route::get('/', function(){
+    return view('layouts.home');
+})
 ->name('home');
 
 Route::group(['prefix' => 'blog'], function(){
