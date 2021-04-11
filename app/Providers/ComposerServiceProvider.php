@@ -26,8 +26,9 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('partials.header', \App\Composers\HeaderComposer::class);
+        View::composer('partial.notification', \App\Composers\NotificationComposer::class);
+        View::composer('partial.header', \App\Composers\HeaderComposer::class);
+        View::composer('partial.footer', \App\Composers\FooterComposer::class);
         View::composer('about.description', \App\Composers\AboutComposer::class);
-        View::composer('partials.notification', \App\Composers\NotificationComposer::class);
     }
 }

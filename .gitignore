@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/_graphics
 .env
 .development.env
 .phpunit.result.cache
@@ -11,3 +12,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+desktop.ini

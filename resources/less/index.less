@@ -1,8 +1,164 @@
-@import '_config';
+/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+========== G E N E R A L   B O D Y   R U L E S / V A R I A B L E S ============
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 
-.init;
-@import 'mod-home.less';
+// -------- FONTS --------
+@base-font-family : 'Kanit';
+@WEB_NAV_FONT: 'Orbitron';
+@base-font-size: 15px;
+@title-font-size: @base-font-size + 10px;
+@subtitle-font-size: @base-font-size + 5px;
+@paragraph-font-size: @base-font-size + 3px;
+
+
+/* Color Theme Swatches in Hex */
+@WEB_NAV_BG_COLOR: #0A1526;
+@lluzardocom-v2-0-2-hex: #0E214D;
+@WEB_SEP_COLOR: #2BA3FF;
+@lluzardocom-v2-0-4-hex: #0595E8;
+@WEB_NAV_FONT_COLOR: #6CC7FF;
+@WEB_FG_COLOR: #E5F0FC;
+
+
+// -------- COLORS --------
+@prime-color: #71E7F5;
+@second-color: #004564;
+@third-color: #0A1C47;
+@complement-color: #0E1C27;
+@warning-prevent-color: #FFCF4B;
+@warning-fail-color: #df4040;
+@inactive-color: #C2C2C2;
+
+// -------- ASSETS --------
+@images : "../assets/images/";
+@icons : "../assets/icons/";
+@webfonts : "../assets/webfonts/";
+
+
+// -------- MIXINS --------
+// .init() {
+
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Orbitron:wght@600&display=swap');
+    body {
+        margin: 0px;
+        padding: 0px;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template:  1fr auto / minmax(auto,250px) auto minmax(auto,250px) ;
+        font-family: @base-font-family, sans-serif;
+
+        // font-size: @base-font-size;
+        // min-width: 320px;
+        // height: 100%;
+        // background-color: @bg-color;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+
+//     .hidden {
+//         display: none;
+//     }
+
+//     .button-container {
+//         display: flex;
+//         justify-content: center;
+//         width: 100%;
+//         text-align: center;
+//     }
+
+//     .button {
+//         display: inline-block;
+//         border: none;
+//         color: @complement-color;
+//         text-decoration: none;
+//         background-color: @prime-color;
+//         .button-shadow;
+//         font-size: @title-font-size;
+//         font-weight: bold;
+//         letter-spacing: 2px;
+//         padding: 10px;
+//         width: 95%;
+
+//         &:hover {
+//             cursor: pointer;
+//         }
+//     }
+// }
+
+// .section-shadow() {
+//     box-shadow: fade(@complement-color, 50%) 0px 1px 5px 2px;
+// }
+
+// .button-shadow() {
+//     box-shadow: fade(@complement-color, 50%) 0px 3px 2px 0px;
+// }
+
+// .icon-size(@size: 40px) {
+//     width: @size;
+//     height: @size;
+// }
+
+// .section-corners(@size: 50px) {
+//     border-radius: 0 @size @size 0;
+// }
+
+.tag-corners(@size: 25px) {
+    border-radius: @size;
+}
+
+// .web-font-size(@size) {
+//     font-size: @base-font-size + @size;
+// }
+
+.title {
+    margin: 5px 0;
+    font-size: @title-font-size;
+    font-weight: bold;
+    color: @complement-color;
+}
+
+.subtitle {
+    font-size: @subtitle-font-size;
+    font-weight: bold;
+    color: @complement-color;
+}
+
+.paragraph {
+    font-size: @paragraph-font-size;
+    color: @complement-color;
+    letter-spacing: .2px;
+    text-align: justify;
+    font-stretch: wider;
+}
+
+.quote {
+    font-weight: normal;
+    margin: 0;
+    color: @complement-color;
+}
+
+.image-disposition(@width: 250px, @height: 250px, @fit : cover) {
+    width: @width;
+    height: @height;
+    max-height: 500px;
+    object-fit: @fit;
+}
+
+// .init;
 @import 'mod-header.less';
+@import 'mod-aside.less';
 @import 'mod-main.less';
 @import 'mod-publication.less';
 @import 'mod-latest.less';

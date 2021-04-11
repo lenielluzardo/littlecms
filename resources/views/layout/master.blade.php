@@ -11,19 +11,23 @@
 </head>
 <body>
 
-@include('partials.notification')
-@include('partials.header')
 
-<!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
-<!--                                 M A I N    C O N T E N T                                      -->
-<!-- --# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #-- -->
 
-<main id="main-container">
-    <div class="sections-container">
+{{-- @include('partials.notification') --}}
+@include('partial.header')
+
+<section id="main-section-container">
+    <nav height="50" id="breadcrumbs">BREADCRUMBS</nav>
+    <main id="main-content-container">
         @yield('content')
-    </div>
-</div>
+    </main>
+</section>
+
+@include('partial.sidebar')
+@include('partial.footer')
 
 <script src="./js/app.js"></script>
 </body>
 </html>
+
+

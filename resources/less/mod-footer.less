@@ -1,14 +1,29 @@
-/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-=============================== F O O T E R ===================================
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+/* # # # # # # # # # # # # # */
+/*          F O O T E R      */
+/* v v v v v v v v v v v v v */
 
-#footer {
-    display: block;
-    text-align: center;
+#footer-section-container {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: @WEB_NAV_BG_COLOR;
+    color:@WEB_FG_COLOR;
 }
-
+#social-media-links{
+    display:grid;
+    grid-template: auto / auto;
+    padding: 10px;
+}
+.social-media-link{
+    text-decoration: none;
+    color:inherit !important;
+}
+.social-media-link:hover{
+    text-decoration:underline;
+}
 .copyrights {
     display: block;
-    font-size: .8em;
-    margin: 20px 0 0 0;
+    font-size: 12px;
+    margin: 10px;
+    border-top: 1px solid;
+    font-weight: 200;
 }
