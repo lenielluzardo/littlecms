@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layout.master')
 
 @section('content')
 
@@ -53,7 +53,7 @@
             </section>
         </article>
 
-        @include('partials.rating')
+        @include('partial.rating')
 
         <hr class="section-separator">
 
@@ -63,6 +63,6 @@
 
 @include('blog.related')
 
-@include('partials.footer')
+@include('partial.footer')
 
 @endsection

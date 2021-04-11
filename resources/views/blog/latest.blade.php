@@ -1,46 +1,37 @@
-<section class="section-container">
-
+<section class="content-section-container">
     <h2 class="section-title">Most Recent Post:</h2>
 
-    <hr class="section-separator">
+    <article class="publication-card-container latest-publication">
 
-    <article class="publication-container">
-       <section class="publication-header">
-           <h2 class="publication-title">{{$latest->title}}</h2>
-           <div class="publication-meta">
-               <h3 class="publication-author">Author: {{$latest->user->nickname}}</h3>
-               <h4 class="publication-date">Date: {{$latest->created_at}}</h4>
-               <div class="publication-rating">
-                   @for($i = 0; $i < 5; $i++)
-                     @if($i < $latest->rating)
-                         <span class="fas fa-star rate"></span>
-                     @else
-                         <span class="fas fa-star"></span>
-                     @endif
-                     @endfor
-               </div>
-               <div class="tags-container">
-                   @foreach($latest->tags as $tag)
-                        <a class="tag" style="background-color:{{$tag->color}};" href="">{{$tag->name}}</a>
-                     @endforeach
-               </div>
-           </div>
-       </section>
-       <section id="latest-body">
+        <section class="publication-card-img-container">
+            <img class="publication-card-img" src="{{$latest->image1}}" alt="publication-img">
+        </section>
 
-            <div id="latest-img-container">
-               <img src="{{$latest->image1}}" alt="publication-img">
+        <section class="publication-card-description-container">
+            <h2 class="publication-card-title">{{$latest->title}}</h2>
+            <p>{{$latest->paragraph1}}</p>
+            <h3 class="publication-card-author">Author: {{$latest->user->nickname}}</h3>
+            <h4 class="publication-card-date">Date: {{$latest->created_at}}</h4>
+            <div class="publication-card-rating">
+                @for($i = 0; $i < 5; $i++)
+                  @if($i < $latest->rating)
+                      <span class="fas fa-star rate"></span>
+                  @else
+                      <span class="fas fa-star"></span>
+                  @endif
+                  @endfor
             </div>
-
-            <div id="latest-description-container">
-               <p>{{$latest->paragraph1}}</p>
+            <div class="tags-container">
+                @foreach($latest->tags as $tag)
+                     <a class="tag" style="background-color:{{$tag->color}};" href="">{{$tag->name}}</a>
+                  @endforeach
             </div>
+        </section>
 
-            <div id="latest-button-container" class="button-container">
-                <a href="{{route('post', ['id' => $latest->id])}}" type="button" class="button">¡Read it!</a>
-            </div>
 
-       </section>
+        <section class="publication-card-button-container">
+            <a href="{{route('post', ['id' => $latest->id])}}"><div>READ THIS POST</div></a>
+        </section>
+
     </article>
-
 </section>

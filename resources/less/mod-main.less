@@ -1,112 +1,24 @@
-/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-========================= M A I N   C O N T E N T =============================
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
-
+/* # # # # # # # # # # # # # */
+/*          M A I N          */
+/* v v v v v v v v v v v v v */
 #main-section-container {
     grid-column: 2 / 3;
     grid-row: 1 / 3;
-
     display:grid;
     grid-template: 50px auto / auto;
-    /*border: solid 1px red;*/
-  }
-  #breadcrumbs{
+}
+#breadcrumbs{
     grid-row: 1 / 2;
-    /*background-color: #0595E8;*/
     background-color: #0E214D;
-
-  }
-
-  #main-content-container{
-    /*background-color: blue;*/
-    border: solid 1px green;
+}
+#main-content-container{
     overflow-y: scroll;
-  }
-  #content{
-    /*border: 1px yellow solid;*/
-    text-align: center;
-    max-width:1000px;
-    margin:auto;
-  }
-
-// #main-container {
-//     color: @complement-color;
-//     background-color: @fg-color;
-//     .section-shadow;
-//     overflow: hidden;
-// }
-
-// #web-back-icon-container {
-//     display: none
-// }
-
-// .sections-container {
-//     max-width: 100%;
-//     margin:0;
-// }
-
-// // .section-container {
-// //     margin: 25px 0;
-// // }
-// .section-title {
-//     margin: 10px 0 0 0;
-// }
-
-// .section-separator {
-//     margin: 10px 0;
-// }
-
+}
+.section-title {
+    background-color: @WEB_SECTION_COLOR;
+    padding: 15px;
+    margin: 0 0 20px 0;
+}
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ======================== M E D I A   Q U E R I E S ============================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
-
-// @media screen and (min-width:500px) {
-//     #main-container {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         // padding: 30px;
-//     }
-
-//     .section-container {
-//         width: 90%;
-//         height: 100%;
-//     }
-// }
-
-// @media screen and (min-width:700px) {
-//     // .section-container {
-//     //     width: 80%;
-//     // }
-// }
-
-// @media screen and (min-width: 1280px) {
-//     body {
-//         display: grid;
-//         grid-template: 1fr / 350px repeat(5, 1fr);
-//         overflow-x: hidden;
-//     }
-
-//     .hidden {
-//         display: block;
-//     }
-
-//     #main-container {
-//         grid-column: 2 / 7;
-//         display: grid;
-//         grid-template: auto/ repeat(6,1fr);
-//         overflow-y: scroll;
-//         margin: 0 0 0 40px;
-//     }
-//     .sections-container{
-//         grid-column: 2 / 6;
-//     }
-//     #web-back-icon-container {
-//         display: block;
-//         width: 100%;
-//         text-align: left;
-//         position: sticky;
-//         left: 0;
-//         top: 0;
-//     }
-// }

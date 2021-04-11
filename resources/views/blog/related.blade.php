@@ -1,23 +1,20 @@
-<section class="section-container related">
+<section class="content-section-container">
+    <h2 class="section-title">Related Posts:</h2>
 
-    <h2 class="section_title">Related Posts:</h2>
-    <hr class="section-separator">
-
-    <ul class="related-list">
+    <ul class="publication-related-list">
 
         @foreach($relateds as $post)
-
-        <li>
-            <article class="related-item">
-                <h3 class="related-title">{{$post->title}}</h3>
-                <img class="related-img" src="{{$post->image1}}" alt="post_image">
+        <li class="publication-related-item">
+            <article class="publication-card-container related-publication">
+                <section class="publication-card-img-container">
+                    <img class="publication-card-img" src="{{$post->image1}}"  alt="post_image">
+                </section>
+                <section class="publication-card-description-container">
+                    <h3 class="related-title">{{$post->title}}</h3>
+                </section>
             </article>
         </li>
-
         @endforeach
 
     </ul>
-
 </section>
-
-<hr class="section-separator">
