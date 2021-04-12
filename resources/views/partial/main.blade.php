@@ -2,9 +2,7 @@
 
 @section('main')
 <section id="main-section-container">
-    <nav height="50" id="breadcrumbs">
-        @include('partial.breadcrumbs')
-    </nav>
+    @include('partial.breadcrumbs')
     <main id="main-content-container">
         @yield('content')
     </main>

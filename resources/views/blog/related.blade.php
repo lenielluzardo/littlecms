@@ -11,6 +11,19 @@
                 </section>
                 <section class="publication-card-description-container">
                     <h3 class="related-title">{{$post->title}}</h3>
+                    <h3 class="publication-card-author">By: {{$post->user->nickname}}</h3>
+                    <div class="publication-card-rating">
+                        @for($i = 0; $i < 5; $i++)
+                          @if($i < $post->rating)
+                              <span class="fas fa-star rate"></span>
+                          @else
+                              <span class="fas fa-star"></span>
+                          @endif
+                          @endfor
+                    </div>
+                </section>
+                <section class="publication-card-button-container">
+                    <a href="{{route('post', ['id' => $post->id])}}"><div>READ</div></a>
                 </section>
             </article>
         </li>

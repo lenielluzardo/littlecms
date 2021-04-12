@@ -2,27 +2,34 @@
 ============================== P U B L I C A T I O N ===========================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 .publication-container{
+    background: rgba(10, 28, 71, 0.1);
+    padding: 20px;
     // margin: auto;
     // width: 90%;
     // max-width: 800px;
 }
 .publication-title {
-    .title;
+    font-size: @title-font-size;
+    font-weight: bold;
+    color: @complement-color;
 }
 .publication-meta{
     margin: 0 0 10px 0 ;
 }
 
 .publication-author {
-    .subtitle;
+    font-size: @subtitle-font-size;
+    color: @complement-color;
 }
 
 .publication-date {
-    .quote;
+    font-weight: normal;
+    margin: 0;
+    color: @complement-color;
 }
 
 .publication-rating {
-    margin: 10px 0;
+    // margin: 10px 0;
 }
 
 .rate {
@@ -31,11 +38,11 @@
 
 .tag {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 5px;
     margin: 0 5px;
-    .tag-corners;
-    .paragraph;
-    font-weight: bold;
+    border-radius: 10px;
+    font-size: 12px;
+    text-decoration: none;
 }
 .publication-body{
     display: flex;
@@ -52,7 +59,11 @@
 }
 .publication-paragraph{
     margin: 20px 0;
-    .paragraph;
+    font-size: @paragraph-font-size;
+    color: @complement-color;
+    letter-spacing: .2px;
+    text-align: justify;
+    font-stretch: wider;
 }
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ======================== M E D I A   Q U E R I E S ============================

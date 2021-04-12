@@ -10,8 +10,8 @@
                 <h2 class="publication-title"> {{$item->title}} </h2>
 
                 <div class="publication-meta">
-                    <h3 class="publication-author">Author: {{$item->user->nickname}}</h3>
-                    <h4 class="publication-date">Date: {{$item->created_at}}</h4>
+                    <h3 class="publication-author">By: {{$item->user->nickname}}</h3>
+                    <h4 class="publication-date">{{$item->created_at}}</h4>
                     <div class="publication-rating">
                         @for($i = 0; $i < 5; $i++)
                             @if($i < $item->rating)

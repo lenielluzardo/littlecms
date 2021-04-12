@@ -10,8 +10,8 @@
         <section class="publication-card-description-container">
             <h2 class="publication-card-title">{{$latest->title}}</h2>
             <p>{{$latest->paragraph1}}</p>
-            <h3 class="publication-card-author">Author: {{$latest->user->nickname}}</h3>
-            <h4 class="publication-card-date">Date: {{$latest->created_at}}</h4>
+            <h3 class="publication-card-author">By: {{$latest->user->nickname}}</h3>
+            <h4 class="publication-card-date">{{$latest->created_at}}</h4>
             <div class="publication-card-rating">
                 @for($i = 0; $i < 5; $i++)
                   @if($i < $latest->rating)

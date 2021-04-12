@@ -19,6 +19,34 @@
     padding: 15px;
     margin: 0 0 20px 0;
 }
+/* # # # # # # # # # # # # # */
+/*  B R E A D C R U M B S    */
+/* v v v v v v v v v v v v v */
+#breadcrumbs{
+    height: 50px;
+    background-color: @WEB_SECTION_COLOR;
+    box-shadow: -5px 0px 10px 1px fade(@WEB_NAV_BG_COLOR, 95%);
+}
+#web-back-icon-container{
+    display: flex;
+    a{
+        display: flex;
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+    div{
+        background-image: url('@{icons}web-back-icon.svg');
+        background-size: 30px 30px;
+        background-repeat: no-repeat;
+        width:30px;
+        height:30px;
+    }
+    h2{
+        margin: 0 5px;
+        color: @WEB_NAV_BG_COLOR;
+        font-size: 15px;
+    }
+}
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ======================== M E D I A   Q U E R I E S ============================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */

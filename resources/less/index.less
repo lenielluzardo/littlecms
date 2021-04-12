@@ -13,13 +13,14 @@
 // -------- COLORS --------
 
 /* Color Theme Swatches in Hex */
-@WEB_NAV_BG_COLOR: #0A1526;
-@WEB_BUTTON_COLOR: #0E214D;
-@WEB_SECTION_COLOR: #2BA3FF;
-@WEB_NAV_FONT_COLOR: #6CC7FF;
 @WEB_FG_COLOR: #E5F0FC;
-@WEB_BG_COLOR: fade(@third-color, 95%);
-@third-color: #0A1C47;
+@WEB_BG_COLOR: #feffff;
+@WEB_NAV_BG_COLOR: #0A1526;
+@WEB_NAV_FONT_COLOR: #6CC7FF;
+@WEB_SECTION_COLOR: #2BA3FF;
+@WEB_BUTTON_COLOR: #0E214D;
+@WEB_BUTTON_COLOR_2: #0A1C47;
+@WEB_BG_CARD: rgba(10, 28, 71, 0.1);
 
 
 @prime-color: #71E7F5;
@@ -48,9 +49,7 @@
         grid-template:  1fr auto / minmax(auto,210px) auto minmax(auto,250px) ;
         font-family: @base-font-family, sans-serif;
         // background-image: url('@{images}bg-graphics.png');
-        // font-size: @base-font-size;
         min-width: 320px;
-        // height: 100%;
         background-color: @WEB_BG_COLOR;
     }
 
@@ -107,9 +106,9 @@
         padding: 0;
     }
 
-//     .hidden {
-//         display: none;
-//     }
+    .hidden {
+        display: none;
+    }
 
 //     .button-container {
 //         display: flex;
@@ -137,56 +136,13 @@
 //     }
 // }
 
-// .section-shadow() {
-//     box-shadow: fade(@complement-color, 50%) 0px 1px 5px 2px;
-// }
-
-// .button-shadow() {
-//     box-shadow: fade(@complement-color, 50%) 0px 3px 2px 0px;
-// }
-
-// .icon-size(@size: 40px) {
-//     width: @size;
-//     height: @size;
-// }
-
-// .section-corners(@size: 50px) {
-//     border-radius: 0 @size @size 0;
-// }
-
-.tag-corners(@size: 25px) {
-    border-radius: @size;
+.element-size-prop(@size) {
+    width: @size;
+    height: @size;
 }
-
-// .web-font-size(@size) {
-//     font-size: @base-font-size + @size;
-// }
-
-.title {
-    margin: 5px 0;
-    font-size: @title-font-size;
-    font-weight: bold;
-    color: @complement-color;
-}
-
-.subtitle {
-    font-size: @subtitle-font-size;
-    font-weight: bold;
-    color: @complement-color;
-}
-
-.paragraph {
-    font-size: @paragraph-font-size;
-    color: @complement-color;
-    letter-spacing: .2px;
-    text-align: justify;
-    font-stretch: wider;
-}
-
-.quote {
-    font-weight: normal;
-    margin: 0;
-    color: @complement-color;
+.element-size(@width, @height) {
+    width: @width;
+    height: @height;
 }
 
 .image-disposition(@width: 250px, @height: 250px, @fit : cover) {
@@ -196,15 +152,14 @@
     object-fit: @fit;
 }
 
-// .init;
 @import 'mod-header.less';
-@import 'mod-aside.less';
 @import 'mod-main.less';
 @import 'mod-publication.less';
 @import 'mod-blog.less';
-@import 'mod-about.less';
+@import 'mod-sidebar.less';
 @import 'mod-footer.less';
-@import 'mod-admin.less';
+@import 'mod-rating.less';
+@import 'mod-about.less';
 @import 'mod-form.less';
 @import 'mod-notification.less';
-@import 'mod-rating.less';
+@import 'mod-admin.less';
