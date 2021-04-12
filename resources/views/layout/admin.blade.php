@@ -11,11 +11,15 @@
 </head>
 <body>
 
+@include('admin.header')
 
+<section id="main-section-container">
+    <nav height="50" id="breadcrumbs">BREADCRUMBS</nav>
+    <main id="main-content-container">
+        @yield('content')
+    </main>
+</section>
 
-{{-- @include('partials.notification') --}}
-@include('partial.header')
-@yield('main')
 @include('partial.sidebar')
 @include('partial.footer')
 

@@ -1,6 +1,6 @@
 <!--  ==================== R A T I N G    ====================== -->
 <section class="rating-container">
-    <h2 class="section-title rating-title">Rate this post:</h2>
+    <h2 class="rating-title">Rate this post:</h2>
 
     <div class="star-widget">
         <input type="radio" name="rate" id="rate-5">

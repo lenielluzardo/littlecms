@@ -1,9 +1,9 @@
-@extends('layout.master')
+@extends('partial.main')
 
 @section('content')
+<section id="blog-section-container">
 
-    <section class="section-container">
-        <hr class="section-separator">
+    <section class="content-section-container">
         <article class="publication-container">
 
             <section class="publication-header">
@@ -54,15 +54,10 @@
         </article>
 
         @include('partial.rating')
-
-        <hr class="section-separator">
-
-        @include('about.description')
-
     </section>
 
-@include('blog.related')
+    {{-- @include('about.description') --}}
+    @include('blog.related')
 
-@include('partial.footer')
-
+</section>
 @endsection

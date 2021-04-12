@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layout.admin')
 
 @section('content')
 
-@include('partials.errors')
+@include('partial.errors')
 
 <div class="admin-container">
     <div class="admin-post_list-container">

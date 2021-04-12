@@ -10,6 +10,7 @@
 @subtitle-font-size: @base-font-size + 5px;
 @paragraph-font-size: @base-font-size + 3px;
 
+// -------- COLORS --------
 
 /* Color Theme Swatches in Hex */
 @WEB_NAV_BG_COLOR: #0A1526;
@@ -17,12 +18,12 @@
 @WEB_SECTION_COLOR: #2BA3FF;
 @WEB_NAV_FONT_COLOR: #6CC7FF;
 @WEB_FG_COLOR: #E5F0FC;
+@WEB_BG_COLOR: fade(@third-color, 95%);
+@third-color: #0A1C47;
 
 
-// -------- COLORS --------
 @prime-color: #71E7F5;
 @second-color: #004564;
-@third-color: #0A1C47;
 @complement-color: #0E1C27;
 @warning-prevent-color: #FFCF4B;
 @warning-fail-color: #df4040;
@@ -46,12 +47,52 @@
         display: grid;
         grid-template:  1fr auto / minmax(auto,210px) auto minmax(auto,250px) ;
         font-family: @base-font-family, sans-serif;
-
+        // background-image: url('@{images}bg-graphics.png');
         // font-size: @base-font-size;
-        // min-width: 320px;
+        min-width: 320px;
         // height: 100%;
-        // background-color: @bg-color;
+        background-color: @WEB_BG_COLOR;
     }
+
+#home-welcome-image {
+    height: 100vh;
+    object-fit: contain;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: @WEB_NAV_BG_COLOR;
+    background-image: url('@{images}bg-home.png');
+}
+#home-welcome-overlay {
+    background-color: fade(@WEB_NAV_BG_COLOR,50%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#home-welcome-card{
+    padding:40px;
+    border-radius: 25px;
+    background-color: fade(@WEB_NAV_BG_COLOR,50%);
+    display: grid;
+    grid-template: auto /auto;
+    color: @WEB_NAV_FONT_COLOR;
+    width: 50%;
+    text-align: center;
+
+    h2{
+        display: block;
+        font-size: 40px;
+        border-bottom: 2px solid;
+        letter-spacing: 2px;
+        margin: 0 0 0 10px;
+    }
+    p{
+        display: block;
+        font-size: 30px;
+        text-align: justify;
+    }
+}
 
     h1,
     h2,

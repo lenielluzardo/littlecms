@@ -1,8 +1,7 @@
-@extends('layouts.master')
+@extends('layout.master')
 
 @section('content')
     @include('portfolio.latest')
     @include('portfolio.related')
-    @include('partials.footer')
 @endsection
 
