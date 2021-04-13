@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('partial.main')
 
 @section('content')
 
-@include('partials.errors')
+@include('partial.errors')
 
 {!! NoCaptcha::renderJs()!!}
 

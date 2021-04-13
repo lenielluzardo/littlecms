@@ -16,19 +16,14 @@ class Project extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function getAllProjects(){
-        $posts = Project::all();
-        return $posts;
-    }
-
-    public function getLatestProject($section)
+    public function getAllProjects($section)
     {
         $_section = Section::where('name', ucfirst($section))->first();
 
-        $project = Project::where('section_id', $_section->id)->orderBy('created_at', 'desc')
-                ->with('user')->with('section')->first();
+        $projects = Project::where('section_id', $_section->id)->orderBy('created_at', 'desc')
+                ->with('user')->with('section')->get();
 
-        return $project;
+        return $projects;
     }
 
     public function getRelatedProjects($section, $id)

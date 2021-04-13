@@ -9,12 +9,8 @@ class PortfolioController extends Controller
     public function getIndex($section)
     {
         $projectModel = new Project();
-
-        $latest = $projectModel->getLatestProject($section);
-
-        $relateds = $projectModel->getRelatedProjects( $section, $latest->id);
-
-        return view('portfolio.index', ['latest' => $latest, 'relateds' => $relateds]);
+        $projects = $projectModel->getAllProjects($section);
+        return view('portfolio.index', ['projects' => $projects]);
     }
 
     Public function getProjectById($section, $id, Project $projectModel)

@@ -11,18 +11,17 @@
 @paragraph-font-size: @base-font-size + 3px;
 
 // -------- COLORS --------
-
-/* Color Theme Swatches in Hex */
 @WEB_FG_COLOR: #E5F0FC;
-@WEB_BG_COLOR: #feffff;
+@WEB_BG_COLOR: #4273b1;
+// @WEB_BG_COLOR: #feffff;
 @WEB_NAV_BG_COLOR: #0A1526;
-@WEB_NAV_FONT_COLOR: #6CC7FF;
+@WEB_NAV_FONT_COLOR: #71E7F5;
+// @WEB_NAV_FONT_COLOR: #6CC7FF;
 @WEB_SECTION_COLOR: #2BA3FF;
 @WEB_BUTTON_COLOR: #0E214D;
 @WEB_BUTTON_COLOR_2: #0A1C47;
 @WEB_CARD_BG:#e0f2fd;
 @WEB_BG_CARD: rgba(10, 28, 71, 0.1);
-
 
 @prime-color: #71E7F5;
 @second-color: #004564;
@@ -37,22 +36,19 @@
 @webfonts : "../assets/webfonts/";
 
 
-// -------- MIXINS --------
-// .init() {
-
-    @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Orbitron:wght@600&display=swap');
-    body {
-        margin: 0px;
-        padding: 0px;
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-        grid-template:  1fr auto / minmax(auto,210px) auto minmax(auto,250px) ;
-        font-family: @base-font-family, sans-serif;
-        // background-image: url('@{images}bg-graphics.png');
-        min-width: 320px;
-        background-color: @WEB_BG_COLOR;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Orbitron:wght@600&display=swap');
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template:  1fr auto / minmax(auto,210px) auto minmax(auto,250px) ;
+    font-family: @base-font-family, sans-serif;
+    // background-image: url('@{images}bg-graphics.png');
+    min-width: 320px;
+    background-color: @WEB_BG_COLOR;
+}
 
 #home-welcome-image {
     height: 100vh;
@@ -107,35 +103,9 @@
         padding: 0;
     }
 
-    .hidden {
-        display: none;
-    }
-
-//     .button-container {
-//         display: flex;
-//         justify-content: center;
-//         width: 100%;
-//         text-align: center;
-//     }
-
-//     .button {
-//         display: inline-block;
-//         border: none;
-//         color: @complement-color;
-//         text-decoration: none;
-//         background-color: @prime-color;
-//         .button-shadow;
-//         font-size: @title-font-size;
-//         font-weight: bold;
-//         letter-spacing: 2px;
-//         padding: 10px;
-//         width: 95%;
-
-//         &:hover {
-//             cursor: pointer;
-//         }
-//     }
-// }
+.hidden {
+    display: none;
+}
 
 .element-size-prop(@size) {
     width: @size;
@@ -157,6 +127,7 @@
 @import 'mod-main.less';
 @import 'mod-publication.less';
 @import 'mod-post.less';
+@import 'mod-portfolio.less';
 @import 'mod-sidebar.less';
 @import 'mod-footer.less';
 @import 'mod-rating.less';
@@ -164,3 +135,21 @@
 @import 'mod-form.less';
 @import 'mod-notification.less';
 @import 'mod-admin.less';
+
+/* # # # # # # # # # # # # # # # #  */
+/* G E N E R I C   E L E M E N T S  */
+/* v v v v v v v v v v v v v v v v  */
+.tag {
+    display: inline-block;
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    text-decoration: none;
+}
+.rate-container {
+    margin: 0;
+}
+.rate {
+    color: #fd4;
+}
