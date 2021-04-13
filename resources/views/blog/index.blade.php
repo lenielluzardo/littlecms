@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section id="blog-section-container">
+    <section class="publication-section-container">
         @include('blog.latest')
         @include('blog.related')
     </section>

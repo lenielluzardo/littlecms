@@ -157,9 +157,11 @@ li {
   overflow-y: scroll;
 }
 .section-title {
-  background-color: #2BA3FF;
-  padding: 15px;
-  margin: 0 0 20px 0;
+  background: #0E214D;
+  padding: 10px 20px;
+  margin: 0 0 10px 0;
+  color: #6CC7FF;
+  /* box-shadow: 0px 1px 5px -1px #000a; */
 }
 /* # # # # # # # # # # # # # */
 /*  B R E A D C R U M B S    */
@@ -192,33 +194,103 @@ li {
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ======================== M E D I A   Q U E R I E S ============================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
-/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-============================== P U B L I C A T I O N ===========================
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
-.publication-container {
-  background: rgba(10, 28, 71, 0.1);
+/* # # # # # # # # # # # # # */
+/*   P U B L I C A T I O N   */
+/* v v v v v v v v v v v v v */
+/* # # # # # # # # # # # # # */
+/*   G E N E R I C  C A R D  */
+/* v v v v v v v v v v v v v */
+.publication-section-container {
+  margin: 20px;
   padding: 20px;
+  max-width: 750px;
+  display: grid;
+  grid-template: auto auto / auto;
+  grid-row-gap: 50px;
 }
-.publication-title {
-  font-size: 25px;
-  font-weight: bold;
-  color: #0E1C27;
+.publication-card-container {
+  display: grid;
+  grid-template: 1fr auto / auto 1fr;
+  background: #e0f2fd;
+  padding: 10px;
 }
-.publication-meta {
-  margin: 0 0 10px 0 ;
+.publication-card-img-container {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
 }
-.publication-author {
-  font-size: 20px;
-  color: #0E1C27;
+.publication-card-description-container {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  padding: 0 0 0 15px;
+  display: grid;
+  grid-template: 'title title title' 'prev prev prev' 'author rate rate' 'date tags tags';
 }
-.publication-date {
-  font-weight: normal;
-  margin: 0;
-  color: #0E1C27;
+.publication-card-title {
+  grid-area: title;
 }
-.rate {
-  color: #fd4;
+.publication-card-preview {
+  grid-area: prev;
 }
+.publication-card-author {
+  grid-area: author;
+}
+.publication-card-date {
+  grid-area: date;
+}
+.publicaction-card-rating-container {
+  grid-area: rate;
+}
+.publication-card-tags-container {
+  grid-area: tags;
+}
+.publication-card-button-container {
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
+  padding: 10px;
+  margin: 10px 0 0 0;
+  background-color: #2BA3FF;
+  text-align: center;
+}
+.publication-card-button-container a {
+  text-decoration: none;
+  color: #0E214D;
+}
+.publication-card-button-container a:hover {
+  text-decoration: underline;
+}
+/* # # # # # # # # # # # # # */
+/*    L A R G E   C A R D    */
+/* v v v v v v v v v v v v v */
+.large-size-publication img {
+  width: 250px;
+  height: 250px;
+  max-height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/* # # # # # # # # # # # # # */
+/*    S M A L L   C A R D    */
+/* v v v v v v v v v v v v v */
+.small-size-publication img {
+  width: 150px;
+  height: 150px;
+  max-height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/* # # # # # # # # # # # # # */
+/*    C A R D   L I S T      */
+/* v v v v v v v v v v v v v */
+.publication-card-list {
+  display: grid;
+  list-style: none;
+  grid-template: auto / 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+/* # # # # # # # # # # # # # # # #  */
+/* G E N E R I C   E L E M E N T S  */
+/* v v v v v v v v v v v v v v v v  */
 .tag {
   display: inline-block;
   padding: 5px;
@@ -227,137 +299,61 @@ li {
   font-size: 12px;
   text-decoration: none;
 }
-.publication-body {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 10px 0;
+.rate-container {
+  margin: 0;
 }
-.publication-img-container {
-  overflow: hidden;
-  margin: 10px auto;
-}
-.publication-img-container img {
-  width: 100%;
-  height: 300px;
-  max-height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.publication-paragraph {
-  margin: 20px 0;
-  font-size: 18px;
-  color: #0E1C27;
-  letter-spacing: 0.2px;
-  text-align: justify;
-  font-stretch: wider;
+.rate {
+  color: #fd4;
 }
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ======================== M E D I A   Q U E R I E S ============================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
-@media screen and (min-width: 700px) {
-  .publication-meta {
-    display: grid;
-    grid-template: "author rating" "date tags";
-  }
-  .publication-author {
-    grid-area: author;
-  }
-  .publication-date {
-    grid-area: date;
-  }
-  .publication-rating {
-    text-align: end;
-    grid-area: rating;
-  }
-  .tags-container {
-    text-align: end;
-    grid-area: tags;
-  }
-  .publication-img-container > img {
-    width: 600px;
-    height: 400px;
-    max-height: 500px;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .publication-img-container > img {
-    width: 100%;
-    height: 500px;
-    max-height: 500px;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-}
 /* # # # # # # # # # # # # # */
 /*          B L O G          */
 /* v v v v v v v v v v v v v */
-#blog-section-container {
-  margin: 20px;
+.post-container {
+  background: #e0f2fd;
   padding: 20px;
-  max-width: 750px;
+}
+.post-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #0E1C27;
+}
+.post-meta {
   display: grid;
-  grid-template: auto auto / auto;
-  grid-row-gap: 50px;
+  grid-template: 'author rate' 'date tags';
+  margin: 10px 0;
 }
-/* # # # # # # # # # # # # # */
-/*        L A T E S T        */
-/* v v v v v v v v v v v v v */
-.publication-card-container {
-  display: grid;
-  grid-template: 1fr auto / auto 1fr;
-  background: rgba(10, 28, 71, 0.1);
-  padding: 10px;
+.post-author {
+  grid-area: author;
 }
-.publication-card-img-container {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
+.post-date {
+  grid-area: date;
 }
-.latest-publication img {
-  width: 250px;
-  height: 250px;
+.post-rate {
+  grid-area: rate;
+}
+.post-tags-container {
+  grid-area: tags;
+}
+.post-img-container {
+  overflow: hidden;
+}
+.post-img-container img {
+  width: 100%;
+  height: 500px;
   max-height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-fit: fill !important;
+     object-fit: fill !important;
+  margin: 10px auto;
 }
-.publication-card-description-container {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
-  padding: 0 0 0 15px;
-}
-.publication-card-button-container {
-  grid-row: 2 / 3;
-  grid-column: 1 / 3;
-  padding: 10px;
-  margin: 10px 0 0 0;
-  background-color: #0E214D;
-  text-align: center;
-}
-.publication-card-button-container a {
-  text-decoration: none;
-  color: #6CC7FF;
-}
-.publication-card-button-container a:hover {
-  text-decoration: underline;
-}
-/* # # # # # # # # # # # # # */
-/*       R E L A T E D       */
-/* v v v v v v v v v v v v v */
-.related-publication img {
-  width: 150px;
-  height: 150px;
-  max-height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.publication-related-list {
-  display: grid;
-  list-style: none;
-  grid-template: auto / 1fr 1fr;
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
+.post-paragraph {
+  margin: 10px 0;
+  letter-spacing: 1px;
+  text-align: justify;
 }
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ======================== M E D I A   Q U E R I E S ============================

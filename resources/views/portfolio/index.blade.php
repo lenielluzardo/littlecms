@@ -1,7 +1,9 @@
-@extends('layout.master')
+@extends('partial.main')
 
 @section('content')
-    @include('portfolio.latest')
-    @include('portfolio.related')
+    <section class="publication-section-container">
+        @include('portfolio.latest')
+        @include('portfolio.related')
+    </section>
 @endsection
 

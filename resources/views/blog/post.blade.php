@@ -1,18 +1,16 @@
 @extends('partial.main')
 
 @section('content')
-<section id="blog-section-container">
-
+<section class="publication-section-container">
     <section class="content-section-container">
-        <article class="publication-container">
+        <article class="post-container">
 
-            <section class="publication-header">
-                <h2 class="publication-title"> {{$item->title}} </h2>
-
-                <div class="publication-meta">
-                    <h3 class="publication-author">By: {{$item->user->nickname}}</h3>
-                    <h4 class="publication-date">{{$item->created_at}}</h4>
-                    <div class="publication-rating">
+            <section class="post-header">
+                <h2 class="post-title"> {{$item->title}} </h2>
+                <div class="post-meta">
+                    <h3 class="post-author">By: {{$item->user->nickname}}</h3>
+                    <h5 class="post-date">{{$item->created_at}}</h4>
+                    <div class="post-rate">
                         @for($i = 0; $i < 5; $i++)
                             @if($i < $item->rating)
                                 <span class="fas fa-star rate"></span>
@@ -22,7 +20,7 @@
                         @endfor
                     </div>
 
-                    <div class="tags-container">
+                    <div class="post-tags-container">
                         @foreach($item->tags as $tag)
                             <a class="tag" style="background-color:{{$tag->color}};" href="">{{$tag->name}}</a>
                         @endforeach
@@ -31,21 +29,21 @@
                 </div>
             </section>
 
-            <section class="publication-body">
-                <div class="publication-img-container">
-                    <img src="{{$item->image1}}" alt="publication_img">
+            <section class="post-body">
+                <div class="post-img-container">
+                    <img src="{{$item->image1}}" alt="post_img">
                 </div>
 
-                <div class="publication-paragraph">
+                <div class="post-paragraph">
                     <p> {{ $item->paragraph1 }} </p>
                     <p> {{ $item->paragraph2 }} </p>
                 </div>
 
-                <div class="publication-img-container">
-                    <img src="{{$item->image2}}" alt="publication_img">
+                <div class="post-img-container">
+                    <img src="{{$item->image2}}" alt="post_img">
                 </div>
 
-                <div class="publication-paragraph">
+                <div class="post-paragraph">
                     <p> {{ $item->paragraph3}} </p>
                     <p> {{ $item->paragraph4}} </p>
                 </div>
