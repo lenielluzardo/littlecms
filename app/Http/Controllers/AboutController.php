@@ -8,9 +8,8 @@ use App\Models\User;
 
 class AboutController extends Controller
 {
-    public function getIndex(User $userModel)
+    public function getIndex()
     {
-        $user = $userModel->find(4);
-        return view('about.index', ['author' => $user]);
+        return view('about.index');
     }
 }

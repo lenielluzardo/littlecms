@@ -1,6 +1,6 @@
-/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-========== G E N E R A L   B O D Y   R U L E S / V A R I A B L E S ============
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+/* # # # # # # # # # # # # # */
+/*        C O N F I G        */
+/* v v v v v v v v v v v v v */
 
 // -------- FONTS --------
 @base-font-family : 'Kanit';
@@ -23,7 +23,6 @@
 @WEB_CARD_BG:#e0f2fd;
 @WEB_BG_CARD: rgba(10, 28, 71, 0.1);
 
-@prime-color: #71E7F5;
 @second-color: #004564;
 @complement-color: #0E1C27;
 @warning-prevent-color: #FFCF4B;
@@ -152,4 +151,12 @@ body {
 }
 .rate {
     color: #fd4;
+}
+/* # # # # # # # # # # # # # */
+/* M E D I A   Q U E R I E S */
+/* v v v v v v v v v v v v v */
+@media screen and (max-width:1300px){
+    body{
+        grid-template:  90% auto / minmax(auto,210px) auto minmax(auto,250px) ;
+    }
 }

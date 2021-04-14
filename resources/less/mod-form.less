@@ -1,38 +1,26 @@
-/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-================================ F O R M =======================================
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
-
+/* # # # # # # # # # # # # # */
+/*         F O R M           */
+/* v v v v v v v v v v v v v */
 .form-container {
+    padding: 10px;
     height: 100%;
 }
-
-.form {
-    display: grid;
-    grid-template: auto / 1fr;
-    margin: auto;
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
 .form-label {
-    font-size: @subtitle-font-size;
-    font-weight: bold;
-    color: @complement-color;
-    display: inline-block;
-    margin: 10px 0 0 0;
-    width: 90%;
+    margin: 20px 0 0 0;
 }
 
 .form-input {
-    // display: inline-block;
-    width: 95%;
-    height: auto;
-    margin: 5px 0;
-    padding: 5px;
+    padding: 10px;
 }
 
 .comments {
     resize: none;
-    height: 100px;
-    width: 100%;
+    min-height: 100px;
     margin: 10px 0;
 }
 
@@ -40,6 +28,16 @@
     width: 15px;
     height: 15px;
     margin: 10px 0;
+}
+.recaptcha-container{
+    margin: 10px 0;
+}
+#form-button{
+    padding: 10px;
+    background-color: @WEB_SECTION_COLOR;
+    text-align: center;
+    width: 100%;
+    border: none;
 }
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 =========================== R E G I S T R A T I O N ============================
@@ -55,28 +53,28 @@
     width:100%;
 }
 /* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-======================== M E D I A   Q U E R I E S ============================
+========================  ============================
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
 
-@media screen and (min-width:1024px) {
-    .form {
-        width: 60%;
-        font-size: 1.3em;
-    }
-}
+// @media screen and (min-width:1024px) {
+//     .form {
+//         width: 60%;
+//         font-size: 1.3em;
+//     }
+// }
 
-@media screen and (min-width: 1280px) {
+// @media screen and (min-width: 1280px) {
 
-    .button {
-        font-size: 1.2em;
-        grid-area: button;
-        width: 60%;
-    }
-}
+//     .button {
+//         font-size: 1.2em;
+//         grid-area: button;
+//         width: 60%;
+//     }
+// }
 
-@media screen and (min-width:1300px) {
-    .form {
-        width: 50%;
-    }
-}
+// @media screen and (min-width:1300px) {
+//     .form {
+//         width: 50%;
+//     }
+// }
 

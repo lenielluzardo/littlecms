@@ -1,11 +1,11 @@
-@extends('layouts.master')
+@extends('partial.main')
 @section('content')
 
-@include('about.description')
-
-<hr class="section-separator">
-
-@include('partials.footer')
+<section class="publication-section-container">
+    <section class="content-section-container">
+        @include('about.description')
+    </section>
+</section>
 @endsection
 
 

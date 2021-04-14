@@ -1,7 +1,9 @@
-@extends('layout.master')
+@extends('partial.main')
 
 @section('content')
-    <section class="section-container">
+<section class="publication-section-container">
+    <section class="content-section-container">
+    <section class="publication-container">
 
         @if (Session::has('fail'))
             <div>
@@ -59,4 +61,6 @@
         </div>
 
     </section>
+    </section>
+</section>
 @endsection

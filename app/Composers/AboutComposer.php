@@ -10,7 +10,7 @@ class AboutComposer{
     protected $author;
 
     public function __construct(User $userModel){
-        $this->author = $userModel->find(env('AUTHOR'));
+        $this->author = $userModel->find(1);
     }
 
     public function compose(View $view){
