@@ -5,11 +5,12 @@
     background-image: url('@{images}bg-graphics.png');
     background-color: @WEB_NAV_BG_COLOR;
     display:grid;
-    grid-template: 1fr 1fr 1fr / 1fr;
+    grid-template: auto / 1fr;
+    position: sticky;
   }
   #sidebar-ads-section-container{
     display: grid;
-    grid-template: auto 150px 150px / auto;
+    grid-template: 90px 150px 150px / auto;
     grid-row-gap: 10px;
 
     color: @WEB_NAV_FONT_COLOR;
