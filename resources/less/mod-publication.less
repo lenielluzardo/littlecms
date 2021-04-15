@@ -8,8 +8,7 @@
 .publication-img-container{
     overflow: hidden;
     img{
-        .image-disposition(100%, 500px);
-        object-fit: fill !important;
+        .image-setting(100%, 500px, 'fill');
         margin:10px auto;
     }
 }
@@ -20,23 +19,18 @@
 /* # # # # # # # # # # # # # */
 /*   G E N E R I C  C A R D  */
 /* v v v v v v v v v v v v v */
-.publication-section-container {
-    margin: 20px;
-    padding: 20px;
-    max-width: 750px;
-    display: grid;
-    grid-template: auto auto / auto;
-    grid-row-gap: 50px;
-}
 .publication-card-container {
     display: grid;
     grid-template: 1fr auto / auto 1fr;
     background: @WEB_CARD_BG;
     padding: 10px;
 }
-.publication-card-img-container{
+.latest-publication-card-img-container{
     grid-row: 1 / 2;
     grid-column: 1 / 2;
+    img {
+        .image-setting(250px, 250px);
+    }
 }
 .publication-card-description-container{
     grid-row: 1 / 2;
@@ -82,22 +76,6 @@
     }
 }
 /* # # # # # # # # # # # # # */
-/*    L A R G E   C A R D    */
-/* v v v v v v v v v v v v v */
-.large-size-publication{
-    img {
-        .image-disposition(250px, 250px);
-    }
-}
-/* # # # # # # # # # # # # # */
-/*    S M A L L   C A R D    */
-/* v v v v v v v v v v v v v */
-.small-size-publication{
-    img {
-        .image-disposition(150px, 150px);
-    }
-}
-/* # # # # # # # # # # # # # */
 /*    C A R D   L I S T      */
 /* v v v v v v v v v v v v v */
 .publication-card-list {
@@ -108,7 +86,8 @@
     grid-column-gap: 20px;
 }
 
-
-/* # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-======================== M E D I A   Q U E R I E S ============================
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # */
+.related-publication-card-img-container{
+    img {
+        .image-setting(150px, 150px);
+    }
+}

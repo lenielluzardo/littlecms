@@ -1,9 +1,8 @@
-<section class="content-section-container">
     <h2 class="section-title">Most Recent Post:</h2>
 
-    <article class="publication-card-container large-size-publication">
+    <article class="publication-card-container">
 
-        <section class="publication-card-img-container">
+        <section class="latest-publication-card-img-container">
             <img class="publication-card-img" src="{{$latest->image1}}" alt="publication-img">
         </section>
 
@@ -33,4 +32,3 @@
         </section>
 
     </article>
-</section>

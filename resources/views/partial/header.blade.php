@@ -13,13 +13,16 @@
     <img id="logotype" src="{{ URL::to('./assets/icons/web-icon.svg') }}" alt="web-icon">
     <h1 id="title">{{ config('app.name') }}</h1>
     </a>
+    <div id="mobile-nav-icon-container">
+        <img src="{{ URL::to('./assets/icons/mobile-nav-icon.svg')}}" alt="">
+    </div>
 </div>
 
 <!-- # # # # # # # # # # # # # -->
 <!--    N A V I G A T I O N    -->
 <!-- v v v v v v v v v v v v v -->
 
-    <nav id="header-navigation-container">
+    <nav id="header-navigation-container" class="hidden">
         <ul id="header-navigation-list">
 
             @foreach ($sections as $section)

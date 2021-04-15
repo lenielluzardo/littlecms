@@ -1,7 +1,6 @@
 @extends('layout.master')
 
 @section('main')
-<section id="main-section-container" >
         <section id="home-welcome-image">
             <div id="home-welcome-overlay">
                 <div id="home-welcome-card">
@@ -15,6 +14,5 @@
                 </p>
                 </div>
             </div>
-        </section>
 </section>
 @endsection

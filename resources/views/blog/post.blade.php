@@ -1,8 +1,6 @@
 @extends('partial.main')
 
 @section('content')
-<section class="publication-section-container">
-    <section class="content-section-container">
         <article class="publication-container">
 
             <section class="post-header">
@@ -49,13 +47,12 @@
                 </div>
 
             </section>
+        @include('partial.rating')
+
         </article>
 
-        @include('partial.rating')
-    </section>
+        @include('blog.related')
 
     {{-- @include('about.description') --}}
-    @include('blog.related')
 
-</section>
 @endsection

@@ -1,12 +1,11 @@
-<section class="content-section-container">
     <h2 class="section-title">Related Posts:</h2>
-
+    <div id="publication-card-list-container">
     <ul class="publication-card-list">
 
         @foreach($relateds as $post)
         <li class="publication-card-list-item">
-            <article class="publication-card-container small-size-publication">
-                <section class="publication-card-img-container">
+            <article class="publication-card-container">
+                <section class="related-publication-card-img-container">
                     <img class="publication-card-img" src="{{$post->image1}}"  alt="post_image">
                 </section>
                 <section class="publication-card-description-container">
@@ -28,6 +27,5 @@
             </article>
         </li>
         @endforeach
-
     </ul>
-</section>
+</div>
