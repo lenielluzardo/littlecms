@@ -1,7 +1,15 @@
 let navMenu = document.getElementById('header-navigation-container');
 let navIcon = document.getElementById('mobile-nav-icon-container');
 let header = document.getElementById('header-section-container');
+let welcomePopup = document.getElementById('home-welcome-card');
 
+document.addEventListener('DOMContentLoaded', showWelcomePopup);
+
+function showWelcomePopup(){
+    if(document.readyState === 'complete'){
+        alert("I'm working");
+    }
+}
 
 navIcon.addEventListener("click", showNavMenu);
 

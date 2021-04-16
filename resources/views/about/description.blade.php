@@ -1,6 +1,7 @@
-<!--  ==================== A B O U T   A U T H O R ====================== -->
-
-<div class="section-container about-section">
+<!-- # # # # # # # # # # # # # -->
+<!--        A B O U T          -->
+<!-- v v v v v v v v v v v v v -->
+<div class="publication-container about-section">
     <h2 class="section-title">About the author</h2>
 
     <div class="author-container">

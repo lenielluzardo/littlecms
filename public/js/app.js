@@ -10,6 +10,15 @@
 var navMenu = document.getElementById('header-navigation-container');
 var navIcon = document.getElementById('mobile-nav-icon-container');
 var header = document.getElementById('header-section-container');
+var welcomePopup = document.getElementById('home-welcome-card');
+document.addEventListener('DOMContentLoaded', showWelcomePopup);
+
+function showWelcomePopup() {
+  if (document.readyState === 'complete') {
+    alert("I'm working");
+  }
+}
+
 navIcon.addEventListener("click", showNavMenu);
 
 function showNavMenu() {

@@ -1,11 +1,11 @@
 @extends('layout.master')
 
 @section('main')
-        <section id="home-welcome-image">
+        <section id="home-welcome-image" >
             <div id="home-welcome-overlay">
-                <div id="home-welcome-card">
-                    <h2>¡WELCOME!</h2>
-                    <p>
+                <div id="home-welcome-card" class="popup-fade-in">
+                    <h2 class="popup-fade-in">¡WELCOME!</h2>
+                    <p class="popup-fade-in">
                     Hello there, I'm Leniel. I'm a software developer and designer,
                     and I love to mix these disciplines to create apps and to bring awsome ideas to life!
                     If you're a curious person, take a look around to my projects and posts.
