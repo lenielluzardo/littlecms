@@ -19,4 +19,4 @@ mix.js('resources/js/app.js', 'public/js')
     .copyDirectory('resources/assets/images', 'public/assets/images')
     .copyDirectory('resources/assets/icons', 'public/assets/icons')
     .copyDirectory('resources/assets/webfonts', 'public/assets/webfonts')
-    .minify(['public/css/index.css']);
+    .minify('public/css/index.css');

@@ -2,8 +2,8 @@
 
 @section('content')
 
-        @include('blog.latest')
-        @include('blog.related')
+    @include('blog.latest')
+    @include('blog.related')
 
 @endsection
 

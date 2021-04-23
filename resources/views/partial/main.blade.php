@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.master-layout')
 
 @section('main')
 <section id="main-section-container">

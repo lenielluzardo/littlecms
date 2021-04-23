@@ -1,9 +1,9 @@
-@extends('layout.master')
+@extends('layout.public-layout')
 
-@section('main')
+@section('content')
         <section id="home-welcome-image" >
             <div id="home-welcome-overlay">
-                <div id="home-welcome-card" class="popup-fade-in">
+                <div id="home-welcome-card">
                     <h2 class="popup-fade-in">¡WELCOME!</h2>
                     <p class="popup-fade-in">
                     Hello there, I'm Leniel. I'm a software developer and designer,

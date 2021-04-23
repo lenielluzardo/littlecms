@@ -1,160 +1,26 @@
-/* # # # # # # # # # # # # # */
-/*        C O N F I G        */
-/* v v v v v v v v v v v v v */
+@import './layouts/body.less';
+@import './layouts/public.less';
 
-// -------- FONTS --------
-@base-font-family : 'Kanit';
-@WEB_NAV_FONT: 'Orbitron';
-@base-font-size: 15px;
-@title-font-size: @base-font-size + 10px;
-@subtitle-font-size: @base-font-size + 5px;
-@paragraph-font-size: @base-font-size + 3px;
+@import './utilities/all.css';
+@import './utilities/animations.less';
+@import './utilities/media-queries.less';
+@import './utilities/mixins.less';
+@import './utilities/variables.less';
 
-// -------- COLORS --------
-@WEB_FG_COLOR: #E5F0FC;
-@WEB_BG_COLOR: #4273b1;
-// @WEB_BG_COLOR: #feffff;
-@WEB_NAV_BG_COLOR: #0A1526;
-@WEB_NAV_FONT_COLOR: #71E7F5;
-// @WEB_NAV_FONT_COLOR: #6CC7FF;
-@WEB_SECTION_COLOR: #2BA3FF;
-@WEB_BUTTON_COLOR: #0E214D;
-@WEB_BUTTON_COLOR_2: #0A1C47;
-@WEB_CARD_BG:#e0f2fd;
-@WEB_BG_CARD: rgba(10, 28, 71, 0.1);
+@import './components/header.less';
+@import './components/main.less';
+@import './components/publication.less';
+@import './components/post.less';
+@import './components/portfolio.less';
+@import './components/sidebar.less';
+@import './components/footer.less';
+@import './components/rating.less';
+@import './components/about.less';
+@import './components/form.less';
+@import './components/notification.less';
+@import './components/admin.less';
+@import './components/animations.less';
 
-@second-color: #004564;
-@complement-color: #0E1C27;
-@warning-prevent-color: #FFCF4B;
-@warning-fail-color: #df4040;
-@inactive-color: #C2C2C2;
-
-// -------- ASSETS --------
-@images : "../assets/images/";
-@icons : "../assets/icons/";
-@webfonts : "../assets/webfonts/";
-
-
-@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Orbitron:wght@600&display=swap');
-body {
-    margin: 0px;
-    padding: 0px;
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template:  1fr auto / minmax(auto,210px) auto minmax(auto,250px) ;
-    font-family: @base-font-family, sans-serif;
-    // background-image: url('@{images}bg-graphics.png');
-    min-width: 320px;
-    background-color: @WEB_BG_COLOR;
-}
-
-#home-welcome-image {
-    height: 100vh;
-    object-fit: contain;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-color: @WEB_NAV_BG_COLOR;
-    background-image: url('@{images}bg-home.png');
-}
-#home-welcome-overlay {
-    background-color: fade(@WEB_NAV_BG_COLOR,50%);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#home-welcome-card{
-    padding:40px;
-    border-radius: 25px;
-    background-color: fade(@WEB_NAV_BG_COLOR,50%);
-    display: grid;
-    grid-template: auto /auto;
-    color: @WEB_NAV_FONT_COLOR;
-    width: 50%;
-    text-align: center;
-
-    opacity: 0;
-    transition-property: all;
-    transition-duration: 3s;
-    transition-delay: 1s;
-    transition-timing-function: ease;
-    animation-name: showmodal;
-    animation-duration: 2s;
-    animation-timing-function: ease;
-    animation-delay: 1s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-
-
-    h2{
-        display: block;
-        font-size: 40px;
-        border-bottom: 2px solid;
-        letter-spacing: 2px;
-        margin: 0 0 0 10px;
-    }
-    p{
-        display: block;
-        font-size: 30px;
-        text-align: justify;
-    }
-}
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    ul,
-    li {
-        margin: 0;
-        padding: 0;
-    }
-
-.hidden {
-    display: none;
-}
-
-.proportional-element-size(@size) {
-    width: @size;
-    height: @size;
-}
-.element-size(@width, @height) {
-    width: @width;
-    height: @height;
-}
-
-.image-setting(@width: 250px, @height: 250px, @fit : cover) {
-    width: @width;
-    height: @height;
-    max-height: 500px;
-    object-fit: @fit;
-}
-
-@import 'mod-header.less';
-@import 'mod-main.less';
-@import 'mod-publication.less';
-@import 'mod-post.less';
-@import 'mod-portfolio.less';
-@import 'mod-sidebar.less';
-@import 'mod-footer.less';
-@import 'mod-rating.less';
-@import 'mod-about.less';
-@import 'mod-form.less';
-@import 'mod-notification.less';
-@import 'mod-admin.less';
-@import 'media-queries.less';
-@import 'animations.less';
-
-/* # # # # # # # # # # # # # # # #  */
-/* G E N E R I C   E L E M E N T S  */
-/* v v v v v v v v v v v v v v v v  */
 .tag {
     display: inline-block;
     padding: 5px;

@@ -2,9 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function(){
-    return view('partial.welcome');
-})
+Route::get('/', 'App\Http\Controllers\HomeController@Index' )
 ->name('home');
 
 Route::group(['prefix' => 'blog'], function(){

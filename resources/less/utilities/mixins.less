@@ -1,0 +1,19 @@
+.hidden {
+    display: none;
+}
+
+.proportional-element-size(@size) {
+    width: @size;
+    height: @size;
+}
+.element-size(@width, @height) {
+    width: @width;
+    height: @height;
+}
+
+.image-setting(@width: 250px, @height: 250px, @fit : cover) {
+    width: @width;
+    height: @height;
+    max-height: 500px;
+    object-fit: @fit;
+}
