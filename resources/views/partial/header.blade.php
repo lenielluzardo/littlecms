@@ -1,7 +1,8 @@
-<!-- # # # # # # # # # # # # # -->
-<!--        H E A D E R        -->
-<!-- v v v v v v v v v v v v v -->
-<header id="header-section-container">
+<!-- ===== H E A D E R ===== -->
+
+<header id="header" class="header-container">
+
     @include('partial.logo')
     @include('partial.navigation')
+
 </header>

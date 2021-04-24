@@ -15,7 +15,7 @@ mix.options({
 });
 mix.js('resources/js/app.js', 'public/js')
     .less('resources/less/index.less', 'public/css')
-    .copy('resources/less/all.css', 'public/css')
+    .copy('resources/less/common/all.css', 'public/css')
     .copyDirectory('resources/assets/images', 'public/assets/images')
     .copyDirectory('resources/assets/icons', 'public/assets/icons')
     .copyDirectory('resources/assets/webfonts', 'public/assets/webfonts')

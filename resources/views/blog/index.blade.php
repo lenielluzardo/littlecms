@@ -1,4 +1,6 @@
-@extends('partial.main')
+@extends('layout.public-layout')
+
+@section('title', 'Blog')
 
 @section('content')
 
