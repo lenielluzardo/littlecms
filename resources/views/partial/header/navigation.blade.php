@@ -1,9 +1,6 @@
+<!-- ===== N A V I G A T I O N ===== -->
 
-<!-- # # # # # # # # # # # # # -->
-<!--    N A V I G A T I O N    -->
-<!-- v v v v v v v v v v v v v -->
-
-<nav id="header-navigation-container" class="hidden">
+<nav id="header-navigation" class="header-navigation-container hidden">
     <ul id="header-navigation-list">
 
         @foreach ($sections as $section)

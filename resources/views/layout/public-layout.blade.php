@@ -5,7 +5,7 @@
 
     <section class="public-layout">
 
-        @include('partial.header')
+        @include('partial.header.header')
 
         @yield('content')
 
