@@ -1,21 +1,19 @@
-let navMenu = document.getElementById('header-navigation');
+let header = document.getElementById('header');
 let navIcon = document.getElementById('mobile-nav-button');
 
 navIcon.addEventListener("click", showNavMenu);
-
+showNavClass = 'show-nav';
 function showNavMenu(){
 //   alert("I'm working");
 
-  if(navMenu.classList.contains('hidden')){
+  if(!header.classList.contains(showNavClass)){
+      header.classList.add(showNavClass);
+      navIcon.innerHTML = 'X';
+      navIcon.style.fontSize = '25px';
+    }
+    else {
 
-    navMenu.classList.remove('hidden');
-    header.style.position = "sticky";
-    navIcon.innerHTML = 'X';
-    navIcon.style.fontSize = '25px';
-  }
-  else {
-    navMenu.classList.add('hidden');
-    header.style.position = "static";
+    header.classList.remove(showNavClass);
     navIcon.innerHTML = '| | |';
     navIcon.style.fontSize = 'initial';
   }

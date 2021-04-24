@@ -1,30 +1,38 @@
 /* ===== N A V I G A T I O N ===== */
 .mobile-nav-button{
-    .fixed-widh-height(50px,50px);
+    .fixed-widh-height(40px,40px);
     .circle-border(2px, solid);
     .no-margin-padding;
-    .flex-center-content{
+    .flex-center-content;
     transform: rotateZ(90deg);
     font-weight: bold;
-}
-#header-navigation-container{
-    grid-row: 2 / 7;
-    padding: 20px 10px;
-    letter-spacing: 2px;
-}
-#header-navigation-list {
-    list-style: none;
-    display: grid;
-    grid-template: auto / 1fr;
-    grid-row-gap: 10px;
-    margin: 20px 0;
-}
-.navigation-item {
-    text-decoration: none;
-    display: grid;
-    color: @fourth !important;
+    .transition(all, .5s, ease-out);
 
+    &:active{
+        .fixed-widh-height(45px,45px);
+        background-color: fade(@fourth, 40%);
+    }
 }
-.navigation-item:hover{
-    border-bottom: 1px solid;
+.header-navigation-container{
+    padding: 20px;
+
+    & > ul{
+        list-style: none;
+        text-align: center;
+        display: grid;
+        grid-template: auto / 1fr;
+        grid-row-gap: 5px;
+
+        > a {
+            padding:10px;
+
+            &:hover{
+                background-color: fade(@fourth, 20%);
+                border-radius: 2px;
+            }
+            &:active{
+                background-color: fade(@fourth, 40%);
+            }
+        }
+    }
 }

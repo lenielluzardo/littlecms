@@ -10,7 +10,6 @@ class HomeController extends Controller
 {
     public function Index()
     {
-        // return view('layout.public-layout');
-        return view('partial.home');
+        return view('user.content.home');
     }
 }

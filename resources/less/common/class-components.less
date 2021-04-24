@@ -30,3 +30,23 @@
 .rate {
     color: #fd4;
 }
+.show-nav{
+    max-height: 100%;
+}
+.modal-container{
+    .box-container-mixin(60%);
+
+    & > .modal-title-container{
+        text-align: center;
+        padding-bottom: 5%;
+        border-bottom: 1px solid;
+    }
+    & > .modal-content-container{
+        text-align: justify;
+        margin-top: 5%;
+    }
+}
+
+.hidden {
+    display: none;
+}

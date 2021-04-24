@@ -13,7 +13,7 @@ class PostController extends Controller
 
         $relateds = $postModel->getRelatedPosts($post->id);
 
-        return view('blog.index', ['latest' => $post, 'relateds' => $relateds]);
+        return view('user.content.blog.blog', ['latest' => $post, 'relateds' => $relateds]);
     }
 
     public function getPostById($id, Post $postModel)
@@ -22,6 +22,6 @@ class PostController extends Controller
 
         $relateds = $postModel->getRelatedPosts($post->id);
 
-        return view('blog.post', ['item' => $post, 'relateds' => $relateds]);
+        return view('user.content.blog.post', ['item' => $post, 'relateds' => $relateds]);
     }
 }

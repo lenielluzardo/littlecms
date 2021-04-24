@@ -1,27 +1,32 @@
-.panel-primary{
-    background-color: @primary ;
+.base-panel(@bgcolor, @color: @fourth){
     font-family: @panel_font_family;
-    color: @fourth;
+    min-height: 50px;
+    min-width: 50px;
+    background-color: @bgcolor;
+    color: @color;
+    a{
+        color: @color;
+        text-decoration:none;
+    }
+}
+.panel-primary{
+    .base-panel(@primary);
 }
 .panel-secondary{
-    background-color: @complementary_two;
+    .base-panel(@complementary_two);
 }
-.flex-center-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.panel-tertiary{
+    .base-panel(@complementary_three);
 }
-.hidden {
-    display: none;
+.box-container-mixin(@transparency: 100%, @color: @complementary_one){
+    min-height: 100px;
+    padding: 10%;
+    background-color: fade(@color, @transparency);
+    border-radius: 10px;
 }
-
-.proportional-element-size(@size) {
+.proportional-size(@size) {
     width: @size;
     height: @size;
-}
-.element-size(@width, @height) {
-    width: @width;
-    height: @height;
 }
 .fixed-widh-height(@width, @height){
     width: @width !important;
@@ -29,14 +34,29 @@
     height: @height !important;
     max-height: @height !important;
 }
-.no-margin-padding{
-    margin: 0px;
-    padding: 0px;
+.transition(@property, @duration, @timing, @delay: 0s){
+    -moz-transition: @property @duration @timing @delay;
+    -ms-transition: @property @duration @timing @delay;
+    -o-transition: @property @duration @timing @delay;
+    -webkit-transition:@property @duration @timing @delay;
+    transition: @property @duration @timing @delay;
 }
-
 .image-setting(@width: 250px, @height: 250px, @fit : cover) {
     width: @width;
     height: @height;
     max-height: 500px;
     object-fit: @fit;
+}
+.circle-border(@thick, @type){
+    border-radius: 50%;
+    border: @thick @type;
+}
+.no-margin-padding{
+    margin: 0px;
+    padding: 0px;
+}
+.flex-center-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

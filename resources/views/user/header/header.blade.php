@@ -2,7 +2,7 @@
 
 <header id="header" class="header-container">
 
-    @include('partial.header.transparent-header')
-    @include('partial.header.navigation')
+    @include('user.header.transparent')
+    @include('user.header.navigation')
 
 </header>

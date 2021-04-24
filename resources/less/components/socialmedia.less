@@ -1,0 +1,25 @@
+.socialmedia-container{
+    padding: 20px;
+    text-align: center;
+    & > div{
+        padding:10px;
+        border-bottom: 1px solid;
+    }
+    & > .socialmedia-links-container{
+        padding: 10px;
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+
+        & > a{
+            color:@tertiary;
+            padding: 10px;
+
+            &:hover {
+                background-color: fade(@fourth, 20%);
+            }
+            &:active{
+                background-color: fade(@fourth, 40%);
+            }
+        }
+    }
+}
