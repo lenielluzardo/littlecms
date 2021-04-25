@@ -2,16 +2,18 @@
 
 @section('content')
 
-    <section id="content" class="content-container">
+    @include('user.content.breadcrumbs')
 
-        @include('user.content.breadcrumbs')
+    <!-- ===== M A I N ===== -->
+    <main id="main" class="main-container">
 
-        <main id="main" class="main-container">
+        <!-- ===== C O N T E N T ===== -->
+        <section id="index" class="index-container box-container">
 
             @yield('main')
 
-        </main>
+        </section>
 
-    </section>
+    </main>
 
 @endsection

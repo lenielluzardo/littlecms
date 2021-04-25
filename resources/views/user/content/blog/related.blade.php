@@ -1,41 +1,32 @@
+<section class="sub-content-container">
+
     <h2 class="section-title">Related Posts:</h2>
-    <div class="box-item-list-container">
-    <ul>
 
-        @foreach($relateds as $post)
-        <li>
-            <article class="box-item box-container">
+    <div class="box-list-container post-list-container">
 
-                <section class="box-item-img-container">
-                    <img src="{{$post->image1}}"  alt="{{$post->title}}">
-                </section>
+        <ul>
+            @foreach($relateds as $post)
 
-                <section class="box-item-title-container">
-                    <h3>{{$post->title}}</h3>
-                </section>
+            <li>
+                <article class="box-item box-container">
 
-                <section class="box-item-meta-container">
+                    <section class="box-item-img-container">
+                        <img src="{{$post->image1}}"  alt="{{$post->title}}">
+                    </section>
 
-                    <p class="box-item-author">By: {{$post->user->nickname}}</p>
+                    <section class="box-item-title-container">
+                        <h3>{{$post->title}}</h3>
+                    </section>
 
-                    <div class="box-item-rating rate-container">
-                        @for($i = 0; $i < 5; $i++)
-                          @if($i < $post->rating)
-                              <span class="fas fa-star rate"></span>
-                          @else
-                              <span class="fas fa-star"></span>
-                          @endif
-                          @endfor
-                    </div>
+                    <section class="box-button">
+                        <a href="{{route('post', ['id' => $post->id])}}">READ</a>
+                    </section>
 
-                </section>
+                </article>
+            </li>
 
-                <section class="box-button">
-                    <a href="{{route('post', ['id' => $post->id])}}">READ</a>
-                </section>
+            @endforeach
+        </ul>
 
-            </article>
-        </li>
-        @endforeach
-    </ul>
-</div>
+    </div>
+</section>

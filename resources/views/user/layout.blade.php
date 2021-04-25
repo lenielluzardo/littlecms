@@ -7,7 +7,12 @@
 
         @include('user.header.header')
 
-        @yield('content')
+        <!-- ===== C O N T E N T ===== -->
+        <section id="content" class="content-container">
+
+            @yield('content')
+
+        </section>
 
         @include('user.aside.aside')
 
@@ -15,5 +20,6 @@
 
     </section>
 
+    <script src="{{asset('/js/app.js')}}"></script>
 @endsection
 

@@ -1,3 +1,5 @@
+<section class="sub-content-container">
+
     <h2 class="section-title">Most Recent Post:</h2>
 
     <article class="box-item box-container">
@@ -43,3 +45,5 @@
         </section>
 
     </article>
+
+</section>

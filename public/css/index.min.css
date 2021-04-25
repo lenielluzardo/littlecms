@@ -107,48 +107,6 @@ h6 {
   color: #74C7FF;
   text-decoration: none;
 }
-.panel-primary {
-  font-family: 'Prompt';
-  min-height: 50px;
-  min-width: 50px;
-  background-color: #00264D;
-  color: #74C7FF;
-}
-.panel-primary a {
-  color: #74C7FF;
-  text-decoration: none;
-}
-.panel-secondary {
-  font-family: 'Prompt';
-  min-height: 50px;
-  min-width: 50px;
-  background-color: #192A3B;
-  color: #74C7FF;
-}
-.panel-secondary a {
-  color: #74C7FF;
-  text-decoration: none;
-}
-.panel-tertiary {
-  font-family: 'Prompt';
-  min-height: 50px;
-  min-width: 50px;
-  background-color: #000324;
-  color: #74C7FF;
-}
-.panel-tertiary a {
-  color: #74C7FF;
-  text-decoration: none;
-}
-.no-margin-padding {
-  margin: 0px;
-  padding: 0px;
-}
-.flex-center-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 @font-face {
   font-family: 'Prompt';
   font-style: normal;
@@ -219,6 +177,52 @@ h6 {
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/indieflower/v12/m8JVjfNVeKWVnh3QMuKkFcZlbg.ttf) format('truetype');
 }
+.panel-primary {
+  font-family: 'Prompt';
+  min-height: 50px;
+  min-width: 50px;
+  background-color: #00264D;
+  color: #74C7FF;
+}
+.panel-primary a {
+  color: #74C7FF;
+  text-decoration: none;
+}
+.panel-secondary {
+  font-family: 'Prompt';
+  min-height: 50px;
+  min-width: 50px;
+  background-color: #192A3B;
+  color: #74C7FF;
+}
+.panel-secondary a {
+  color: #74C7FF;
+  text-decoration: none;
+}
+.panel-tertiary {
+  font-family: 'Prompt';
+  min-height: 50px;
+  min-width: 50px;
+  background-color: #000324;
+  color: #74C7FF;
+}
+.panel-tertiary a {
+  color: #74C7FF;
+  text-decoration: none;
+}
+.no-margin-padding {
+  margin: 0px;
+  padding: 0px;
+}
+.flex-center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.remove-decoration {
+  text-decoration: none;
+  color: inherit;
+}
 /* ===== L O G O ===== */
 .logotype-container {
   display: grid;
@@ -287,22 +291,20 @@ h6 {
 }
 /* ===== M A I N ===== */
 .main-container {
+  /* Wraps everything in the content section */
   background: linear-gradient(#74C7FF 20%, #13339B);
   padding: 20px;
 }
-#main-content-container {
-  padding: 40px;
-  display: grid;
-  grid-template: auto auto / auto;
-  grid-row-gap: 25px;
-  grid-column: 1 / 6;
-  overflow-y: scroll;
-  scrollbar-track-color: khaki;
+.index-container {
+  /* Wraps the each sub-content section */
+  padding: 0 !important;
+}
+.sub-content-container {
+  /* Wraps the articles, posts, lists, projects, etc.*/
+  padding: 5%;
 }
 .section-title {
-  padding: 10px 20px;
-  font-weight: lighter;
-  /* box-shadow: 0px 1px 5px -1px #000a; */
+  padding: 10px 0;
 }
 /* ===== B R E A D C R U M B S ===== */
 .breadcrumbs-container {
@@ -352,48 +354,31 @@ h6 {
 .breadcrumbs-container div .breadcrumbs-arrow:active {
   background-color: rgba(116, 199, 255, 0.4);
 }
-/* ===== P U B L I C A T I O N ===== */
-/* # # # # # # # # # # # # # */
-/*   G E N E R I C  C A R D  */
-/* v v v v v v v v v v v v v */
-.publication-card-container {
-  padding: 10px;
+.post-list-container {
+  border: 5px solid rgba(194, 194, 194, 0.2) !important;
+  background: radial-gradient(ellipse at center, rgba(50, 130, 183, 0.45) 50%, #00000029 100%) !important;
+  padding: 0 !important;
 }
-.box-item {
+/* ===== P O S T ===== */
+.post-title {
+  font-weight: bold;
+}
+.post-meta {
   display: grid;
-  grid-template: auto / 1fr;
-  grid-row-gap: 15px;
+  grid-template: 'author a a a a rate' 'date   a a a a tags';
+  margin: 10px 0;
 }
-.box-item-title-container {
-  padding-bottom: 5px;
-  border-bottom: 1px solid;
+.post-author {
+  grid-area: author;
 }
-.box-item-img-container {
-  border: 5px solid #dddddd;
-  border-radius: 5px;
+.post-date {
+  grid-area: date;
 }
-.box-item-img-container img {
-  width: 100%;
-  height: 100%;
-  max-height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.post-rate {
+  grid-area: rate;
 }
-.box-item-meta-container {
-  display: inherit;
-  grid-template: auto / 1fr;
-  grid-row-gap: 5px;
-  border-radius: 5px;
-  min-height: 20px;
-  padding: 10px;
-  background: rgba(194, 194, 194, 0.2);
-  border: none none none;
-  border-radius: 10px;
-  box-shadow: 0px 3px 2px 0px #0000004d;
-  box-shadow: none;
-}
-.box-item-content-container {
-  text-align: justify;
+.post-tags-container {
+  grid-area: tags;
 }
 .socialmedia-container {
   padding: 20px;
@@ -423,6 +408,41 @@ h6 {
   color: #C2C2C2;
   background-color: #0b1019;
   padding: 10px;
+}
+/* ===== P O R T F O L I O ===== */
+.project-list-container {
+  max-height: 20em;
+}
+.project-list-container ul {
+  display: block !important;
+  overflow-x: hidden !important;
+  max-height: inherit;
+}
+.project-list-container ul li {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 15px 0 !important;
+  padding: 0;
+}
+.project-list-container ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+.project-title-container {
+  padding: 20px;
+  margin: 30px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Zilla Slab Highlight', sans-serif;
+}
+/* ===== P R O J E C T ===== */
+.portfolio-meta {
+  margin: 10px;
+  padding: 10px ;
+  border-bottom: 1px solid;
 }
 .panel-primary {
   background-color: #00264D;
@@ -461,7 +481,7 @@ h6 {
   color: #fd4;
 }
 .show-nav {
-  max-height: 100%;
+  max-height: 100% !important;
 }
 .modal-container {
   min-height: 20px;
@@ -490,6 +510,7 @@ h6 {
   border: 1px solid #ffffff40;
   border-radius: 10px;
   box-shadow: 0px 3px 2px 0px #0000004d;
+  overflow-x: hidden;
 }
 .box-button {
   min-height: 20px;
@@ -509,11 +530,13 @@ h6 {
 }
 .box-button a {
   text-decoration: none;
+  color: inherit;
   color: #74C7FF;
   font-weight: bold;
 }
 .box-button a:hover {
   text-decoration: none;
+  color: inherit;
 }
 .box-item {
   display: grid;
@@ -551,7 +574,7 @@ h6 {
 .box-item-content-container {
   text-align: justify;
 }
-.box-item-list-container {
+.box-list-container {
   overflow: hidden;
   min-height: 20px;
   padding: 10px;
@@ -560,13 +583,13 @@ h6 {
   border-radius: 10px;
   box-shadow: 0px 3px 2px 0px #0000004d;
 }
-.box-item-list-container ul {
+.box-list-container ul {
   display: flex;
-  overflow-x: scroll;
+  overflow: scroll;
   list-style: none;
 }
-.box-item-list-container ul li {
-  margin: 20px;
-  min-width: 70%;
+.box-list-container ul li {
+  margin: 10px;
+  min-width: 60%;
 }
 
