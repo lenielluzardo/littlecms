@@ -4,8 +4,12 @@
 
 @section('main')
 
-    @include('user.content.blog.latest')
-    @include('user.content.blog.related')
+    <section id="archive" class="archive-container box-container">
+
+        @include('user.content.blog.latest')
+        @include('user.content.blog.related')
+
+    </section>
 
 @endsection
 

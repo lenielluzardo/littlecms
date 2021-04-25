@@ -18,11 +18,15 @@
 .panel-tertiary{
     .base-panel(@complementary_three);
 }
-.box-container-mixin(@transparency: 100%, @color: @complementary_one){
-    min-height: 100px;
-    padding: 10%;
-    background-color: fade(@color, @transparency);
+.box-container-mixin(@transparency: 100%, @padding: 10%,  @color: @complementary_one,
+@border_width: 1px, @border_color: #ffffff40, @border_style: solid){
+
+    min-height: 20px;
+    padding: @padding;
+    background: fade(@color, @transparency);
+    border: @border_width @border_style @border_color;
     border-radius: 10px;
+    box-shadow: 0px 3px 2px 0px #0000004d;
 }
 .proportional-size(@size) {
     width: @size;
@@ -41,14 +45,14 @@
     -webkit-transition:@property @duration @timing @delay;
     transition: @property @duration @timing @delay;
 }
-.image-setting(@width: 250px, @height: 250px, @fit : cover) {
+.image-size(@width: 250px, @height: 250px, @fit : cover) {
     width: @width;
     height: @height;
     max-height: 500px;
     object-fit: @fit;
 }
-.circle-border(@thick, @type){
-    border-radius: 50%;
+.round-border(@thick, @type, @roundness){
+    border-radius: @roundness;
     border: @thick @type;
 }
 .no-margin-padding{

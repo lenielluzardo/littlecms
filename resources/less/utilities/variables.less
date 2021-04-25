@@ -30,14 +30,22 @@
 @secondary: #13339B;
 @tertiary: #007AD6;
 @fourth: #74C7FF;
+@fifth: #0046A2;
 @complementary_one: #1C4F84;
 @complementary_two: #192A3B;
 @complementary_three: #000324;
 @complementary_four: #0b1019;
+
 @warning: #FFCF4B;
 @danger: #df4040;
 @inactive: #C2C2C2;
 
+@box_button_color: linear-gradient(@tertiary, @fifth);
+@box_button_color_hover: linear-gradient(@tertiary, fade(@fifth, 70%));
+@box_button_color_active: linear-gradient(@fifth, @tertiary);
+
+
+// @main_bg_color : radial-gradient(,@fourth, @complementary_one);
 // Assets Variables
 @home_bg_img : url('../../assets/images/bg-home.png');
 

@@ -1,13 +1,17 @@
 /* ===== N A V I G A T I O N ===== */
 .mobile-nav-button{
     .fixed-widh-height(40px,40px);
-    .circle-border(2px, solid);
     .no-margin-padding;
     .flex-center-content;
+    .round-border(2px, solid, 10px);
+    .box-container-mixin(10%, 0px, @primary);
     transform: rotateZ(90deg);
     font-weight: bold;
     .transition(all, .5s, ease-out);
 
+    &:hover{
+        background-color: fade(@fourth, 20%);
+    }
     &:active{
         .fixed-widh-height(45px,45px);
         background-color: fade(@fourth, 40%);

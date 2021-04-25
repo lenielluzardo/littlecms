@@ -10,7 +10,7 @@ class PortfolioController extends Controller
     {
         $projectModel = new Project();
         $projects = $projectModel->getAllProjects($section);
-        return view('portfolio.index', ['projects' => $projects]);
+        return view('user.content.portfolio.portfolio', ['projects' => $projects]);
     }
 
     Public function getProjectById($section, $id, Project $projectModel)
@@ -19,6 +19,6 @@ class PortfolioController extends Controller
 
         $relateds = $projectModel->getRelatedProjects($section, $latest->id, );
 
-        return view('portfolio.project', ['item' => $latest, 'relateds' => $relateds]);
+        return view('user.content.portfolio.project', ['item' => $latest, 'relateds' => $relateds]);
     }
 }

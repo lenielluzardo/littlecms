@@ -1,33 +1,44 @@
     <h2 class="section-title">Most Recent Post:</h2>
 
-    <article class="publication-card-container">
+    <article class="box-item box-container">
 
-        <section class="latest-publication-card-img-container">
-            <img class="publication-card-img" src="{{$latest->image1}}" alt="publication-img">
+        <div class="box-item-title-container">
+            <h2>{{$latest->title}}</h2>
+        </div>
+
+        <section class="box-item-img-container">
+            <img src="{{$latest->image1}}" alt="{{$latest->title}}">
         </section>
 
-        <section class="publication-card-description-container">
-            <h2 class="publication-card-title">{{$latest->title}}</h2>
-            <p class="publication-card-preview">{{$latest->paragraph1}}</p>
-            <h3 class="publication-card-author">By: {{$latest->user->nickname}}</h3>
-            <h5 class="publication-card-date">{{$latest->created_at}}</h4>
-            <div class="publication-card-rating-container rate-container">
+        <div class="box-item-meta-container">
+
+            <p class="box-item-author">By: {{$latest->user->nickname}}</p>
+
+            <p class="box-item-date">{{$latest->created_at}}</p>
+
+            <div class="box-item-rating-container rate-container">
                 @for($i = 0; $i < 5; $i++)
-                  @if($i < $latest->rating)
-                      <span class="fas fa-star rate"></span>
-                  @else
-                      <span class="fas fa-star"></span>
-                  @endif
-                  @endfor
+                @if($i < $latest->rating)
+                <span class="fas fa-star rate"></span>
+                @else
+                <span class="fas fa-star"></span>
+                @endif
+                @endfor
             </div>
-            <div class="publication-card-tags-container">
+
+            <div class="box-item-tags-container">
                 @foreach($latest->tags as $tag)
-                     <a class="tag" style="background-color:{{$tag->color}};" href="">{{$tag->name}}</a>
-                  @endforeach
+                <a class="tag" style="background-color:{{$tag->color}};" href="">{{$tag->name}}</a>
+                @endforeach
             </div>
+
+        </div>
+
+        <section class="box-item-content-container">
+            <p>{{$latest->paragraph1}}</p>
         </section>
 
-        <section class="publication-card-button-container">
+        <section class="box-button">
             <a href="{{route('post', ['id' => $latest->id])}}"><div>READ THIS POST</div></a>
         </section>
 
