@@ -30,7 +30,7 @@ class ComposerServiceProvider extends ServiceProvider
         View::composer('admin.header', \App\Composers\HeaderComposer::class);
         View::composer('admin.header', \App\Composers\WebSectionComposer::class);
         View::composer('user.header.header', \App\Composers\HeaderComposer::class);
-        View::composer('user.contet.about.description', \App\Composers\AboutComposer::class);
+        View::composer('user.content.about.description', \App\Composers\AboutComposer::class);
         View::composer('user.footer.footer', \App\Composers\FooterComposer::class);
         View::composer('user.partial.notification', \App\Composers\NotificationComposer::class);
     }

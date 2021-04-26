@@ -308,14 +308,15 @@ h6 {
 }
 /* ===== B R E A D C R U M B S ===== */
 .breadcrumbs-container {
-  width: 100%;
-  position: sticky;
-  top: 75px;
   font-family: 'Prompt';
   min-height: 50px;
   min-width: 50px;
   color: #74C7FF;
   background-color: #192A3B;
+  width: 100%;
+  position: sticky;
+  z-index: 2;
+  top: 75px;
   align-items: center;
   font-weight: bold;
 }
@@ -510,7 +511,16 @@ h6 {
   border: 1px solid #ffffff40;
   border-radius: 10px;
   box-shadow: 0px 3px 2px 0px #0000004d;
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
+}
+.box-container div > img,
+.box-container img {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .box-button {
   min-height: 20px;
@@ -591,5 +601,9 @@ h6 {
 .box-list-container ul li {
   margin: 10px;
   min-width: 60%;
+}
+.text-container {
+  text-align: justify;
+  padding: 10px 0;
 }
 

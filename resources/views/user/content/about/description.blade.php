@@ -1,16 +1,17 @@
-<!-- # # # # # # # # # # # # # -->
-<!--        A B O U T          -->
-<!-- v v v v v v v v v v v v v -->
-<div class="publication-container about-section">
+<section class="sub-content-container">
+
     <h2 class="section-title">About the author</h2>
 
-    <div class="author-container">
-        <div class="author-img-container">
-            <img src="{{ $author->img_profile }}" alt="it's me :)">
+   <div class="box-container">
+
+        <div>
+           <img src="{{ $author->img_profile }}" alt="it's me :)">
         </div>
 
-        <div class="publication-paragraph about-description">
-            <p>{{ $author->description }}</p>
-        </div>
+       <div class="text-container">
+           <p>{{ $author->description }}</p>
+       </div>
+
     </div>
-</div>
+
+</section>

@@ -10,6 +10,6 @@ class AboutController extends Controller
 {
     public function getIndex()
     {
-        return view('about.index');
+        return view('user.content.about.about');
     }
 }

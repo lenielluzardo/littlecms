@@ -50,8 +50,18 @@
 }
 .box-container{
     .box-container-mixin(30%, 5%,@primary);
-    overflow-x:hidden;
+    overflow:hidden;
+
+    position: relative;
+
+    div > img, img{
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: contain;
+    }
 }
+
 .box-button{
     .box-container-mixin(100%, 10px, @fifth, none, none, none);
     background: @box_button_color;
@@ -119,4 +129,8 @@
             min-width: 60%;
         }
     }
+}
+.text-container{
+    text-align: justify;
+    padding: 10px 0;
 }

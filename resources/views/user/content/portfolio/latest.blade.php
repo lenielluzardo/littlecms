@@ -1,3 +1,5 @@
+<?php $section = "Portfolio" ?>
+
 <section class="sub-content-container">
 
     <h2 class="section-title">Most Recent Project:</h2>
@@ -8,6 +10,8 @@
 
             @foreach($projects as $project)
 
+                <?php $section =  $project->section->name ?>
+
                 <li class="box-container"
                     style="background-image: url({{$project->image1}})"
                 >
@@ -17,7 +21,9 @@
                     <article>
 
                         <div class="project-title-container">
-                        <h2 >{{$project->title}}</h2>
+
+                            <h2 >{{$project->title}}</h2>
+
                         </div>
 
                     </article>
@@ -33,3 +39,5 @@
     </div>
 
 </section>
+
+@section('title') <?php print("$section") ?> @endsection
