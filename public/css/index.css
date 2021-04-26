@@ -223,6 +223,38 @@ h6 {
   text-decoration: none;
   color: inherit;
 }
+.reset-input {
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+@-webkit-keyframes modalSlideFromTop {
+  0% {
+    opacity: 0;
+    top: -100%;
+  }
+  80% {
+    opacity: 1;
+    top: 30%;
+  }
+  100% {
+    top: 20%;
+  }
+}
+@keyframes modalSlideFromTop {
+  0% {
+    opacity: 0;
+    top: -100%;
+  }
+  80% {
+    opacity: 1;
+    top: 30%;
+  }
+  100% {
+    top: 20%;
+  }
+}
 /* ===== L O G O ===== */
 .logotype-container {
   display: grid;
@@ -297,6 +329,7 @@ h6 {
 }
 .index-container {
   /* Wraps the each sub-content section */
+  position: relative;
   padding: 0 !important;
 }
 .sub-content-container {
@@ -444,6 +477,68 @@ h6 {
   margin: 10px;
   padding: 10px ;
   border-bottom: 1px solid;
+}
+/* ===== F O R M ===== */
+.form-container form {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(116, 199, 255, 0.5);
+  box-sizing: border-box;
+}
+.form-container .form-group {
+  margin: 10px 0;
+}
+.form-container .form-group label {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.form-container .form-group input,
+.form-container .form-group select,
+.form-container .form-group textarea {
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  padding: 3px 0;
+  padding-left: 5px !important;
+  font-family: inherit !important;
+  border-radius: 5px;
+}
+.form-container .form-group input {
+  width: 98%;
+}
+.form-container .form-group select {
+  width: 100%;
+}
+.form-container .form-group textarea {
+  width: 98%;
+}
+.form-container .form-group .g-recaptcha {
+  transform: scale(0.77);
+  -webkit-transform: scale(0.8);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+/* ===== M O D A L ===== */
+.contact-modal {
+  background: linear-gradient(#007AD6, rgba(19, 51, 155, 0.9)) !important;
+  color: #000324;
+  position: absolute;
+  top: -100%;
+  -webkit-animation: modalSlideFromTop 0.7s ease-in-out 0s forwards;
+          animation: modalSlideFromTop 0.7s ease-in-out 0s forwards;
+}
+.contact-modal .modal-title-container {
+  background: rgba(11, 16, 25, 0.8);
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Prompt';
+  padding: 10px !important;
+  color: #007AD6;
+}
+.contact-modal .modal-content-container {
+  color: #74C7FF;
 }
 .panel-primary {
   background-color: #00264D;

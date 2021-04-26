@@ -9,9 +9,18 @@ use App\Mail\WebContact;
 
 class ContactController extends Controller
 {
-    public function getIndex()
+    public function Index()
     {
-        return view('contact.index');
+        $modal = [
+            'id' => 'home-modal',
+            'class' => 'contact-modal',
+            'title' => '<h2>! Info !<h2>',
+            'content' => " Hello there!, if you want to contact me, please send me a message with one of the pre-selected subjects. I'll reply to you as soon as possible.
+            <br><br> Don't forget to take a look to my projects or posts, I know that you'll find some fun stuff there. Thank you for your interest, have a great day.
+            <br><br><span style=\" display:block; text-align:center;\"> Byeee! :) <span>"
+        ];
+
+        return view('user.content.contact.contact', ['modal' => $modal]);
     }
 
     public function contactFromWeb(Request $request)

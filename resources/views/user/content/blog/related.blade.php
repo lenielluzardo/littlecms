@@ -1,5 +1,6 @@
 <section class="sub-content-container">
 
+    <!-- ===== R E L A T E D ===== -->
     <h2 class="section-title">Related Posts:</h2>
 
     <div class="box-list-container post-list-container">

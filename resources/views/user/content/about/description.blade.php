@@ -1,3 +1,4 @@
+<!-- ===== V E R Y   I N T E R E S T I N G   H I S T O R Y ===== -->
 <section class="sub-content-container">
 
     <h2 class="section-title">About the author</h2>

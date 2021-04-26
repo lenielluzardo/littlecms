@@ -27,7 +27,7 @@ Route::get('/about', 'App\Http\Controllers\AboutController@getIndex')
 
 Route::group(['prefix' => 'contact'], function () {
 
-    Route::get('', 'App\Http\Controllers\ContactController@getIndex')
+    Route::get('', 'App\Http\Controllers\ContactController@Index')
     ->name('contact.index');
 
     Route::post('', 'App\Http\Controllers\ContactController@contactFromWeb')

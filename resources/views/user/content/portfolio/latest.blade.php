@@ -2,6 +2,7 @@
 
 <section class="sub-content-container">
 
+    <!-- ===== L A T E S T ===== -->
     <h2 class="section-title">Most Recent Project:</h2>
 
     <div class="box-list-container project-list-container">

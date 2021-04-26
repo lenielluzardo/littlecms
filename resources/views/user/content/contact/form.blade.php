@@ -1,34 +1,34 @@
-{!! NoCaptcha::renderJs()!!}
+<section class="sub-content-container">
 
-<section class="publication-container">
-@if($notification = Session::get('success'))
-    <div >
-        <strong>{{$notification}}</strong>
-    </div>
-@endif
+    <!-- ===== F O R M ===== -->
+    @if($notification = Session::get('success'))
+        <div >
+            <strong>{{$notification}}</strong>
+        </div>
+    @endif
 
-{{-- @if ($errors->has('g-recaptcha-response'))
-    <span class="help-block">
-        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-    </span>
-@endif --}}
+    {{-- @if ($errors->has('g-recaptcha-response'))
+        <span class="help-block">
+            <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+        </span>
+    @endif --}}
 
-    <div class="form-container">
-      <form class="form" action="{{route('contact.send')}}" method="post">
+    <div class="form-container box-container">
+      <form action="{{route('contact.send')}}" method="post">
 
         <div class="form-group">
-            <label class="form-label" for="fullname">Fullname</label>
-            <input class="form-input" id="fullname" name="fullname" type="text">
+            <label for="fullname">Fullname</label>
+            <input id="fullname" name="fullname" type="text">
         </div>
 
         <div class="form-group">
-            <label class="form-label" for="email">Email</label>
-            <input class="form-input" id="email" name="email" type="text">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text">
         </div>
 
         <div class="form-group">
-            <label class="form-label" for="subject">Subject</label>
-            <select class="form-input" id="subject" type="select" name="subject">
+            <label for="subject">Subject</label>
+            <select id="subject" type="select" name="subject">
 
               <option value="">- - Please Select - -</option>
               <option value="Job Proposal">Job Proposal</option>
@@ -39,8 +39,8 @@
         </div>
 
         <div class="form-group">
-            <label class="form-label" for="discipline">Discipline</label>
-            <select class="form-input" id="discipline" type="select" name="discipline">
+            <label for="discipline">Discipline</label>
+            <select id="discipline" type="select" name="discipline">
 
               <option value="">- - Please Select - -</option>
               <option value="Software / Game Development">Software / Game Development</option>
@@ -62,13 +62,15 @@
             {!! NoCaptcha::display()!!}
         </div>
 
-        <div class="form-button-container">
+        <div class="form-group">
             {{ csrf_field() }}
-            <button id="form-button" class="button" value="" type="submit" name="form-button" >
+            <button id="form-button" class="box-button" value="" type="submit" name="form-button" >
                 Send
             </button>
         </div>
 
       </form>
     </div>
+    {!! NoCaptcha::renderJs()!!}
 </section>
+

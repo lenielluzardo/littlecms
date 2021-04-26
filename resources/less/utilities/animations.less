@@ -1,11 +1,13 @@
-.modal-show{
-    opacity: 1;
-}
-@keyframes showmodal {
-    from {
+@keyframes modalSlideFromTop {
+    0% {
         opacity: 0;
+        top: -100%;
     }
-    to {
+    80%{
         opacity: 1;
+        top: 30%;
+    }
+    100%{
+        top: 20%;
     }
 }
