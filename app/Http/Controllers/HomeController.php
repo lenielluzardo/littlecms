@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         $modal = [
             'id' => 'home-modal',
-            'class' => 'contact-modal',
+            'class' => 'home-modal',
             'title' => 'Welcome',
             'content' => "<p>
                                 Hello there, I'm Leniel. I'm a software developer and designer,
@@ -20,7 +20,9 @@ class HomeController extends Controller
                                 If you're a curious person, take a look around to my projects and posts.
                                 Make sure to have fun, and get in contact with me to create something espectacular,
                                 ¡wish you a good day!
-                            </p>"
+                            </p>",
+            'button' => ""
+
         ];
 
 

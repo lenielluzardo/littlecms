@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function getIndex(Post $postModel)
+    public function Index(Post $postModel)
     {
         $post = $postModel->getLatestPost();
 
@@ -16,7 +16,7 @@ class PostController extends Controller
         return view('user.content.blog.blog', ['latest' => $post, 'relateds' => $relateds]);
     }
 
-    public function getPostById($id, Post $postModel)
+    public function Post($id, Post $postModel)
     {
         $post = $postModel->getPostById($id);
 

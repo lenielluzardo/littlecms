@@ -1,58 +1,72 @@
-@extends('partial.main')
+<?php $title = "Post" ?>
 
-@section('content')
-        <article class="publication-container">
+@extends('user.content.main')
 
-            <section class="post-header">
-                <h2 class="publication-title post-title"> {{$item->title}} </h2>
-                <div class="post-meta">
-                    <h3 class="post-author">By: {{$item->user->nickname}}</h3>
-                    <h5 class="publication-date post-date">{{$item->created_at}}</h4>
-                    <div class="post-rate">
-                        @for($i = 0; $i < 5; $i++)
-                            @if($i < $item->rating)
-                                <span class="fas fa-star rate"></span>
-                            @else
-                                <span class="fas fa-star"></span>
-                            @endif
-                        @endfor
-                    </div>
+@section('main')
 
-                    <div class="post-tags-container">
+    <?php $title = $item->title ?>
+
+    <!-- ===== S U B C O N T E N T ===== -->
+    <section class="sub-content-container">
+
+        <div class="box-container post-container">
+
+            <article id="{{$item->id}}" class="box-item">
+
+               <div class="box-item-title-container">
+                   <h2 > {{$item->title}} </h2>
+               </div>
+
+               <div class="box-item-img-container">
+                   <img src="{{$item->image1}}" alt="{{$item->title}}">
+               </div>
+
+                <section class="box-item-meta-container">
+
+                    <p class="box-item-author">By: {{$item->user->nickname}}</p>
+
+                    <p class="box-item-date">{{$item->created_at}}</p>
+
+                    <div class="box-item-tags-container">
+
                         @foreach($item->tags as $tag)
                             <a class="tag" style="background-color:{{$tag->color}};" href="">{{$tag->name}}</a>
                         @endforeach
+
                     </div>
 
-                </div>
-            </section>
+                </section>
 
-            <section class="post-body">
-                <div class="publication-img-container">
-                    <img src="{{$item->image1}}" alt="post_img">
-                </div>
+                <section class="box-item-content-container">
 
-                <div class="publication-paragraph">
-                    <p> {{ $item->paragraph1 }} </p>
-                    <p> {{ $item->paragraph2 }} </p>
-                </div>
+                    <p> {!! $item->paragraph1 !!} </p><br>
+                    <p> {!! $item->paragraph2 !!} </p><br>
+                    <p> {!! $item->paragraph3 !!} </p><br>
+                    <p> {!! $item->paragraph4 !!} </p><br>
 
-                <div class="publication-img-container">
-                    <img src="{{$item->image2}}" alt="post_img">
-                </div>
+                </section>
 
-                <div class="publication-paragraph">
-                    <p> {{ $item->paragraph3}} </p>
-                    <p> {{ $item->paragraph4}} </p>
-                </div>
+            </article>
 
-            </section>
-        @include('partial.rating')
+        <div>
 
-        </article>
+        @include('user.partial.rating')
 
-        @include('blog.related')
+    </div>
 
-    {{-- @include('about.description') --}}
+    </section>
+
+    @include('user.content.blog.related')
 
 @endsection
+
+{{-- <div class="post-rate">
+    @for($i = 0; $i < 5; $i++)
+        @if($i < $item->rating)
+            <span class="fas fa-star rate"></span>
+        @else
+            <span class="fas fa-star"></span>
+        @endif
+    @endfor
+</div> --}}
+@section('title')"<?php print("$item->title") ?> @endsection

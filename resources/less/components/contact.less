@@ -16,8 +16,8 @@
             width: 100%;
             margin-bottom: 5px;
         }
-        input, select, textarea{
-            .reset-input;
+        input, select, textarea, button{
+            .input-reset;
             padding: 3px 0;
             padding-left: 5px !important;
             font-family: inherit !important;
@@ -26,8 +26,11 @@
         input {
             width: 98%;
         }
-        select{
+        select, button{
             width: 100%;
+        }
+        button{
+            padding: 10px
         }
         textarea{
             width: 98%;
@@ -42,22 +45,43 @@
 }
 /* ===== M O D A L ===== */
 .contact-modal{
-    background: linear-gradient(@tertiary, fade(@secondary, 90%)) !important;
-    color: @complementary_three;
+    background: @light_neutral !important;
     position: absolute;
     top: -100%;
+    padding: 25% 10% !important;
+    padding-bottom: 8% !important;
     animation: modalSlideFromTop .7s ease-in-out 0s forwards;
 
-    .modal-title-container{
-        background: fade(@complementary_four, 80%);
-        border-radius: 5px;
+    &-title-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        position: absolute;
+        background: fade(@fourth, 60%);
         font-weight: bold;
         font-family: @panel_font_family;
-        padding: 10px !important;
-        color: @tertiary;
+        padding: 10px 0 !important;
+        color: fade(@tertiary, 70%);
     }
-    .modal-content-container{
-        color: @fourth;
+    &-content-container{
+        font-family: 'DockGothic16', sans-serif;
+        color:@complementary_four;
+    }
+
+    &-button-container{
+
+        button{
+            background: linear-gradient(@mid_neutral, @dark_neutral) !important;
+            width: 100%;
+
+            &:hover{
+                background: linear-gradient(@mid_neutral, fade(@dark_neutral, 60%)) !important;
+            }
+            &:active{
+                background: linear-gradient(@dark_neutral, @mid_neutral) !important;
+            }
+        }
     }
 }
 

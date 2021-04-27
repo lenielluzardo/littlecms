@@ -223,7 +223,13 @@ h6 {
   text-decoration: none;
   color: inherit;
 }
-.reset-input {
+.button-setup {
+  padding: 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+}
+.input-reset {
   display: block;
   border: 0;
   padding: 0;
@@ -239,7 +245,7 @@ h6 {
     top: 30%;
   }
   100% {
-    top: 20%;
+    top: 15%;
   }
 }
 @keyframes modalSlideFromTop {
@@ -252,7 +258,35 @@ h6 {
     top: 30%;
   }
   100% {
-    top: 20%;
+    top: 15%;
+  }
+}
+@-webkit-keyframes modalSlideToTop {
+  0% {
+    top: 15%;
+  }
+  50% {
+    top: 15%;
+  }
+  80% {
+    top: 30%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+@keyframes modalSlideToTop {
+  0% {
+    top: 15%;
+  }
+  50% {
+    top: 15%;
+  }
+  80% {
+    top: 30%;
+  }
+  100% {
+    top: -100%;
   }
 }
 /* ===== L O G O ===== */
@@ -325,12 +359,13 @@ h6 {
 .main-container {
   /* Wraps everything in the content section */
   background: linear-gradient(#74C7FF 20%, #13339B);
-  padding: 20px;
+  padding: 10px;
 }
 .index-container {
   /* Wraps the each sub-content section */
   position: relative;
   padding: 0 !important;
+  overflow: initial !important;
 }
 .sub-content-container {
   /* Wraps the articles, posts, lists, projects, etc.*/
@@ -394,25 +429,15 @@ h6 {
   padding: 0 !important;
 }
 /* ===== P O S T ===== */
-.post-title {
-  font-weight: bold;
+.post-container {
+  padding: 5px !important;
 }
-.post-meta {
-  display: grid;
-  grid-template: 'author a a a a rate' 'date   a a a a tags';
-  margin: 10px 0;
-}
-.post-author {
-  grid-area: author;
-}
-.post-date {
-  grid-area: date;
-}
-.post-rate {
-  grid-area: rate;
-}
-.post-tags-container {
-  grid-area: tags;
+.post-container article {
+  max-height: 80vh;
+  overflow-y: scroll;
+  padding: 5px 10px;
+  background: #fdfdfd !important;
+  border-radius: 3px;
 }
 .socialmedia-container {
   padding: 20px;
@@ -478,6 +503,43 @@ h6 {
   padding: 10px ;
   border-bottom: 1px solid;
 }
+/* ===== R A T I N G ===== */
+.rate-container {
+  margin: 0;
+}
+.rate {
+  color: #74C7FF;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+  padding: 5px !important;
+  margin: 5px 0 !important;
+}
+.rating-title {
+  padding: 10px;
+}
+.star-widget {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px;
+}
+.star-widget > input {
+  display: none;
+}
+.star-widget > label {
+  font-size: 20px;
+  color: #192A3B;
+  -webkit-text-stroke: 1px #1C4F84;
+  transition: all 0.2s ease;
+}
+.star-widget > input:not(:checked) ~ label:hover,
+.star-widget > input:not(:checked) ~ label:hover ~ label {
+  color: #74C7FF;
+}
+.star-widget > input:checked ~ label {
+  color: #74C7FF;
+}
 /* ===== F O R M ===== */
 .form-container form {
   padding: 5px;
@@ -495,7 +557,8 @@ h6 {
 }
 .form-container .form-group input,
 .form-container .form-group select,
-.form-container .form-group textarea {
+.form-container .form-group textarea,
+.form-container .form-group button {
   display: block;
   border: 0;
   padding: 0;
@@ -508,8 +571,12 @@ h6 {
 .form-container .form-group input {
   width: 98%;
 }
-.form-container .form-group select {
+.form-container .form-group select,
+.form-container .form-group button {
   width: 100%;
+}
+.form-container .form-group button {
+  padding: 10px;
 }
 .form-container .form-group textarea {
   width: 98%;
@@ -522,23 +589,57 @@ h6 {
 }
 /* ===== M O D A L ===== */
 .contact-modal {
-  background: linear-gradient(#007AD6, rgba(19, 51, 155, 0.9)) !important;
-  color: #000324;
+  background: #fdfdfd !important;
   position: absolute;
   top: -100%;
+  padding: 25% 10% !important;
+  padding-bottom: 8% !important;
   -webkit-animation: modalSlideFromTop 0.7s ease-in-out 0s forwards;
           animation: modalSlideFromTop 0.7s ease-in-out 0s forwards;
 }
-.contact-modal .modal-title-container {
-  background: rgba(11, 16, 25, 0.8);
-  border-radius: 5px;
+.contact-modal-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  background: rgba(116, 199, 255, 0.6);
   font-weight: bold;
   font-family: 'Prompt';
-  padding: 10px !important;
-  color: #007AD6;
+  padding: 10px 0 !important;
+  color: rgba(0, 122, 214, 0.7);
 }
-.contact-modal .modal-content-container {
-  color: #74C7FF;
+.contact-modal-content-container {
+  font-family: 'DockGothic16', sans-serif;
+  color: #0b1019;
+}
+.contact-modal-button-container button {
+  background: linear-gradient(#C2C2C2, #6b6b6b) !important;
+  width: 100%;
+}
+.contact-modal-button-container button:hover {
+  background: linear-gradient(#C2C2C2, rgba(107, 107, 107, 0.6)) !important;
+}
+.contact-modal-button-container button:active {
+  background: linear-gradient(#6b6b6b, #C2C2C2) !important;
+}
+.modal-container {
+  display: grid;
+  grid-template: auto / 1fr;
+  grid-row-gap: 20px;
+}
+.modal-container .modal-button-container {
+  text-align: center;
+}
+.modal-container .modal-button-container button {
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  padding: 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
 }
 .panel-primary {
   background-color: #00264D;
@@ -565,16 +666,9 @@ h6 {
 .tag {
   display: inline-block;
   padding: 5px;
-  margin: 0 5px;
-  border-radius: 10px;
-  font-size: 12px;
+  margin: 0 1px;
+  border-radius: 3px;
   text-decoration: none;
-}
-.rate-container {
-  margin: 0;
-}
-.rate {
-  color: #fd4;
 }
 .show-nav {
   max-height: 100% !important;
@@ -596,9 +690,6 @@ h6 {
   text-align: justify;
   margin-top: 5%;
 }
-.hidden {
-  display: none;
-}
 .box-container {
   min-height: 20px;
   padding: 5%;
@@ -619,13 +710,15 @@ h6 {
 }
 .box-button {
   min-height: 20px;
-  padding: 10px;
   background: #0046a2;
   border: none none none;
   border-radius: 10px;
   box-shadow: 0px 3px 2px 0px #0000004d;
+  padding: 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
   background: linear-gradient(#007AD6, #0046A2);
-  text-align: center !important;
 }
 .box-button:hover {
   background: linear-gradient(#007AD6, rgba(0, 70, 162, 0.7));
@@ -637,11 +730,13 @@ h6 {
   text-decoration: none;
   color: inherit;
   color: #74C7FF;
-  font-weight: bold;
 }
 .box-button a:hover {
   text-decoration: none;
   color: inherit;
+}
+.box-button a:active {
+  transform: scaleY(0.95);
 }
 .box-item {
   display: grid;

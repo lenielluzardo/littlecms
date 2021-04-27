@@ -12,25 +12,28 @@
             <img src="{{$latest->image1}}" alt="{{$latest->title}}">
         </section>
 
+
         <div class="box-item-meta-container">
 
             <p class="box-item-author">By: {{$latest->user->nickname}}</p>
-
             <p class="box-item-date">{{$latest->created_at}}</p>
 
             <div class="box-item-rating-container rate-container">
+
                 @for($i = 0; $i < 5; $i++)
-                @if($i < $latest->rating)
-                <span class="fas fa-star rate"></span>
-                @else
-                <span class="fas fa-star"></span>
-                @endif
+                    @if($i < $latest->rating)
+                        <span class="fas fa-star rate"></span>
+                    @else
+                        <span class="fas fa-star"></span>
+                    @endif
                 @endfor
+
             </div>
 
             <div class="box-item-tags-container">
                 @foreach($latest->tags as $tag)
-                <a class="tag" style="background-color:{{$tag->color}};" href="">{{$tag->name}}</a>
+                    <a class="tag" style="background-color:{{$tag->color}};" href="">{{$tag->name}}</a>
+
                 @endforeach
             </div>
 

@@ -1,13 +1,16 @@
 .panel-primary{
     background-color: @primary ;
 }
+
 .panel-secondary{
     background-color: @complementary_two;
 }
+
 .sm-icon{
     .fixed-widh-height(25px, 25px);
     .no-margin-padding;
 }
+
 .md-icon{
     .fixed-widh-height(50px, 50px);
     .no-margin-padding;
@@ -16,21 +19,16 @@
 .tag {
     display: inline-block;
     padding: 5px;
-    margin: 0 5px;
-    border-radius: 10px;
-    font-size: 12px;
+    margin: 0 1px;
+    border-radius: 3px;
     text-decoration: none;
 }
-.rate-container {
-    margin: 0;
-}
-.rate {
-    color: #fd4;
-}
+
+
 .show-nav{
-    // height: 100% !important;
     max-height: 100% !important;
 }
+
 .modal-container{
     .box-container-mixin(60%);
 
@@ -45,13 +43,9 @@
     }
 }
 
-.hidden {
-    display: none;
-}
 .box-container{
     .box-container-mixin(30%, 5%,@primary);
     overflow:hidden;
-
     position: relative;
 
     div > img, img{
@@ -64,28 +58,30 @@
 
 .box-button{
     .box-container-mixin(100%, 10px, @fifth, none, none, none);
-    background: @box_button_color;
-    text-align: center !important;
+    .button-setup;
+    background: @dark_box_button_color;
 
     &:hover{
-        background: @box_button_color_hover;
+        background: @dark_box_button_color_hover;
     }
+
     &:active{
-        background:  @box_button_color_active;
+        background:  @dark_box_button_color_active;
     }
 
     a {
         .remove-decoration;
         color: @fourth;
-        font-weight: bold;
 
         &:hover{
             .remove-decoration;
         }
-        // &:active{
-        // }
+        &:active{
+            transform: scaleY(.95);
+        }
     }
 }
+
 .box-item{
     display: grid;
     grid-template: auto / 1fr;
@@ -99,25 +95,29 @@
     &-img-container{
         border: 5px solid rgb(221, 221, 221);
         border-radius: 5px;
+
         img {
             .image-size(100%, 100%);
         }
     }
+
     &-meta-container{
         display: inherit;
         grid-template: auto / 1fr;
         grid-row-gap: 5px;
         border-radius: 5px;
-        .box-container-mixin(20%, 10px, @inactive, none, none, none);
+        .box-container-mixin(20%, 10px, @mid_neutral, none, none, none);
         box-shadow: none;
     }
+
     &-content-container{
         text-align: justify;
     }
 }
+
 .box-list-container{
     overflow: hidden;
-    .box-container-mixin(20%, 10px, @inactive, none, none, none);
+    .box-container-mixin(20%, 10px, @mid_neutral, none, none, none);
 
     ul{
         display: flex;
@@ -130,6 +130,7 @@
         }
     }
 }
+
 .text-container{
     text-align: justify;
     padding: 10px 0;
