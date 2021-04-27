@@ -708,35 +708,33 @@ h6 {
   -o-object-fit: contain;
      object-fit: contain;
 }
-.box-button {
+.box-button-container .box-button {
+  display: block;
+  color: #74C7FF;
+  background: linear-gradient(#007AD6, #0046A2);
   min-height: 20px;
   background: #0046a2;
   border: none none none;
   border-radius: 10px;
   box-shadow: 0px 3px 2px 0px #0000004d;
+  text-decoration: none;
+  color: inherit;
   padding: 10px;
   border-radius: 2px;
   font-weight: bold;
   text-align: center;
-  background: linear-gradient(#007AD6, #0046A2);
 }
-.box-button:hover {
+.box-button-container .box-button:hover {
   background: linear-gradient(#007AD6, rgba(0, 70, 162, 0.7));
 }
-.box-button:active {
+.box-button-container .box-button:active {
   background: linear-gradient(#0046A2, #007AD6);
-}
-.box-button a {
-  text-decoration: none;
-  color: inherit;
-  color: #74C7FF;
-}
-.box-button a:hover {
-  text-decoration: none;
-  color: inherit;
-}
-.box-button a:active {
   transform: scaleY(0.95);
+}
+.box-button-container .box-button:visited {
+  color: #74C7FF !important;
+  -webkit-text-decoration: dashed !important;
+          text-decoration: dashed !important;
 }
 .box-item {
   display: grid;

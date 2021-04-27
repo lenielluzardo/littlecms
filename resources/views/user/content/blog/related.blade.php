@@ -19,9 +19,9 @@
                         <h3>{{$post->title}}</h3>
                     </section>
 
-                    <section class="box-button">
-                        <a href="{{route('post', ['id' => $post->id])}}">READ</a>
-                    </section>
+                    <div class="box-button-container">
+                        <a class="box-button" href="{{route('post', ['id' => $post->id])}}">READ</a>
+                    </div>
 
                 </article>
             </li>

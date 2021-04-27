@@ -43,9 +43,9 @@
             <p>{{$latest->paragraph1}}</p>
         </section>
 
-        <section class="box-button">
-            <a href="{{route('post', ['id' => $latest->id])}}"><div>READ THIS POST</div></a>
-        </section>
+        <div class="box-button-container">
+            <a class="box-button" href="{{route('post', ['id' => $latest->id])}}"><div>READ THIS POST</div></a>
+        </div>
 
     </article>
 

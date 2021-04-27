@@ -55,29 +55,27 @@
         object-fit: contain;
     }
 }
+.box-button-container{
 
-.box-button{
-    .box-container-mixin(100%, 10px, @fifth, none, none, none);
-    .button-setup;
-    background: @dark_box_button_color;
-
-    &:hover{
-        background: @dark_box_button_color_hover;
-    }
-
-    &:active{
-        background:  @dark_box_button_color_active;
-    }
-
-    a {
-        .remove-decoration;
+    .box-button{
+        display: block;
         color: @fourth;
+        background: @dark_box_button_color;
+        .box-container-mixin(100%, 10px, @fifth, none, none, none);
+        .remove-decoration;
+        .button-setup;
 
         &:hover{
-            .remove-decoration;
+            background: @dark_box_button_color_hover;
         }
+
         &:active{
+            background:  @dark_box_button_color_active;
             transform: scaleY(.95);
+        }
+        &:visited{
+            color: @fourth !important;
+            text-decoration: dashed !important;
         }
     }
 }
