@@ -9,9 +9,9 @@
     <!-- ===== S U B C O N T E N T ===== -->
     <section class="sub-content-container">
 
-        <div class="box-container post-container">
+        <div class="box-container single-container">
 
-            <article id="{{$item->id}}" class="box-item">
+            <article id="post-{{$item->id}}" class="box-item">
 
                <div class="box-item-title-container">
                    <h2 > {{$item->title}} </h2>
@@ -69,4 +69,4 @@
         @endif
     @endfor
 </div> --}}
-@section('title')"<?php print("$item->title") ?> @endsection
+@section('title') <?php print("$item->title") ?> @endsection
