@@ -458,41 +458,6 @@ h6 {
   background-color: #0b1019;
   padding: 10px;
 }
-/* ===== P O R T F O L I O ===== */
-.project-list-container {
-  max-height: 20em;
-}
-.project-list-container ul {
-  display: block !important;
-  overflow-x: hidden !important;
-  max-height: inherit;
-}
-.project-list-container ul li {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 15px 0 !important;
-  padding: 0;
-}
-.project-list-container ul li a {
-  text-decoration: none;
-  color: inherit;
-}
-.project-title-container {
-  padding: 20px;
-  margin: 30px;
-  border: 1px solid;
-  border-radius: 5px;
-  text-align: center;
-  justify-content: center;
-  font-family: 'Zilla Slab Highlight', sans-serif;
-}
-/* ===== P R O J E C T ===== */
-.portfolio-meta {
-  margin: 10px;
-  padding: 10px ;
-  border-bottom: 1px solid;
-}
 /* ===== R A T I N G ===== */
 .rate-container {
   margin: 0;
