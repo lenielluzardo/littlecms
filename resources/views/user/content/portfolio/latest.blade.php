@@ -13,24 +13,14 @@
 
                 <?php $section =  $project->section->name ?>
 
-                <li class="box-container"
-                    style="background-image: url({{$project->image1}})"
-                >
 
-                <a href="{{route('project', ['section' => strtolower($project->section->name), 'id' => "$project->id"])}}">
+                <li class="box-container" style="background-image: url({{$project->image1}})" >
+                    <a href="{{route('project', ['section' => strtolower($project->section->name), 'id' => "$project->id"])}}">
 
-                    <article>
-
-                        <div class="project-title-container">
-
+                        <div>
                             <h2 >{{$project->title}}</h2>
-
                         </div>
-
-                    </article>
-
-                </a>
-
+                    </a>
                 </li>
 
             @endforeach

@@ -9,11 +9,11 @@
     <!-- ===== S U B C O N T E N T ===== -->
     <section class="sub-content-container">
 
-        <div class="box-container single-container">
+        <div class="box-container">
 
-            <article id="post-{{$item->id}}" class="box-item">
+            <article id="post-{{$item->id}}" class="box-item single-entry">
 
-               <div class="box-item-title-container">
+               <div class="box-item-title-container single-entry-title">
                    <h2 > {{$item->title}} </h2>
                </div>
 
@@ -37,7 +37,7 @@
 
                 </section>
 
-                <section class="box-item-content-container">
+                <section class="box-item-content-container single-entry-content">
 
                     <p> {!! $item->paragraph1 !!} </p><br>
                     <p> {!! $item->paragraph2 !!} </p><br>

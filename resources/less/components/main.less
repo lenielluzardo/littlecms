@@ -8,7 +8,6 @@
     /* Wraps the each sub-content section */
     position:relative;
     padding:0 !important;
-    overflow: initial !important;
 }
 .sub-content-container{
     /* Wraps the articles, posts, lists, projects, etc.*/
@@ -16,4 +15,33 @@
 }
 .section-title {
     padding: 10px 0;
+}
+@media screen and (min-width: 500px){
+    .main-container{
+        padding: 5% 10%;
+    }
+}
+@media screen and (min-width: 720px){
+    .main-container{
+        padding: 5% 20%;
+    }
+}
+@media screen and (min-width: 860px){
+    .main-container{
+        grid-row: 2 / 7;
+        padding: 5%;
+        overflow: none;
+        display: grid;
+        grid-template: 1fr / repeat(2, 1fr);
+    }
+    .sub-content-container{
+        max-height: 70vh;
+    }
+}
+@media screen and (min-width: 1024px){
+    .main-container{
+        grid-column-gap: 30px;
+        overflow: hidden !important;
+        padding: 30px;
+    }
 }

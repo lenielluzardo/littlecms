@@ -1,6 +1,6 @@
 <nav id="socialmedia" class="socialmedia-container" >
     <div>
-        <h4>CONNECT WITH ME ON:</h3>
+        <h4>CONNECT ON:</h3>
     </div>
     <section id="socialmedia-links" class="socialmedia-links-container">
         @foreach ($sections as $section)

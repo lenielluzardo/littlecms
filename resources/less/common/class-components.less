@@ -46,20 +46,13 @@
     .box-container-mixin(30%, 5%,@primary);
     overflow:hidden;
     position: relative;
-
-    div > img, img{
-        max-width: 100%;
-        min-width: 100%;
-        min-height: 100%;
-        object-fit: contain;
-    }
 }
 
 .box-button-container{
 
     .box-button{
         display: block;
-        color: @fourth;
+        color: @fourth !important;
         background: @dark_box_button_color;
         .box-container-mixin(100%, 10px, @fifth, none, none, none);
         .remove-decoration;
@@ -86,6 +79,7 @@
     grid-row-gap: 15px;
 
     &-title-container{
+        margin: 15px 0;
         padding-bottom: 5px;
         border-bottom: 1px solid;
     }
@@ -93,6 +87,7 @@
     &-img-container{
         border: 5px solid rgb(221, 221, 221);
         border-radius: 5px;
+        max-height: 500px;
 
         img {
             .image-size(100%, 100%);
@@ -109,6 +104,7 @@
     }
 
     &-content-container{
+        color:@fourth;
         text-align: justify;
     }
 }
@@ -134,14 +130,18 @@
     padding: 10px 0;
 }
 
-.single-container{
-    padding: 5px !important;
+.single-entry{
+    max-height: 80vh;
+    overflow-y: scroll;
+    padding: 5px 10px;
+    background: @light_neutral !important;
+    border-radius: 3px;
 
-    article{
-        max-height: 80vh;
-        overflow-y: scroll;
-        padding: 5px 10px;
-        background: @light_neutral !important;
-        border-radius: 3px;
+    &-title{
+        color: @primary !important;
+    }
+
+    &-content{
+        color: @complementary_four !important;
     }
 }

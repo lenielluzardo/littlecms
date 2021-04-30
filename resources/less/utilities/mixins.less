@@ -45,10 +45,9 @@
     -webkit-transition:@property @duration @timing @delay;
     transition: @property @duration @timing @delay;
 }
-.image-size(@width: 250px, @height: 250px, @fit : cover) {
+.image-size(@width: 250px, @height: 250px, @fit : fill) {
     width: @width;
     height: @height;
-    max-height: 500px;
     object-fit: @fit;
 }
 .round-border(@thick, @type, @roundness){

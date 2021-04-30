@@ -3,9 +3,9 @@
 
     <h2 class="section-title">About the author</h2>
 
-   <div class="box-container">
+   <div class="box-container about-container">
 
-        <div>
+        <div class="about-img-container">
            <img src="{{ $author->img_profile }}" alt="it's me :)">
         </div>
 
