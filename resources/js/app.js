@@ -1,32 +1,32 @@
-let navMenu = document.getElementById('header-navigation-container');
-let navIcon = document.getElementById('mobile-nav-icon-container');
-let header = document.getElementById('header-section-container');
-let welcomePopup = document.getElementById('home-welcome-card');
-
-document.addEventListener('DOMContentLoaded', showWelcomePopup);
-
-function showWelcomePopup(){
-    if(document.readyState === 'complete'){
-        alert("I'm working");
-    }
-}
+let header = document.getElementById('header');
+let navIcon = document.getElementById('mobile-nav-button');
 
 navIcon.addEventListener("click", showNavMenu);
+showNavClass = 'show-nav';
 
 function showNavMenu(){
 //   alert("I'm working");
 
-  if(navMenu.classList.contains('hidden')){
+  if(!header.classList.contains(showNavClass)){
+      header.classList.add(showNavClass);
+      navIcon.innerHTML = 'X';
+      navIcon.style.fontSize = '25px';
+    }
+    else {
 
-    navMenu.classList.remove('hidden');
-    header.style.position = "sticky";
-    navIcon.src='./assets/icons/mobile-close-icon.svg';
+    header.classList.remove(showNavClass);
+    navIcon.innerHTML = '| | |';
+    navIcon.style.fontSize = 'initial';
   }
-  else {
-    navMenu.classList.add('hidden');
-    header.style.position = "static";
-    navIcon.src='./assets/icons/mobile-nav-icon.svg';
-  }
+}
+
+let closeButton = document.getElementById('modal-close-button');
+
+closeButton.addEventListener('click', closeModal);
+
+function closeModal(){
+    // alert("I'm working!");
+    modal.style.animation = 'modalSlideToTop .7s ease-in-out 0s forwards';
 }
 
 

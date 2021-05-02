@@ -2,17 +2,15 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function(){
-    return view('partial.welcome');
-})
+Route::get('/', 'App\Http\Controllers\HomeController@Index' )
 ->name('home');
 
 Route::group(['prefix' => 'blog'], function(){
 
-    Route::get('', 'App\Http\Controllers\PostController@getIndex')
+    Route::get('', 'App\Http\Controllers\PostController@Index')
     ->name('blog');
 
-    Route::get('/posts/{id}', 'App\Http\Controllers\PostController@getPostById')
+    Route::get('/{section}/{id}', 'App\Http\Controllers\PostController@Post')
     ->name('post');
 });
 
@@ -29,7 +27,7 @@ Route::get('/about', 'App\Http\Controllers\AboutController@getIndex')
 
 Route::group(['prefix' => 'contact'], function () {
 
-    Route::get('', 'App\Http\Controllers\ContactController@getIndex')
+    Route::get('', 'App\Http\Controllers\ContactController@Index')
     ->name('contact.index');
 
     Route::post('', 'App\Http\Controllers\ContactController@contactFromWeb')

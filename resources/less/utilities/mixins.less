@@ -1,0 +1,84 @@
+.base-panel(@bgcolor, @color: @fourth){
+    font-family: @panel_font_family;
+    min-height: 50px;
+    min-width: 50px;
+    background-color: @bgcolor;
+    color: @color;
+    a{
+        color: @color;
+        text-decoration:none;
+    }
+}
+.panel-primary{
+    .base-panel(@primary);
+}
+.panel-secondary{
+    .base-panel(@complementary_two);
+}
+.panel-tertiary{
+    .base-panel(@complementary_three);
+}
+.box-container-mixin(@transparency: 100%, @padding: 5px,  @color: @complementary_one,
+@border_width: 1px, @border_color: #ffffff40, @border_style: solid){
+
+    padding: @padding;
+    background: fade(@color, @transparency);
+    border: @border_width @border_style @border_color;
+    border-radius: 5px;
+    box-shadow: 0px 3px 2px 0px #0000004d;
+}
+.proportional-size(@size) {
+    width: @size;
+    height: @size;
+}
+.fixed-widh-height(@width, @height){
+    width: @width !important;
+    max-width: @width !important;
+    height: @height !important;
+    max-height: @height !important;
+}
+.transition(@property, @duration, @timing, @delay: 0s){
+    -moz-transition: @property @duration @timing @delay;
+    -ms-transition: @property @duration @timing @delay;
+    -o-transition: @property @duration @timing @delay;
+    -webkit-transition:@property @duration @timing @delay;
+    transition: @property @duration @timing @delay;
+}
+.image-size(@width: 250px, @height: 250px, @fit : fill) {
+    width: @width;
+    height: @height;
+    object-fit: @fit;
+}
+.round-border(@thick, @type, @roundness){
+    border-radius: @roundness;
+    border: @thick @type;
+}
+.no-margin-padding{
+    margin: 0px;
+    padding: 0px;
+}
+.flex-center-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.remove-decoration{
+    text-decoration: none;
+    color: inherit;
+}
+.button-setup {
+    padding: 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    text-align: center;
+}
+.input-reset{
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.size(@width, @height){
+    width: @width;
+    height: @height;
+}

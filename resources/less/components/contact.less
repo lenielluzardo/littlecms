@@ -1,0 +1,92 @@
+/* ===== F O R M ===== */
+.form-container {
+    background: fade(@fifth, 50%);
+   form{
+        padding: 5px;
+        border-radius: 5px;
+        background-color: fade(@fourth, 50%);
+        box-sizing: border-box;
+    }
+
+    .form-group{
+        margin: 10px 0;
+
+        label{
+            display: block;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        input, select, textarea, button{
+            .input-reset;
+            padding: 3px 0;
+            padding-left: 5px !important;
+            font-family: inherit !important;
+            border-radius: 5px;
+        }
+        input {
+            width: 98%;
+        }
+        select, button{
+            width: 100%;
+        }
+        button{
+            padding: 10px
+        }
+        textarea{
+            width: 98%;
+        }
+        .g-recaptcha{
+            transform:scale(0.77);
+            -webkit-transform:scale(0.8);
+            transform-origin:0 0;
+            -webkit-transform-origin:0 0;
+        }
+    }
+}
+/* ===== M O D A L ===== */
+.contact-modal{
+    background: @light_neutral !important;
+    position: absolute;
+    top: -100%;
+    left: auto;
+    animation: modalSlideFromTop .7s ease-in-out 0s forwards;
+
+    &-title-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        position: absolute;
+        background: fade(@fourth, 60%);
+        font-weight: bold;
+        font-family: @panel_font_family;
+        padding: 15px 0 !important;
+        color: fade(@tertiary, 70%);
+    }
+    &-content-container{
+        padding: 0 20px;
+        padding-top: 50px;
+        font-family: 'DockGothic16', sans-serif;
+        color:@complementary_four;
+    }
+
+    &-button-container{
+
+        button{
+            background: linear-gradient(@mid_neutral, @dark_neutral) !important;
+            width: 100%;
+
+            &:hover{
+                background: linear-gradient(@mid_neutral, fade(@dark_neutral, 60%)) !important;
+            }
+            &:active{
+                background: linear-gradient(@dark_neutral, @mid_neutral) !important;
+            }
+        }
+    }
+}
+@media @desktop{
+    .form-container {
+        width: 550px
+    }
+}

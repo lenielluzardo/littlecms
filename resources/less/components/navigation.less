@@ -1,0 +1,48 @@
+/* ===== N A V I G A T I O N ===== */
+.mobile-nav-button{
+    .fixed-widh-height(40px,40px);
+    .no-margin-padding;
+    .flex-center-content;
+    .round-border(2px, solid, 10px);
+    .box-container-mixin(10%, 0px, @primary);
+    transform: rotateZ(90deg);
+    font-weight: bold;
+    position: sticky;
+    .transition(all, .5s, ease-out);
+
+    &:hover{
+        background-color: fade(@fourth, 20%);
+    }
+    &:active{
+        .fixed-widh-height(45px,45px);
+        background-color: fade(@fourth, 40%);
+    }
+}
+.header-navigation-container{
+    padding: 20px;
+
+    & > ul{
+        list-style: none;
+        text-align: center;
+        display: grid;
+        grid-template: auto / 1fr;
+        grid-row-gap: 5px;
+
+        > a {
+            padding:10px;
+
+            &:hover{
+                background-color: fade(@fourth, 20%);
+                border-radius: 2px;
+            }
+            &:active{
+                background-color: fade(@fourth, 40%);
+            }
+        }
+    }
+}
+@media screen and (min-width: 860px){
+    .mobile-nav-button{
+        display: none;
+    }
+}

@@ -1,0 +1,79 @@
+// Font Size Variables
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&family=Quicksand:wght@400;600;700&display=swap');
+
+//Barrio Font - Like Scratches
+@import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+
+//DockGothic16 - Like Oldschool Computer OR Gameboy
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+// 'Zilla Slab Highlight' - Black bg
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@400;700&display=swap');
+
+//Indie Flower - Like Handwriting
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+@base_font_family: 'Quicksand';
+@panel_font_family: 'Prompt';
+@note_font_family: 'Indie Flower';
+
+@base_font_color: @complementary_four;
+@base_font_size: 15px;
+@parent_heading_size : 25px;
+@heading_size : 20px;
+@sub_heading_size : 18px;
+@annotation_size : 15px;
+@sub_annotation_size : 12px;
+@child_annotation_size : 10px;
+
+/* Colors */
+@primary: #00264D;
+@secondary: #13339B;
+@tertiary: #007AD6;
+@fourth: #74C7FF;
+@fifth: #0046A2;
+@complementary_one: #1C4F84;
+@complementary_two: #192A3B;
+@complementary_three: #000324;
+@complementary_four: #0b1019;
+
+@warning: #FFCF4B;
+@danger: #df4040;
+@light_neutral: #fdfdfd;
+@mid_neutral: #dadada;
+@dark_neutral: #6b6b6b;
+
+@dark_box_button_color: linear-gradient(@tertiary, @fifth);
+@dark_box_button_color_hover: linear-gradient(@tertiary, fade(@fifth, 70%));
+@dark_box_button_color_active: linear-gradient(@fifth, @tertiary);
+
+@light_box_button_color: linear-gradient(@fourth, @tertiary);
+@light_box_button_color_hover: linear-gradient(@fourth, fade(@tertiary, 70%));
+@light_box_button_color_active: linear-gradient(@tertiary, @fourth);
+
+/* Assets Variables */
+@home_bg_img : url('../../assets/images/bg-home.png');
+
+@images : "../assets/images";
+@icons : "../assets/icons";
+@webfonts : "../assets/webfonts";
+
+/* Media Queries */
+
+@tablet : ~"only screen and (min-width: 540px)";
+@desktop : ~"only screen and (min-width: 851px) and (min-height: 799px)";
+
+
+
+// /* iPhone X */
+// @media screen and (min-width: 375px) and (min-height: 812px){}
+// /* Nokia N9 */
+// @media screen and (min-width: 480px) and (min-height: 854px){}
+// /* Surface Duo */
+// @media screen and (min-width: 540px) and (min-height: 720px){}
+// /* iPad */
+// @media screen and (min-width: 760px) and (min-height: 1024px){}
+// /* Amazon Fire HDX */
+// @media screen and (min-width: 800px) and (min-height: 1280px){}
+// /* Laptop with MDPI */
+// @media screen and (min-width: 1280px) and (min-height: 800px){}

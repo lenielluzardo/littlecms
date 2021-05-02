@@ -1,0 +1,46 @@
+/* ===== R A T I N G ===== */
+.rate-container {
+    margin: 0;
+}
+
+.rate {
+    color: @fourth;
+    // color: #fd4;
+}
+.rating-container {
+    display:flex;
+    align-items: center;
+    padding:5px !important;
+    margin: 5px 0 !important;
+}
+.rating-title{
+    padding: 10px;
+}
+
+.star-widget {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10px;
+}
+
+.star-widget>input {
+    display: none;
+}
+
+.star-widget>label {
+    font-size: 20px;
+    color: @complementary_two;
+    -webkit-text-stroke: 1px @complementary_one;
+    transition: all 0.2s ease;
+}
+
+.star-widget>input:not(:checked)~label:hover,
+.star-widget>input:not(:checked)~label:hover~label {
+    color:@fourth;
+    // color: #fd4;
+}
+
+.star-widget>input:checked~label {
+    color: @fourth;
+    // color: #fd4;
+}

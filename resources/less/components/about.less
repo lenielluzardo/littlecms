@@ -1,0 +1,21 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: @light_neutral;
+
+    .about-img-container{
+
+        max-height: 200px;
+        max-width: 200px;
+        border-radius: 50% !important;
+        overflow: hidden;
+
+        img{
+            max-width: inherit;
+            max-height: inherit;
+            object-fit: cover;
+        }
+    }
+}
