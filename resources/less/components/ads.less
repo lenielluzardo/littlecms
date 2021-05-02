@@ -1,3 +1,17 @@
-.ads-container{
-    padding: 10px;
+.ads{
+    &-img-container{
+        display: flex;
+        margin: 20px 0;
+        justify-content: center;
+        div{
+            margin: 10px;
+        }
+    }
+}
+@media @desktop{
+    .ads-img-container{
+        flex-direction: column !important;
+        margin: 0;
+        padding-bottom:20px;
+    }
 }

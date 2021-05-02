@@ -2,7 +2,7 @@
 
 @section('title', 'Home')
 
-@section('content')
+@section('main')
 
         <section id="home" class="home-container">
 

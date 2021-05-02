@@ -2,7 +2,7 @@
 
 @extends('user.content.main')
 
-@section('main')
+@section('subindex')
 
     <?php $title = $item->title ?>
 

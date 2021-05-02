@@ -2,13 +2,23 @@
 
 @section('title', 'Blog')
 
-@section('main')
+@section('index')
 
     <!-- ===== S U B C O N T E N T ===== -->
-    @include('user.content.blog.latest')
-    <!-- ===== S U B C O N T E N T ===== -->
-    @include('user.content.blog.related')
+    @include('user.partial.archive')
 
 @endsection
 
 
+@section('subindex')
+
+    @foreach ($items as $item )
+
+        @include('user.partial.entry', ['item' => $item])
+
+    @endforeach
+
+@endsection
+
+
+    {{-- @include('user.content.blog.latest') --}}

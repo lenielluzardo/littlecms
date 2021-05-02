@@ -10,7 +10,7 @@ class PortfolioController extends Controller
     {
         $projectModel = new Project();
         $projects = $projectModel->getAllProjects($section);
-        return view('user.content.portfolio.portfolio', ['projects' => $projects]);
+        return view('user.content.portfolio.portfolio', ['items' => $projects, 'routeName' => 'project', 'urlSection' => 'software', 'path' => 'Portfolio']);
     }
 
     Public function getProjectById($section, $id, Project $projectModel)

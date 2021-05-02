@@ -1,9 +1,11 @@
 @extends('user.content.main')
 
-@section('main')
+@section('index')
 
     <!-- ===== S U B C O N T E N T ===== -->
-    @include('user.content.portfolio.latest')
+    @include('user.partial.archive')
+
+    {{-- @include('user.content.portfolio.latest') --}}
 
 @endsection
 

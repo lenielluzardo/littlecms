@@ -9,19 +9,19 @@ class PostController extends Controller
 {
     public function Index(Post $postModel)
     {
-        $post = $postModel->getLatestPost();
+        $articles = $postModel->all();
 
-        $relateds = $postModel->getRelatedPosts($post->id);
 
-        return view('user.content.blog.blog', ['latest' => $post, 'relateds' => $relateds]);
+        return view('user.content.blog.blog', ['items' => $articles, 'section'=> 'Archive', 'routeName' => 'post', 'urlSection' => 'posts', 'path' => 'Archive']);
     }
 
-    public function Post($id, Post $postModel)
+    public function Post($section, $id, Post $postModel)
     {
+        // dd($id);
         $post = $postModel->getPostById($id);
 
-        $relateds = $postModel->getRelatedPosts($post->id);
+        // $relateds = $postModel->getRelatedPosts($post->id);
 
-        return view('user.content.blog.post', ['item' => $post, 'relateds' => $relateds]);
+        return view('user.partial.article', ['item' => $post]);
     }
 }

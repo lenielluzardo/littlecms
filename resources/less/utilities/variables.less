@@ -26,7 +26,7 @@
 @sub_annotation_size : 12px;
 @child_annotation_size : 10px;
 
-// Colors
+/* Colors */
 @primary: #00264D;
 @secondary: #13339B;
 @tertiary: #007AD6;
@@ -40,7 +40,7 @@
 @warning: #FFCF4B;
 @danger: #df4040;
 @light_neutral: #fdfdfd;
-@mid_neutral: #C2C2C2;
+@mid_neutral: #dadada;
 @dark_neutral: #6b6b6b;
 
 @dark_box_button_color: linear-gradient(@tertiary, @fifth);
@@ -51,10 +51,29 @@
 @light_box_button_color_hover: linear-gradient(@fourth, fade(@tertiary, 70%));
 @light_box_button_color_active: linear-gradient(@tertiary, @fourth);
 
-// Assets Variables
+/* Assets Variables */
 @home_bg_img : url('../../assets/images/bg-home.png');
 
 @images : "../assets/images";
 @icons : "../assets/icons";
 @webfonts : "../assets/webfonts";
 
+/* Media Queries */
+
+@tablet : ~"only screen and (min-width: 540px)";
+@desktop : ~"only screen and (min-width: 851px) and (min-height: 799px)";
+
+
+
+// /* iPhone X */
+// @media screen and (min-width: 375px) and (min-height: 812px){}
+// /* Nokia N9 */
+// @media screen and (min-width: 480px) and (min-height: 854px){}
+// /* Surface Duo */
+// @media screen and (min-width: 540px) and (min-height: 720px){}
+// /* iPad */
+// @media screen and (min-width: 760px) and (min-height: 1024px){}
+// /* Amazon Fire HDX */
+// @media screen and (min-width: 800px) and (min-height: 1280px){}
+// /* Laptop with MDPI */
+// @media screen and (min-width: 1280px) and (min-height: 800px){}

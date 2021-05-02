@@ -10,7 +10,7 @@ Route::group(['prefix' => 'blog'], function(){
     Route::get('', 'App\Http\Controllers\PostController@Index')
     ->name('blog');
 
-    Route::get('/posts/{id}', 'App\Http\Controllers\PostController@Post')
+    Route::get('/{section}/{id}', 'App\Http\Controllers\PostController@Post')
     ->name('post');
 });
 

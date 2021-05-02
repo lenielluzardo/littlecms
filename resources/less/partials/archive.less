@@ -1,0 +1,26 @@
+.archive-container{
+    padding: 0 !important;
+}
+.archive-list{
+    display: flex;
+    height: 350px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    &-item {
+        margin: 10px;
+    }
+}
+@media @tablet{
+    .archive-list{
+        display: block;
+        height: 400px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+@media @desktop {
+    .archive-list{
+        height: 73vh;
+    }
+}

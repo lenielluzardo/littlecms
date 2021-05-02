@@ -1,6 +1,6 @@
 /* ===== F O R M ===== */
 .form-container {
-
+    background: fade(@fifth, 50%);
    form{
         padding: 5px;
         border-radius: 5px;
@@ -48,8 +48,7 @@
     background: @light_neutral !important;
     position: absolute;
     top: -100%;
-    padding: 25% 10% !important;
-    padding-bottom: 8% !important;
+    left: auto;
     animation: modalSlideFromTop .7s ease-in-out 0s forwards;
 
     &-title-container{
@@ -61,10 +60,12 @@
         background: fade(@fourth, 60%);
         font-weight: bold;
         font-family: @panel_font_family;
-        padding: 10px 0 !important;
+        padding: 15px 0 !important;
         color: fade(@tertiary, 70%);
     }
     &-content-container{
+        padding: 0 20px;
+        padding-top: 50px;
         font-family: 'DockGothic16', sans-serif;
         color:@complementary_four;
     }
@@ -84,4 +85,8 @@
         }
     }
 }
-
+@media @desktop{
+    .form-container {
+        width: 550px
+    }
+}

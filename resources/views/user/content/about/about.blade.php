@@ -2,7 +2,7 @@
 
 @section('title', 'About')
 
-@section('main')
+@section('index')
 
     <!-- ===== A B O U T ===== -->
     <section class="content-section-container">

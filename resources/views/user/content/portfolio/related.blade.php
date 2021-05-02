@@ -12,7 +12,6 @@
                 <h3 class="related-title">{{ $project->title }} </h3>
                 <img class="related-img" src="{{ $project->image1}}" alt="post_image">
             </article>
-
         </li>
 
         @endforeach

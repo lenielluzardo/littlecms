@@ -2,7 +2,7 @@
 
     <h2 class="section-title">Most Recent Post:</h2>
 
-    <article class="box-item box-container">
+    <article class="box-item box-container latest-item">
 
         <div class="box-item-title-container">
             <h2>{{$latest->title}}</h2>

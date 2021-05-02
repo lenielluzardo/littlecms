@@ -10,7 +10,7 @@
         <!-- ===== C O N T E N T ===== -->
         <section id="content" class="content-container">
 
-            @yield('content')
+            @yield('main')
 
         </section>
 
