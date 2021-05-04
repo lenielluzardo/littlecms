@@ -10,16 +10,16 @@ Route::group(['prefix' => 'blog'], function(){
     Route::get('', 'App\Http\Controllers\PostController@Index')
     ->name('blog');
 
-    Route::get('/{section}/{id}', 'App\Http\Controllers\PostController@Post')
-    ->name('post');
+    // Route::get('/{section}/{id}', 'App\Http\Controllers\PostController@Post')
+    // ->name('post');
 });
 
 Route::group(['prefix' => 'portfolio'], function(){
     Route::get('/{section}', 'App\Http\Controllers\PortfolioController@getIndex')
     ->name('portfolio');
 
-    Route::get('/{section}/{id}', 'App\Http\Controllers\PortfolioController@getProjectById')
-    ->name('project');
+    // Route::get('/{section}/{id}', 'App\Http\Controllers\PortfolioController@getProjectById')
+    // ->name('project');
 });
 
 Route::get('/about', 'App\Http\Controllers\AboutController@getIndex')

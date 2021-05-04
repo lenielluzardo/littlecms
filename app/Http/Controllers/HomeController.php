@@ -11,8 +11,8 @@ class HomeController extends Controller
     public function Index()
     {
         $modal = [
-            'id' => 'home-modal',
-            'class' => 'home-modal',
+            'id' => 'contact-modal',
+            'class' => 'contact-modal',
             'title' => 'Welcome',
             'content' => "<p>
                                 Hello there, I'm Leniel. I'm a software developer and designer,

@@ -6,6 +6,7 @@
     </h2>
 </div>
 @endsection
+
 @extends('user.content.main')
 
 @section('index')
@@ -14,6 +15,11 @@
     @include('user.partial.errors')
 
     @include('user.content.contact.form')
+
+
+@endsection
+
+@section('modal')
 
     @include('user.partial.modal', ['modal' => $modal])
 

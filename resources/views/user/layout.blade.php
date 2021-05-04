@@ -20,6 +20,9 @@
 
     </section>
 
+    @yield('modal')
     <script src="{{asset('/js/app.js')}}"></script>
+
 @endsection
+
 

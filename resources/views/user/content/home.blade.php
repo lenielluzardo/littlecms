@@ -6,8 +6,14 @@
 
         <section id="home" class="home-container">
 
-            @include('user.partial.modal', ['modal' => $modal])
+            {{-- @include('user.partial.modal', ['modal' => $modal]) --}}
 
         </section>
+
+@endsection
+
+@section('modal')
+
+    @include('user.partial.modal', ['modal' => $modal])
 
 @endsection
