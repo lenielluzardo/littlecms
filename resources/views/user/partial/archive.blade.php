@@ -1,30 +1,22 @@
 @section('path')
-<div class="path-section">
-    <h2 class="section-title">
-        / {{ $path }}
-    </h2>
-</div>
+    <div class="path-section">
+        <h2 class="section-title"> / {{ $path }} </h2>
+    </div>
 @endsection
 
-<section class="sub-content-container box-container archive-container">
-    @include('controls.filter')
+@section('index')
 
-    <section>
-        <ul class="archive-list">
+    <!-- ===== S U B C O N T E N T ===== -->
+    @include('user.partial.index')
 
-            @foreach($items as $item)
+@endsection
 
-            <li class="archive-list-item">
+@section('subindex')
 
-                @include('controls.preview-item', ['item' => $item])
+    @foreach ($items as $item )
 
+        @include('user.partial.entry', ['item' => $item])
 
-            </li>
-            @endforeach
-        </ul>
-    </section>
+    @endforeach
 
-    @include('controls.paging')
-
-</section>
-
+@endsection

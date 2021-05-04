@@ -425,6 +425,7 @@ h6 {
 .index-container {
   /* Wraps each sub-content section in the left side of the main content */
   overflow: inherit;
+  width: 100%;
   max-width: 600px;
   justify-self: center;
 }
@@ -433,6 +434,7 @@ h6 {
   justify-self: center;
   display: none;
   height: 500px;
+  width: 100%;
   max-width: 600px;
 }
 .sub-content-container {
@@ -627,13 +629,16 @@ h6 {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.ads-section-title {
+  padding-top: 10px;
+}
 .ads-img-container {
   display: flex;
-  margin: 20px 0;
+  padding: 10px 0;
   justify-content: center;
 }
 .ads-img-container div {
-  margin: 10px;
+  margin: 0 10px;
 }
 @media only screen and (min-width: 851px) and (min-height: 799px) {
   .ads-img-container {

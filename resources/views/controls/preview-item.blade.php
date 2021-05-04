@@ -10,6 +10,4 @@
         <a  class="box-button" onclick="showArticle({{$item->id}})">READ</a>
     </div>
 
-
-
 </div>
