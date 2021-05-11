@@ -16,17 +16,19 @@
     }
 }
 
+@media @desktop{
+    .modal-container{
+        left: 40%;
+        .box-container-mixin(60%);
 
-.modal-container{
-    .box-container-mixin(60%);
-
-    & > .modal-title-container{
-        text-align: center;
-        padding-bottom: 5%;
-        border-bottom: 1px solid;
-    }
-    & > .modal-content-container{
-        text-align: justify;
-        margin-top: 5%;
+        & > .modal-title-container{
+            text-align: center;
+            padding-bottom: 5%;
+            border-bottom: 1px solid;
+        }
+        & > .modal-content-container{
+            text-align: justify;
+            margin-top: 5%;
+        }
     }
 }

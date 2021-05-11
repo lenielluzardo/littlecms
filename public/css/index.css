@@ -20,6 +20,7 @@ body {
   color: #0b1019;
   font-size: 15px;
   font-family: 'Quicksand';
+  font-weight: 500;
 }
 body,
 h1,
@@ -149,25 +150,18 @@ h6 {
   }
 }
 @font-face {
-  font-family: 'Prompt';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/prompt/v5/-W__XJnvUD7dzB26Zw.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Prompt';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/prompt/v5/-W_8XJnvUD7dzB2Cv_44bg.ttf) format('truetype');
-}
-@font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o18E.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkM0o18E.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Quicksand';
@@ -182,6 +176,20 @@ h6 {
   font-weight: 700;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkBgv18E.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/prompt/v5/-W__XJnvUD7dzB26Zw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/prompt/v5/-W_8XJnvUD7dzB2Cv_44bg.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Barrio';
@@ -1014,21 +1022,24 @@ h6 {
   font-weight: bold;
   text-align: center;
 }
-.modal-container {
-  padding: 5px;
-  background: rgba(28, 79, 132, 0.6);
-  border: 1px solid #ffffff40;
-  border-radius: 5px;
-  box-shadow: 0px 3px 2px 0px #0000004d;
-}
-.modal-container > .modal-title-container {
-  text-align: center;
-  padding-bottom: 5%;
-  border-bottom: 1px solid;
-}
-.modal-container > .modal-content-container {
-  text-align: justify;
-  margin-top: 5%;
+@media only screen and (min-width: 851px) and (min-height: 799px) {
+  .modal-container {
+    left: 40%;
+    padding: 5px;
+    background: rgba(28, 79, 132, 0.6);
+    border: 1px solid #ffffff40;
+    border-radius: 5px;
+    box-shadow: 0px 3px 2px 0px #0000004d;
+  }
+  .modal-container > .modal-title-container {
+    text-align: center;
+    padding-bottom: 5%;
+    border-bottom: 1px solid;
+  }
+  .modal-container > .modal-content-container {
+    text-align: justify;
+    margin-top: 5%;
+  }
 }
 .box-container {
   padding: 5px;
