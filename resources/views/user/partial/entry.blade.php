@@ -7,11 +7,11 @@
         <h2>{{$item->title}}</h2>
 
         <div class="entry-img-container">
-            <img src="{{$item->image1}}"  alt="{{$item->title}}">
+            <img src="{{$item->preview_img}}"  alt="{{$item->title}}">
         </div>
 
         <div class="entry-meta-container">
-            <em>By:</em> {{$item->user->nickname}}</p>
+            {{-- <em>By:</em> {{$item->user->nickname}}</p> --}}
             <em>Date:</em> <time class="entry-time">{{date('d-m-Y', strtotime($item->created_at))}}</time>
         </div>
 
@@ -19,12 +19,7 @@
 
     <!-- ===== C O N T E N T ===== -->
     <section class="entry-content">
-
-        <p> {!! $item->paragraph1 !!} </p><br>
-        <p> {!! $item->paragraph2 !!} </p><br>
-        <p> {!! $item->paragraph3 !!} </p><br>
-        <p> {!! $item->paragraph4 !!} </p><br>
-
+       {!! $item->content !!}
     </section>
 
     <!-- ===== F O O T E R ===== -->

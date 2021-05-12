@@ -1,6 +1,6 @@
-@extends('partial.main')
+@extends('user.content.main')
 
-@section('content')
+@section('index')
 <section class="publication-section-container">
     <section class="content-section-container">
         <section class="publication-container">

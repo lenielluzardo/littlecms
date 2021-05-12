@@ -14,4 +14,8 @@ class Section extends Model
     public function projects(){
         return $this->hasMany('App\Models\Project', 'section_id', 'id');
     }
+
+    public function entries(){
+        return $this->hasMany('App\Models\Entry', 'section_id', 'id');
+    }
 }

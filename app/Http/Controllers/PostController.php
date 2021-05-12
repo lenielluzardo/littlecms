@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Entry;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function Index(Post $postModel)
     {
-        $articles = $postModel->all();
+        $entryModel = new Entry();
+        // $articles = $postModel->all();
+        $articles = $entryModel->all();
 
 
         return view('user.content.blog.blog', ['items' => $articles, 'section'=> 'Archive', 'routeName' => 'post', 'urlSection' => 'posts', 'path' => 'Archive']);
