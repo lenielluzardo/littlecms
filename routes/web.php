@@ -7,7 +7,7 @@ Route::get('/', 'App\Http\Controllers\HomeController@Index' )
 
 Route::group(['prefix' => 'blog'], function(){
 
-    Route::get('', 'App\Http\Controllers\PostController@Index')
+    Route::get('', 'App\Http\Controllers\BlogController@Index')
     ->name('blog');
 
     // Route::get('/{section}/{id}', 'App\Http\Controllers\PostController@Post')

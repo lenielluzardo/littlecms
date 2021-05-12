@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use App\Models\Entry;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class BlogController extends Controller
 {
-    public function Index(Post $postModel)
+    public function Index()
     {
         $entryModel = new Entry();
-        // $articles = $postModel->all();
-        $articles = $entryModel->all();
+
+        //TODO: Create View Model : Migrate this logic to a new layer
+        $articles = $entryModel->all()->where('section_id', 1);
 
 
         return view('user.content.blog.blog', ['items' => $articles, 'section'=> 'Archive', 'routeName' => 'post', 'urlSection' => 'posts', 'path' => 'Archive']);
