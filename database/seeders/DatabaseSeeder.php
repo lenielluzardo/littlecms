@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EntryTableSeeder::class);
         $this->call(CategoryTableSeeder::class);
         $this->call(LabelTableSeeder::class);
+        $this->call(MenuTableSeeder::class);
+        $this->call(MenuItemTableSeeder::class);
     }
 }
