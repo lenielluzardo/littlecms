@@ -3,22 +3,22 @@
 <nav id="header-navigation" class="header-navigation-container">
     <ul>
 
-        @foreach ($sections as $section)
-            @if ($section->category === 'web' && $section->route != 'portfolio')
-                <a href="{{ route($section->route) }}">
+        @foreach ($items as $item)
+            {{-- @if ($item->category === 'web' && $item->route != 'portfolio') --}}
+                <a href="{{ route($item->route_name, $item->url) }}">
                     <li>
-                        {{ $section->name }}
+                        {{ $item->title }}
                     </li>
                 </a>
-                @endif
+                {{-- @endif --}}
 
-                @if ($section->category === 'web' && $section->route === 'portfolio')
-                    <a href="{{ route($section->route, strtolower($section->name)) }}">
+                {{-- @if ($item->category === 'web' && $item->route === 'portfolio')
+                    <a href="{{ route($item->route, strtolower($item->name)) }}">
                         <li>
-                            {{ $section->name }}
+                            {{ $item->name }}
                         </li>
                     </a>
-            @endif
+            @endif --}}
         @endforeach
 
     </ul>

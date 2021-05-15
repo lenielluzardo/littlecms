@@ -3,17 +3,18 @@
 namespace App\Composers;
 
 use Illuminate\View\View;
-use App\Models\Section;
+use App\Models\Menu;
 
 class SocialMediaComposer{
 
-    protected $sections = [];
+    protected $links = [];
 
-    public function __construct(Section $sectionModel){
-        $this->sections = $sectionModel->all();
+    public function __construct(Menu $menu)
+    {
+        $this->links = $menu->find('social')->items;
     }
 
     public function compose(View $view){
-        $view->with('sections', $this->sections);
+        $view->with('links', $this->links);
     }
 }

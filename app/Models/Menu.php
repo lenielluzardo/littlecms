@@ -10,6 +10,7 @@ class Menu extends Model
     use HasFactory;
 
     protected $fillable = ['section'];
+    protected $primaryKey = 'section';
 
     public function items(){
         return $this->hasMany('App\Models\MenuItem', 'menu_id', 'id');

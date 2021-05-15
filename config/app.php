@@ -233,4 +233,28 @@ return [
 
     ],
 
+    'admin' => [
+
+        'name' => env('ADMIN_USER_NAME'),
+        'nickname' => env('ADMIN_USER_NICKNAME'),
+        'email' => env('ADMIN_USER_EMAIL'),
+        'password' => env('ADMIN_USER_PASS'),
+        'description' => env('ADMIN_USER_DESCRIPTION'),
+        'about' => env('ADMIN_USER_ABOUT'),
+        'profile_img' => env('ADMIN_USER_PROFILE_IMG'),
+        'recovery_email' => env('ADMIN_USER_RECOVERY_EMAIL'),
+
+        'social' => [
+
+            'github' => env('SOCIAL_GH'),
+            'behance' => env('SOCIAL_BH'),
+            'linkedin' => env('SOCIAL_LI'),
+            'youtube' =>  env('SOCIAL_YT'),
+            'twitter' => env('SOCIAL_TW'),
+            'instagram' => env('SOCIAL_IG'),
+            'facebook' => env('SOCIAL_FB'),
+        ]
+
+    ]
+
 ];

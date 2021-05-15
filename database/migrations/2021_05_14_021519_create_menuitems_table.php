@@ -16,7 +16,7 @@ class CreateMenuitemsTable extends Migration
         Schema::create('menu_items', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('title');
-            $table->string('route_name')->nullable();
+            $table->string('route_name');
             $table->string('url')->nullable();
             $table->integer('menu_id');
             $table->timestamps();
