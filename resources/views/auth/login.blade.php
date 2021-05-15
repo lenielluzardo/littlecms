@@ -1,6 +1,6 @@
-@extends('partial.main')
+@extends('user.content.main')
 
-@section('content')
+@section('index')
 <section class="publication-section-container">
     <section class="content-section-container">
         <section class="publication-container">
@@ -42,9 +42,9 @@
                         <label class="form-label" for="remember">Remember me</label>
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         {!! NoCaptcha::display()!!}
-                    </div>
+                    </div> --}}
 
                     <div class="button-container">
                         {{ csrf_field() }}

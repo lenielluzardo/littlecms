@@ -12,10 +12,12 @@ class HeaderModulesComposer{
     public function __construct(Menu $menu)
     {
         $this->menuModules = $menu->getUserHeaderMenu();
+        // dd($this->menuModules);
     }
 
     public function compose(View $view)
     {
+
         $view->with('modules', $this->menuModules);
     }
 }

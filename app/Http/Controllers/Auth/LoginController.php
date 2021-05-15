@@ -25,7 +25,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if(Auth::atttempt($credentials)){
-            return redirect()->intended('welcome');
+            return redirect()->intended('home');
         }
         return view('admin.login');
     }

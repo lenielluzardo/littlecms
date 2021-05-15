@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Composers;
+namespace App\Composers\User;
 
 use Illuminate\View\View;
 use App\Models\Notification;

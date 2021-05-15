@@ -35,14 +35,21 @@ Route::group(['prefix' => 'contact'], function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
-    Route::get('', 'App\Http\Controllers\Admin\AdminController@getIndex')
-    ->name('admin.index');
+    Route::get('', 'App\Http\Controllers\Admin\AdminController@Index')
+    ->name('admin');
 
-    Route::post('', 'App\Http\Controllers\Admin\AdminController@savePost')
-    ->name('admin.save');
 
-    Route::get('/{id}', 'App\Http\Controllers\Admin\AdminController@deletePost')
-    ->name('admin.remove');
+    // Route::post('', 'App\Http\Controllers\Admin\AdminController@savePost')
+    // ->name('admin.save');
+
+    // Route::get('/{id}', 'App\Http\Controllers\Admin\AdminController@deletePost')
+    // ->name('admin.remove');
+
+    Route::get('/entries', 'App\Http\Controllers\Admin\EntryManagementController@Index')
+    ->name('entries');
+
+    Route::get('/menus', 'App\Http\Controllers\Admin\MenuManagementController@Index')
+    ->name('menus');
 });
 
 Auth::routes();

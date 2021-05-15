@@ -17,18 +17,18 @@ class Menu extends Model
         return $this->hasMany('App\Models\Menu', 'parent_id', 'id');
     }
 
-    public function getUserSocialMenu()
+    public function getSocialMediaMenu()
     {
-        return $this->find('footer_social')->childs;
+        return $this->find('social_media')->childs;
     }
 
     public function getUserHeaderMenu()
     {
-        return $this->find('header_modules')->childs;
+        return $this->find('user_header')->childs;
     }
     public function getAdminHeaderMenu()
     {
-
+        return $this->find('admin_header')->childs;
     }
 
 }

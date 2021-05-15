@@ -5,13 +5,13 @@ namespace App\Composers\User;
 use Illuminate\View\View;
 use App\Models\Menu;
 
-class FooterSocialComposer{
+class SocialMediaComposer{
 
     protected $links = [];
 
     public function __construct(Menu $menu)
     {
-        $this->links = $menu->getUserSocialMenu();
+        $this->links = $menu->getSocialMediaMenu();
     }
 
     public function compose(View $view)

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\User;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Domains\BlogDomain;
+use App\Domains\User\BlogDomain;
 
 class BlogController extends Controller
 {

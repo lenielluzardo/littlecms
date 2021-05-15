@@ -4,7 +4,7 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Domains\PortfolioDomain;
+use App\Domains\User\PortfolioDomain;
 
 
 class PortfolioController extends Controller

@@ -4,11 +4,7 @@
 
 @section('main')
 
-        <section id="home" class="home-container">
-
-            {{-- @include('user.partial.modal', ['modal' => $modal]) --}}
-
-        </section>
+    <section id="home" class="home-container"></section>
 
 @endsection
 

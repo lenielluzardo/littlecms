@@ -10,7 +10,8 @@
 
         <link rel="icon" type="image/svg" width="16px" height="16px" href="{{URL::to('./assets/icons/web-icon.svg')}}" type="text/css">
 
-        <link rel="stylesheet" href="{{asset('/css/index.min.css')}}" type="text/css">
+        @yield('stylesheets')
+
         <link rel="stylesheet" href="{{asset('/css/all.css')}}" type="text/css">
 
         <script src="{{asset('/js/jquery-3.6.0.min.js')}}"></script>

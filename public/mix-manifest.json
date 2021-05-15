@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/index.css": "/css/index.css",
+    "/css/admin.css": "/css/admin.css",
+    "/css/user.css": "/css/user.css",
     "/css/all.css": "/css/all.css",
     "/assets/images/bg-graphics.png": "/assets/images/bg-graphics.png",
     "/assets/images/bg-home.png": "/assets/images/bg-home.png",
@@ -23,5 +24,6 @@
     "/assets/webfonts/fa-solid-900.ttf": "/assets/webfonts/fa-solid-900.ttf",
     "/assets/webfonts/fa-solid-900.woff": "/assets/webfonts/fa-solid-900.woff",
     "/assets/webfonts/fa-solid-900.woff2": "/assets/webfonts/fa-solid-900.woff2",
-    "/css/index.min.css": "/css/index.min.css"
+    "/css/user.min.css": "/css/user.min.css",
+    "/css/admin.min.css": "/css/admin.min.css"
 }

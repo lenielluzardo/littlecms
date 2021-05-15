@@ -1,5 +1,8 @@
 @extends('master')
-@section('title', 'Home')
+
+@section('stylesheets')
+    <link rel="stylesheet" href="{{asset('/css/user.min.css')}}" type="text/css">
+@endsection
 
 @section('layout')
 

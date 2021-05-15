@@ -1,7 +1,6 @@
 .preview-item{
     display:grid;
     grid-template: minmax(150px, 200px) repeat(2, auto) / 1fr;
-    grid-row-gap: 5px;
     height:100%;
     width: 200px;
     padding: 0 !important;
@@ -9,13 +8,15 @@
 
     &-title{
         text-align: center;
-        margin: 0 5px;
+        padding: 5px;
+        background-color: fade(@dark_neutral, 10%);
     }
 
     &-desc {
         text-align: justify;
         overflow: hidden;
-        margin: 0 5px;
+        padding: 0 5px;
+        margin: 5px 0;
     }
 
     &-img-container{
@@ -29,14 +30,14 @@
     }
 
     .box-button-container{
-        margin: 5px !important;
+        margin: 0px !important;
     }
 }
 @media @tablet{
     .preview-item{
         display:grid;
-        grid-gap: 5px;
         grid-template: auto 1fr auto /auto 1fr;
+        align-items: center;
         height: 150px;
         width: 100%;
 

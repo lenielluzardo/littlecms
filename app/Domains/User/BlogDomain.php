@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domains;
+namespace App\Domains\User;
 
 use App\Models\Category;
 use App\ViewModels\User\BlogViewModel;

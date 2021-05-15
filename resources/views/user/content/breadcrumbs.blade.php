@@ -6,7 +6,11 @@
         <div class="previous-button-label">Previous</div>
     </div>
 
-    <div class="path-container">
+    <section class="path-container">
         @yield('path')
-    </div>
+    </section>
+
+    @include('auth.session')
+
 </nav>
+

@@ -14,9 +14,13 @@ mix.options({
     processCssUrls: false
 });
 mix.js('resources/js/app.js', 'public/js')
-    .less('resources/less/index.less', 'public/css')
-    .copy('resources/less/utilities/all.css', 'public/css')
+    .less('resources/less/user.less', 'public/css')
+    .less('resources/less/admin.less', 'public/css');
+
+mix.copy('resources/less/utilities/all.css', 'public/css')
     .copyDirectory('resources/assets/images', 'public/assets/images')
     .copyDirectory('resources/assets/icons', 'public/assets/icons')
-    .copyDirectory('resources/assets/webfonts', 'public/assets/webfonts')
-    .minify('public/css/index.css');
+    .copyDirectory('resources/assets/webfonts', 'public/assets/webfonts');
+
+mix.minify('public/css/user.css');
+mix.minify('public/css/admin.css');

@@ -14,7 +14,7 @@ class MenuTableSeeder extends Seeder
     public function run()
     {
         $menu = new \App\Models\Menu([
-            'title' => 'header',
+            'title' => 'admin_header',
             'section_id' => 1,
         ]);
         $menu->save();
@@ -38,7 +38,7 @@ class MenuTableSeeder extends Seeder
         $menu->save();
 
         $menu = new \App\Models\Menu([
-            'title' => 'header_modules',
+            'title' => 'user_header',
             'section_id' => 2,
         ]);
         $menu->save();
@@ -56,7 +56,7 @@ class MenuTableSeeder extends Seeder
         $menu->save();
 
         $menu = new \App\Models\Menu([
-            'title' => 'footer_social',
+            'title' => 'social_media',
             'section_id' => 2,
         ]);
         $menu->save();
@@ -169,6 +169,24 @@ class MenuTableSeeder extends Seeder
             'url' => config('app.admin.social.facebook'),
             'section_id' => 2,
             'parent_id' => 8
+        ]);
+        $menu->save();
+
+        $menu = new \App\Models\Menu([
+            'title' => 'Entries',
+            'route_name' => 'entries',
+            'url' => 'entries',
+            'section_id' => 1,
+            'parent_id' => 1
+        ]);
+        $menu->save();
+
+        $menu = new \App\Models\Menu([
+            'title' => 'Menus',
+            'route_name' => 'menus',
+            'url' => 'menus',
+            'section_id' => 1,
+            'parent_id' => 1
         ]);
         $menu->save();
     }

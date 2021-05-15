@@ -26,4 +26,8 @@ class Category extends Model
         return $this->find($category)->entries;
     }
 
+    public function getAllEntries()
+    {
+        return $this->all();
+    }
 }

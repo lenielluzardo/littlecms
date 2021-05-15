@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 
 class UserTableSeeder extends Seeder
@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
             'name' => config('app.admin.name'),
             'nickname' => config('app.admin.nickname'),
             'email' => config('app.admin.email'),
-            'password' => config('app.admin.password'),
+            'password' => Hash::make(config('app.admin.password')),
             'description' => config('app.admin.description'),
             'about' => config('app.admin.about'),
             'profile_img' => config('app.admin.profile_img'),
