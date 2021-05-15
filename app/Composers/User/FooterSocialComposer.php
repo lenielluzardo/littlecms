@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Composers;
+namespace App\Composers\User;
 
 use Illuminate\View\View;
 use App\Models\Menu;
 
-class SocialMediaComposer{
+class FooterSocialComposer{
 
     protected $links = [];
 
     public function __construct(Menu $menu)
     {
-        $this->links = $menu->find('social')->items;
+        $this->links = $menu->getUserSocialMenu();
     }
 
-    public function compose(View $view){
+    public function compose(View $view)
+    {
         $view->with('links', $this->links);
     }
 }

@@ -29,17 +29,18 @@
 
     <script>
         function showArticle(id){
-            let $entryOpacity = $('#entry-'+id).css('display');
-            $('#subindex').show();
-            // $('#subindex').css('display', 'block');
 
-            if($entryOpacity !== 'none')
+            let $entry = $('#entry-'+id);
+            let $display = $entry.css('display');
+
+            if($display !== 'none')
             {
                 return;
             }
-
+            $('#subindex').show();
             $('.entry').css('display', 'none');
             $('#entry-'+id).toggle('ease-in-out');
+            document.title += " | " + $('#entry-title').text();
         }
     </script>
 @endsection

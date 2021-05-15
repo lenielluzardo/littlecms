@@ -14,12 +14,14 @@ class ModuleTableSeeder extends Seeder
     public function run()
     {
         $module = new \App\Models\Module([
-            'name' => 'blog'
+            'name' => 'blog',
+            'section_id' => 2
         ]);
         $module->save();
 
         $module = new \App\Models\Module([
-            'name' => 'portfolio'
+            'name' => 'portfolio',
+            'section_id' => 2
         ]);
         $module->save();
     }

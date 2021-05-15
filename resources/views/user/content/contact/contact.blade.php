@@ -12,7 +12,7 @@
 @section('index')
 
     <!-- ===== S U B C O N T E N T ===== -->
-    @include('user.partial.errors')
+    @include('partial.errors')
 
     @include('user.content.contact.form')
 
@@ -21,6 +21,6 @@
 
 @section('modal')
 
-    @include('user.partial.modal', ['modal' => $modal])
+    @include('partial.modal', ['modal' => $modal])
 
 @endsection

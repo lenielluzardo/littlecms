@@ -15,4 +15,15 @@ class Category extends Model
     public function entries(){
         return $this->hasMany('App\Models\Entry', 'category_id', 'id');
     }
+
+    public function getBlogEntries()
+    {
+        return $this->find('posts')->entries;
+    }
+
+    public function getPortfolioEntries($category)
+    {
+        return $this->find($category)->entries;
+    }
+
 }

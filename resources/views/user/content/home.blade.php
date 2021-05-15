@@ -14,6 +14,6 @@
 
 @section('modal')
 
-    @include('user.partial.modal', ['modal' => $modal])
+    @include('partial.modal', ['modal' => $modal])
 
 @endsection

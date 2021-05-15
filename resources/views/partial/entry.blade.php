@@ -4,7 +4,7 @@
     <!-- ===== H E A D E R ===== -->
     <header class="entry-header" >
 
-        <h2>{{$item->title}}</h2>
+        <h2 id="entry-title">{{$item->title}}</h2>
 
         <div class="entry-img-container">
             <img src="{{$item->preview_img}}"  alt="{{$item->title}}">

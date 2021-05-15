@@ -31,9 +31,8 @@ class ComposerServiceProvider extends ServiceProvider
         View::composer('admin.header', \App\Composers\WebSectionComposer::class);
 
 
-        View::composer('user.header.navigation', \App\Composers\UserNavigationComposer::class);
-
-        View::composer('user.footer.socialmedia', \App\Composers\SocialMediaComposer::class);
+        View::composer('user.header.navigation', \App\Composers\User\HeaderModulesComposer::class);
+        View::composer('user.footer.socialmedia', \App\Composers\User\FooterSocialComposer::class);
 
         // View::composer('user.header.header', \App\Composers\HeaderComposer::class);
         View::composer('user.content.about.description', \App\Composers\AboutComposer::class);

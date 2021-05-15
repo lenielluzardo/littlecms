@@ -14,7 +14,7 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         $category = new \App\Models\Category([
-            'name' => 'blog',
+            'name' => 'posts',
         ]);
         $category->save();
 
