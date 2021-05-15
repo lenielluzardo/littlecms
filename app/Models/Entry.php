@@ -9,7 +9,7 @@ class Entry extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'preview_img', 'preview_content', 'content'];
+    protected $fillable = ['title', 'preview_img', 'preview_content', 'content', 'user_id', 'label_id', 'category_id', 'module_name'];
 
     public function category(){
         return $this->belongsTo('App\Models\Category');

@@ -19,6 +19,7 @@ class CreateMenuitemsTable extends Migration
             $table->string('route_name');
             $table->string('url')->nullable();
             $table->integer('menu_id');
+            $table->string('module_name')->nullable();
             $table->timestamps();
         });
     }

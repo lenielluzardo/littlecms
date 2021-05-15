@@ -5,17 +5,16 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'App\Http\Controllers\HomeController@Index' )
 ->name('home');
 
-Route::group(['prefix' => 'blog'], function(){
-
-    Route::get('', 'App\Http\Controllers\BlogController@Index')
+Route::group([''], function(){
+    Route::get('{module}', 'App\Http\Controllers\EntryController@Index')
     ->name('blog');
 
     // Route::get('/{section}/{id}', 'App\Http\Controllers\PostController@Post')
     // ->name('post');
 });
 
-Route::group(['prefix' => 'portfolio'], function(){
-    Route::get('/{section}', 'App\Http\Controllers\PortfolioController@getIndex')
+Route::group([''], function(){
+    Route::get('portfolio/{category}', 'App\Http\Controllers\EntryController@Index')
     ->name('portfolio');
 
     // Route::get('/{section}/{id}', 'App\Http\Controllers\PortfolioController@getProjectById')

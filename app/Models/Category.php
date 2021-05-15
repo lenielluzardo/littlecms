@@ -10,6 +10,7 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+    protected $primaryKey = 'name';
 
     public function entries(){
         return $this->hasMany('App\Models\Entry', 'category_id', 'id');

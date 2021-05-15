@@ -19,9 +19,9 @@ class CreateEntriesTable extends Migration
             $table->text('preview_img');
             $table->text('preview_content');
             $table->text('content');
-            $table->text('label_id')->nullable();
-            $table->text('category_id')->nullable();
-            $table->text('section_id')->nullable();
+            $table->integer('label_id')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->string('module_name')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

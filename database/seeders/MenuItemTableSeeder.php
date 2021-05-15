@@ -16,8 +16,9 @@ class MenuItemTableSeeder extends Seeder
         $menuItem = new \App\Models\MenuItem([
             'title' => 'Blog',
             'route_name' => 'blog',
-            'url' => '',
+            'url' => 'blog',
             'menu_id' => 2,
+            'module_name' => 'blog',
         ]);
         $menuItem->save();
 
@@ -26,6 +27,8 @@ class MenuItemTableSeeder extends Seeder
             'route_name' => 'portfolio',
             'url' => "software",
             'menu_id' => 2,
+            'module_name' => 'portfolio',
+
         ]);
         $menuItem->save();
 
@@ -34,6 +37,7 @@ class MenuItemTableSeeder extends Seeder
             'route_name' => 'portfolio',
             'url' => "animation",
             'menu_id' => 2,
+            'module_name' => 'portfolio',
         ]);
         $menuItem->save();
 
@@ -42,6 +46,7 @@ class MenuItemTableSeeder extends Seeder
             'route_name' => 'portfolio',
             'url' => "illustration",
             'menu_id' => 2,
+            'module_name' => 'portfolio',
         ]);
         $menuItem->save();
 

@@ -2,11 +2,19 @@
 
 namespace App\Models;
 
+use App\Models\Category;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
     protected $fillable = ['title', 'content'];
+    protected $_category;
+    public function __construct()
+    {
+
+        $this->_category = new Category();
+    }
 
     public function section(){
         return $this->belongsTo('App\Models\Section', 'section_id');
@@ -20,8 +28,7 @@ class Project extends Model
     {
         $_section = Section::where('name', ucfirst($section))->first();
 
-        $projects = Project::where('section_id', $_section->id)->orderBy('created_at', 'desc')
-                ->with('user')->with('section')->get();
+        $projects = $this->_category->find($section)->entries;
 
         return $projects;
     }

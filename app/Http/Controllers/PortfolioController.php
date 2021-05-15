@@ -6,10 +6,9 @@ use App\Models\Project;
 
 class PortfolioController extends Controller
 {
-    public function getIndex($section)
+    public function getIndex($category, Project $project)
     {
-        $projectModel = new Project();
-        $projects = $projectModel->getAllProjects($section);
+        $projects = $project->getAllProjects($category);
         return view('user.content.portfolio.portfolio', ['items' => $projects, 'routeName' => 'project', 'urlSection' => 'software', 'path' => 'Portfolio']);
     }
 

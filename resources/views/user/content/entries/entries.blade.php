@@ -1,5 +1,5 @@
 @extends('user.content.main')
 
-@section('title', 'Blog')
+{{-- @section('title', 'Blog') --}}
 
 @include('user.partial.archive')
