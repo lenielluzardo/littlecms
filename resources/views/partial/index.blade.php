@@ -2,10 +2,8 @@
 
     <!-- ===== I N D E X ===== -->
     <section id="index" class="index-container">
+        <section class="index-content-container content-container">
         @include('controls.filter')
-
-        {{-- <section class="index-content-container content-container"> --}}
-
 
                 <ul class="archive-list">
 
@@ -21,7 +19,7 @@
 
             {{-- @include('controls.paging') --}}
 
-        {{-- </section> --}}
+        </section>
 
     </section>
 

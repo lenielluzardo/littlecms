@@ -64,7 +64,7 @@ h6 {
 .user-layout {
   height: inherit;
   overflow: scroll;
-  background-color: #006bff;
+  background: linear-gradient(#0091ff, #006bff);
 }
 /* ===== H E A D E R ===== */
 .header-container {
@@ -437,24 +437,27 @@ h6 {
   padding: 20px;
   min-height: 50vh ;
   overflow: scroll;
-  background-color: #e9f5ff;
+  background-color: rgba(253, 253, 253, 0.6);
+}
+.main-center {
+  /* Wraps everything in the content section IS A SECOND LAYOUT FOR MAIN */
+  grid-row: 2 / 7;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background-color: rgba(253, 253, 253, 0.6);
 }
 .index-container {
   /* Wraps each sub-content section in the left side of the main content */
   overflow: inherit;
   width: 100%;
   justify-self: center;
-  background-color: #fffefe;
 }
 .sub-index-container {
   /* Wraps each sub-content section in the right side of the main content */
   justify-self: center;
   display: none;
-  height: 500px;
   width: 100%;
-}
-.content-container {
-  /* Wraps each sub-content section in the right side of the main content */
 }
 .sub-content-container {
   /* Wraps the articles, posts, lists, projects, etc.*/
@@ -463,24 +466,17 @@ h6 {
 .section-title {
   color: #e2e2e2;
 }
-@media only screen and (min-width: 540px) {
-  .index-container {
-    background-color: #d6edff8f;
-  }
-}
 @media only screen and (min-width: 851px) and (min-height: 799px) {
   .main-container {
     grid-row: 2 / 7;
     overflow: hidden;
     display: grid;
-    grid-template: 1fr / 1fr 2fr;
-    grid-column-gap: 20px;
+    grid-template: 1fr / repeat(2, 1fr);
     padding: 0px;
   }
   .index-container {
     display: grid;
-    grid-template-rows: auto 1fr;
-    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.5);
+    place-items: center;
   }
   .sub-index-container {
     grid-column: 2 / 3;
@@ -489,9 +485,19 @@ h6 {
     height: 100%;
     justify-self: initial;
   }
+  .index-content-container {
+    /* Wraps each sub-content section in the right side of the main content */
+    width: 80%;
+    height: 100%;
+    display: grid;
+    overflow-x: hidden;
+    grid-template-rows: auto 1fr;
+    background-color: rgba(226, 226, 226, 0.1);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+  }
   .subindex-content-container {
     /* Wraps each sub-content section in the right side of the main content */
-    width: 65%;
+    width: 90%;
     margin: 0 20px;
     background-color: #fffefe;
     box-shadow: 0px 0px 7px 1px #00000056;
@@ -750,10 +756,14 @@ h6 {
   color: #000479;
 }
 /* ===== F O R M ===== */
+.form-container {
+  box-shadow: 0px 0px 20px 1px #00000069 !important;
+}
 .form-container form {
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgba(0, 4, 121, 0.5);
+  padding: 20px;
+  border-radius: 3px;
+  background: linear-gradient(#37c0ff, #0091ff);
+  border: 1px solid rgba(0, 107, 255, 0.5);
   box-sizing: border-box;
 }
 .form-container .form-group {
@@ -772,13 +782,12 @@ h6 {
   border: 0;
   padding: 0;
   margin: 0;
-  padding: 3px 0;
-  padding-left: 5px !important;
+  padding: 5px 0;
   font-family: inherit !important;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 .form-container .form-group input {
-  width: 98%;
+  width: 100%;
 }
 .form-container .form-group select,
 .form-container .form-group button {
@@ -788,7 +797,7 @@ h6 {
   padding: 10px;
 }
 .form-container .form-group textarea {
-  width: 98%;
+  width: 100%;
 }
 .form-container .form-group .g-recaptcha {
   transform: scale(0.77);
@@ -871,7 +880,6 @@ h6 {
   margin: auto;
   padding: 10px;
   margin: 10px 0;
-  background: rgba(218, 218, 218, 0.3);
 }
 .entry-header .entry-meta-container em {
   font-style: initial;
@@ -897,7 +905,7 @@ h6 {
   display: flex;
   height: 350px;
   padding-right: 17px;
-  margin-left: 15px;
+  margin-left: 10px;
   width: 100%;
   box-sizing: content-box;
   overflow-y: hidden;

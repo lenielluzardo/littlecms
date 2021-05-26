@@ -18,3 +18,6 @@
 
 </div>
 
+@section('scripts')
+    <script src="{{asset('js/modal.js')}}"></script>
+@endsection

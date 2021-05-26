@@ -23,7 +23,7 @@ class HomeController extends Controller
                                 Make sure to have fun, and get in contact with me to create something espectacular,
                                 ¡wish you a good day!
                             </p>",
-            'button' => ""
+            'button' => '<button id="modal-close-button">Close</button>'
 
         ];
 

@@ -1,6 +1,5 @@
 let header = document.getElementById('header');
 let navIcon = document.getElementById('mobile-nav-button');
-let overlay = document.getElementById('overlay');
 
 navIcon.addEventListener("click", showNavMenu);
 showNavClass = 'show-nav';
@@ -21,14 +20,5 @@ function showNavMenu(){
   }
 }
 
-let closeButton = document.getElementById('modal-close-button');
-
-closeButton.addEventListener('click', closeModal);
-
-function closeModal(){
-    // alert("I'm working!");
-    modal.style.animation = 'modalSlideToTop .7s ease-in-out 0s forwards';
-    overlay.style.display = 'none';
-}
 
 

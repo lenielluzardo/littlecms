@@ -11,16 +11,18 @@
 
 @section('main')
 
+    @include('user.content.breadcrumbs')
+
     <!-- ===== I N D E X ===== -->
-    <main id="main" class="main-container">
+    <main id="main" class="main-center">
 
         @include('partial.errors')
 
-        <section class="index-content-container content-container">
+        {{-- <section class="index-content-container content-container"> --}}
 
             @include('user.content.contact.form')
 
-        </section>
+        {{-- </section> --}}
 
     </main>
 

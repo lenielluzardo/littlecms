@@ -1,10 +1,13 @@
 /* ===== F O R M ===== */
 .form-container {
+    box-shadow: 0px 0px 20px 1px #00000069 !important;
+
     // background: fade(@fifth, 50%);
    form{
-        padding: 5px;
-        border-radius: 5px;
-        background-color: fade(@fourth, 50%);
+        padding: 20px;
+        border-radius: 3px;
+        background: linear-gradient(@primary, @secondary);
+        border: 1px solid fade(@tertiary, 50%);
         box-sizing: border-box;
     }
 
@@ -18,13 +21,13 @@
         }
         input, select, textarea, button{
             .input-reset;
-            padding: 3px 0;
-            padding-left: 5px !important;
+            padding: 5px 0;
+            // padding-left: 5px !important;
             font-family: inherit !important;
-            border-radius: 5px;
+            border-radius: 2px;
         }
         input {
-            width: 98%;
+            width: 100%;
         }
         select, button{
             width: 100%;
@@ -33,7 +36,7 @@
             padding: 10px
         }
         textarea{
-            width: 98%;
+            width: 100%;
         }
         .g-recaptcha{
             transform:scale(0.77);
