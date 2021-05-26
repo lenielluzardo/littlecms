@@ -1,16 +1,17 @@
 .user-layout {
     height: inherit;
     overflow: scroll;
+    background-color: @tertiary;
 }
 /* ===== H E A D E R ===== */
 .header-container{
-    .panel-primary;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 6;
     width: 100%;
     max-height: 75px;
     overflow: hidden;
+    background-color: @shade_six;
     .transition(max-height, 1s, ease-in-out);
 }
 .transparent-header-container{
@@ -19,18 +20,21 @@
     padding: 10px;
     overflow: hidden;
 }
-/* ===== C O N T E N T ===== */
-.content-container{
+/* ===== D E S K T O P ===== */
+.desktop-container{
  /* Wraps the section between the header & aside */
+
 }
 /* ===== A S I D E ===== */
 .aside-container{
     text-align: center;
-    .panel-primary;
+    background-color: @shade_six;
+    // .panel-primary;
 }
 /* ===== F O O T E R ===== */
 .footer-container {
-    .panel-tertiary;
+    background-color: @shade_five;
+    // .panel-tertiary;
 }
 @media @desktop{
     .user-layout {
@@ -47,7 +51,7 @@
     .transparent-header-container{
         display: block;
     }
-    .content-container{
+    .desktop-container{
         grid-row: 1 / 6;
         grid-column: 2 / 7;
         display: grid;
@@ -66,6 +70,5 @@
         min-height: initial;
         display: flex;
         justify-content: space-between;
-        background-color: @complementary_four;
     }
 }

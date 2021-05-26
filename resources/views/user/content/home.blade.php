@@ -13,3 +13,5 @@
     @include('partial.modal', ['modal' => $modal])
 
 @endsection
+
+

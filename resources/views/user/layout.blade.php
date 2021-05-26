@@ -10,8 +10,8 @@
 
         @include('user.header.header')
 
-        <!-- ===== C O N T E N T ===== -->
-        <section id="content" class="content-container">
+        <!-- ===== D E S K T O P ===== -->
+        <section id="desktop" class="desktop-container">
 
             @yield('main')
 
@@ -24,7 +24,7 @@
     </section>
 
     @yield('modal')
-    <script src="{{asset('/js/app.js')}}"></script>
+    @yield('scripts')
 
 @endsection
 

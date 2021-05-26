@@ -17,7 +17,7 @@ class EntryManagementController extends Controller
     {
         $model = $this->_domain->getEntryManagementModel();
 
-        return view('admin.content.management', ['model'=> $model]);
+        return view('admin.content.main', ['model'=> $model]);
     }
 
 }

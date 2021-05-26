@@ -7,27 +7,17 @@
     <!-- ===== M A I N ===== -->
     <main id="main" class="main-container">
 
-        <!-- ===== C O N T E N T ===== -->
-        <section id="index" class="index-container">
+        @yield('index')
 
-            @yield('index')
-
-        </section>
-
-        <section id="subindex" class="sub-index-container">
-
-            <!-- ===== S U B C O N T E N T ===== -->
-            <section class="sub-content-container box-container entry-container">
-
-                @yield('subindex')
-
-            </section>
-
-        </section>
+        @yield('subindex')
 
     </main>
 
-    <script>
+@endsection
+
+@section('scripts')
+    <script src="{{asset('/js/app.js')}}"></script>
+<script>
         function showArticle(id){
 
             let $entry = $('#entry-'+id);

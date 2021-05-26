@@ -6,4 +6,9 @@
 
 @extends('user.content.main')
 
-@include('partial.archive', ['items' => $model->items])
+@include('partial.index', ['items' => $model->items])
+
+@include('partial.subindex', ['items' => $model->items])
+
+@section('title') <?php print("$model->title") ?> @endsection
+

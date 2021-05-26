@@ -7,14 +7,22 @@
 </div>
 @endsection
 
-@extends('user.content.main')
+@extends('user.layout')
 
-@section('index')
+@section('main')
 
-    <!-- ===== S U B C O N T E N T ===== -->
-    @include('partial.errors')
+    <!-- ===== I N D E X ===== -->
+    <main id="main" class="main-container">
 
-    @include('user.content.contact.form')
+        @include('partial.errors')
+
+        <section class="index-content-container content-container">
+
+            @include('user.content.contact.form')
+
+        </section>
+
+    </main>
 
 
 @endsection
@@ -23,4 +31,23 @@
 
     @include('partial.modal', ['modal' => $modal])
 
+@endsection
+@section('scripts')
+    <script src="{{asset('/js/app.js')}}"></script>
+<script>
+        function showArticle(id){
+
+            let $entry = $('#entry-'+id);
+            let $display = $entry.css('display');
+
+            if($display !== 'none')
+            {
+                return;
+            }
+            $('#subindex').show();
+            $('.entry').css('display', 'none');
+            $('#entry-'+id).toggle('ease-in-out');
+            document.title += " | " + $('#entry-title').text();
+        }
+    </script>
 @endsection

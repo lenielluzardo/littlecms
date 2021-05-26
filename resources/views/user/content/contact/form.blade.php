@@ -1,5 +1,3 @@
-<section class="sub-content-container">
-
     <!-- ===== F O R M ===== -->
     @if($notification = Session::get('success'))
         <div >
@@ -13,7 +11,7 @@
         </span>
     @endif --}}
 
-    <div class="form-container box-container">
+    <div class="form-container">
       <form action="{{route('contact.send')}}" method="post">
 
         <div class="form-group">
@@ -72,5 +70,4 @@
       </form>
     </div>
     {!! NoCaptcha::renderJs()!!}
-</section>
 

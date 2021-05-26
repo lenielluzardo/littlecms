@@ -20,7 +20,7 @@
 @panel_font_family: 'Prompt';
 @note_font_family: 'Indie Flower';
 
-@base_font_color: @complementary_four;
+@base_font_color: rgb(9, 9, 9);
 @base_font_size: 15px;
 @parent_heading_size : 25px;
 @heading_size : 20px;
@@ -30,11 +30,11 @@
 @child_annotation_size : 10px;
 
 /* Colors */
-@primary: #00264D;
-@secondary: #13339B;
-@tertiary: #007AD6;
-@fourth: #74C7FF;
-@fifth: #0046A2;
+@primary: #37c0ff;
+@secondary: #0091ff;
+@tertiary: #006bff;
+@fourth: #000479;
+
 @complementary_one: #1C4F84;
 @complementary_two: #192A3B;
 @complementary_three: #000324;
@@ -46,16 +46,26 @@
 @mid_neutral: #dadada;
 @dark_neutral: #6b6b6b;
 
-@dark_box_button_color: linear-gradient(@tertiary, @fifth);
-@dark_box_button_color_hover: linear-gradient(@tertiary, fade(@fifth, 70%));
-@dark_box_button_color_active: linear-gradient(@fifth, @tertiary);
+@shade_one: #fffefe;
+@shade_two: #e2e2e2;
+@shade_three:#d4d4d4;
+@shade_four:fade(#ababab, 20%);
+@shade_five:fade(#6f6f6f, 30%);
+@shade_six:fade(#090909, 50%);
 
-@light_box_button_color: linear-gradient(@fourth, @tertiary);
-@light_box_button_color_hover: linear-gradient(@fourth, fade(@tertiary, 70%));
-@light_box_button_color_active: linear-gradient(@tertiary, @fourth);
+// @dark_box_button_color: linear-gradient(@tertiary, @fifth);
+// @dark_box_button_color_hover: linear-gradient(@tertiary, fade(@fifth, 70%));
+// @dark_box_button_color_active: linear-gradient(@fifth, @tertiary);
+
+// @light_box_button_color: linear-gradient(@fourth, @tertiary);
+// @light_box_button_color_hover: linear-gradient(@fourth, fade(@tertiary, 70%));
+// @light_box_button_color_active: linear-gradient(@tertiary, @fourth);
 
 /* Assets Variables */
 @home_bg_img : url('../../assets/images/bg-home.png');
+@layout_user_bg_img : url('../../assets/images/layout-user-bg-img.svg');
+@layout_admin_bg_img : url('../../assets/images/layout-admin-bg-img.svg');
+@body_bg_img : url('../../assets/images/body-bg-img.svg');
 
 @images : "../assets/images";
 @icons : "../assets/icons";

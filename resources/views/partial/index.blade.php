@@ -1,23 +1,28 @@
+@section('index')
 
-<section class="sub-content-container box-container archive-container">
-    @include('controls.filter')
+    <!-- ===== I N D E X ===== -->
+    <section id="index" class="index-container">
+        @include('controls.filter')
 
-    <section>
-        <ul class="archive-list">
-
-            @foreach($items as $item)
-
-            <li class="archive-list-item">
-
-                @include('controls.preview-item', ['item' => $item])
+        {{-- <section class="index-content-container content-container"> --}}
 
 
-            </li>
-            @endforeach
-        </ul>
+                <ul class="archive-list">
+
+                    @foreach($items as $item)
+
+                    <li class="archive-list-item">
+
+                        @include('controls.preview-item', ['item' => $item])
+
+                    </li>
+                    @endforeach
+                </ul>
+
+            {{-- @include('controls.paging') --}}
+
+        {{-- </section> --}}
+
     </section>
 
-    @include('controls.paging')
-
-</section>
-
+@endsection

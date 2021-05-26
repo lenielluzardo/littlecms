@@ -38,12 +38,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('', 'App\Http\Controllers\Admin\AdminController@Index')
     ->name('admin');
 
-
+    Route::get('/login', 'App\Http\Controllers\Auth\LoginController@authenticate');
+    
     // Route::post('', 'App\Http\Controllers\Admin\AdminController@savePost')
     // ->name('admin.save');
 
     // Route::get('/{id}', 'App\Http\Controllers\Admin\AdminController@deletePost')
     // ->name('admin.remove');
+    Route::post('/login', [
+        'uses' => 'App\Http\Controllers\Auth\LoginController@Login',
+        'as' => 'auth.signin'
+    ]);
 
     Route::get('/entries', 'App\Http\Controllers\Admin\EntryManagementController@Index')
     ->name('entries');
@@ -54,7 +59,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 Auth::routes();
 
-Route::post('login', [
-    'uses' => 'App\Http\Controllers\Admin\SigninController@signin',
-    'as' => 'auth.signin'
-]);
+

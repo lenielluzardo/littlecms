@@ -27,6 +27,26 @@ class LoginController extends Controller
         if(Auth::atttempt($credentials)){
             return redirect()->intended('home');
         }
-        return view('admin.login');
+        return view('auth.login');
+    }
+
+    public function Login(Request $request)
+    {
+        $validated = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        $isValid = Auth::attempt([ 'email' => $request->input('email'), 'password' => $request->input('password')],$request->has('remember'));
+
+        // dd($request->input('email'), $request->input('password'));
+        // dd($isValid);
+        // dd($isValid);
+
+        if($isValid)
+        {
+            return redirect()->route('admin.index');
+        }
+
+        return redirect()->back()->with('fail', 'Authentication Failed');
     }
 }
