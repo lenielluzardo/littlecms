@@ -30,7 +30,7 @@
             $('#subindex').show();
             $('.entry').css('display', 'none');
             $('#entry-'+id).toggle('ease-in-out');
-            document.title += " | " + $('#entry-title').text();
+            document.title += " :: " + $('#entry-title').text();
         }
     </script>
 @endsection

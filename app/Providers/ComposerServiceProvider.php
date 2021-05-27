@@ -34,7 +34,7 @@ class ComposerServiceProvider extends ServiceProvider
         View::composer('user.footer.socialmedia', \App\Composers\User\SocialMediaComposer::class);
 
         // View::composer('user.header.header', \App\Composers\HeaderComposer::class);
-        View::composer('user.content.about.description', \App\Composers\User\AboutComposer::class);
+        View::composer('user.content.about.author', \App\Composers\User\AuthorComposer::class);
         // View::composer('user.footer.footer', \App\Composers\FooterComposer::class);
         View::composer('user.partial.notification', \App\Composers\User\NotificationComposer::class);
     }

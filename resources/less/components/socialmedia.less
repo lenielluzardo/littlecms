@@ -1,5 +1,5 @@
 .socialmedia-container{
-    color: @shade_one;
+    color: @footer_text_color;
     padding: 20px;
     text-align: center;
     & > div{
@@ -12,14 +12,14 @@
         grid-template: repeat(2, 1fr) / repeat(4, 1fr);
 
         & > a{
-            color: @shade_one;
+            color: @footer_text_color;
             margin: 0 10px;
 
             &:hover {
-                background-color: fade(@fourth, 20%);
+                background-color: @link_bg_color_hover;
             }
             &:active{
-                background-color: fade(@fourth, 40%);
+                background-color: @link_bg_color_active;
             }
         }
     }
@@ -34,12 +34,13 @@
         }
 
         & > .socialmedia-links-container{
+            align-items: center;
             grid-template: auto / auto;
             grid-auto-flow: column;
-            padding: 5px;
+            padding: 0px;
 
             & > a{
-                padding: 5px;
+                padding: 10px;
             }
         }
     }

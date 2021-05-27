@@ -24,30 +24,33 @@
             <input id="email" name="email" type="text">
         </div>
 
-        <div class="form-group">
-            <label for="subject">Subject</label>
-            <select id="subject" type="select" name="subject">
+        <div class="select-form-group">
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" type="select" name="subject">
 
-              <option value="">- - Please Select - -</option>
-              <option value="Job Proposal">Job Proposal</option>
-              <option value="Request a Commission">Request a Commission</option>
-              <option value="Make a Collaboration">Make a Collaboration</option>
+                <option value="">- - Please Select - -</option>
+                <option value="Job Proposal">Job Proposal</option>
+                <option value="Request a Commission">Request a Commission</option>
+                <option value="Make a Collaboration">Make a Collaboration</option>
 
-            </select>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="discipline">Discipline</label>
+                <select id="discipline" type="select" name="discipline">
+
+                <option value="">- - Please Select - -</option>
+                <option value="Software / Game Development">Software / Game Development</option>
+                <option value="Animation">Animation</option>
+                <option value="Illustration / Concept Art">Illustration / Concept Art</option>
+                <option value="UI / UX Desing">UI / UX Desing</option>
+
+                </select>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="discipline">Discipline</label>
-            <select id="discipline" type="select" name="discipline">
-
-              <option value="">- - Please Select - -</option>
-              <option value="Software / Game Development">Software / Game Development</option>
-              <option value="Animation">Animation</option>
-              <option value="Illustration / Concept Art">Illustration / Concept Art</option>
-              <option value="UI / UX Desing">UI / UX Desing</option>
-
-            </select>
-        </div>
 
         <div class="form-group">
             <textarea class="comments" name="comments" value="" placeholder="Leave a datailed message please..."></textarea>

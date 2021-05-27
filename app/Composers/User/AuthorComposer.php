@@ -5,12 +5,12 @@ namespace App\Composers\User;
 use Illuminate\View\View;
 use App\Models\User;
 
-class AboutComposer{
+class AuthorComposer{
 
     protected $author;
 
     public function __construct(User $userModel){
-        $this->author = $userModel->find(1);
+        $this->author = $userModel->find(config('app.admin.email'));
     }
 
     public function compose(View $view){

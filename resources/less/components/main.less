@@ -6,9 +6,10 @@
     padding:20px;
     min-height: 50vh ;
     overflow: scroll;
-    // background: linear-gradient(fade(@primary, 50%), @fourth);
+    background-color: @main_bg_color;
+    z-index: @main_index;
 
-    background-color:fade(#fdfdfd, 60%);
+
 }
 .main-center{
     /* Wraps everything in the content section IS A SECOND LAYOUT FOR MAIN */
@@ -16,8 +17,7 @@
     display: grid;
     place-items: center;
     height: 100%;
-    background-color:fade(#fdfdfd, 60%);
-    // background-color:#fdfdfd
+    background-color: @main_bg_color;
 }
 .index-container {
     /* Wraps each sub-content section in the left side of the main content */
@@ -29,21 +29,17 @@
     /* Wraps each sub-content section in the right side of the main content */
     justify-self: center;
     display: none;
-    // height: 500px;
     width: 100%;
 }
 .sub-content-container{
     /* Wraps the articles, posts, lists, projects, etc.*/
-    // overflow: inherit;
     margin: 10px;
 }
 .section-title {
-    // padding: 10px 0;
-    color: @shade_two;
+    margin-left:20px;
 }
 @media @tablet{
     .index-container{
-        // background-color:#d6edff8f;
     }
 }
 @media @desktop{
@@ -52,7 +48,6 @@
         overflow: hidden;
         display: grid;
         grid-template: 1fr / repeat(2, 1fr);
-        // grid-column-gap: 20px;
         padding: 0px;
     }
     .index-container {
@@ -73,16 +68,13 @@
         display: grid;
         overflow-x: hidden;
         grid-template-rows: auto 1fr;
-        // background: linear-gradient(fade(@primary, 50%), @fourth);
-        background-color: fade(@shade_two, 10%);
-
+        background-color: @index_bg_color;
         box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
     }
     .subindex-content-container {
         /* Wraps each sub-content section in the right side of the main content */
         width: 90%;
         margin: 0 20px;
-        background-color: @shade_one;
         box-shadow: 0px 0px 7px 1px #00000056;
     }
 }

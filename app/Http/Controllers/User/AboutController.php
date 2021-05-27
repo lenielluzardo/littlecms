@@ -12,6 +12,8 @@ class AboutController extends Controller
 {
     public function getIndex()
     {
-        return view('user.content.about.about');
+        $model = User::find(config('app.admin.email'));
+
+        return view('user.content.about.about', ['model' => $model ]);
     }
 }

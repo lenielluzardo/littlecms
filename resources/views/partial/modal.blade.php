@@ -1,6 +1,6 @@
 <div id="overlay" class="overlay-container">
 
-    <div id="modal" class="modal-container {{$modal['class']}}">
+    <div id="modal" class="modal {{$modal['class']}}">
         <!-- ===== S U B C O N T E N T ===== -->
         <div class="modal-title-container {{$modal['class']}}-title-container">
             {!! $modal['title'] !!}

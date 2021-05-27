@@ -1,24 +1,4 @@
-.base-panel(@bgcolor, @color: @fourth){
-    font-family: @panel_font_family;
-    min-height: 50px;
-    min-width: 50px;
-    background-color: @bgcolor;
-    color: @color;
-    a{
-        color: @color;
-        text-decoration:none;
-    }
-}
-.panel-primary{
-    .base-panel(@primary);
-}
-.panel-secondary{
-    .base-panel(@complementary_two);
-}
-.panel-tertiary{
-    .base-panel(@complementary_three);
-}
-.box-container-mixin(@transparency: 100%, @padding: 5px,  @color: @complementary_one,
+.box-container-mixin(@transparency: 100%, @padding: 5px,  @color: rgb(89, 89, 89),
 @border_width: 1px, @border_color: #ffffff40, @border_style: solid){
 
     padding: @padding;

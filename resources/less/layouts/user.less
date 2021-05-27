@@ -1,18 +1,17 @@
 .user-layout {
     height: inherit;
     overflow: scroll;
-    // background-color: @tertiary;
-    background: linear-gradient(@secondary, @tertiary);
 }
 /* ===== H E A D E R ===== */
 .header-container{
     position: sticky;
     top: 0;
-    z-index: 6;
+    z-index: @header_index;
     width: 100%;
     max-height: 75px;
     overflow: hidden;
-    background-color: @shade_six;
+    background: @header_bg;
+    // background-color: @header_bg;
     .transition(max-height, 1s, ease-in-out);
 }
 .transparent-header-container{
@@ -24,18 +23,22 @@
 /* ===== D E S K T O P ===== */
 .desktop-container{
  /* Wraps the section between the header & aside */
+    z-index: @desktop_index;
+
 
 }
 /* ===== A S I D E ===== */
 .aside-container{
+    z-index: @aside_index;
     text-align: center;
-    background-color: @shade_six;
-    // .panel-primary;
+    background-color: @aside_bg_color;
+
 }
 /* ===== F O O T E R ===== */
 .footer-container {
-    background-color: @shade_five;
-    // .panel-tertiary;
+    z-index: @footer_index;
+    box-shadow: 0px 0px 10px 1px #0000004a;
+    background-color: @footer_bg_color;
 }
 @media @desktop{
     .user-layout {
@@ -61,6 +64,8 @@
         overflow: hidden;
     }
     .aside-container{
+        display: grid;
+        place-items: end;
         grid-row: 4 / 7;
         grid-column: 1 / 2;
         max-width: 250px;
@@ -71,5 +76,6 @@
         min-height: initial;
         display: flex;
         justify-content: space-between;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
     }
 }

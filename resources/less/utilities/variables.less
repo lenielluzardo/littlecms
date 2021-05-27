@@ -30,37 +30,73 @@
 @child_annotation_size : 10px;
 
 /* Colors */
-@primary: #37c0ff;
-@secondary: #0091ff;
-@tertiary: #006bff;
-@fourth: #000479;
+@primary:              #37c0ff;
+@secondary:            #0091ff;
+@tertiary:             #006bff;
+@fourth:               #000479;
+@tint_one:             #fffefe;
+@tint_two:             #fdfdfd;
+@tint_three:           #dadada;
+@shade_one:            #ababab;
+@shade_two:            #6f6f6f;
+@shade_three:          #434343;
+@warning:              #FFCF4B;
+@danger:               #df4040;
 
-@complementary_one: #1C4F84;
-@complementary_two: #192A3B;
-@complementary_three: #000324;
-@complementary_four: #0b1019;
 
-@warning: #FFCF4B;
-@danger: #df4040;
-@light_neutral: #fdfdfd;
-@mid_neutral: #dadada;
-@dark_neutral: #6b6b6b;
+/* Module Bg Colors */
+@header_bg: linear-gradient(#23578f, #0f2146,#0f2146);
+@header_bg_color:      #0f2146;
+@main_bg_color:        #081829 ;
+@breadcrumbs_bg_color: #083769;
+@footer_bg_color:      #182d71 ;
+@panel_bg_color:       #3479c1;
+@aside_bg_color: @header_bg_color;
+@index_bg_color : fade(@secondary, 20%);
 
-@shade_one: #fffefe;
-@shade_two: #e2e2e2;
-@shade_three:#d4d4d4;
-@shade_four:fade(#ababab, 20%);
-@shade_five:fade(#6f6f6f, 30%);
-@shade_six:fade(#090909, 50%);
+/* Module Text Colors */
+@header_text_color: @tint_three;
+@footer_text_color: @tint_three;
+@breadcrumbs_text_color: @tint_three;
+@about_text_color : @tint_three;
 
-// @dark_box_button_color: linear-gradient(@tertiary, @fifth);
-// @dark_box_button_color_hover: linear-gradient(@tertiary, fade(@fifth, 70%));
-// @dark_box_button_color_active: linear-gradient(@fifth, @tertiary);
 
-// @light_box_button_color: linear-gradient(@fourth, @tertiary);
-// @light_box_button_color_hover: linear-gradient(@fourth, fade(@tertiary, 70%));
-// @light_box_button_color_active: linear-gradient(@tertiary, @fourth);
+/* Controls Text Colors */
+@label_text_color:@tint_three;
+@input_text_color: @tint_three;
+@button_text_color: @tint_three;
+@preview_item_text_color: @tint_three;
+@modal_title_text_color: @breadcrumbs_bg_color;
+@modal_content_text_color: @tint_three;
 
+/* Controls BG Colors*/
+@preview_item_bg_color: @tint_one;
+@form_bg_color: @tint_two;
+@form_bg: linear-gradient(@breadcrumbs_bg_color, @footer_bg_color);
+@input_bg_color: fade(@header_bg_color, 50%);
+@input_border_color: fade(@primary, 50%);
+@modal_bg : linear-gradient(@primary, @footer_bg_color);
+@modal_bg_color: #fff;
+@overlay_bg_color: fade(#000c18, 80%);
+
+@button_bg_color: linear-gradient(#3279c5, #193372);
+@button_bg_color_hover: linear-gradient(fade(#3279c5, 60%), #193372);
+@button_bg_color_active: linear-gradient(#193372, #3279c5);
+
+/* Partials BG Colors*/
+@entry_bg_color : @tint_one;
+@preview_item_bg: linear-gradient(@panel_bg_color, @footer_bg_color);
+@link_bg_color_hover: fade(@primary, 5%);
+@link_bg_color_active: fade(@primary, 15%);
+
+/* Component Indexes */
+@header_index: 7;
+@header_nav_index: 6;
+@desktop_index: 3;
+@breadcrumbs_index: 2;
+@main_index:1;
+@aside_index: 5;
+@footer_index: 4;
 /* Assets Variables */
 @home_bg_img : url('../../assets/images/bg-home.png');
 @layout_user_bg_img : url('../../assets/images/layout-user-bg-img.svg');

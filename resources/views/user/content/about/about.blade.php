@@ -8,15 +8,30 @@
     </div>
 @endsection
 
+@extends('user.layout')
 
-@section('index')
+@section('main')
 
-    <!-- ===== A B O U T ===== -->
-    <section class="content-section-container">
+    @include('user.content.breadcrumbs')
 
-        @include('user.content.about.description')
+    <!-- ===== M A I N ===== -->
+    <main id="main" class="main-center">
 
-    </section>
+        <!-- ===== A B O U T ===== -->
+        <section class="about">
+
+            <div class="about-img-container">
+                <img src="{{ $model->profile_img }}" alt="that's me! :)">
+            </div>
+
+            <div class="about-description-container">
+                <div class="about-description-content"> {{ $model->description }} </div>
+            </div>
+            {{-- @include('user.content.about.author') --}}
+
+        </section>
+
+    </main>
 
 @endsection
 

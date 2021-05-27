@@ -12,6 +12,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
     protected $table = 'users';
     protected $fillable = [ 'name', 'nickname','email', 'password', 'description', 'about','profile_img','recovery_email'];
+    protected $primaryKey = 'email';
     protected $hidden = ['password', 'remember_token'];
     protected $casts = [ 'email_verified_at' => 'datetime'];
 
