@@ -44,7 +44,7 @@ class LoginController extends Controller
 
         if($isValid)
         {
-            return redirect()->route('admin.index');
+            return redirect()->route('admin.content.main');
         }
 
         return redirect()->back()->with('fail', 'Authentication Failed');

@@ -12,7 +12,7 @@
 
     <div></div>
 
-    @include('auth.session')
+    {{-- @include('auth.session') --}}
 
 </nav>
 

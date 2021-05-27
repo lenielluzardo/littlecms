@@ -4,6 +4,6 @@
      onclick="location.href= '{{url('/')}}'">
 
      <img src="{{ asset('/assets/icons/site-logo.svg') }}" alt="go to Home">
-    <h1 id="title">{{ config('app.name') }}</h1>
+    <h1 id="title" class="website-title">{{ config('app.name') }}</h1>
 
 </div>

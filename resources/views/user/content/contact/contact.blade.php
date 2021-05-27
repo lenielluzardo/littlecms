@@ -1,8 +1,9 @@
+@section('title', 'Contact')
+
 @section('path')
 <div class="path-section">
     <h2 class="section-title">
         / Contact
-        {{-- / {{ $section }} --}}
     </h2>
 </div>
 @endsection

@@ -65,6 +65,9 @@ h6 {
   height: inherit;
   overflow: scroll;
 }
+.website-title {
+  color: #fdfdfd;
+}
 /* ===== H E A D E R ===== */
 .header-container {
   position: sticky;
@@ -758,7 +761,7 @@ h6 {
   box-sizing: border-box;
 }
 .form-container .form-group {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 .form-container .form-group label {
   display: block;
