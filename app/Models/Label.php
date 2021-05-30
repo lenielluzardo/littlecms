@@ -11,7 +11,8 @@ class Label extends Model
 
     protected $fillable = ['name'];
 
-    public function entries(){
+    public function entries()
+    {
         return $this->hasMany('App\Models\Entry', 'label_id', 'id');
     }
 }

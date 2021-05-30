@@ -11,15 +11,18 @@ class Module extends Model
     protected $fillable = ['name'];
     protected $primaryKey = 'name';
 
-    public function entries(){
+    public function entries()
+    {
         return $this->hasMany('App\Models\Entry', 'module_id', 'id');
     }
 
-    public function menus(){
+    public function menus()
+    {
         return $this->hasMany('App\Models\Menu', 'module_name', 'name');
     }
 
-    public function menuItems(){
+    public function menuItems()
+    {
         return $this->hasMany('App\Models\MenuItem', 'module_name', 'name');
     }
 }

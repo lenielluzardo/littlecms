@@ -38,10 +38,6 @@ class LoginController extends Controller
         ]);
         $isValid = Auth::attempt([ 'email' => $request->input('email'), 'password' => $request->input('password')],$request->has('remember'));
 
-        // dd($request->input('email'), $request->input('password'));
-        // dd($isValid);
-        // dd($isValid);
-
         if($isValid)
         {
             return redirect()->route('admin.content.main');

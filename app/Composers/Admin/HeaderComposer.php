@@ -5,8 +5,8 @@ namespace App\Composers\Admin;
 use Illuminate\View\View;
 use App\Models\Menu;
 
-class HeaderComposer{
-
+class HeaderComposer
+{
     protected $modules = [];
 
     public function __construct(Menu $menu)

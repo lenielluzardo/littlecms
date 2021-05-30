@@ -11,7 +11,8 @@ class MenuItem extends Model
 
     protected $fillable = ['title', 'route_name', 'url', 'menu_id'];
 
-    public function menu(){
+    public function menu()
+    {
         return $this->belongsTo('App\Models\Menu');
     }
 }

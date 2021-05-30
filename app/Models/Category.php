@@ -12,7 +12,8 @@ class Category extends Model
     protected $fillable = ['name'];
     protected $primaryKey = 'name';
 
-    public function entries(){
+    public function entries()
+    {
         return $this->hasMany('App\Models\Entry', 'category_id', 'id');
     }
 

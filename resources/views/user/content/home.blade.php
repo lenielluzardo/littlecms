@@ -4,14 +4,22 @@
 
 @section('main')
 
-    <section id="home" class="home-container"></section>
+    <main id="main" class="main-center">
+
+        <div class="salute">
+            <em class="not">Not,</em> <em class="just-another-blog">Just Another Developer Blog. </em>
+        </div>
+
+    </main>
 
 @endsection
 
-@section('modal')
+@if($model->modal !== null)
 
-    @include('partial.modal', ['modal' => $modal])
+    @section('modal')
 
-@endsection
+        @include('partial.modal', ['modal' => $model->modal])
 
+    @endsection
 
+@endif

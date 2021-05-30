@@ -5,7 +5,8 @@ namespace App\Composers\User;
 use Illuminate\View\View;
 use App\Models\Menu;
 
-class SocialMediaComposer{
+class SocialMediaComposer
+{
 
     protected $links = [];
 

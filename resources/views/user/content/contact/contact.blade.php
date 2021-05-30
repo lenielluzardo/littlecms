@@ -30,11 +30,16 @@
 
 @endsection
 
-@section('modal')
+@if($model->modal !== null )
 
-    @include('partial.modal', ['modal' => $modal])
+    @section('modal')
 
-@endsection
+        @include('partial.modal', ['modal' => $model->modal])
+
+    @endsection
+
+@endif
+
 @section('scripts')
     <script src="{{asset('/js/app.js')}}"></script>
 <script>

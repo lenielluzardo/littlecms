@@ -17,6 +17,7 @@ class CreateModulesTable extends Migration
             $table->id()->autoIncrement();
             $table->string('name');
             $table->integer('section_id');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

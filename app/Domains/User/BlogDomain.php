@@ -7,9 +7,7 @@ use App\ViewModels\User\BlogViewModel;
 
 class BlogDomain
 {
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function getBlogModel()
     {

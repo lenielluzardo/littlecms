@@ -17,6 +17,7 @@ class CreateSectionsTable extends Migration
             $table->id()->autoIncrement();
             $table->string('name');
             $table->text('url')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

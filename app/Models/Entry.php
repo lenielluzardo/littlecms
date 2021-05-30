@@ -11,15 +11,18 @@ class Entry extends Model
 
     protected $fillable = ['title', 'preview_img', 'preview_content', 'content', 'user_id', 'label_id', 'category_id', 'module_name'];
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo('App\Models\Category');
     }
 
-    public function label(){
+    public function label()
+    {
         return $this->belongsTo('App\Models\Label');
     }
 
-    public function section(){
+    public function section()
+    {
         return $this->belongsTo('App\Models\Section');
     }
 }

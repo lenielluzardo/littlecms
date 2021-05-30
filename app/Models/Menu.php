@@ -19,12 +19,12 @@ class Menu extends Model
 
     public function getSocialMediaMenu()
     {
-        return $this->find('social_media')->childs;
+        return $this->find('social_media')->childs()->where('active', true)->get();
     }
 
     public function getUserHeaderMenu()
     {
-        return $this->find('user_header')->childs;
+        return $this->find('user_header')->childs()->where('active', true)->get();
     }
     public function getAdminHeaderMenu()
     {

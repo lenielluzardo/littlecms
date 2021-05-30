@@ -7,9 +7,7 @@ use App\ViewModels\Admin\EntryManagementViewModel;
 
 class EntryManagementDomain
 {
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function getEntryManagementModel()
     {

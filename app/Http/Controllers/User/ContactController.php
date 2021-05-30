@@ -3,27 +3,34 @@
 namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\WebContact;
 use App\Http\Controllers\Controller;
-
+use App\Domains\User\ContactDomain;
 
 class ContactController extends Controller
 {
-    public function Index()
-    {
-        $modal = [
-            'id' => 'home-modal',
-            'class' => 'contact-modal',
-            'title' => '<h2>! Info !<h2>',
-            'content' => "<p>Hello there!, if you want to contact me, please send me a message with one of the pre-selected subjects. I'll reply to you as soon as possible.</p>
-            <br><p> Don't forget to take a look to my projects or posts, I know that you'll find some fun stuff there. Thank you for your interest, have a great day.</p>
-            <br><span style=\" display:block; text-align:center;\"> Byeee! :)</span>",
-            'button' => '<button id="modal-close-button"> Close </button>'
-        ];
+    private $domain;
 
-        return view('user.content.contact.contact', ['modal' => $modal]);
+    function __construct(ContactDomain $contactDomain)
+    {
+        $this->domain = $contactDomain;
+    }
+
+    public function Index(Request $request)
+    {
+        $model = $this->domain->getViewModel();
+        $cookie = $request->cookie('first_time_user_contact');
+
+        if($cookie == null)
+        {
+            Cookie::queue(Cookie::make('first_time_user_contact', true, 30));
+            $model->modal = $this->domain->getModal();
+        }
+
+        return view('user.content.contact.contact', ['model' => $model]);
     }
 
     public function contactFromWeb(Request $request)

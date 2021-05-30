@@ -6,28 +6,30 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cookie;
+use App\Domains\User\HomeDomain;
 
 
 class HomeController extends Controller
 {
-    public function Index()
+    private $domain;
+
+    function __construct(HomeDomain $homeDomain)
     {
-        $modal = [
-            'id' => 'contact-modal',
-            'class' => 'contact-modal',
-            'title' => 'Welcome',
-            'content' => "<p>
-                                Hello there, I'm Leniel. I'm a software developer and designer,
-                                and I love to mix these disciplines to create apps and to bring awsome ideas to life!
-                                If you're a curious person, take a look around to my projects and posts.
-                                Make sure to have fun, and get in contact with me to create something espectacular,
-                                ¡wish you a good day!
-                            </p>",
-            'button' => '<button id="modal-close-button">Close</button>'
+        $this->domain = $homeDomain;
+    }
 
-        ];
+    public function Index(Request $request)
+    {
+        $model = $this->domain->getViewModel();
+        $cookie = $request->cookie('first_time_user_home');
 
+        if($cookie == null)
+        {
+            Cookie::queue(Cookie::make('first_time_user_home', true, 30));
+            $model->modal = $this->domain->getModal();
+        }
 
-        return view('user.content.home', ['modal' => $modal]);
+        return view('user.content.home', ['model' => $model]);
     }
 }

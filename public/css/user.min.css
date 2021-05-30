@@ -89,6 +89,7 @@ h6 {
 .desktop-container {
   /* Wraps the section between the header & aside */
   z-index: 3;
+  background-color: #081829;
 }
 /* ===== A S I D E ===== */
 .aside-container {
@@ -106,13 +107,16 @@ h6 {
   .user-layout {
     overflow: hidden;
     display: grid;
-    grid-template: repeat(5, 1fr) auto / auto repeat(5, 1fr);
+    grid-template: repeat(5, 1fr) auto / minmax(auto, 240px) repeat(5, 1fr);
   }
   .header-container {
     grid-row: 1/4;
     grid-column: 1/2;
     max-height: initial;
     max-width: 250px;
+    display: grid;
+    grid-template: auto 1fr / 1fr;
+    grid-row-gap: 20px;
   }
   .transparent-header-container {
     display: block;
@@ -334,12 +338,233 @@ h6 {
     background-color: #37c0ff;
   }
 }
+@-webkit-keyframes intermittentLightGoOff {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0;
+  }
+  32% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  39% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes intermittentLightGoOff {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0;
+  }
+  32% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  39% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes intermittentLight {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0.8;
+  }
+  2% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 0.9;
+  }
+  4% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  6% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0.8;
+  }
+  9% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0.8;
+  }
+  32% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0.9;
+  }
+  34% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.8;
+  }
+  36% {
+    opacity: 1;
+  }
+  37% {
+    opacity: 0.8;
+  }
+  38% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes intermittentLight {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0.8;
+  }
+  2% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 0.9;
+  }
+  4% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  6% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0.8;
+  }
+  9% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0.8;
+  }
+  32% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0.9;
+  }
+  34% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.8;
+  }
+  36% {
+    opacity: 1;
+  }
+  37% {
+    opacity: 0.8;
+  }
+  38% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* ===== L O G O ===== */
 .logotype-container {
   display: grid;
   grid-template: auto / auto 1fr;
   grid-column-gap: 10px;
   align-items: center;
+}
+.logotype-container:hover {
+  cursor: pointer;
 }
 @media screen and (min-width: 860px) {
   .logotype-container {
@@ -386,9 +611,10 @@ h6 {
   text-align: center;
   display: grid;
   grid-template: auto / 1fr;
-  grid-row-gap: 5px;
 }
 .header-navigation-container > ul > a {
+  box-shadow: 0px 0px 1px 1px #00000021;
+  background: linear-gradient(transparent, #00000030);
   padding: 10px;
   color: #dadada;
 }
@@ -404,13 +630,37 @@ h6 {
     display: none;
   }
 }
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/pressstart2p/v9/e3t4euO8T-267oIAQAu6jDQyK0nS.ttf) format('truetype');
+}
 /* ===== H O M E ===== */
-.home-container {
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  background: url('../assets/images/bg-home.png') no-repeat center 50%;
-  padding: 10%;
+.salute {
+  text-align: center;
+  width: 60%;
+  font-size: 3em;
+  font-family: 'Press Start 2P', cursive;
+  font-style: normal;
+  color: #fffefe;
+  text-shadow: 0px 0px 15px #37c0ff;
+  padding: 10% 0;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.481);
+  border: solid 2px #37c0ff;
+  border-radius: 5px;
+}
+.salute em {
+  font-style: normal;
+}
+.not {
+  -webkit-animation: intermittentLightGoOff 10s linear infinite;
+          animation: intermittentLightGoOff 10s linear infinite;
+}
+.just-another-blog {
+  -webkit-animation: intermittentLight 8s linear infinite;
+          animation: intermittentLight 8s linear infinite;
 }
 /* ===== M A I N ===== */
 .main-container {
@@ -484,6 +734,10 @@ h6 {
     width: 90%;
     margin: 0 20px;
     box-shadow: 0px 0px 7px 1px #00000056;
+    background-color: rgba(0, 145, 255, 0.2);
+    padding: 0px 20px;
+    height: 100%;
+    overflow-y: scroll;
   }
 }
 /* ===== B R E A D C R U M B S ===== */
@@ -660,22 +914,15 @@ h6 {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.ads-section-title {
-  padding-top: 10px;
+.ads {
+  overflow: hidden;
 }
 .ads-img-container {
-  display: flex;
-  padding: 10px 0;
-  justify-content: center;
+  padding: 10px;
 }
-.ads-img-container div {
-  margin: 0 10px;
-}
-@media only screen and (min-width: 851px) and (min-height: 799px) {
-  .ads-img-container {
-    flex-direction: column !important;
-    margin: 0;
-  }
+.ads-img-container img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
 }
 .socialmedia-container {
   color: #dadada;
@@ -837,6 +1084,21 @@ h6 {
     width: 550px;
   }
 }
+.error-container {
+  text-align: center;
+  font-size: 3em;
+  font-family: 'Press Start 2P', cursive;
+  font-style: normal;
+  color: #fffefe;
+  text-shadow: 0px 0px 15px #37c0ff;
+  padding: 10% 5%;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.481);
+  border: solid 1px #37c0ff;
+  border-radius: 3px;
+}
+.error-container em {
+  font-style: normal;
+}
 .tag {
   display: inline-block;
   padding: 5px;
@@ -885,6 +1147,7 @@ h6 {
 @media only screen and (min-width: 851px) and (min-height: 799px) {
   .entry {
     padding: 50px;
+    height: 100%;
   }
 }
 .archive-container {
@@ -1059,6 +1322,7 @@ h6 {
   border: 1px solid rgba(55, 192, 255, 0.5);
 }
 .modal .modal-button-container button:hover {
+  cursor: pointer;
   background: linear-gradient(rgba(50, 121, 197, 0.6), #193372);
 }
 .modal .modal-button-container button:active {

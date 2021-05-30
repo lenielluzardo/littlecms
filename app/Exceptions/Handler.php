@@ -2,6 +2,11 @@
 
 namespace App\Exceptions;
 
+use Exception;
+use App\Exceptions\InvalidOrderException;
+use App\Exceptions\CustomException;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -34,7 +39,13 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
+        $this->renderable(function ( Throwable $e)
+        {
+
+        });
+
+        $this->reportable(function (Throwable $e)
+        {
             //
         });
     }

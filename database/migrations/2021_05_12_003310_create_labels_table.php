@@ -16,6 +16,7 @@ class CreateLabelsTable extends Migration
         Schema::create('labels', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

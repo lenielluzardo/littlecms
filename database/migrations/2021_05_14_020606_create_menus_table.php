@@ -21,6 +21,7 @@ class CreateMenusTable extends Migration
             $table->integer('parent_id')->default(0);
             $table->integer('section_id')->foreignId();
             $table->integer('module_id')->foreignId()->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

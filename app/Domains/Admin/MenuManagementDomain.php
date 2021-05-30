@@ -7,9 +7,7 @@ use App\ViewModels\Admin\MenuManagementViewModel;
 
 class MenuManagementDomain
 {
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function getMenuManagementModel()
     {

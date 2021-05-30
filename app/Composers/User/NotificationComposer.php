@@ -7,15 +7,18 @@ use App\Models\Notification;
 
 
 
-class NotificationComposer{
+class NotificationComposer
+{
 
     protected $notification;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->notification = Notification::latest()->first();
     }
 
-    public function compose(View $view){
+    public function compose(View $view)
+    {
         $view->with('notification', $this->notification);
     }
 }

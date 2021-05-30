@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->text('profile_img')->nullable();
             $table->string('recovery_email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->boolean('active')->default(true);
             $table->rememberToken();
             $table->timestamps();
         });

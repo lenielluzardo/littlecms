@@ -64,7 +64,6 @@ class MenuTableSeeder extends Seeder
         $menu = new \App\Models\Menu([
             'title' => 'Blog',
             'route_name' => 'blog',
-            'url' => 'posts',
             'section_id' => 2,
             'parent_id' => 5
         ]);
