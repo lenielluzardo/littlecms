@@ -25,19 +25,24 @@ function showNavMenu() {
   }
 }
 
-var closeButton = document.getElementById('modal-close-button');
-closeButton.addEventListener('click', closeModal);
+/***/ }),
 
-function closeModal() {
-  // alert("I'm working!");
-  modal.style.animation = 'modalSlideToTop .7s ease-in-out 0s forwards';
-}
+/***/ "./resources/less/user.less":
+/*!**********************************!*\
+  !*** ./resources/less/user.less ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
-/***/ "./resources/less/index.less":
+/***/ "./resources/less/admin.less":
 /*!***********************************!*\
-  !*** ./resources/less/index.less ***!
+  !*** ./resources/less/admin.less ***!
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -134,7 +139,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/index": 0
+/******/ 			"css/admin": 0,
+/******/ 			"css/user": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -182,8 +188,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/index"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/index"], () => (__webpack_require__("./resources/less/index.less")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin","css/user"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin","css/user"], () => (__webpack_require__("./resources/less/user.less")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/admin","css/user"], () => (__webpack_require__("./resources/less/admin.less")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

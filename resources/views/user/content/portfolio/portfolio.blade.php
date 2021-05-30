@@ -1,11 +1,14 @@
+@section('path')
+    <div class="path-section">
+        <h2 class="section-title"> / {{$model->title }} </h2>
+    </div>
+@endsection
+
 @extends('user.content.main')
 
-@section('index')
+@include('partial.index', ['items' => $model->items])
 
-    <!-- ===== S U B C O N T E N T ===== -->
-    @include('user.partial.archive')
+@include('partial.subindex', ['items' => $model->items])
 
-    {{-- @include('user.content.portfolio.latest') --}}
-
-@endsection
+@section('title') <?php print("$model->title") ?> @endsection
 

@@ -1,12 +1,10 @@
 <!-- ===== A D S ===== -->
 <section id="ads" class="ads">
-    <h4 class="ads-section-title">Your ads can go here ;)</h4>
-    <div class="ads-img-container">
-        <div>
-            <img src="http://via.placeholder.com/200" alt="">
+     @foreach ($model->items as $item)
+
+         <div class="ads-img-container">
+             <img src="{{$item->ad_img}}" alt="{{$item->description}}">
         </div>
-        {{-- <div>
-            <img src="http://via.placeholder.com/200" alt="">
-        </div> --}}
-    </div>
+
+    @endforeach
 </section>

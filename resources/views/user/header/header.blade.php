@@ -3,7 +3,7 @@
 <header id="header" class="header-container">
 
     @include('user.header.transparent')
-    @include('user.header.navigation')
+    @include('partial.navigation')
 
 </header>
 

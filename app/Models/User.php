@@ -10,13 +10,18 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    protected $fillable = [ 'name', 'nickname','email', 'password', 'description', 'about','img_profile', 'img_profile_2','recovery_email'];
+
+    protected $table = 'users';
+    protected $fillable = [ 'name', 'nickname','email', 'password', 'description', 'about','profile_img','recovery_email'];
+    protected $primaryKey = 'email';
     protected $hidden = ['password', 'remember_token'];
     protected $casts = [ 'email_verified_at' => 'datetime'];
 
-    public function posts(){
+    public function posts()
+    {
         return $this->hasMany('App\Models\Post');
     }
+
     public function projects(){
         return $this->hasMany('App\Models\Projects');
     }

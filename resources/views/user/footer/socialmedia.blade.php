@@ -3,12 +3,12 @@
         <h4>CONNECT ON:</h3>
     </div>
     <section id="socialmedia-links" class="socialmedia-links-container">
-        @foreach ($sections as $section)
-            @if ($section->category === 'social')
-                <a class="social-media-link" target="_blank" href="{{ $section->url }}">
-                    {{ $section->name }}
+        @foreach ($links as $link)
+            {{-- @if ($link->category === 'social') --}}
+                <a class="social-media-link" target="_blank" href="{{ $link->url }}">
+                    {{ $link->title }}
                 </a>
-            @endif
+            {{-- @endif --}}
         @endforeach
     </section>
 </nav>

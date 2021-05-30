@@ -3,36 +3,41 @@
     /* Wraps everything in the content section */
     display:grid;
     grid-template : auto auto / 1fr;
-    background: linear-gradient(@fourth 20%, @secondary);
-    min-height: 50vh ;
     padding:20px;
+    min-height: 50vh ;
     overflow: scroll;
+    background-color: @main_bg_color;
+    z-index: @main_index;
+}
+.main-center{
+    /* Wraps everything in the content section IS A SECOND LAYOUT FOR MAIN */
+    grid-row: 2 / 7;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    background-color: @main_bg_color;
 }
 .index-container {
     /* Wraps each sub-content section in the left side of the main content */
     overflow: inherit;
-    max-width: 600px;
+    width: 100%;
     justify-self: center;
 }
 .sub-index-container{
     /* Wraps each sub-content section in the right side of the main content */
     justify-self: center;
     display: none;
-    height: 500px;
-    max-width: 600px;
-
+    width: 100%;
 }
 .sub-content-container{
     /* Wraps the articles, posts, lists, projects, etc.*/
-    // overflow: inherit;
     margin: 10px;
 }
 .section-title {
-    padding: 10px 0;
+    margin-left:20px;
 }
 @media @tablet{
-    .sub-index-container{
-        height: 700px;
+    .index-container{
     }
 }
 @media @desktop{
@@ -40,23 +45,38 @@
         grid-row: 2 / 7;
         overflow: hidden;
         display: grid;
-        grid-template: 1fr / minmax(auto, 600px) auto;
-        grid-column-gap: 20px;
+        grid-template: 1fr / repeat(2, 1fr);
         padding: 0px;
     }
     .index-container {
-       height: 100%;
-       grid-column: 1 /2;
-       max-width: initial;
-       justify-self: initial;
+        display: grid;
+        place-items: center;
     }
     .sub-index-container{
         grid-column: 2 /3;
         position:relative;
-        overflow: hidden;
-        height: 95%;
+        overflow-x: hidden;
+        height: 100%;
         justify-self: initial;
-        max-width: 800px;
-
+    }
+    .index-content-container {
+        /* Wraps each sub-content section in the right side of the main content */
+        width: 80%;
+        height: 100%;
+        display: grid;
+        overflow-x: hidden;
+        grid-template-rows: auto 1fr;
+        background-color: @index_bg_color;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+    }
+    .subindex-content-container {
+        /* Wraps each sub-content section in the right side of the main content */
+        width: 90%;
+        margin: 0 20px;
+        box-shadow: 0px 0px 7px 1px #00000056;
+        background-color: @index_bg_color;
+        padding: 0px 20px;
+        height: 100%;
+        overflow-y: scroll;
     }
 }

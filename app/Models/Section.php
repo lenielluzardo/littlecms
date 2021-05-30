@@ -11,7 +11,13 @@ class Section extends Model
     protected $table = 'sections';
     protected $fillable = ['name', 'url'];
 
-    public function projects(){
+    public function projects()
+    {
         return $this->hasMany('App\Models\Project', 'section_id', 'id');
+    }
+
+    public function entries()
+    {
+        return $this->hasMany('App\Models\Entry', 'section_id', 'id');
     }
 }

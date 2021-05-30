@@ -2,14 +2,36 @@
 
 @section('title', 'About')
 
-@section('index')
+@section('path')
+    <div class="path-section">
+        <h2 class="section-title"> / About </h2>
+    </div>
+@endsection
 
-    <!-- ===== A B O U T ===== -->
-    <section class="content-section-container">
+@extends('user.layout')
 
-        @include('user.content.about.description')
+@section('main')
 
-    </section>
+    @include('user.content.breadcrumbs')
+
+    <!-- ===== M A I N ===== -->
+    <main id="main" class="main-center">
+
+        <!-- ===== A B O U T ===== -->
+        <section class="about">
+
+            <div class="about-img-container">
+                <img src="{{ $model->profile_img }}" alt="that's me! :)">
+            </div>
+
+            <div class="about-description-container">
+                <div class="about-description-content"> {{ $model->description }} </div>
+            </div>
+            {{-- @include('user.content.about.author') --}}
+
+        </section>
+
+    </main>
 
 @endsection
 

@@ -34,4 +34,4 @@
         @endif
     @endfor
 </div> --}}
-@section('title') <?php print("$item->title") ?> @endsection
+

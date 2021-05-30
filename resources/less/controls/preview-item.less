@@ -1,21 +1,22 @@
 .preview-item{
     display:grid;
     grid-template: minmax(150px, 200px) repeat(2, auto) / 1fr;
-    grid-row-gap: 5px;
     height:100%;
     width: 200px;
     padding: 0 !important;
-    background: @light_neutral !important;
+    color: @preview_item_text_color;
+    background: @preview_item_bg;
+    // background-color: @preview_item_bg_color !important;
+    border: none !important;
 
     &-title{
-        text-align: center;
-        margin: 0 5px;
+        padding: 10px 20px;
     }
 
     &-desc {
         text-align: justify;
         overflow: hidden;
-        margin: 0 5px;
+        padding: 10px 20px;
     }
 
     &-img-container{
@@ -29,13 +30,12 @@
     }
 
     .box-button-container{
-        margin: 5px !important;
+        margin: 0px !important;
     }
 }
 @media @tablet{
     .preview-item{
         display:grid;
-        grid-gap: 5px;
         grid-template: auto 1fr auto /auto 1fr;
         height: 150px;
         width: 100%;

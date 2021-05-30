@@ -1,5 +1,8 @@
 @extends('master')
-@section('title', 'Home')
+
+@section('stylesheets')
+    <link rel="stylesheet" href="{{asset('/css/user.min.css')}}" type="text/css">
+@endsection
 
 @section('layout')
 
@@ -7,8 +10,8 @@
 
         @include('user.header.header')
 
-        <!-- ===== C O N T E N T ===== -->
-        <section id="content" class="content-container">
+        <!-- ===== D E S K T O P ===== -->
+        <section id="desktop" class="desktop-container">
 
             @yield('main')
 
@@ -20,6 +23,9 @@
 
     </section>
 
-    <script src="{{asset('/js/app.js')}}"></script>
+    @yield('modal')
+    @yield('scripts')
+
 @endsection
+
 

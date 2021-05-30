@@ -1,11 +1,49 @@
-.about-container {
+.about{
+    display: grid;
+    grid-template: 1fr/ 1.5fr 2fr;
+    width: 50%;
+    height: 70%;
+    background: @form_bg;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0px 0px 20px 1px #00000069 !important;
+    color: @about_text_color;
+
+
+    &-img-container{
+
+        img{
+            width: 100%;
+            aspect-ratio: 9 / 15;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &-description-container{
+        display: grid;
+        place-items: center;
+        text-align: justify;
+        overflow-y: scroll;
+        box-sizing: border-box;
+
+        .about-description-content{
+            width: 80%;
+            // height: 70%;
+            padding: 50px 20px;
+
+        }
+    }
+
+}
+
+.author-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: @light_neutral;
 
-    .about-img-container{
+    .author-img-container{
 
         max-height: 200px;
         max-width: 200px;

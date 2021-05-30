@@ -16,9 +16,8 @@ class CreateSectionsTable extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name');
-            $table->string('category');
-            $table->string('route')->nullable();
             $table->text('url')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

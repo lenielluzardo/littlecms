@@ -1,8 +1,8 @@
 <div class="filter filter-container">
     <div class="input-group">
-        <label for="filter"> filter</label>
+        {{-- <label for="filter"> filter</label>
         <select name="filter" id="">
             <option value="">HELLO</option>
-        </select>
+        </select> --}}
     </div>
 </div>
