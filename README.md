@@ -1,3 +1,6 @@
+Built with LARAVEL, it's intended to show my skills, write some posts and upload animation demo reels. You can visit at https://www.lenielluzardo.com and be part of the community. Check out the content and let me know what do you think. 
+
+<!--
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
