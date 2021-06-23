@@ -46,6 +46,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     })->name('module');
 
+    // Route::post('/{module}', function($module) {
+
+    //     return App::make('App\Http\Controllers\Admin\\'.ucfirst($module).'ManagementController')->Index();
+
+    // })->name('module');
 
     Route::get('/login', 'App\Http\Controllers\Auth\LoginController@authenticate');
     // Route::get('/login', 'App\Http\Controllers\Auth\LoginController@Index');
@@ -56,9 +61,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     //     'uses' => 'App\Http\Controllers\Auth\LoginController@Authenticate',
     //     'as' => 'auth.signin'
     // ]);
-    // Route::post('', 'App\Http\Controllers\Admin\AdminController@savePost')
-    // ->name('admin.save');
+    Route::post('/user', 'App\Http\Controllers\Admin\UserManagementController@PostUser')
+    ->name('user.post');
 
+    Route::get('/user', 'App\Http\Controllers\Admin\UserManagementController@GetUser')
+    ->name('user.get');
     // Route::get('/{id}', 'App\Http\Controllers\Admin\AdminController@deletePost')
     // ->name('admin.remove');
 

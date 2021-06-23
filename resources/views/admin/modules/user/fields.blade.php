@@ -5,7 +5,7 @@
             @endif --}}
 
             <div class="form-container">
-              <form class="form registration" action="{{ route('register')}}" method="post">
+              <form class="form registration" action="{{ route('user.post')}}" method="post">
 
                 <div class="form-section">
 
@@ -44,10 +44,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="img_profile">Profile Image Url</label>
-                        <input class="form-input" id="img_profile" name="img_profile" type="text" value="{{$user->profile_img}}">
+                        <label class="form-label" for="profile_img">Profile Image Url</label>
+                        <input class="form-input" id="profile_img" name="profile_img" type="text" value="{{$user->profile_img}}">
 
-                        @error('img_profile')
+                        @error('profile_img')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -55,10 +55,10 @@
                     </div>
 
                     {{-- <div class="form-group">
-                        <label class="form-label" for="img_profile_2">Secondary Image Url</label>
-                        <input class="form-input" id="img_profile_2" name="img_profile_2" type="text" value="{{old('img_profile_2')}}">
+                        <label class="form-label" for="profile_img_2">Secondary Image Url</label>
+                        <input class="form-input" id="profile_img_2" name="profile_img_2" type="text" value="{{old('profile_img_2')}}">
 
-                        @error('img_profile_2')
+                        @error('profile_img_2')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -78,6 +78,7 @@
 
                     <div class="form-group">
                         <label class="form-label" for="email">Email</label>
+
                         <input class="form-input" id="email" name="email" type="text" value="{{$user->email}}">
 
                         @error('email')
@@ -88,10 +89,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="recovery">Recovery Email</label>
-                        <input class="form-input" id="recovery" name="recovery" type="text" value="{{$user->recovery_email}}">
+                        <label class="form-label" for="recovery_email">Recovery Email</label>
+                        <input class="form-input" id="recovery_email" name="recovery_email" type="text" value="{{$user->recovery_email}}">
 
-                        @error('recovery')
+                        @error('recovery_email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -127,7 +128,7 @@
 
                     <div class="button-container">
                         {{ csrf_field() }}
-                      <input type="submit" name="f_button" id="f_button" class="button" value="Register">
+                      <input type="submit" name="f_button" id="f_button" class="button" value="Save">
                     </div>
 
                 </div>
