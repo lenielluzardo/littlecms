@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,24 +38,40 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('', 'App\Http\Controllers\Admin\AdminController@Index')
     ->name('admin');
+    // dd("hello");
+
+    Route::get('/{module}', function($module) {
+
+        return App::make('App\Http\Controllers\Admin\\'.ucfirst($module).'ManagementController')->Index();
+
+    })->name('module');
+
 
     Route::get('/login', 'App\Http\Controllers\Auth\LoginController@authenticate');
-    
+    // Route::get('/login', 'App\Http\Controllers\Auth\LoginController@Index');
+
+    // Route::post('/login', 'App\Http\Controllers\Auth\LoginController@Authenticate');
+
+    // Route::post('/login', [
+    //     'uses' => 'App\Http\Controllers\Auth\LoginController@Authenticate',
+    //     'as' => 'auth.signin'
+    // ]);
     // Route::post('', 'App\Http\Controllers\Admin\AdminController@savePost')
     // ->name('admin.save');
 
     // Route::get('/{id}', 'App\Http\Controllers\Admin\AdminController@deletePost')
     // ->name('admin.remove');
-    Route::post('/login', [
-        'uses' => 'App\Http\Controllers\Auth\LoginController@Login',
-        'as' => 'auth.signin'
-    ]);
 
     Route::get('/entries', 'App\Http\Controllers\Admin\EntryManagementController@Index')
     ->name('entries');
 
     Route::get('/menus', 'App\Http\Controllers\Admin\MenuManagementController@Index')
     ->name('menus');
+
+    // Route::get('/user', 'App\Http\Controllers\Admin\UserManagementController@Index')
+    // ->name('user');
+
+
 });
 
 Auth::routes();

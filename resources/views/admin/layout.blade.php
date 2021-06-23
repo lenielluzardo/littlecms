@@ -11,7 +11,9 @@
         @include('admin.header.header')
 
         <!-- ===== C O N T E N T ===== -->
-        <section >
+        <section id="desktop" class="admin-desktop-container" >
+
+            @include('admin.content.tools')
 
             @yield('main')
 

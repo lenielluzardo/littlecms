@@ -8,6 +8,7 @@ class AdminController extends Controller
 {
     public function Index()
     {
-        return view('admin.content.main');
+        // dd("admin");
+        return view('admin.home', ['menu' => ['module' => 'user']]);
     }
 }

@@ -20,27 +20,31 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function authenticate(Request $request){
-
+    public function authenticate(Request $request)
+    {
+        dd("Hello World");
         $credentials = $request->only('email', 'password');
 
-        if(Auth::atttempt($credentials)){
+        if(Auth::atttempt($credentials))
+        {
             return redirect()->intended('home');
         }
+
         return view('auth.login');
     }
 
-    public function Login(Request $request)
+    public function aAuthenticate(Request $request)
     {
         $validated = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
+
         $isValid = Auth::attempt([ 'email' => $request->input('email'), 'password' => $request->input('password')],$request->has('remember'));
 
         if($isValid)
         {
-            return redirect()->route('admin.content.main');
+            return redirect('/admin');
         }
 
         return redirect()->back()->with('fail', 'Authentication Failed');
