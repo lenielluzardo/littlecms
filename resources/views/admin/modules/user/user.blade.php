@@ -4,7 +4,7 @@
 
     <section class="module">
 
-        @include('admin.modules.user.form')
+        @include('admin.modules.user.fields', ['user' => $model->items])
 
     </section>
 
