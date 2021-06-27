@@ -14,19 +14,18 @@ class CreateEntriesTable extends Migration
     public function up()
     {
         Schema::create('entries', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id()->unsignedBigInteger()->autoIncrement();
             $table->string('title');
             $table->text('preview_img');
             $table->text('preview_content');
             $table->text('content');
-            $table->integer('label_id')->nullable();
-            $table->integer('category_id')->nullable();
-            $table->string('module_name')->nullable();
             $table->timestamp('published_at')->nullable();
+            $table->boolean('active')->default(true);
+            $table->unsignedBigInteger('user_id')->default(1);
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('module_id');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
-            $table->boolean('active')->default(true);
-            $table->integer('user_id')->default(1);
         });
     }
 

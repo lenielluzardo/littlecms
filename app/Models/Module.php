@@ -9,20 +9,14 @@ class Module extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
-    protected $primaryKey = 'name';
+    // protected $primaryKey = 'name';
 
     public function entries()
     {
         return $this->hasMany('App\Models\Entry', 'module_id', 'id');
     }
 
-    public function menus()
-    {
-        return $this->hasMany('App\Models\Menu', 'module_name', 'name');
-    }
-
-    public function menuItems()
-    {
-        return $this->hasMany('App\Models\MenuItem', 'module_name', 'name');
+    public function menus(){
+        return $this->belongsToMany('App\Models\Menu');
     }
 }

@@ -15,7 +15,7 @@ mix.options({
 });
 mix.js('resources/js/app.js', 'public/js')
    .js('resources/js/modal.js', 'public/js');
-
+mix.react();
 mix.less('resources/less/user.less', 'public/css')
    .less('resources/less/admin.less', 'public/css');
 

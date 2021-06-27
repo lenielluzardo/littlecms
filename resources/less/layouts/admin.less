@@ -3,10 +3,16 @@
     overflow: scroll;
 }
 .module{
-    grid-row: 2 / 13;
+    grid-row: 1 / 13;
     grid-column: 1 / 4;
 
     overflow-y: scroll;
+}
+.module-container {
+    grid-row: 2 / 13;
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template: repeat(12, 1fr) / repeat(12, 1fr);
 }
 
 .website-title{

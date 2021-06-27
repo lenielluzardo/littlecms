@@ -7,10 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    public function posts()
+    public function entries()
     {
-        return $this->belongsToMany('\App\Models\Post', 'post_tag', 'tag_id', 'post_id')
-        ->withTimestamps();
+        return $this->belongsToMany('\App\Models\ENtries');
     }
 
     public function getAllTags()
