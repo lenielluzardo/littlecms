@@ -476,6 +476,17 @@ h6 {
   height: inherit;
   overflow: scroll;
 }
+.module {
+  grid-row: 1 / 13;
+  grid-column: 1 / 4;
+  overflow-y: scroll;
+}
+.module-container {
+  grid-row: 2 / 13;
+  grid-column: 1 / 13;
+  display: grid;
+  grid-template: repeat(12, 1fr) / repeat(12, 1fr);
+}
 .website-title {
   color: #fdfdfd;
 }
@@ -734,6 +745,93 @@ h6 {
   .breadcrumbs-container {
     position: initial;
     grid-row: 1 / 2;
+  }
+}
+/* ===== F O R M ===== */
+.form-container {
+  box-shadow: 0px 0px 20px 1px #00000069 !important;
+  background: linear-gradient(#083769, #182d71);
+  border-radius: 3px;
+}
+.form-container form {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.form-container .form-group {
+  margin: 20px 0;
+}
+.form-container .form-group label {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  color: #dadada;
+}
+.form-container .form-group input,
+.form-container .form-group select,
+.form-container .form-group textarea,
+.form-container .form-group button {
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  padding: 5px 0;
+  font-family: inherit !important;
+  border-radius: 2px;
+  border: 1px solid rgba(55, 192, 255, 0.5);
+  color: #dadada;
+  width: 100%;
+}
+.form-container .form-group input {
+  height: 25px;
+  width: calc(100% - 10px);
+  padding-left: 10px;
+  background-color: rgba(15, 33, 70, 0.5);
+}
+.form-container .form-group select {
+  background-color: rgba(15, 33, 70, 0.5);
+}
+.form-container .form-group button {
+  padding: 10px;
+  color: #dadada;
+  background: linear-gradient(#3279c5, #193372);
+}
+.form-container .form-group button:hover {
+  background: linear-gradient(rgba(50, 121, 197, 0.6), #193372);
+}
+.form-container .form-group button:active {
+  background: linear-gradient(#193372, #3279c5);
+}
+.form-container .form-group textarea {
+  resize: none;
+  width: 100%;
+  height: 100px;
+  padding-left: 10px;
+  width: calc(100% - 10px);
+  background-color: rgba(15, 33, 70, 0.5);
+}
+.form-container .form-group textarea::-moz-placeholder {
+  color: rgba(55, 192, 255, 0.5);
+}
+.form-container .form-group textarea:-ms-input-placeholder {
+  color: rgba(55, 192, 255, 0.5);
+}
+.form-container .form-group textarea::placeholder {
+  color: rgba(55, 192, 255, 0.5);
+}
+.form-container .form-group .g-recaptcha {
+  transform: scale(0.77);
+  -webkit-transform: scale(0.8);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+.form-container .select-form-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+}
+@media only screen and (min-width: 851px) and (min-height: 799px) {
+  .form-container {
+    width: 550px;
   }
 }
 .tag {

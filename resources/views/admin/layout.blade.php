@@ -13,9 +13,10 @@
         <!-- ===== C O N T E N T ===== -->
         <section id="desktop" class="admin-desktop-container" >
 
-            @include('admin.content.tools')
+            @yield('toolbar')
+            {{-- @include('admin.content.tools') --}}
 
-            @yield('main')
+            @yield('module')
 
         </section>
 
@@ -25,8 +26,8 @@
 
     </section>
 
-    {{-- @yield('modal')
-    <script src="{{asset('/js/app.js')}}"></script> --}}
+    @yield('modal')
+    @yield('scripts')
 
 @endsection
 

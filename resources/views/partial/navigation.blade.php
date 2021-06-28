@@ -5,9 +5,10 @@
 
         @foreach ($modules as $module)
 
-           <a href="{{ route($module->route_name, $module->url) }}">
+           {{-- <a href="{{ route($module->route, $module->url) }}"> --}}
+            <a href="{{ route( strtolower($module->route))}}">
                 <li>
-                    {{ $module->title }}
+                    {{ $module->name }}
                 </li>
             </a>
 

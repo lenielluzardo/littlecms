@@ -9,7 +9,15 @@
 
     <main id="main" class="admin-main-container">
 
-       @include('admin.dashboard')
+        <section class="module">
+
+            @foreach($modules as $module)
+
+                <a href="{{ route($module->route, strtolower($module->name)) }}"> {{ $module->name }}</a>
+
+            @endforeach
+
+        </section>
 
     <main>
 

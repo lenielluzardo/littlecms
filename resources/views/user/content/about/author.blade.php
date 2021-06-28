@@ -2,7 +2,7 @@
 <div class="author-container">
 
     <div class="author-img-container">
-        <img src="{{ $author->img_profile }}" alt="it's me :)">
+        <img src="{{ $author->profile_img }}" alt="it's me :)">
     </div>
 
     <div class="text-container">

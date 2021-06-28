@@ -1,14 +1,16 @@
 <!-- ===== N A V I G A T I O N ===== -->
-<nav id="header-navigation-container">
-    <ul id="header-navigation-list">
+
+<nav id="header-navigation" class="header-navigation-container">
+    <ul>
 
         @foreach ($modules as $module)
 
-            <li>
-                <a class="navigation-item" href="{{ route($module->route) }}">
+           {{-- <a href="{{ route($module->route, $module->url) }}"> --}}
+            <a href="{{ route( strtolower($module->route), strtolower($module->url))}}">
+                <li>
                     {{ $module->name }}
-                </a>
-            </li>
+                </li>
+            </a>
 
         @endforeach
 
