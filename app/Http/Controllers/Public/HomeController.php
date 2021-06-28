@@ -5,16 +5,16 @@ namespace App\Http\Controllers\Public;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cookie;
-use App\Domains\User\HomeDomain;
+use App\Services\HomeService;
 
 
 class HomeController extends Controller
 {
     private $domain;
 
-    function __construct(HomeDomain $homeDomain)
+    function __construct(HomeService $HomeService)
     {
-        $this->domain = $homeDomain;
+        $this->domain = $HomeService;
     }
 
     public function Index(Request $request)

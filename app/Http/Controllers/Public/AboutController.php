@@ -12,7 +12,7 @@ class AboutController extends Controller
 {
     public function Index()
     {
-        $model = User::where('primary_email', config('app.admin.primary_email'))->first();
+        $model = User::where('email', config('app.admin.primary_email'))->first();
 
         return view('user.content.about.about', ['model' => $model ]);
     }

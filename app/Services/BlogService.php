@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\User;
+namespace App\Services;
 
 use App\Models\Category;
 use App\ViewModels\User\BlogViewModel;
 
-class BlogDomain
+class BlogService
 {
     public function __construct() {}
 

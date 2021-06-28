@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\User;
+namespace App\Services;
 
 use App\ViewModels\User\HomeViewModel;
-use App\Domains\Domain;
+use App\Services\Service;
 
-class HomeDomain extends Domain
+class HomeService extends Service
 {
     public function __construct(HomeViewModel $homeViewModel)
     {

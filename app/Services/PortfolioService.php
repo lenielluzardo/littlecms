@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\User;
+namespace App\Services;
 
 use App\Models\Category;
 use App\ViewModels\User\PortfolioViewModel;
 
-class PortfolioDomain
+class PortfolioService
 {
     public function __construct(){}
 

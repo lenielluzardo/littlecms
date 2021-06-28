@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
-use App\Domains\User\BlogDomain;
+use App\Services\BlogService;
 
 class BlogController extends Controller
 {
     private $_domain;
 
-    public function __construct(BlogDomain $domain)
+    public function __construct(BlogService $domain)
     {
         $this->_domain = $domain;
     }

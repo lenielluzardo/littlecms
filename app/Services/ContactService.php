@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\User;
+namespace App\Services;
 
-use App\Domains\Domain;
+use App\Services\Service;
 use App\ViewModels\User\ContactViewModel;
 
-class ContactDomain extends Domain
+class ContactService extends Service
 {
     public function __construct(ContactViewModel $contactViewModel)
     {

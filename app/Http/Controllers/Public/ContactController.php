@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\WebContact;
 use App\Http\Controllers\Controller;
-use App\Domains\User\ContactDomain;
+use App\Services\ContactService;
 
 class ContactController extends Controller
 {
     private $domain;
 
-    function __construct(ContactDomain $contactDomain)
+    function __construct(ContactService $contactDomain)
     {
         $this->domain = $contactDomain;
     }

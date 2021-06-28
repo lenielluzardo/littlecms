@@ -3,7 +3,8 @@
 @section('toolbar')
 
     <nav id="desktop-navigation" class="desktop-navigation">
-        ENTRIES TOOL BAR
+        <button className="new_button button">New Post</button>
+
     </nav>
 
 @endsection
@@ -17,11 +18,13 @@
         <ul class="post_list">
             @foreach($model as $post)
                 <li >
-                    <div class="post_item-container">
+                    @include('controls.preview-item', ['item' => $post])
+
+                    {{-- <div class="post_item-container">
                         <img class="post_item-img" src="{{$post->image1}}" alt="post_image">
                         <h3 class="post_item-title">{{$post->title}}</h3>
                         <h4 class="post_item-date">{{$post->created_at}}</h3>
-                    </div>
+                    </div> --}}
                 </li>
             @endforeach
         </ul>
@@ -31,7 +34,7 @@
 
 @endsection
 @section('scripts')
-    <script src="{{asset('/js/app.js')}}"></script>
+    <script src="{{asset('/js/admin/index.js')}}"></script>
     {{-- <script>
         function showArticle(id){
 
