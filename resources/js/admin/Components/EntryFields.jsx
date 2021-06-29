@@ -5,7 +5,6 @@ class EntryFields extends React.Component{
         super();
 
     }
-
     render(){
         return (
                 <form className="post_form" action="/admin/users" method="post">
