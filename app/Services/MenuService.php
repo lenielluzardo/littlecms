@@ -5,7 +5,7 @@ namespace App\Domains\Admin;
 use App\Models\Category;
 use App\ViewModels\Admin\MenuManagementViewModel;
 
-class MenuManagementDomain
+class MenuService
 {
     public function __construct() {}
 

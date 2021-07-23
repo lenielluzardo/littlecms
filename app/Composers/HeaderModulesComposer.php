@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Composers\Public;
+namespace App\Composers;
 
 use Illuminate\View\View;
 use App\Models\Menu;
 
 class HeaderModulesComposer
 {
-
     protected $menuModules;
 
     public function __construct(Menu $menu)

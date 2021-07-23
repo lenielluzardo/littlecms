@@ -6,25 +6,25 @@ use Illuminate\Support\Facades\Auth;
 
 Route::group(['prefix' => '/'], function(){
 
-    Route::get('', 'App\Http\Controllers\Public\HomeController@Index' )
+    Route::get('', 'App\Http\Controllers\Web\HomeController@Index' )
     ->name('home');
 
-    Route::get('blog', 'App\Http\Controllers\Public\BlogController@Index')
+    Route::get('blog', 'App\Http\Controllers\Web\BlogController@Index')
     ->name('blog');
 
-    Route::get('portfolio', 'App\Http\Controllers\Public\PortfolioController@Index')
+    Route::get('portfolio', 'App\Http\Controllers\Web\PortfolioController@Index')
     ->name('portfolio');
 
     Route::group(['prefix' => 'contact'], function () {
 
-        Route::get('', 'App\Http\Controllers\Public\ContactController@Index')
+        Route::get('', 'App\Http\Controllers\Web\ContactController@Index')
         ->name('contact');
 
-        Route::post('', 'App\Http\Controllers\Public\ContactController@contactFromWeb')
+        Route::post('', 'App\Http\Controllers\Web\ContactController@contactFromWeb')
         ->name('contact.send');
     });
 
-    Route::get('about', 'App\Http\Controllers\Public\AboutController@Index')
+    Route::get('about', 'App\Http\Controllers\Web\AboutController@Index')
     ->name('about');
 
     // Route::get('/{section}/{id}', 'App\Http\Controllers\PostController@Post')
@@ -36,7 +36,7 @@ Auth::routes();
 
 // Route::get('/{module}', function($module, Request $request) {
 
-//     return App::make('App\Http\Controllers\Public\\'.ucfirst($module).'Controller')->Index($request);
+//     return App::make('App\Http\Controllers\Web\\'.ucfirst($module).'Controller')->Index($request);
 
 // })->name('public');
 
