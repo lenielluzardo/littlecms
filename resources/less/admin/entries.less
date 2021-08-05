@@ -1,0 +1,31 @@
+.entries_table {
+    width: 100%;
+    &-entry{
+        object-fit:contain;
+
+        &_thumbnail{
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &_title{
+            width: 30%;
+        }
+        &_content{
+            width: 70%;
+            height: 5em;
+            overflow-y: hidden;
+        }
+        &_actions{
+
+        }
+    }
+
+    &-entry:nth-child(even) {
+        background-color: #dddddd;
+    }
+}
+
+.crud-item{
+    width: 50px;
+}

@@ -13,17 +13,19 @@ const mix = require('laravel-mix');
 mix.options({
     processCssUrls: false
 });
-mix.js('resources/js/admin/index.js', 'public/js/admin')
+// mix.js('resources/js/admin-app/index.js', 'public/js/admin')
 mix.js('resources/js/app.js', 'public/js')
    .js('resources/js/modal.js', 'public/js');
-mix.react();
-mix.less('resources/less/user.less', 'public/css')
-   .less('resources/less/admin.less', 'public/css');
 
-mix.copy('resources/less/utilities/all.css', 'public/css')
+//    mix.react();
+
+mix.less('resources/less/web/index.less', 'public/css')
+   .less('resources/less/admin/index.less', 'public/css/admin');
+
+mix.copy('resources/less/common/all.css', 'public/css')
     .copyDirectory('resources/assets/images', 'public/assets/images')
     .copyDirectory('resources/assets/icons', 'public/assets/icons')
     .copyDirectory('resources/assets/webfonts', 'public/assets/webfonts');
 
-mix.minify('public/css/user.css');
-mix.minify('public/css/admin.css');
+mix.minify('public/css/index.css');
+mix.minify('public/css/admin/index.css');

@@ -9,7 +9,6 @@ class Module extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
-    // protected $primaryKey = 'name';
 
     public function entries()
     {
@@ -18,5 +17,10 @@ class Module extends Model
 
     public function menus(){
         return $this->belongsToMany('App\Models\Menu');
+    }
+
+    public function GetAll()
+    {
+        return $this->all();
     }
 }

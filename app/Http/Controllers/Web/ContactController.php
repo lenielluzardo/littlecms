@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\WebContact;
 use App\Http\Controllers\Controller;
-use App\Services\ContactService;
+use App\Services\Web\ContactService;
 
 class ContactController extends Controller
 {
@@ -30,7 +30,7 @@ class ContactController extends Controller
             $model->modal = $this->domain->getModal();
         }
 
-        return view('user.content.contact.contact', ['model' => $model]);
+        return view('web.contact.contact', ['model' => $model]);
     }
 
     public function contactFromWeb(Request $request)

@@ -1,34 +1,31 @@
 @extends('master')
 
-@section('stylesheets')
-    <link rel="stylesheet" href="{{asset('/css/admin.min.css')}}" type="text/css">
+@section('stylesheets') 
+
+    <link rel="stylesheet" href="{{asset('/css/admin/index.min.css')}}" type="text/css">
+
+@endsection
+
+@section('title')
+Admin
 @endsection
 
 @section('layout')
 
-    <section class="admin-layout">
+   <section class="admin-layout">
+   
+      @include('admin.partial.module_navigation')
+      
+      <main class="module">
 
-        @include('admin.header.header')
-
-        <!-- ===== C O N T E N T ===== -->
-        <section id="desktop" class="admin-desktop-container" >
-
-            @yield('toolbar')
-            {{-- @include('admin.content.tools') --}}
-
-            @yield('module')
-
-        </section>
-
-        {{-- @include('user.aside.aside')
-
-        @include('user.footer.footer') --}}
-
-    </section>
-
-    @yield('modal')
-    @yield('scripts')
+         @yield('module')
+      
+      <main>
+   
+   </section>
+    
+   @yield('scripts')
+    
+   @yield('modal')
 
 @endsection
-
-

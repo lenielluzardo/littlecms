@@ -2,23 +2,49 @@
 
 @section('title', 'Admin')
 
-@section('main')
-{{-- {{ dd("admin view") }} --}}
+@section('module')
 
-    {{-- @include('admin.content.tools') --}}
+    <section class="module-content">
 
-    <main id="main" class="admin-main-container">
+        <table class="admin_table modules_table">
+            
+            <thead>
+                <th> Name </th>
+                <th> Status </th>
+                <th> Actions </th>
+            </thead>
 
-        <section class="module">
+            <tbody>
 
-            @foreach($modules as $module)
+                @foreach($viewModel->model as $module)
+              
+                <tr class="modules_table-module">
+                    <form method="POST"
+                              action="{{ route('admin.module.save', ['module' => strtolower($viewModel->viewModule) ]) }}" >
 
-                <a href="{{ route($module->route, strtolower($module->name)) }}"> {{ $module->name }}</a>
+                        <td class="modules_table-module_name" >
+                            <input type="text" hidden name="id" value="{{ $module->id }}">
+                            {{ $module->name}}
+                        </td>
 
-            @endforeach
+                        <td class="modules_table-module_status">
+                            <input type="checkbox" name="active" {{ $module->active ? "checked" : "" }} /> 
+                            <label for="active"> {{ $module->active ? "Active" : "Inactive" }} </label>
+                        </td>
 
-        </section>
+                        <td class="admin_table-actions modules_table-module_actions">
+                            {{ csrf_field() }}
+                            <button class="table_button"> Save </button>
+                        </td>
 
-    <main>
+                    </form>
+                </tr>
+
+                @endforeach
+            
+            </tbody>
+
+        </table>
+    </section>
 
 @endsection

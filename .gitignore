@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 /_graphics
+/resources/js/admin-app/config.json
 .env
 .phpunit.result.cache
 docker-compose.override.yml

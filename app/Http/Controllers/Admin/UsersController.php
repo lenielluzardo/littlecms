@@ -5,66 +5,67 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Services\UserService;
+use App\Services\Admin\UserService;
 
 class UsersController extends Controller
 {
-    private $domain;
+    private $_service;
 
-    public function __construct(UserService $userService)
+    public function __construct(UserService $service)
     {
-        $this->domain = $userService;
+        $this->_service = $service;
     }
 
     public function Index()
     {
-        // dd("# Breakpoint # Admin > UsersController > Index");
+        // dd(" *** get_class($this) / Index Create()  *** ");
 
-        $model = $this->domain->getUserManagementModel();
+        $viewModel = $this->_service->GetIndexModel('Users');
 
-        return view('admin.modules.users.users', ['model' => $model]);
+        return view('admin.users.users', [ 'viewModel' => $viewModel]);
     }
 
-    public function GetUser ()
+    public function Create()
     {
-
-    }
-
-    public function PostUser(Request $request)
-    {
-        // dd('before validation');
-        $isValid = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-                'nickname' => ['required', 'string', 'max:255'],
-                // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-
-
-        // $validator = Validator::make($request->all(), [
-        //         'name' => ['required', 'string', 'max:255'],
-        //         'nickname' => ['required', 'string', 'max:255'],
-        //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        //         'password' => ['required', 'string', 'min:8', 'confirmed'],
-        //     // 'g-recaptcha-response' => 'required | captcha'
-        // ]);
-
-        // if($validator->fails()){
-        //     return redirect()->back()->withErrors($validator)->withInput();
+        // dd(' *** Entries Controller / Get Create()  *** ');
+        $viewModel = $this->_service->GetCreateModel('Users');
+        
+        // if(!$model->success)
+        // {
+        //   return $model->error;
         // }
 
-        // dd('passed validation');
-        // dd($request->input());
-
-        $this->domain->SaveUser($request->input());
-
-        // dd("admin user controller");
-        // $user = auth()->user();
-        // dd($user);
-        // dd($request->input());
-
-        $model = $this->domain->getUserManagementModel();
-
-        return view('admin.modules.user.user', ['model' => $model]);
+        return view('admin.users.user', ['viewModel' => $viewModel]);
     }
+
+    public function Edit($id)
+    {
+        // dd(' *** Entries Controller / Get Edit()  *** ');
+
+        $viewModel = $this->_service->GetEditModel($id, 'Users');
+        return view('admin.users.user', ['viewModel'=> $viewModel]);
+    }
+
+    public function Save(Request $request)
+    {
+        // dd(' *** Entries Controller / Post Edit()  *** ');
+
+        $model = $this->_service->SaveModel($request, 'Users');
+       
+        // if(!$model->success)
+        // {
+        //   return $model->error;
+        // }
+
+        return redirect()->route('admin.module.index', ['module' => 'users']);
+    }
+
+    public function Delete($id)
+    {
+        // dd('*** '.get_class($this).'\Delete() ***');
+
+        $viewModel = $this->_service->DeleteModel($id, 'Users');
+        return redirect()->route('admin.module.index', ['module' => 'users']);
+    }
+
 }

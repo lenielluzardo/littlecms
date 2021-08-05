@@ -9,7 +9,7 @@ class Menu extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'name', 'url', 'route_name', 'parent_id', 'section_id', 'module_id'];
+    protected $fillable = [ 'name', 'url','parent_id'];
     public $incrementing = false;
 
     public function users(){
@@ -28,21 +28,23 @@ class Menu extends Model
 
     public function getSocialMediaMenu()
     {
-        $footer = $this->where('name','public_footer')->first()->childs()->where('active', true)->get();
+        $footer = $this->where('name','web_socialmedia')->first()->childs()->where('active', true)->get();
         // dd($footer);
         return $footer;
     }
 
     public function getUserHeaderMenu()
     {
-        $header = $this->where('name', 'public_header')->first()->modules()->where('active', true)->get();
-        return $header;
-    }
-    public function getAdminHeaderMenu()
-    {
-        $header = $this->where('name', 'admin_header')->first()->modules()->where('active', true)->get();
+        $header = $this->where('name', 'web_main_navigation')->first()->modules()->where('active', true)->get();
         // dd($header);
         return $header;
+
+    }
+    public function GetAllModules()
+    {
+        $modules = $this->where('name', 'admin_main_navigation')->first()->modules()->get();
+        // dd($header);
+        return $modules;
     }
 
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cookie;
-use App\Services\HomeService;
+use App\Services\Web\HomeService;
 
 
 class HomeController extends Controller
@@ -28,6 +28,6 @@ class HomeController extends Controller
             $model->modal = $this->domain->getModal();
         }
 
-        return view('user.content.home', ['model' => $model]);
+        return view('web.home.home', ['model' => $model]);
     }
 }

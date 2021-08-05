@@ -1,6 +1,6 @@
 @section('title', 'Login')
 
-@extends('user.layout')
+@extends('web.layout')
 
 @section('main')
 

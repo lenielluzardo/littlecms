@@ -4,24 +4,22 @@ namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Services\PortfolioService;
+use App\Services\Web\EntryService;
 
 
 class PortfolioController extends Controller
 {
-    private $_domain;
+    private $service;
 
-    public function __construct(PortfolioService $domain)
+    public function __construct(EntryService $service)
     {
-        $this->_domain = $domain;
+        $this->service = $service;
     }
 
-    public function Index()
+    public function Index(Request $request)
     {
-        // $model = $this->_domain->getPortfolioModel();
+        $viewModel = $this->service->GetPortfolioIndexModel('portfolio');
 
-        // return view('user.content.blog.blog', ['model' => $model]);
-
-        return "Hello World";
+        return view('web.blog.blog', ['viewModel' => $viewModel]);
     }
 }

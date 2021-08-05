@@ -24,14 +24,11 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('admin.header.header', \App\Composers\Admin\HeaderComposer::class);
-        View::composer('admin.header', \App\Composers\WebSectionComposer::class);
-        View::composer('user.header.header', \App\Composers\HeaderModulesComposer::class);
-        View::composer('user.footer.socialmedia', \App\Composers\SocialMediaComposer::class);
+        View::composer('admin.partial.module_navigation', \App\Composers\Admin\ModuleNavigationComposer::class);
 
-        View::composer('user.content.about.author', \App\Composers\AuthorComposer::class);
-        View::composer('user.partial.notification', \App\Composers\NotificationComposer::class);
 
-        View::composer('user.aside.ads', \App\Composers\AdsComposer::class);
+        View::composer('web.navigation.header', \App\Composers\Web\HeaderModulesComposer::class);
+        View::composer('web.socialmedia.socialmedia', \App\Composers\Web\SocialMediaComposer::class);
+        View::composer('web.about.author', \App\Composers\Web\AuthorComposer::class);
     }
 }

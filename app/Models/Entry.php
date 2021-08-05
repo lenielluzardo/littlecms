@@ -9,7 +9,8 @@ class Entry extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'preview_img', 'preview_content', 'content', 'user_id', 'label_id', 'category_id', 'module_name'];
+    protected $fillable = ['title', 'thumbnail', 'content', 'user_id', 'category_id', 'module_id', 'published_at'];
+    protected $primaryKey = 'id';
 
     public function tags()
     {
@@ -18,6 +19,10 @@ class Entry extends Model
     public function category()
     {
         return $this->belongsTo('App\Models\Category');
+    }
+    public function module()
+    {
+        return $this->belongsTo('App\Models\Module');
     }
 
     public function user()
@@ -33,5 +38,10 @@ class Entry extends Model
     public function section()
     {
         return $this->belongsTo('App\Models\Section');
+    }
+
+    public function GetAll()
+    {
+        return $this->all();
     }
 }

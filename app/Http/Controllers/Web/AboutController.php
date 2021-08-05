@@ -10,10 +10,10 @@ use App\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
-    public function Index()
+    public function Index(Request $request)
     {
         $model = User::where('email', config('app.admin.primary_email'))->first();
 
-        return view('user.content.about.about', ['model' => $model ]);
+        return view('web.about.about', ['model' => $model ]);
     }
 }

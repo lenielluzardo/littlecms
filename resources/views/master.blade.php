@@ -25,6 +25,7 @@
         @yield('layout')
 
     </body>
+    
 </html>
 
 

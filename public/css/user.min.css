@@ -3,28 +3,28 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o18E.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/quicksand/v24/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o18E.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkM0o18E.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/quicksand/v24/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkM0o18E.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkCEv18E.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/quicksand/v24/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkCEv18E.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkBgv18E.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/quicksand/v24/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkBgv18E.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Prompt';
@@ -514,7 +514,7 @@ h6 {
   box-shadow: 0px 0px 10px 1px #0000004a;
   background-color: #182d71;
 }
-@media only screen and (min-width: 851px) and (min-height: 799px) {
+@media only screen and (min-width: 810px) and (min-height: 630px) {
   .user-layout {
     overflow: hidden;
     display: grid;
@@ -710,7 +710,7 @@ h6 {
 .section-title {
   margin-left: 20px;
 }
-@media only screen and (min-width: 851px) and (min-height: 799px) {
+@media only screen and (min-width: 810px) and (min-height: 630px) {
   .main-container {
     grid-row: 2 / 7;
     overflow: hidden;
@@ -1089,7 +1089,7 @@ h6 {
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 20px;
 }
-@media only screen and (min-width: 851px) and (min-height: 799px) {
+@media only screen and (min-width: 810px) and (min-height: 630px) {
   .form-container {
     width: 550px;
   }
@@ -1154,7 +1154,7 @@ h6 {
   margin: 10px 0;
   text-align: justify;
 }
-@media only screen and (min-width: 851px) and (min-height: 799px) {
+@media only screen and (min-width: 810px) and (min-height: 630px) {
   .entry {
     padding: 50px;
     height: 100%;
@@ -1184,7 +1184,7 @@ h6 {
     overflow-y: scroll;
   }
 }
-@media only screen and (min-width: 851px) and (min-height: 799px) {
+@media only screen and (min-width: 810px) and (min-height: 630px) {
   .archive-list {
     height: 100%;
   }
@@ -1259,7 +1259,7 @@ h6 {
     grid-column: 2 / 3;
   }
 }
-@media only screen and (min-width: 851px) and (min-height: 799px) {
+@media only screen and (min-width: 810px) and (min-height: 630px) {
   .preview-item-img-container {
     width: 150px;
   }
@@ -1338,7 +1338,7 @@ h6 {
 .modal .modal-button-container button:active {
   background: linear-gradient(#193372, #3279c5);
 }
-@media only screen and (min-width: 851px) and (min-height: 799px) {
+@media only screen and (min-width: 810px) and (min-height: 630px) {
   .modal {
     left: 40%;
   }

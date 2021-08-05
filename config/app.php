@@ -177,7 +177,7 @@ return [
 
         App\Providers\ComposerServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
-
+        App\Provider\RepositoryServiceProvider::class,
     ],
 
     /*

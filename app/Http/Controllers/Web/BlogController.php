@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers\Web;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Services\BlogService;
+use App\Services\Web\EntryService;
 
 class BlogController extends Controller
 {
-    private $_domain;
+    private $service;
 
-    public function __construct(BlogService $domain)
+    public function __construct(EntryService $service)
     {
-        $this->_domain = $domain;
+        $this->service = $service;
     }
 
-    public function Index()
+    public function Index(Request $request)
     {
-        $model = $this->_domain->getBlogModel();
+        $viewModel = $this->service->GetBlogIndexModel('blog');
 
-        return view('user.content.blog.blog', ['model' => $model]);
+        return view('web.blog.blog', ['viewModel' => $viewModel]);
     }
 }

@@ -15,66 +15,61 @@ class ModuleTableSeeder extends Seeder
     {
         $module = new \App\Models\Module([
             'name' => 'Blog',
-            'route' => 'blog',
-            'url' => 'blog',
+            'web_route' => 'web.blog.index',
+            'admin_route' => 'module',
         ]);
         $module->save();
 
         $module = new \App\Models\Module([
             'name' => 'Portfolio',
-            'route' => 'portfolio',
-            'url' => 'portfolio',
+            'web_route' => 'web.portfolio.index',
+            'admin_route' => 'module',
         ]);
         $module->save();
 
         $module = new \App\Models\Module([
             'name' => 'Contact',
-            'route' => 'contact',
-            'url' => 'contact',
+            'web_route' => 'web.contact.index',
+            'admin_route' => 'module',
         ]);
         $module->save();
 
         $module = new \App\Models\Module([
             'name' => 'About',
-            'route' => 'about',
-            'url' => 'about',
+            'web_route' => 'web.about.index',
+            'admin_route' => 'module',
         ]);
         $module->save();
 
         $module = new \App\Models\Module([
             'name' => 'Users',
-            'route' => 'module',
-            'url' => 'users',
+            'web_route' => 'module',
+            'admin_route' => 'module',
         ]);
         $module->save();
 
         $module = new \App\Models\Module([
             'name' => 'Menus',
-            'route' => 'module',
-            'url' => 'menus',
-        ]);
-        $module->save();
-
-        $module = new \App\Models\Module([
-            'name' => 'Entries',
-            'route' => 'module',
-            'url' => 'entries',
+            'web_route' => 'module',
+            'admin_route' => 'module',
         ]);
         $module->save();
 
         $module = new \App\Models\Module([
             'name' => 'Roles',
-            'route' => 'module',
-            'url' => 'roles',
+            'web_route' => 'module',
+            'admin_route' => 'module',
         ]);
         $module->save();
 
         $module = new \App\Models\Module([
             'name' => 'Tags',
-            'route' => 'module',
-            'url' => 'tags',
+            'web_route' => 'module',
+            'admin_route' => 'module',
         ]);
         $module->save();
+
+        
 
     }
 }

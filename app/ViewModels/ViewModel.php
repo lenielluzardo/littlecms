@@ -4,13 +4,12 @@ namespace App\ViewModels;
 
 class ViewModel
 {
-    public $title;
-    public $items;
-    public $path;
-    protected $links;
+    public $viewTitle;
+    public $viewPath;
+    public $viewModule;
+    public $model;
+    public $success = true;
+    public $errors = "";
 
-    public function __construct()
-    {
-
-    }
+    public function __construct(){}
 }

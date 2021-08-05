@@ -10,7 +10,8 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
-    protected $primaryKey = 'name';
+    // protected $primaryKey = 'name';
+    // public $incrementing = false;
 
     public function entries()
     {
@@ -28,6 +29,11 @@ class Category extends Model
     }
 
     public function getAllEntries()
+    {
+        return $this->all();
+    }
+
+    public function GetAll()
     {
         return $this->all();
     }
