@@ -9,9 +9,14 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'parent_id', 'module_id'];
     // protected $primaryKey = 'name';
     // public $incrementing = false;
+
+    public function childs()
+    {
+        return $this->hasMany('App\Models\Category', 'parent_id', 'id');
+    }
 
     public function entries()
     {

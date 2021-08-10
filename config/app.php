@@ -177,7 +177,6 @@ return [
 
         App\Providers\ComposerServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
-        App\Provider\RepositoryServiceProvider::class,
     ],
 
     /*
@@ -235,15 +234,11 @@ return [
 
     'admin' => [
 
-        'name' => env('ADMIN_USER_NAME'),
-        'nickname' => env('ADMIN_USER_NICKNAME'),
+        'username' => env('ADMIN_USER_NICKNAME'),
         'primary_email' => env('ADMIN_USER_PRIMARY_EMAIL'),
         'secondary_email' => env('ADMIN_USER_SECONDARY_EMAIL'),
         'recovery_email' => env('ADMIN_USER_RECOVERY_EMAIL'),
         'password' => env('ADMIN_USER_PASS'),
-        'description' => env('ADMIN_USER_DESCRIPTION'),
-        'about' => env('ADMIN_USER_ABOUT'),
-        'profile_img' => env('ADMIN_USER_PROFILE_IMG'),
 
         'social' => [
 

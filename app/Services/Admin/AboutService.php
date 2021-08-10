@@ -3,19 +3,21 @@
 namespace App\Services\Admin;
 
 use App\Services\Service;
-use App\Models\Entry;
-use App\Models\Category;
+use App\Models\User;
+use App\Models\UserField;
 use App\Models\Module;
 use App\ViewModels\Admin\AboutViewModel;
-use Carbon\Carbon;
+use App\Mappers\UserMapper;
 
 class AboutService extends Service
 {
     public $viewModel;
+    private $userModel;
 
-    public function __construct(AboutViewModel $viewModel)
+    public function __construct(AboutViewModel $viewModel, User $model)
     {
         $this->viewModel = $viewModel;
+        $this->userModel = $model;
     }
 
     /**
@@ -24,25 +26,14 @@ class AboutService extends Service
     */
     public function GetIndexModel($module)
     {
-        // dd($module);
-        $module = Module::where('name', $module)->first();
+        $user = $this->userModel->where('username', config('app.admin.username'))->first();
+        $userFields = $user->fields()->first();
 
-        if($module == null)
-        {  
-            //TODO: Return a message telling the user the module name was incorrect.
-            //TODO: Log the module enter
-            return false;
-        }
-
-        $this->viewModel->model = $module->entries()->get();
-
-        if($this->viewModel->model == null)
-        {
-            //TODO: Return a message that no model where found?
-            $this->viewModel->model = Collect([]);
-        }
-
-       return $this->SetViewModelProperties($module->name);
+        $dto = UserMapper::MapToDTO($userFields);
+        $dto->id = $userFields->id;
+        $this->viewModel->model = $dto;                               
+        
+        return $this->viewModel->SetViewModelProperties('About');
     }
 
     /**
@@ -88,28 +79,23 @@ class AboutService extends Service
         {
             if($request['id'] == null)
             {
-                $entryToSave = new Entry();
+                $modelToSave = new UserField();
                 $isNew= true;
             }
             else
             {
-                $entryToSave = Entry::find($request['id']);
+                $modelToSave = UserField::find($request['id']);
             }
 
-            $entryToSave->title = $request['title'];
-            $entryToSave->thumbnail = $request['thumbnail'];
-            $entryToSave->content = $request['content'];
-            $entryToSave->active = $request['active'] == null ? false : true;
-            $entryToSave->module_id = $request['module_id'];
-            $entryToSave->category_id = $request['category_id'];
-            $entryToSave->user_id = auth()->user()->id;
+            $modelToSave->thumbnail = $request['thumbnail'];
+            $modelToSave->description = $request['description'];
+            $modelToSave->experience = $request['experience'];
+            $modelToSave->studies = $request['studies'];
+            $modelToSave->stack = $request['stack'];
+            $modelToSave->interests = $request['interests'];
+            $modelToSave->hobbies = $request['hobbies'];
             
-            if($isNew && $entryToSave->active)
-            {
-                $entryToSave->published_at = Carbon::now();
-            }
-
-            $entryToSave->save();
+            $modelToSave->save();
         }
         catch(\Exception $ex)
         {

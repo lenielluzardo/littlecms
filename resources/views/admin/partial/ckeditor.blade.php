@@ -1,14 +1,12 @@
-<textarea id="editor" name="content"> 
+<textarea id="{{$editorId}}" name="{{$editorId}}"> 
 	{{ $content }}
 </textarea>
 
-
-@section('scripts')
 <script src="{{ asset('ckeditor5-build-classic/ckeditor.js')}}"></script>
-
 <script>
+	var editorId = '{{ $editorId }}';
 	ClassicEditor
-		.create( document.querySelector( '#editor' ), {
+		.create( document.querySelector('#'+editorId), {
 			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
 		} )
 		.then( editor => {
@@ -18,4 +16,3 @@
 			console.error( err.stack );
 		} );
 </script>
-@endsection

@@ -1,38 +1,52 @@
-@extends('web.blog.main')
+{{-- @extends('web.blog.section') --}}
 
 @section('title', 'About')
 
 @section('path')
     <div class="path-section">
-        <h2 class="section-title"> / About </h2>
+        <h2 class="section-title"> / {{$viewModel->viewModule}} </h2>
     </div>
 @endsection
 
 @extends('web.layout')
 
-@section('main')
+@section('module')
 
-    @include('web.partial.breadcrumbs')
+    <!-- ===== A B O U T ===== -->
+    <section class="{{$viewModel->viewModule}}">
 
-    <!-- ===== M A I N ===== -->
-    <main id="main" class="main-center">
+        <header class="{{ $viewModel->viewModule }}_header">
 
-        <!-- ===== A B O U T ===== -->
-        <section class="about">
-
-            <div class="about-img-container">
-                <img src="{{ $model->profile_img }}" alt="that's me! :)">
+            <div class="{{ $viewModel->viewModule }}_header-image">
+            
+                <img src="{{ $viewModel->model->thumbnail }}" 
+                alt="{{ $viewModel->model->name.' profile picture' }}" />
+            
             </div>
 
-            <div class="about-description-container">
-                <div class="about-description-content"> {{ $model->description }} </div>
+            <div class="{{ $viewModel->viewModule }}_header-description">
+                   
+                {!! $viewModel->model->description !!}
+            
             </div>
-            {{-- @include('user.content.about.author') --}}
+        
+        </header>
 
-        </section>
+       <section class="{{ $viewModel->viewModule }}_body">
+            @foreach($viewModel->model->fields as $key => $value)
+                
+                <div id="{{ $viewModel->viewModule}}_body-{{$key}}"
+                     class="{{ $viewModel->viewModule}}_body-section"
+                    > {!! $value !!} </div>
 
-    </main>
+            @endforeach
+       </section>
 
+       <footer class="{{ $viewModel->viewModule }}_footer">
+
+       </footer>
+      
+    </section>
 @endsection
 
 

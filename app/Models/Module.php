@@ -15,6 +15,11 @@ class Module extends Model
         return $this->hasMany('App\Models\Entry', 'module_id', 'id');
     }
 
+    public function categories()
+    {
+        return $this->hasMany('App\Models\Category', 'module_id', 'id');
+    }
+
     public function menus(){
         return $this->belongsToMany('App\Models\Menu');
     }

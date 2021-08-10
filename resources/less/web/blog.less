@@ -38,26 +38,31 @@
         text-align: justify;
     }
 }
-@media screen and (min-width: 860px){
-    .latest{
-        max-height: 20em !important;
-    }
+@media @desktop{
+    .blog{
+        margin: 1em;
+        // display: grid;
+        // grid-auto-flow: column;
+        // flex-direction: column;
+        // overflow-y: scroll;
+        
+        &_category{
+            display: grid;
+            grid-auto-flow: column;
+            background-color: darkblue;
+            // overflow-y: scroll;
 
-    .post-list-container{
-        ul{
+            &-article{
 
-            max-height: 80vh !important;
-            display: flex !important;
-            flex-direction: column !important;
-
-            li{
-                article{
-                    // max-height: 150px !important;
+                &_image{
+                    height: 100px;
                 }
+                &_title{
+
+                }
+
             }
         }
     }
 }
-@media @desktop {
 
-}

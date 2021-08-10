@@ -48,7 +48,7 @@ class AboutController extends Controller
     public function Save(Request $request)
     {
         // dd(' *** Entries Controller / Post Edit()  *** ');
-
+// dd($request->all());
         $model = $this->_service->SaveModel($request, 'About');
        
         if(!$model->success)

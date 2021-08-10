@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('stylesheets')
-    <link rel="stylesheet" href="{{asset('/css/user.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/index.min.css')}}" type="text/css">
 @endsection
 
 @section('layout')
@@ -12,8 +12,14 @@
 
         <!-- ===== D E S K T O P ===== -->
         <section id="desktop" class="desktop-container">
+            
+            @include('web.partial.breadcrumbs')
 
-            @yield('main')
+            <main class="main">
+                
+                @yield('module')
+
+            </main>
 
         </section>
 

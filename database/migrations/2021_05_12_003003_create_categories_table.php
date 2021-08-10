@@ -17,6 +17,8 @@ class CreateCategoriesTable extends Migration
             $table->id()->unsignedBigInteger()->autoIncrement();
             $table->string('name');
             $table->boolean('active')->default(true);
+            $table->integer('module_id')->default(0);
+            $table->integer('parent_id')->default(0);
             $table->timestamps();
         });
     }

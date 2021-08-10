@@ -2,7 +2,9 @@
 
 namespace App\Services\Web;
 
+use App\Mappers\CategoryMapper;
 use App\Models\Module;
+use App\Models\Category;
 use App\ViewModels\Web\EntryViewModel;
 
 class EntryService
@@ -16,12 +18,20 @@ class EntryService
 
     public function GetBlogIndexModel($module)
     {
-        $entries = Module::where('name', $module)
-                            ->first()
-                            ->entries()
-                            ->get();
+        $module = Module::where('name', $module)->first();
+        
+        if(!$module->active)
+        {
+            $this->viewModel->success = false;
+            $this->viewModel->errors = "The Module is not active";
+            return $this->viewModel;
+        }
 
-        $this->viewModel->model = $entries;
+        $categories = $module->categories()->with('entries')->get();
+       
+        $categoriesDto = CategoryMapper::MapEntriesByCategory($categories);
+       
+        $this->viewModel->model = $categoriesDto;
         $this->viewModel->title = 'Blog';
         $this->viewModel->path = 'Blog / posts';
 
@@ -30,12 +40,16 @@ class EntryService
 
     public function GetPortfolioIndexModel($module)
     {
-        $entries = Module::where('name', $module)
-                            ->first()
-                            ->entries()
-                            ->with('category')
-                            ->get();
+        $module = Module::where('name', $module)->first();
+         
+        if(!$module->active)
+        {
+            $this->viewModel->success = false;
+            $this->viewModel->errors = "The Module is not active";
+            return $this->viewModel;
+        }
 
+        $entries = $module->entries()->get();
         $this->viewModel->model = $entries;
         $this->viewModel->title = 'Blog';
         $this->viewModel->path = 'Portfolio / posts';

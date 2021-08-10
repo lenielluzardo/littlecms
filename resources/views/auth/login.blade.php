@@ -2,7 +2,7 @@
 
 @extends('web.layout')
 
-@section('main')
+@section('module')
 
     <!-- ===== M A I N ===== -->
     <main id="main" class="main-center">

@@ -20,6 +20,11 @@ class PortfolioController extends Controller
     {
         $viewModel = $this->service->GetPortfolioIndexModel('portfolio');
 
+        if(!$viewModel->success)
+        {
+            return redirect()->back();
+        }
+
         return view('web.blog.blog', ['viewModel' => $viewModel]);
     }
 }

@@ -10,9 +10,7 @@
 
 @extends('web.layout')
 
-@section('main')
-
-    @include('web.partial.breadcrumbs')
+@section('module')
 
     <!-- ===== I N D E X ===== -->
     <main id="main" class="main-center">

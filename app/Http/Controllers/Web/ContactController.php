@@ -21,16 +21,21 @@ class ContactController extends Controller
 
     public function Index(Request $request)
     {
-        $model = $this->domain->getViewModel();
+        $viewModel = $this->domain->getViewModel();
+        
+        if(!$viewModel->success)
+        {
+            return redirect()->back();
+        }
+        
         $cookie = $request->cookie('first_time_user_contact');
-
         if($cookie == null)
         {
             Cookie::queue(Cookie::make('first_time_user_contact', true, 30));
-            $model->modal = $this->domain->getModal();
+            $viewModel->modal = $this->domain->getModal();
         }
 
-        return view('web.contact.contact', ['model' => $model]);
+        return view('web.contact.contact', ['model' => $viewModel]);
     }
 
     public function contactFromWeb(Request $request)

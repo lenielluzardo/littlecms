@@ -1,12 +1,9 @@
-.socialmedia-container{
+.socialmedia{
     color: @footer_text_color;
     padding: 20px;
     text-align: center;
-    & > div{
-        padding:10px;
-        border-bottom: 1px solid;
-    }
-    & > .socialmedia-links-container{
+    
+    &_links{
         padding: 10px;
         display: grid;
         grid-template: repeat(2, 1fr) / repeat(4, 1fr);
@@ -24,23 +21,22 @@
         }
     }
 }
-@media screen and (min-width: 860px){
-    .socialmedia-container{
-        padding: initial;
+@media @desktop{
+    .socialmedia{
+        padding: 0;
         display: flex;
+        flex-direction: column;
+        margin: auto;
 
-        & > div{
-            border-bottom:none;
+        &_title{
+
         }
-
-        & > .socialmedia-links-container{
+        &_links{
+            
             align-items: center;
-            grid-template: auto / auto;
-            grid-auto-flow: column;
-            padding: 0px;
 
-            & > a{
-                padding: 10px;
+            &-link{
+                font-size: 1.5em;
             }
         }
     }

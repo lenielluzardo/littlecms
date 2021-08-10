@@ -12,21 +12,27 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $table = 'users';
-    protected $fillable = [ 'name', 'username','primary_email', 'secondary_email', 'password', 'description','thumbnail','recovery_email'];
-    // public $incrementing = false;
+    protected $fillable = [ 'username','primary_email', 'secondary_email', 'password','recovery_email'];
     protected $hidden = ['password', 'remember_token'];
     protected $casts = [ 'email_verified_at' => 'datetime'];
 
-
-    public function entries(){
+    public function entries()
+    {
         return $this->hasMany('App\Models\Entry');
     }
 
-    public function menus(){
+    public function menus()
+    {
         return $this->belongsToMany('App\Models\Menu');
     }
 
-    public function roles(){
+    public function roles()
+    {
         return $this->belongsToMany('App\Models\Role');
+    }
+
+    public function fields()
+    {   
+        return $this->hasMany('App\Models\UserField');
     }
 }

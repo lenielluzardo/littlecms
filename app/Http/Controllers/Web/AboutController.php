@@ -3,17 +3,28 @@
 namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+use App\Services\Web\AboutService;
 
 use App\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
-    public function Index(Request $request)
+    private $service;
+    
+    public function __construct(AboutService $service)
     {
-        $model = User::where('email', config('app.admin.primary_email'))->first();
+        $this->service = $service;
+    }
 
-        return view('web.about.about', ['model' => $model ]);
+    public function Index()
+    {
+        $viewModel = $this->service->GetIndexModel('about');
+        
+        if(!$viewModel->success)
+        {
+            return redirect()->back();
+        }
+
+        return view('web.about.about', ['viewModel' => $viewModel ]);
     }
 }

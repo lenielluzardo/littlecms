@@ -17,7 +17,13 @@ class BlogController extends Controller
 
     public function Index(Request $request)
     {
+
         $viewModel = $this->service->GetBlogIndexModel('blog');
+
+        if(!$viewModel->success)
+        {
+            return redirect()->back();
+        }
 
         return view('web.blog.blog', ['viewModel' => $viewModel]);
     }

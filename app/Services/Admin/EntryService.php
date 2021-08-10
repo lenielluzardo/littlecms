@@ -43,7 +43,7 @@ class EntryService extends Service
             $this->viewModel->model = Collect([]);
         }
 
-       return $this->SetViewModelProperties($module->name);
+       return $this->viewModel->SetViewModelProperties($module->name);
     }
 
     /**
@@ -65,7 +65,7 @@ class EntryService extends Service
         $this->viewModel->entriesCategories = Category::all();
         $this->viewModel->entriesModules = Module::all();
 
-        return $this->SetViewModelProperties($module);
+        return $this->viewModel->SetViewModelProperties($module);
     }
 
     public function GetCreateModel($module)
@@ -74,7 +74,7 @@ class EntryService extends Service
         $this->viewModel->entriesCategories = Category::all();
         $this->viewModel->entriesModules = Module::all();
 
-        return $this->SetViewModelProperties($module);
+        return $this->viewModel->SetViewModelProperties($module);
     }
     
     /**
@@ -118,7 +118,7 @@ class EntryService extends Service
         }
         finally
         {
-            return $this->SetViewModelProperties($module);
+            return $this->viewModel->SetViewModelProperties($module);
         }
     }
     
@@ -140,8 +140,7 @@ class EntryService extends Service
         }
         finally
         {
-            $this->SetViewModelProperties($module);
-            return $this->viewModel;
+            return $this->viewModel->SetViewModelProperties($module);
         }
     }
 
@@ -158,13 +157,6 @@ class EntryService extends Service
         $this->viewModel->error = $ex;
     }
     
-    /**
-     * Sets the view model properties that will be shown in the UI.
-     */
-    private function SetViewModelProperties($module)
-    {
-        $this->viewModel->viewTitle = "$module Management";
-        $this->viewModel->viewModule = strtolower($module);
-        return $this->viewModel;
-    }
+    
+    
 }

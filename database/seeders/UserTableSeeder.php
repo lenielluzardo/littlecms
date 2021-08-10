@@ -15,14 +15,11 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $user = new \App\Models\User([
-            'name' => config('app.admin.name'),
-            'username' => config('app.admin.nickname'),
+            'username' => config('app.admin.username'),
             'email' => config('app.admin.primary_email'),
             'secondary_email' => config('app.admin.secondary_email'),
             'recovery_email' => config('app.admin.recovery_email'),
             'password' => Hash::make(config('app.admin.password')),
-            'description' => config('app.admin.description'),
-            'thumbnail' => config('app.admin.profile_img'),
         ]);
         $user->save();
     }
