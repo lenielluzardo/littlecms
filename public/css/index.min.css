@@ -690,10 +690,11 @@ h6 {
     margin: 2em;
     display: grid;
     grid-template: auto / auto;
+    grid-row-gap: 2em;
     align-items: center;
   }
   .blog-category {
-    margin: 1.5em auto;
+    margin: 0 auto;
   }
   .blog-category-articles {
     display: flex;
@@ -997,21 +998,22 @@ h6 {
   aspect-ratio: 1 / 1;
 }
 /* ===== L O G O ===== */
-.logotype-container {
+.brand {
   display: grid;
   grid-template: auto / auto 1fr;
-  grid-column-gap: 10px;
+  grid-column-gap: 1em;
   align-items: center;
+  color: #fff;
 }
-.logotype-container:hover {
+.brand:hover {
   cursor: pointer;
 }
-@media screen and (min-width: 860px) {
-  .logotype-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
+.brand-logo {
+  width: 2em;
+}
+.brand-title {
+  color: inherit;
+  font-size: 1.5em;
 }
 /* ===== B R E A D C R U M B S ===== */
 .breadcrumbs-container {

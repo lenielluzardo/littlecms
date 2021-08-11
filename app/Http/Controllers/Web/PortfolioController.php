@@ -30,7 +30,7 @@ class PortfolioController extends Controller
 
     public function GetByName($projectName)
     {
-        $viewModel = $this->service->GetModelByName($projectName);
+        $viewModel = $this->service->GetModelByName($projectName, 'portfolio');
 
         if(!$viewModel->success)
         {

@@ -8,9 +8,7 @@ Route::group(['prefix' => '/'], function(){
 
     // dd("**** Web Root ****");
     Route::get('/', 'App\Http\Controllers\Web\HomeController@Index' )
-    ->name('home');
-
-   
+    ->name('web.home');
 
     Route::group(['prefix' => 'blog'], function () {
 

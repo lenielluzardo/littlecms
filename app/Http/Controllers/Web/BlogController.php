@@ -30,7 +30,7 @@ class BlogController extends Controller
 
     public function GetByName($articleName)
     {
-        $viewModel = $this->service->GetModelByName($articleName);
+        $viewModel = $this->service->GetModelByName($articleName, 'blog');
 
         if(!$viewModel->success)
         {

@@ -1,10 +1,15 @@
 @extends('web.layout')
 
-@section('title') <?php print("$viewModel->title") ?> @endsection
+@section('title') 
+    @php
+        $module = ucfirst($viewModel->viewModule); 
+        print("$module")
+    @endphp 
+@endsection
 
 @section('path')
     <div class="path-section">
-        <h2 class="section-title"> / {{$viewModel->path }} </h2>
+        <h2 class="section-title"> / {{ $module  }} </h2>
     </div>
 @endsection
 
@@ -15,7 +20,11 @@
 
         @foreach ($viewModel->model as $category)
         <div class="blog-category">
-            <h3 class="blog-category_name"> {{ $category->name }} </h3>
+            <h3 class="blog-category_name"> {{ ucfirst($category->name) }} 
+            <hr>
+            </h3>
+            
+            
             <ul class="blog-category-articles">
 
                 @foreach ($category->entries as $article)

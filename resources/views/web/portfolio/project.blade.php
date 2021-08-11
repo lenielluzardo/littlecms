@@ -1,12 +1,21 @@
 @extends('web.layout')
 
-@section('title') <?php print("$viewModel->viewTitle") ?> @endsection
+@section('title') 
+    @php
+        $title = ucfirst($viewModel->viewModule).' > '.$viewModel->model->title; 
+        print("$title")
+    @endphp 
+@endsection
 
 @section('path')
     <div class="path-section">
-        <h2 class="section-title"> / {{$viewModel->viewTitle }} </h2>
+        <h2 class="section-title">
+            / <a href="{{ route( "web.$viewModel->viewModule.index") }}"> {{ ucfirst($viewModel->viewModule) }} </a>
+            > {{ $viewModel->model->title }}
+        </h2>
     </div>
 @endsection
+
 
 @section('module')
 

@@ -2,7 +2,7 @@
 
 @section('title', 'Home')
 
-@section('main')
+@section('module')
 
     <main id="main" class="main-center">
 

@@ -25,7 +25,8 @@ class EntryService
         {
             $this->viewModel->success = false;
             $this->viewModel->errors = "The Module is not active";
-            return $this->viewModel;
+
+            return $this->viewModel->SetViewModelProperties($module);
         }
 
         $categories = $module->categories()->with('entries')->get();
@@ -36,7 +37,7 @@ class EntryService
         $this->viewModel->title = 'Blog';
         $this->viewModel->path = 'Blog / posts';
 
-        return $this->viewModel;
+        return $this->viewModel->SetViewModelProperties($module->name);
     }
 
     public function GetPortfolioIndexModel($module)
@@ -47,18 +48,19 @@ class EntryService
         {
             $this->viewModel->success = false;
             $this->viewModel->errors = "The Module is not active";
-            return $this->viewModel;
+
+            return $this->viewModel->SetViewModelProperties($module);
         }
 
-        $entries = $module->entries()->paginate(10);
+        $entries = $module->entries()->paginate(8);
         $this->viewModel->model = $entries;
         $this->viewModel->title = 'Blog';
         $this->viewModel->path = 'Portfolio / posts';
 
-        return $this->viewModel;
+        return $this->viewModel->SetViewModelProperties($module->name);
     }
 
-    public function GetModelByName($name)
+    public function GetModelByName($name, $module)
     {
         $name = ucwords(str_replace('_', ' ', $name));
         // dd($name);
@@ -74,7 +76,7 @@ class EntryService
             return $this->viewModel;
         }
         $this->viewModel->model = $entry;
-        return $this->viewModel;
+        return $this->viewModel->SetViewModelProperties($module);
 
     }
 

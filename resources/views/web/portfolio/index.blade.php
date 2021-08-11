@@ -1,10 +1,15 @@
 @extends('web.layout')
 
-@section('title') <?php print("$viewModel->viewTitle") ?> @endsection
+@section('title') 
+    @php
+        $module = ucfirst($viewModel->viewModule); 
+        print("$module")
+    @endphp 
+@endsection
 
 @section('path')
     <div class="path-section">
-        <h2 class="section-title"> / {{$viewModel->viewTitle }} </h2>
+        <h2 class="section-title"> / {{ $module  }} </h2>
     </div>
 @endsection
 
