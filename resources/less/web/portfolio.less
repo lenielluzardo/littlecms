@@ -30,25 +30,29 @@
         }
     }
 }
-@media screen and (min-width: 860px){
-    .project-list-container{
-        ul{
-            display: block !important;
-            overflow-y: scroll !important;
-            overflow-x: hidden !important;
-            max-height: 66vh;
+@media @desktop{
+    .portfolio{
+        &-projects{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
 
-            li{
-                min-height: 300px;
-            }
-        }
-    }
-}
-@media screen and (min-width: 1024px){
-    .project-list-container{
-        ul{
-            max-height: 68vh;
-            li{
+            &-project{
+                margin: 1em;
+                width: 200px;
+                height: 200px;
+                border-radius: 3px;
+                
+                display: flex;
+                place-items: center;
+                text-align: center;
+
+
+                background-position: center;
+                background-size: contain;
+
+                &_title{
+                }
             }
         }
     }

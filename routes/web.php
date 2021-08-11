@@ -10,13 +10,31 @@ Route::group(['prefix' => '/'], function(){
     Route::get('/', 'App\Http\Controllers\Web\HomeController@Index' )
     ->name('home');
 
-    // dd("**** Web Blog ****");
-    Route::get('blog', 'App\Http\Controllers\Web\BlogController@Index')
-    ->name('web.blog.index');
+   
 
-    // dd("**** Web Portfolio ****");
-    Route::get('portfolio', 'App\Http\Controllers\Web\PortfolioController@Index')
-    ->name('web.portfolio.index');
+    Route::group(['prefix' => 'blog'], function () {
+
+         // dd("**** Web Blog ****");
+
+        Route::get('', 'App\Http\Controllers\Web\BlogController@Index')
+        ->name('web.blog.index');
+
+        Route::get('/{articleName}', 'App\Http\Controllers\Web\BlogController@GetByName')
+        ->name('web.blog.article');
+    });
+
+    Route::group(['prefix' => 'portfolio'], function () {
+        
+        // dd("**** Web Portfolio ****");
+        
+        Route::get('', 'App\Http\Controllers\Web\PortfolioController@Index')
+        ->name('web.portfolio.index');
+
+        Route::get('/{projectName}', 'App\Http\Controllers\Web\PortfolioController@GetByName')
+        ->name('web.portfolio.project');
+    });
+   
+    
 
     // dd("**** Web About ****");
     Route::get('about', 'App\Http\Controllers\Web\AboutController@Index')

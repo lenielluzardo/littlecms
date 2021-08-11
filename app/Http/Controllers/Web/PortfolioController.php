@@ -25,6 +25,20 @@ class PortfolioController extends Controller
             return redirect()->back();
         }
 
-        return view('web.blog.blog', ['viewModel' => $viewModel]);
+        return view('web.portfolio.index', ['viewModel' => $viewModel]);
     }
+
+    public function GetByName($projectName)
+    {
+        $viewModel = $this->service->GetModelByName($projectName);
+
+        if(!$viewModel->success)
+        {
+            return redirect()->back()->withErrors($viewModel->errors);
+        }
+
+        return view('web.portfolio.project', ['viewModel' => $viewModel]);
+    }
+
+    
 }

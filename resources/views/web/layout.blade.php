@@ -15,15 +15,13 @@
             
             @include('web.partial.breadcrumbs')
 
-            <main class="main">
-                
+            <main>
+
                 @yield('module')
 
             </main>
 
         </section>
-
-        {{-- @include('web.aside.aside') --}}
 
         @include('web.footer.footer')
 

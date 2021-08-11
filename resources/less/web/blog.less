@@ -40,25 +40,44 @@
 }
 @media @desktop{
     .blog{
-        margin: 1em;
-        // display: grid;
-        // grid-auto-flow: column;
-        // flex-direction: column;
-        // overflow-y: scroll;
+        margin: 2em;
+        display: grid;
+        grid-template: auto / auto;
+        align-items: center;
         
-        &_category{
-            display: grid;
-            grid-auto-flow: column;
-            background-color: darkblue;
-            // overflow-y: scroll;
+        
+        &-category{
+            margin: 1.5em auto;
 
-            &-article{
+            &_name{
+                
+            }
 
-                &_image{
-                    height: 100px;
-                }
-                &_title{
+            &-articles{
+                display: flex;
+                flex-flow: wrap;
+               
+                width: 100%;
 
+                &-article{
+                    border-radius: 5px;
+                    overflow: hidden;
+                    margin: 1em;
+                    width: 200px;
+                    height: 200px;
+                    background-color: darkblue;
+
+                    
+                    &_image{
+                        // border-radius: 5px;
+                        width: 100%;
+                        object-fit: cover;
+                        aspect-ratio: 16 / 9;
+                    }
+                    &_title{
+                        margin: 10px;
+                        text-align: center;
+                    }
                 }
 
             }

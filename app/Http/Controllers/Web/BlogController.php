@@ -25,6 +25,19 @@ class BlogController extends Controller
             return redirect()->back();
         }
 
-        return view('web.blog.blog', ['viewModel' => $viewModel]);
+        return view('web.blog.index', ['viewModel' => $viewModel]);
     }
+
+    public function GetByName($articleName)
+    {
+        $viewModel = $this->service->GetModelByName($articleName);
+
+        if(!$viewModel->success)
+        {
+            return redirect()->back()->withErrors($viewModel->errors);
+        }
+
+        return view('web.blog.article', ['viewModel' => $viewModel]);
+    }
+
 }

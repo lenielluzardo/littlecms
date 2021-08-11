@@ -18,7 +18,8 @@ class CategoryMapper
             $categoryDto->name = $category->name;
             $categoryDto->entries = collect([]);
 
-            foreach($category->entries as $entry)
+            $entries = $category->entries()->orderBy('published_at', 'desc')->paginate(4);
+            foreach($entries as $entry)
             {
                 $entryDto = new EntryDto();
                 $entryDto->thumbnail = $entry->thumbnail;

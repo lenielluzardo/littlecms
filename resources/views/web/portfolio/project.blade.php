@@ -1,36 +1,39 @@
-<?php $title = "Portfolio" ?>
+@extends('web.layout')
 
-@extends('user.content.main')
+@section('title') <?php print("$viewModel->viewTitle") ?> @endsection
 
-@section('subindex')
+@section('path')
+    <div class="path-section">
+        <h2 class="section-title"> / {{$viewModel->viewTitle }} </h2>
+    </div>
+@endsection
 
-    <?php $title = $item->title ?>
+@section('module')
+
+    <?php $title = $viewModel->model->title ?>
 
     <!-- ===== S U B C O N T E N T ===== -->
     <section class="sub-content-container">
 
         <div class="box-container">
 
-            <article id="project-{{$item->id}}" class="box-item project-container single-entry">
+            <article id="project-{{$viewModel->model->id}}" class="box-item project-container single-entry">
 
                 <section class="box-item-img-container single-entry-title">
-                    <img src="{{$item->image1}}" alt="{{$item->title}}">
+                    <img src="{{$viewModel->model->image1}}" alt="{{$viewModel->model->title}}">
                 </section>
 
                 <div class="box-item-title-container">
-                    <h2 > {{$item->title}} </h2>
+                    <h2 > {{$viewModel->model->title}} </h2>
                 </div>
 
                 <section class="box-item-meta-container">
-                    <h5 class="publication-date"> {{$item->created_at}} </h2>
+                    <h5 class="publication-date"> {{$viewModel->model->created_at}} </h2>
                 </section>
 
                 <section class="box-item-content-container single-entry-content">
 
-                    <p> {!! $item->paragraph1 !!} </p><br>
-                    <p> {!! $item->paragraph2 !!} </p><br>
-                    <p> {!! $item->paragraph3 !!} </p><br>
-                    <p> {!! $item->paragraph4 !!} </p><br>
+                    {!! $viewModel->model->content !!}
 
                 </section>
 
@@ -42,4 +45,4 @@
 
 @endsection
 
-@section('title') <?php print("$item->title") ?> @endsection
+@section('title') <?php print("$viewModel->model->title") ?> @endsection
