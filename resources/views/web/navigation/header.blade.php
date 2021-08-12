@@ -2,9 +2,10 @@
 
 <header id="header" class="header-container">
 
-    @include('web.navigation.transparent')
+    {{-- @include('web.navigation.transparent') --}}
+    @include('web.partial.brand')
 
-    @include('web.partial.navigation')
+    @include('web.navigation.modules')
 
 </header>
 

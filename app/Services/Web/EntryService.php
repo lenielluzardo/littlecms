@@ -63,9 +63,8 @@ class EntryService
     public function GetModelByName($name, $module)
     {
         $name = ucwords(str_replace('_', ' ', $name));
-        // dd($name);
         $entry = Entry::where('title', $name)->first();
-        // dd($entry);
+
         if($entry == null)
         {
             $this->viewModel->success = false;

@@ -5,6 +5,6 @@
     <img class="brand-logo" alt="Home"
          src="{{ asset('/assets/icons/site-logo.svg') }}" >
          
-    <h1 class="brand-title" id="title" > {{ config('app.name') }} </h1>
+    <h1 class="brand-title" > {{ config('app.name') }} </h1>
 
 </a>

@@ -21,7 +21,7 @@
         
             <a href="{{ route('web.portfolio.project', ['projectName' => urlencode(str_replace(' ', '_', strtolower($project->title)))]) }}">
                
-                <li class="portfolio-projects-project" 
+                <li class="portfolio-projects-project card" 
                     style="background-image: url('{{ $project->thumbnail }}')">
                     
                     <h2 class="portfolio-projects-project_title"> {{ $project->title }} </h2>

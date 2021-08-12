@@ -9,9 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'parent_id', 'module_id'];
-    // protected $primaryKey = 'name';
-    // public $incrementing = false;
+    protected $fillable = ['name','description','icon','active','parent_id', 'module_id'];
 
     public function childs()
     {

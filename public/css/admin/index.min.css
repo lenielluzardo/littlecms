@@ -515,23 +515,12 @@ a {
 a:visited {
   color: initial;
 }
-h1 {
-  font-size: 25px;
-}
-h2 {
-  font-size: 20px;
-}
-h3 {
-  font-size: 18px;
-}
-h4 {
-  font-size: 15px;
-}
-h5 {
-  font-size: 12px;
-}
-h6 {
-  font-size: 10px;
+.card {
+  overflow: hidden;
+  min-width: 1em;
+  min-height: 1em;
+  border-radius: 0.4em;
+  box-shadow: 0em 0.5em 0.5em rgba(0, 0, 0, 0.5);
 }
 .tag {
   display: inline-block;
@@ -546,72 +535,6 @@ h6 {
 .text-container {
   text-align: justify;
   padding: 10px 0;
-}
-.entry {
-  display: none;
-  padding: 20px;
-  max-width: 750px;
-  background-color: #fffefe;
-}
-.entry-header h2 {
-  padding: 10px;
-}
-.entry-header .entry-meta-container {
-  margin: auto;
-  padding: 10px;
-  margin: 10px 0;
-}
-.entry-header .entry-meta-container em {
-  font-style: initial;
-  font-weight: bold;
-}
-.entry .entry-img-container {
-  margin: 10px 0;
-}
-.entry .entry-img-container img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.entry-content {
-  margin: 10px 0;
-  text-align: justify;
-}
-@media only screen and (min-width: 810px) and (min-height: 630px) {
-  .entry {
-    padding: 50px;
-    height: 100%;
-  }
-}
-.archive-container {
-  padding: 0 !important;
-}
-.archive-list {
-  display: flex;
-  height: 350px;
-  padding-right: 17px;
-  margin-left: 10px;
-  width: 100%;
-  box-sizing: content-box;
-  overflow-y: hidden;
-  overflow-x: scroll;
-}
-.archive-list-item {
-  margin: 10px;
-}
-@media only screen and (min-width: 540px) {
-  .archive-list {
-    display: block;
-    height: 400px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
-}
-@media only screen and (min-width: 810px) and (min-height: 630px) {
-  .archive-list {
-    height: 100%;
-  }
 }
 .preview-item {
   display: grid;

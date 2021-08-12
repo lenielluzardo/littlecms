@@ -16,6 +16,8 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id()->unsignedBigInteger()->autoIncrement();
             $table->string('name');
+            $table->string('description')->default('*Default Category Description*');
+            $table->string('icon')->default('fa fa-cog');
             $table->boolean('active')->default(true);
             $table->integer('module_id')->default(0);
             $table->integer('parent_id')->default(0);

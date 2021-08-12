@@ -19,27 +19,39 @@
     <section class="module blog">
 
         @foreach ($viewModel->model as $category)
-        <div class="blog-category">
-            <h3 class="blog-category_name"> {{ ucfirst($category->name) }} 
-            <hr>
-            </h3>
+        <section class="blog-category">
             
-            
-            <ul class="blog-category-articles">
-
-                @foreach ($category->entries as $article)
-                <a href="{{ route('web.blog.article', ['articleName' => urlencode(str_replace(' ', '_', strtolower($article->title)))]) }}">
-
-                    <li class="blog-category-articles-article">
-                        <img class="blog-category-articles-article_image" src="{{ $article->thumbnail }}" alt="{{ $article->title.' Image' }}"/>
-                        <h2 class="blog-category-articles-article_title" >{{ $article->title }}</h2>
-                    </li>
-                </a>
+            <header class="blog-category_header"> 
+                <div class="blog-category_header-icon">
+                    <i class="{{ $category->icon }}"></i>
+                </div>
                 
-                @endforeach
-            </ul>
+                <h3 class="blog-category_header-name">{{ ucfirst($category->name) }}</h3>  
+            </header>
+            
+            <section class="blog-category_body">
+                <ul class="blog-category_body-articles">
 
-        </div>
+                    @foreach ($category->entries as $article)
+                    <a href="{{ route('web.blog.article', ['articleName' => urlencode(str_replace(' ', '_', strtolower($article->title)))]) }}">
+
+                        <li class="blog-category_body-articles-article card">
+                            
+                            <img class="blog-category_body-articles-article_image" 
+                            src="{{ $article->thumbnail }}" alt="{{ $article->title.' Image' }}"/>
+                            
+                            <h4 class="blog-category_body-articles-article_title" >
+                                {{ $article->title }}
+                            </h4>
+
+                        </li>
+                    </a>
+                    @endforeach
+
+                </ul>
+            </section>
+
+        </section>
         @endforeach
 
     </section>
