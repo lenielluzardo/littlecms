@@ -4,6 +4,7 @@ namespace App\Mappers;
 
 use App\ViewModels\Admin\EntryViewModel;
 use App\DTO\EntryDTO;
+use App\Models\UserField;
 
 class EntryMapper
 {
@@ -15,8 +16,8 @@ class EntryMapper
         $viewModel->title = $model->title;
         $viewModel->thumbnail = $model->thumbnail;
         $viewModel->content = $model->content;
-        $viewModel->module = $model->module;
-        $viewModel->category = $model->category;
+        $viewModel->module = $model->module()->name;
+        $viewModel->category = $model->category()->name;
         // $viewModel->tags = $model->tags;
         
         return $viewModel;
@@ -25,10 +26,12 @@ class EntryMapper
     {
         $entryDto = new EntryDto();
         $entryDto->thumbnail = $entry->thumbnail;
+        $entryDto->published_at = $entry->published_at;
         $entryDto->title = $entry->title;
         $entryDto->content = $entry->content;
-        $entryDto->author = $entry->author;
-        $entryDto->category = $entry->category;
+        $entryDto->author = UserField::find($entry->user->id)->name;
+        $entryDto->category = $entry->category->name;
+        $entryDto->module = $entry->module->name;
 
         return $entryDto;
     }

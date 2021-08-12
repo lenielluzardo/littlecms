@@ -58,3 +58,42 @@
     }
 }
 
+.article{
+    margin: 2em;
+    max-width: 50%;
+    background-color: @entry_bg_color;
+
+    &_header{
+        display:grid;
+        grid-row-gap: 1em;
+        
+        &-thumbnail{
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+    }
+
+    &_body{
+        margin: 10px 0;
+        text-align: justify;
+
+        p{
+
+        }
+
+        img{
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        li{
+
+        }
+    }
+
+    &_footer{
+
+    }
+}

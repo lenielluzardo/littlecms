@@ -20,11 +20,15 @@
         <section class="blog-category">
             
             <header class="blog-category_header"> 
+                
                 <div class="blog-category_header-icon">
                     <i class="{{ $category->icon }}"></i>
                 </div>
-                
-                <h3 class="blog-category_header-name">{{ ucfirst($category->name) }}</h3>  
+
+                <a href="{{ route("web.blog.category", ['category' => urlencode($category->name)]) }}">
+                    <h3 class="blog-category_header-name">{{ ucfirst($category->name) }}</h3>  
+                </a>
+
             </header>
             
             <section class="blog-category_body">

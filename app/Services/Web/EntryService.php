@@ -89,7 +89,10 @@ class EntryService
 
             return $this->viewModel;
         }
-        $this->viewModel->model = $entry;
+
+        $entryDto = EntryMapper::MapToEntryDTO($entry);
+        
+        $this->viewModel->model = $entryDto;
         return $this->viewModel->SetViewModelProperties($module);
 
     }

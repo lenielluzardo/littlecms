@@ -648,6 +648,31 @@ a:visited {
   margin: 10px;
   text-align: center;
 }
+.article {
+  margin: 2em;
+  max-width: 50%;
+  background-color: #fffefe;
+}
+.article_header {
+  display: grid;
+  grid-row-gap: 1em;
+}
+.article_header-thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.article_body {
+  margin: 10px 0;
+  text-align: justify;
+}
+.article_body img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .project-list-container ul {
   flex-direction: column !important;
 }
@@ -824,8 +849,9 @@ a:visited {
     font-size: 1.5em;
   }
 }
-.copyrights {
+.copyright {
   display: flex;
+  font-size: 0.8em;
   padding: 10px;
 }
 /* ===== M A I N ===== */

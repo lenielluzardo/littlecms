@@ -10,4 +10,5 @@ class EntryDTO
     public $author;
     public $tags;
     public $category;
+    public $published_at;
 }
