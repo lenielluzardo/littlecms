@@ -7,11 +7,8 @@
             <a href="{{ route( $module->web_route)}}">
                 <li class="navigation-modules-module">
                   
-                    {{-- <div class="navigation-modules-module-label"> --}}
-                        <i class="navigation-modules-module-label_icon fa fa-{{ $module->icon }}"></i>
-                        <h4 class="navigation-modules-module-label_name">{{ $module->name }}</h4>
-                    {{-- </div> --}}
-                        
+                    <i class="navigation-modules-module-label_icon fa fa-{{ $module->icon }}"></i>
+                    <h4 class="navigation-modules-module-label_name">{{ $module->name }}</h4>
                         
                 </li>
             </a>

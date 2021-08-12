@@ -1,16 +1,15 @@
 <!-- ===== B R E A D C R U M B S ===== -->
-<nav id="breadcrumbs" class="breadcrumbs-container">
+<nav id="breadcrumbs" class="breadcrumbs">
 
     {{-- <div id="previous-button" class="previous-button box-container" onclick="location.href= '{{URL::previous()}}'">
         <div class="previous-button-arrow"  ><< </div>
         <div class="previous-button-label">Previous</div>
     </div> --}}
 
-    <section class="path-container">
+    <ol class="path">
         @yield('path')
-    </section>
+    </ol>
 
-    <div></div>
 
     {{-- @include('auth.session') --}}
 

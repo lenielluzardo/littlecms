@@ -38,7 +38,14 @@
         background-color: fade(@fourth, 40%);
     }
 }
-@media screen and (min-width: 860px){
+@media @desktop{
+
+    .path{
+        display: flex;
+        grid-auto-flow: column;
+        grid-column-gap: .5em;
+        margin: .5em 1em;
+    }
     .breadcrumbs-container{
         position: initial;
         grid-row: 1 / 2;

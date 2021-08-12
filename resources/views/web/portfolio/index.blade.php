@@ -2,16 +2,18 @@
 
 @section('title') 
     @php
-        $module = ucfirst($viewModel->viewModule); 
-        print("$module")
+
+    $module = ucfirst($viewModel->viewModule); 
+    print("$module")
+
     @endphp 
 @endsection
 
-@section('path')
-    <div class="path-section">
-        <h2 class="section-title"> / {{ $module  }} </h2>
-    </div>
-@endsection
+@section('path') 
+    <li>
+        {{ $module  }} 
+    </li>
+ @endsection
 
 @section('module')
     
@@ -24,7 +26,7 @@
                 <li class="portfolio-projects-project card" 
                     style="background-image: url('{{ $project->thumbnail }}')">
                     
-                    <h2 class="portfolio-projects-project_title"> {{ $project->title }} </h2>
+                    <h4 class="portfolio-projects-project_title"> {{ $project->title }} </h4>
                 </li>
             </a>
         

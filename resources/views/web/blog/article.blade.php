@@ -2,18 +2,30 @@
 
 @section('title') 
     @php
-        $title = ucfirst($viewModel->viewModule).' > '.$viewModel->model->title; 
-        print("$title")
+    
+    $title = ucfirst($viewModel->viewModule).' > '.$viewModel->model->title; 
+    print("$title")
+
     @endphp 
 @endsection
 
 @section('path')
-    <div class="path-section">
-        <h2 class="section-title">
-            / <a href="{{ route( "web.$viewModel->viewModule.index") }}"> {{ ucfirst($viewModel->viewModule) }} </a>
-            > {{ $viewModel->model->title }}
-        </h2>
-    </div>
+    <li>
+        <a href="{{ route( "web.$viewModel->viewModule.index") }}">
+            {{ ucfirst($viewModel->viewModule) }} 
+        </a> / 
+    </li>
+    <li>
+        @php
+            $categoryName = $viewModel->model->category()->first()->name;
+        @endphp
+        <a href="{{ route("web.$viewModel->viewModule.category", ['category' => $categoryName ]) }}">
+            {{ $categoryName }}
+        </a> /
+    </li>
+    <li>
+        {{ $viewModel->model->title }}
+    </li>
 @endsection
 
 

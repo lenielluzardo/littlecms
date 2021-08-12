@@ -28,9 +28,9 @@ class BlogController extends Controller
         return view('web.blog.index', ['viewModel' => $viewModel]);
     }
 
-    public function GetByName($articleName)
+    public function GetByName($cateogry, $article)
     {
-        $viewModel = $this->service->GetModelByName($articleName, 'blog');
+        $viewModel = $this->service->GetModelByName($article, 'blog');
 
         if(!$viewModel->success)
         {
@@ -38,6 +38,18 @@ class BlogController extends Controller
         }
 
         return view('web.blog.article', ['viewModel' => $viewModel]);
+    }
+
+    public function GetByCategory($category)
+    {
+        $viewModel = $this->service->GetModelByCategory($category, 'blog');
+
+        if(!$viewModel->success)
+        {
+            return redirect()->back()->withErrors($viewModel->errors);
+        }
+
+        return view('web.blog.category', ['viewModel' => $viewModel]);
     }
 
 }

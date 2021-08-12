@@ -17,7 +17,10 @@ Route::group(['prefix' => '/'], function(){
         Route::get('', 'App\Http\Controllers\Web\BlogController@Index')
         ->name('web.blog.index');
 
-        Route::get('/{articleName}', 'App\Http\Controllers\Web\BlogController@GetByName')
+        Route::get('/{category}', 'App\Http\Controllers\Web\BlogController@GetByCategory')
+        ->name('web.blog.category');
+
+        Route::get('/{category}/{article}', 'App\Http\Controllers\Web\BlogController@GetByName')
         ->name('web.blog.article');
     });
 

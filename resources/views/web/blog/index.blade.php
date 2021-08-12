@@ -2,16 +2,14 @@
 
 @section('title') 
     @php
-        $module = ucfirst($viewModel->viewModule); 
-        print("$module")
+    
+    $module = ucfirst($viewModel->viewModule); 
+    print("$module")
+    
     @endphp 
 @endsection
 
-@section('path')
-    <div class="path-section">
-        <h2 class="section-title"> / {{ $module  }} </h2>
-    </div>
-@endsection
+@section('path') <li>{{ $module  }}</li> @endsection
 
 @section('module')
 
@@ -33,7 +31,13 @@
                 <ul class="blog-category_body-articles">
 
                     @foreach ($category->entries as $article)
-                    <a href="{{ route('web.blog.article', ['articleName' => urlencode(str_replace(' ', '_', strtolower($article->title)))]) }}">
+
+                    @php
+                        $categoryName = urlencode(strtolower($category->name));
+                        $articleName = urlencode(str_replace(' ', '_', strtolower($article->title)));
+                    @endphp
+
+                    <a href="{{ route('web.blog.article', ['category' => $categoryName, 'article' => $articleName ]) }}">
 
                         <li class="blog-category_body-articles-article card">
                             
