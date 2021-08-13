@@ -36,7 +36,6 @@ class PortfolioController extends Controller
         {
             return redirect()->back()->withErrors($viewModel->errors);
         }
-
         return view('web.portfolio.project', ['viewModel' => $viewModel]);
     }
 

@@ -649,9 +649,10 @@ a:visited {
   text-align: center;
 }
 .article {
+  display: grid;
+  grid-row-gap: 1em;
   margin: 2em;
   max-width: 50%;
-  background-color: #fffefe;
 }
 .article_header {
   display: grid;
@@ -664,7 +665,6 @@ a:visited {
      object-fit: cover;
 }
 .article_body {
-  margin: 10px 0;
   text-align: justify;
 }
 .article_body img {
@@ -713,6 +713,25 @@ a:visited {
     text-align: center;
     background-position: center;
     background-size: contain;
+  }
+  .project {
+    display: grid;
+    grid-row-gap: 1em;
+    margin: 2em;
+    max-width: 50%;
+  }
+  .project_header {
+    display: grid;
+    grid-row-gap: 1em;
+  }
+  .project_header-hero {
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    place-items: center;
+    place-content: center;
   }
 }
 @media only screen and (min-width: 810px) and (min-height: 630px) {

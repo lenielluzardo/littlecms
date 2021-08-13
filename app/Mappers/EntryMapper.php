@@ -5,6 +5,7 @@ namespace App\Mappers;
 use App\ViewModels\Admin\EntryViewModel;
 use App\DTO\EntryDTO;
 use App\Models\UserField;
+use Carbon\Carbon;
 
 class EntryMapper
 {
@@ -26,7 +27,7 @@ class EntryMapper
     {
         $entryDto = new EntryDto();
         $entryDto->thumbnail = $entry->thumbnail;
-        $entryDto->published_at = $entry->published_at;
+        $entryDto->published_at = Carbon::parse($entry->published_at)->format('F j, Y');
         $entryDto->title = $entry->title;
         $entryDto->content = $entry->content;
         $entryDto->author = UserField::find($entry->user->id)->name;

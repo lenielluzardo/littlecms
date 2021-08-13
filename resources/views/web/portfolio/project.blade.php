@@ -8,50 +8,55 @@
 @endsection
 
 @section('path')
-    <div class="path-section">
-        <h2 class="section-title">
-            / <a href="{{ route( "web.$viewModel->viewModule.index") }}"> {{ ucfirst($viewModel->viewModule) }} </a>
-            > {{ $viewModel->model->title }}
-        </h2>
-    </div>
+    <li>
+        <a href="{{ route( "web.$viewModel->viewModule.index") }}">
+            {{ ucfirst($viewModel->viewModule) }} 
+        </a> / 
+    </li>
+    <li>
+        @php
+            $categoryName = $viewModel->model->category;
+        @endphp
+        <a href="{{ route("web.$viewModel->viewModule.category", ['category' => $categoryName ]) }}">
+            {{ $categoryName }}
+        </a> /
+    </li>
+    <li>
+        {{ $viewModel->model->title }}
+    </li>
 @endsection
 
 
 @section('module')
-
-    <?php $title = $viewModel->model->title ?>
-
     <!-- ===== S U B C O N T E N T ===== -->
-    <section class="sub-content-container">
+    <section class="">
+        <article class="project">
 
-        <div class="box-container">
+            <header class="project_header">
+                <div class="project_header-hero"
+                     style="background-image: url('{{ $viewModel->model->thumbnail }}');">
+                         
+                    <h2 class="project_header-hero_title" > {{$viewModel->model->title}} </h2>
 
-            <article id="project-{{$viewModel->model->id}}" class="box-item project-container single-entry">
-
-                <section class="box-item-img-container single-entry-title">
-                    <img src="{{$viewModel->model->image1}}" alt="{{$viewModel->model->title}}">
-                </section>
-
-                <div class="box-item-title-container">
-                    <h2 > {{$viewModel->model->title}} </h2>
                 </div>
+                <div class="porject_header-meta">
+                   
+                    <h5 class="publication-date"> {{$viewModel->model->author}} </h2>
+                    <h5 class="publication-date"> {{$viewModel->model->published_at}} </h2>
 
-                <section class="box-item-meta-container">
-                    <h5 class="publication-date"> {{$viewModel->model->created_at}} </h2>
-                </section>
+                </div>
+            </header>
 
-                <section class="box-item-content-container single-entry-content">
+            <section class="box-item-content-container single-entry-content">
+                {!! $viewModel->model->content !!}
 
-                    {!! $viewModel->model->content !!}
+            </section>
 
-                </section>
+            <footer>
 
-            </article>
+            </footer>
 
-        </section>
-
+        </article>
     </section>
 
 @endsection
-
-@section('title') <?php print("$viewModel->model->title") ?> @endsection

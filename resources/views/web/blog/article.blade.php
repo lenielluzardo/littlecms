@@ -41,13 +41,13 @@
 
                 <div class="article_header-meta">
                     <h5>
-                        Author:
+                        By:
                         {{$viewModel->model->author}}
                     </h5>
                 <h5>
-                    Published on:
+                    On:
                     <time class="article_header-meta_date">
-                        {{ date('d-m-Y', strtotime($viewModel->model->published_at)) }}
+                        {{ $viewModel->model->published_at }}
                         </time>
                     </h4> 
                 </div>

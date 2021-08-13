@@ -33,6 +33,9 @@ Route::group(['prefix' => '/'], function(){
 
         Route::get('/{projectName}', 'App\Http\Controllers\Web\PortfolioController@GetByName')
         ->name('web.portfolio.project');
+
+        Route::get('/{category}', 'App\Http\Controllers\Web\BlogController@GetByCategory')
+        ->name('web.portfolio.category');
     });
    
     

@@ -59,9 +59,10 @@
 }
 
 .article{
+    display:grid;
+    grid-row-gap: 1em;
     margin: 2em;
     max-width: 50%;
-    background-color: @entry_bg_color;
 
     &_header{
         display:grid;
@@ -75,7 +76,6 @@
     }
 
     &_body{
-        margin: 10px 0;
         text-align: justify;
 
         p{

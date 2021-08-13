@@ -30,7 +30,7 @@ class EntryService
             return $this->viewModel->SetViewModelProperties($module);
         }
 
-        $categories = $module->categories()->with('entries')->get();
+        $categories = $module->categories()->with('entries')->where('active', true)->get();
        
         $categoriesDto = collect([]);
 
