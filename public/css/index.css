@@ -758,7 +758,6 @@ a:visited {
 /* ===== F O R M ===== */
 .form-container {
   box-shadow: 0px 0px 20px 1px #00000069 !important;
-  background: linear-gradient(#083769, #182d71);
   border-radius: 3px;
 }
 .form-container form {
@@ -772,7 +771,6 @@ a:visited {
   display: block;
   width: 100%;
   margin-bottom: 5px;
-  color: #dadada;
 }
 .form-container .form-group input,
 .form-container .form-group select,
@@ -785,29 +783,15 @@ a:visited {
   padding: 5px 0;
   font-family: inherit !important;
   border-radius: 2px;
-  border: 1px solid rgba(55, 192, 255, 0.5);
-  color: #dadada;
   width: 100%;
 }
 .form-container .form-group input {
   height: 25px;
   width: calc(100% - 10px);
   padding-left: 10px;
-  background-color: rgba(15, 33, 70, 0.5);
-}
-.form-container .form-group select {
-  background-color: rgba(15, 33, 70, 0.5);
 }
 .form-container .form-group button {
   padding: 10px;
-  color: #dadada;
-  background: linear-gradient(#3279c5, #193372);
-}
-.form-container .form-group button:hover {
-  background: linear-gradient(rgba(50, 121, 197, 0.6), #193372);
-}
-.form-container .form-group button:active {
-  background: linear-gradient(#193372, #3279c5);
 }
 .form-container .form-group textarea {
   resize: none;
@@ -815,16 +799,6 @@ a:visited {
   height: 100px;
   padding-left: 10px;
   width: calc(100% - 10px);
-  background-color: rgba(15, 33, 70, 0.5);
-}
-.form-container .form-group textarea::-moz-placeholder {
-  color: rgba(55, 192, 255, 0.5);
-}
-.form-container .form-group textarea:-ms-input-placeholder {
-  color: rgba(55, 192, 255, 0.5);
-}
-.form-container .form-group textarea::placeholder {
-  color: rgba(55, 192, 255, 0.5);
 }
 .form-container .form-group .g-recaptcha {
   transform: scale(0.77);

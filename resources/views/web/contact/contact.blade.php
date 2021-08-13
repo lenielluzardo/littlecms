@@ -13,7 +13,7 @@
 @section('module')
 
     <!-- ===== I N D E X ===== -->
-    <main id="main" class="main-center">
+    <main id="main" class="">
 
         @include('web.partial.errors')
 
