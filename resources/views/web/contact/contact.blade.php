@@ -1,29 +1,24 @@
 @section('title', 'Contact')
 
-@section('path')
-<div class="path-section">
-    <h2 class="section-title">
-        / Contact
-    </h2>
-</div>
+@section('breadcrumbs')
+
+    @include('web.partial.breadcrumbs', ['paths' => $viewModel->viewPath])
+
 @endsection
 
 @extends('web.layout')
 
 @section('module')
 
-    <!-- ===== I N D E X ===== -->
-    @include('web.partial.errors')
-
     @include('web.contact.form')
 
 @endsection
 
-@if($model->modal !== null )
+@if($viewModel->modal !== null )
 
     @section('modal')
 
-        @include('web.partial.modal', ['modal' => $model->modal])
+        @include('web.partial.modal', ['modal' => $viewModel->modal])
 
     @endsection
 

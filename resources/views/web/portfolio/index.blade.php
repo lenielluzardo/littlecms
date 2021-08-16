@@ -17,7 +17,7 @@
 
 @section('module')
     
-    <section class="module portfolio">
+    <section class="portfolio">
         <ul class="portfolio-projects">
         @foreach ($viewModel->model as $project)
         

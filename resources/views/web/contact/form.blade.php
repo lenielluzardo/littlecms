@@ -10,9 +10,7 @@
             <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
         </span>
     @endif --}}
-
-    <div class="form-container">
-      <form action="{{route('web.contact.email')}}" method="post">
+      <form class="contact" action="{{route('web.contact.email')}}" method="post">
 
         <div class="form-group">
             <label for="fullname">Fullname</label>
@@ -71,6 +69,5 @@
         </div>
 
       </form>
-    </div>
     {!! NoCaptcha::renderJs()!!}
 

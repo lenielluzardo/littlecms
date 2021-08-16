@@ -32,6 +32,8 @@
 }
 @media @desktop{
     .portfolio{
+        margin: 2em 4em;
+
         &-projects{
             display: flex;
             flex-flow: wrap;
@@ -61,8 +63,12 @@
     .project{
         display:grid;
         grid-row-gap: 1em;
-        margin: 2em;
+        margin: 2em 4em;
         max-width: 50%;
+
+        background-color: #fff;
+        box-shadow: 0em 0.2em 0.4em 0em #00000033;
+        border-radius: 0 0 .5em .5em;
 
         &_header{
             display:grid;
@@ -80,8 +86,12 @@
                 &_title{
                 }
             }
+            &-meta{
+                padding:0 1em;
+            }
         }
         &_body{
+           padding:0 1em;
 
         }
         &_footer{

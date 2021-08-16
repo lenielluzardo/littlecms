@@ -6,7 +6,7 @@
     margin: 2em 4em;
     
     &-category{
-        margin: 0 auto;
+        // margin: 0 auto;
         border-radius: 5px 5px;
         
         &_header{
@@ -49,13 +49,26 @@
 .article{
     display:grid;
     grid-row-gap: 1em;
-    margin: 2em;
+    margin: 0em 4em;
+    padding: 1em 0;
     max-width: 50%;
+    background-color: #fff;
+    box-shadow: 0em 0.2em 0.4em 0em #00000033;
+    border-radius: 0 0 .5em .5em;
 
     &_header{
         display:grid;
         grid-row-gap: 1em;
         
+        &-title{
+            padding:0 1em;
+
+        }
+        &-meta{
+            padding:0 1em;
+
+        }
+
         &-thumbnail{
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -65,6 +78,7 @@
 
     &_body{
         text-align: justify;
+        padding:0 1em;
 
         p{
 
@@ -85,3 +99,5 @@
 
     }
 }
+
+@import './category.less';

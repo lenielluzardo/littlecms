@@ -3,9 +3,8 @@
     <ol class="path">
         @foreach ($paths as $path)
             <li> /
-                {{-- {{dd($path['route_values'])}} --}}
                 <a href="{{ route($path['route_name'], $path['route_values']) }}">
-                    {{$path['path_name']}}
+                    {{ ucfirst($path['path_name']) }}
                 </a> 
             </li>
         @endforeach

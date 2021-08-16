@@ -32,35 +32,22 @@
 
         &-module{
             display: grid;
-            grid-template: auto / 1fr 1fr;
-            // grid-column-gap: 1em;
+            grid-template: auto / auto 1fr;
             place-items: center;
-            margin: .5em auto;
-            width: 80%-20%;
-            padding: .5em;
-            border-radius: 1em;
-            box-shadow: 0px 0px 1px 1px #00000021;
-
-            // background: linear-gradient(transparent, #00000030);
-            // color: @header_text_color;
+            padding: 0.5em 2em;
             
             &:hover{
-                // background-color: @link_bg_color_hover;
-                width: 80%;
-
+                background-color: fade(#000, 10%);
             }
 
             &:active{
-                // background-color: @link_bg_color_active;
-                width: 85%;
+                background-color: fade(#000, 20%);
             }
-
             
             &_icon{
                 margin: 0 0 0 .5em
     
             }
-            
             &_name{
     
             }

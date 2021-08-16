@@ -14,8 +14,11 @@
     <!-- ===== A B O U T ===== -->
     <section class="about">
         
-        <article class="about-author"> 
-            @include('web.partial.author') </article>
+        <article class="about-author"
+                 style="background-image: url('https://via.placeholder.com/1200x200')"> 
+                 {{-- style="background-image: url('{{ asset('/assets/images/background.jpg') }}')">  --}}
+            @include('web.partial.author') 
+        </article>
 
         @foreach ($viewModel->model as $section)
             <article class="about-section">

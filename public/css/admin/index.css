@@ -507,13 +507,14 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+  color: #1d1d1d;
 }
 a {
   text-decoration: none;
-  color: initial;
+  color: #1d1d1d;
 }
 a:visited {
-  color: initial;
+  color: #1d1d1d;
 }
 .card {
   overflow: hidden;
@@ -556,10 +557,11 @@ a:visited {
   place-content: center;
   width: 2em;
   height: 2em;
-  background-color: blue;
-  color: #ffF;
+  background: linear-gradient(45deg, #cccccc 0%, #f7f7f7 10% 90%, #cccccc 100%);
+  color: #363232;
   font-size: 1.5em;
   border-radius: 50%;
+  border: solid 1.5px #cccccc;
 }
 .module .section_header-name {
   margin: 0 1.5em;

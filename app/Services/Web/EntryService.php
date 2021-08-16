@@ -165,6 +165,21 @@ class EntryService
         // $entries = $category->entries()->get();
 
         $this->viewModel->model = $categoryDto;
+
+        $this->viewModel->viewPath = collect([
+            [
+             'path_name' => "$module" ,
+             'route_name' => "web.$module.index", 
+             'route_values' => [ 'module' => "$module"]
+            ],
+            [
+                'path_name' => "$entryDto->category" ,
+                'route_name' => "web.$module.category", 
+                'route_values' => [ 'category' =>  $entryDto->category]
+            ],
+         ]);
+
+
         // $this->viewModel->model = $entries;
         return $this->viewModel->SetViewModelProperties($module);
 

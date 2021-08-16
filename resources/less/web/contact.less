@@ -1,53 +1,54 @@
 /* ===== F O R M ===== */
-.form-container {
-    box-shadow: 0px 0px 20px 1px #00000069 !important;
-    // background-color: @form_bg_color;
-    // background: @form_bg;
-    border-radius: 3px;
-
-    form{
-        padding: 20px;
-        box-sizing: border-box;
-    }
+.contact{
+    margin: 2em auto;
+    padding: 1em;
+    width: 50%; 
+    box-shadow: 0em 0.2em 0.4em 0em #00000033;
+    box-sizing: border-box;
+    border-radius: .5em;
+    border: solid 1px #d7d7d7;
 
     .form-group{
-        margin: 20px 0;
+        margin: 0 0 1em 0;
 
         label{
             display: block;
             width: 100%;
             margin-bottom: 5px;
-            // color: @label_text_color;
         }
         input, select, textarea, button{
-            .input-reset;
-            padding: 5px 0;
-            font-family: inherit !important;
-            border-radius: 2px;
-            // border: 1px solid @input_border_color;
-            // color: @input_text_color;
+            padding: .2em 0;
+            border-radius: .4em;
             width: 100%;
+            background-color: #efefef;
+            border: none;
         }
         input {
             height: 25px;
             width: calc(100% - 10px);
-            padding-left: 10px;
-            // background-color: @input_bg_color;
+            padding-left: .5em;
         }
         select{
-            // background-color: @input_bg_color;
         }
         button{
-            padding: 10px;
-            // color: @button_text_color;
-            // background: @button_bg_color;
+            padding: 1em;
+            background-color: #1562ff;
+            color:#fff;
+            letter-spacing: 2px;
+            font-size: 1em;
+            font-weight: bold;
 
 
             &:hover{
-                // background: @button_bg_color_hover;
+                cursor: pointer;
+                background-color: fade(#1562ff, 80%);
+
             }
             &:active{
-                // background: @button_bg_color_active;
+                cursor: pointer;
+                transform: scale(.99);
+                background-color: fade(#1562ff, 90%);
+
             }
         }
         textarea{
@@ -73,10 +74,5 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 20px;
-    }
-}
-@media @desktop{
-    .form-container {
-        width: 550px
     }
 }

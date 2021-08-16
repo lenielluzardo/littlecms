@@ -26,7 +26,7 @@
                     <h2 class="project_header-hero_title" > {{$viewModel->model->title}} </h2>
 
                 </div>
-                <div class="porject_header-meta">
+                <div class="project_header-meta">
                    
                     <h5 class="publication-date"> {{$viewModel->model->author}} </h2>
                     <h5 class="publication-date"> {{$viewModel->model->published_at}} </h2>
@@ -34,7 +34,7 @@
                 </div>
             </header>
 
-            <section class="box-item-content-container single-entry-content">
+            <section class="project_body">
                 {!! $viewModel->model->content !!}
 
             </section>

@@ -21,7 +21,7 @@ class ContactController extends Controller
 
     public function Index(Request $request)
     {
-        $viewModel = $this->domain->getViewModel();
+        $viewModel = $this->domain->GetIndexModel();
         
         if(!$viewModel->success)
         {
@@ -32,10 +32,9 @@ class ContactController extends Controller
         if($cookie == null)
         {
             Cookie::queue(Cookie::make('first_time_user_contact', true, 30));
-            $viewModel->modal = $this->domain->getModal();
         }
 
-        return view('web.contact.contact', ['model' => $viewModel]);
+        return view('web.contact.contact', ['viewModel' => $viewModel]);
     }
 
     public function contactFromWeb(Request $request)

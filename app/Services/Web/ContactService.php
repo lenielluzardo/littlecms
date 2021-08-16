@@ -12,9 +12,26 @@ class ContactService extends Service
        parent::__construct($contactViewModel);
     }
 
-    public function getModal()
+    public function GetIndexModel()
     {
-        return $this->viewModel->modal = [
+
+        $this->viewModel->viewPath = collect([
+            [
+             'path_name' => "Contact" ,
+             'route_name' => "web.contact.index", 
+             'route_values' => [ 'module' => '']
+            ]
+         ]);
+
+
+        $this->viewModel->modal =  $this->GetModal();
+
+        return $this->viewModel;
+    }
+
+    private function GetModal()
+    {
+        return [
             'id' => 'home-modal',
             'class' => 'contact-modal',
             'title' => '<h2>! Info !<h2>',
@@ -24,5 +41,4 @@ class ContactService extends Service
             'button' => '<button id="modal-close-button"> Close </button>'
         ];
     }
-
 }
