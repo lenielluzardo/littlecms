@@ -37,10 +37,8 @@ class ContactController extends Controller
         return view('web.contact.contact', ['viewModel' => $viewModel]);
     }
 
-    public function contactFromWeb(Request $request)
+    public function SendEmail(Request $request)
     {
-        //TODO: Implement newsletter feature
-
         $messages = [
             'g-recaptcha-response.required' => env('NOCAPTCHA_RESPONSE_REQUIRED'),
             'g-recaptacha-response.captcha' => env('NOCAPTCHA_RESPONSE_CAPTCHA')
@@ -51,15 +49,14 @@ class ContactController extends Controller
             'email' => 'required | email',
             'subject' => 'required',
             'discipline' => 'required',
+            'comments' => 'required',
             'g-recaptcha-response' => 'required | captcha'
         ], $messages);
 
-        if($validator->fails()){
+        if($validator->fails())
+        {            
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
-        //TODO: Implement Abstraction for Request Mapper
-        //---
 
         $data = array(
             'name' => $request->input('fullname'),

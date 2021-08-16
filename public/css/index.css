@@ -463,6 +463,10 @@ a:visited {
   border-radius: 0.4em;
   box-shadow: 0em 0.2em 0.2em rgba(0, 0, 0, 0.3);
 }
+.validation_error {
+  font-size: 0.8em;
+  color: red;
+}
 .tag {
   display: inline-block;
   padding: 5px;

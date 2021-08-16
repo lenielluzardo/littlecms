@@ -7,16 +7,16 @@
     <!-- ===== M A I N ===== -->
     <main id="main" class="main-center">
 
-        @if (Session::has('fail'))
+        {{-- @if (Session::has('fail'))
 
             <div> {{ Session::get('fail') }} </div>
 
-        @endif
+        @endif --}}
 
         <!-- ===== L O G I N ===== -->
         <div class="form-container">
 
-            <form class="form" action="{{ url('/login') }}" method="post">
+            <form class="login" action="{{ route( 'login') }}" method="POST">
 
                 <div class="form-group">
                     <label for="email">Email</label>

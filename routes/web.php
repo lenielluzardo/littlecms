@@ -48,8 +48,8 @@ Route::group(['prefix' => '/'], function(){
         Route::get('', 'App\Http\Controllers\Web\ContactController@Index')
         ->name('web.contact.index');
 
-        Route::post('', 'App\Http\Controllers\Web\ContactController@contactFromWeb')
-        ->name('web.contact.email');
+        Route::post('', 'App\Http\Controllers\Web\ContactController@SendEmail')
+        ->name('web.contact.email.post');
     });
 
 });

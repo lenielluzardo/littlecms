@@ -5,22 +5,23 @@
         </div>
     @endif
 
-    {{-- @if ($errors->has('g-recaptcha-response'))
-        <span class="help-block">
-            <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-        </span>
-    @endif --}}
-      <form class="contact" action="{{route('web.contact.email')}}" method="post">
+    
+      <form class="contact"  method="POST" action="{{ route('web.contact.email.post') }}">
 
         <div class="form-group">
             <label for="fullname">Fullname</label>
             <input id="fullname" name="fullname" type="text">
+
+            @include('web.partial.error', ['field' => 'fullname'])
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
             <input id="email" name="email" type="text">
+            
+            @include('web.partial.error', ['field' => 'email'])
         </div>
+
 
         <div class="select-form-group">
             <div class="form-group">
@@ -33,6 +34,8 @@
                 <option value="Make a Collaboration">Make a Collaboration</option>
 
                 </select>
+
+                @include('web.partial.error', ['field' => 'subject'])
             </div>
 
             <div class="form-group">
@@ -46,12 +49,16 @@
                 <option value="UI / UX Desing">UI / UX Desing</option>
 
                 </select>
+
+                @include('web.partial.error', ['field' => 'discipline'])
             </div>
         </div>
 
 
         <div class="form-group">
             <textarea class="comments" name="comments" value="" placeholder="Leave a datailed message please..."></textarea>
+
+            @include('web.partial.error', ['field' => 'comments'])
         </div>
 
         {{-- <input id="news" class="f_chk" type="checkbox" name="newsletter" value="on" checked="true">
@@ -59,6 +66,8 @@
 
         <div class="form-group recaptcha-container">
             {!! NoCaptcha::display()!!}
+            
+            @include('web.partial.error', ['field' => 'g-recaptcha-response'])
         </div>
 
         <div class="form-group">
