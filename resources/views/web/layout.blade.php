@@ -15,7 +15,7 @@
             
             @include('web.partial.breadcrumbs')
 
-            <main>
+            <main class="module">
 
                 @yield('module')
 

@@ -14,7 +14,41 @@
 
     <!-- ===== A B O U T ===== -->
     <section class="module_content">
-<form method="POST" action="{{ route('admin.module.save', ['module' => $viewModel->viewModule ]) }}">
+    
+        <table>
+           
+            <thead>
+                <th> Thumbnail </th>
+                <th> Title </th>
+                <th> Content </th>
+                <th> Active </th>
+                <th> Actions </th>
+            </thead>
+            
+            <tbody>
+            
+                @foreach ($viewModel->model as $field)
+                <tr>
+                    <td style="background-image: url('{{ $field->thumbnail }}');"></td>
+                    <td> {{ $field->title }} </td>
+                    <td> {{ $field->content }} </td>
+                    <td> {{ $field->active }} </td>
+                    <td> 
+                        <form method="GET" action="{{ route('admin.module.get.edit', ['module' => 'about', 'id' => $field->id ]) }}">
+                            <button> Edit </button>
+                        </form>
+                        <form method="POST" action="{{ route('admin.module.delete', ['module' => 'about', 'id' => $field->id ]) }}">
+                            {{ csrf_field() }}
+                            <button> Delete </button>
+                        </form>
+                    </td>
+                </tr>    
+                @endforeach
+            
+            </tbody>
+        </table>
+
+    {{-- <form method="POST" action="{{ route('admin.module.save', ['module' => $viewModel->viewModule ]) }}">
 
     <input type="text" name="id" hidden value="{{$viewModel->model->id}}">
 
@@ -46,7 +80,7 @@
     <button>
         SAVE
     </button>
-</form>
+</form> --}}
 @endsection
 
 

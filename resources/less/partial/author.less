@@ -1,0 +1,21 @@
+.author{
+    display: grid;
+    grid-template: auto / auto 1fr;
+    grid-auto-flow: column;
+    grid-column-gap: 1em;
+
+    &_thumbnail{
+        border-radius: 50%;
+        height: 8em;
+        width: 8em;
+        display: flex;
+        place-content: center;
+        overflow: hidden;
+        place-items: center;
+    }
+    
+    &_description{
+        display: flex;
+        place-items: center;
+    }
+}

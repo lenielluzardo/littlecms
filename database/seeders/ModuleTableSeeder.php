@@ -30,17 +30,17 @@ class ModuleTableSeeder extends Seeder
         $module->save();
 
         $module = new \App\Models\Module([
-            'name' => 'Contact',
-            'icon' => 'fa fa-phone-alt',
-            'web_route' => 'web.contact.index',
+            'name' => 'About',
+            'icon' => 'fa fa-user-astronaut',
+            'web_route' => 'web.about.index',
             'admin_route' => 'module',
         ]);
         $module->save();
 
         $module = new \App\Models\Module([
-            'name' => 'About',
-            'icon' => 'fa fa-user-astronaut',
-            'web_route' => 'web.about.index',
+            'name' => 'Contact',
+            'icon' => 'fa fa-phone-alt',
+            'web_route' => 'web.contact.index',
             'admin_route' => 'module',
         ]);
         $module->save();

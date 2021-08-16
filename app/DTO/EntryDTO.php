@@ -11,4 +11,5 @@ class EntryDTO
     public $tags;
     public $category;
     public $published_at;
+    public $icon;
 }

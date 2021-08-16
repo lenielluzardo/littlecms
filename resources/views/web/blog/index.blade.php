@@ -14,22 +14,26 @@
 @section('module')
 
     <!-- ===== B L O G ===== -->
-    <section class="module blog">
+    <section class="blog section">
 
         @foreach ($viewModel->model as $category)
         <section class="blog-category">
-            
-            <header class="blog-category_header"> 
+          
+            <a href="{{ route("web.blog.category", ['category' => urlencode($category->name)]) }}">
+          
+                <header class="blog-category_header section_header"
+                        style="background-image: url('{{ $category->thumbnail }}');">
                 
-                <div class="blog-category_header-icon">
-                    <i class="{{ $category->icon }}"></i>
-                </div>
+                    <div class="blog-category_header-icon section_header-icon" >
+                        <i class="{{ $category->icon }}"></i>
+                    </div>
 
-                <a href="{{ route("web.blog.category", ['category' => urlencode($category->name)]) }}">
-                    <h3 class="blog-category_header-name">{{ ucfirst($category->name) }}</h3>  
-                </a>
-
-            </header>
+                    <h3 class="blog-category_header-name section_header-name">
+                        {{ ucfirst($category->name) }}
+                    </h3>  
+                    
+                </header>
+            </a>
             
             <section class="blog-category_body">
                 <ul class="blog-category_body-articles">
@@ -63,10 +67,6 @@
         @endforeach
 
     </section>
-        
-
-
-
 @endsection
 
 @section('scripts')

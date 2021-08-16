@@ -1,0 +1,37 @@
+@import '../../partial/author.less';
+
+@media @desktop {
+    .about{
+        display: grid;
+        grid-template: auto / 1fr 1fr;
+        grid-column-gap: 2em;
+        grid-row-gap: 2em;
+        margin: 2em 4em;
+
+        &-author{
+            grid-column: span 2;
+        }
+    
+        &-section{
+            
+            display: grid;
+            grid-template: auto 1fr auto / auto;
+            grid-row-gap: 1em;
+
+            &_header{
+                
+                &-icon{
+                }
+                &-name{
+                }
+            }
+        
+            &_body{
+            }
+
+            &_footer{
+                
+            }
+        }
+    }
+}

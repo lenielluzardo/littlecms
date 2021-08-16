@@ -15,8 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id()->unsignedBigInteger()->autoIncrement();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->text('description');
             $table->string('username')->unique();
             $table->string('email')->unique();
+            $table->string('thumbnail')->default('https://via.placeholder.com/200/lightblue');
             $table->string('secondary_email')->unique();
             $table->string('recovery_email')->nullable();
             $table->string('password');

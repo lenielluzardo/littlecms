@@ -4,21 +4,21 @@ namespace App\Composers\Web;
 
 use Illuminate\View\View;
 use App\Models\User;
+use App\Mappers\UserMapper;
 
 class AuthorComposer
 {
 
-    protected $author;
+    protected $userDto;
 
-    public function __construct(User $userModel)
+    public function __construct(User $model)
     {
-        $this->author = $userModel->where('primary_email', config('app.admin.email'))->first()->get();
-        dd($this->author);
+        $user = $model->where('email', config('app.admin.email'))->first();
+        $this->userDto = UserMapper::MapToDto($user);
     }
 
     public function compose(View $view)
     {
-        dd($this->author);
-        $view->with('author', $this->author);
+        $view->with('author', $this->userDto);
     }
 }

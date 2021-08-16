@@ -3,33 +3,20 @@
     grid-template: auto / auto;
     grid-row-gap: 2em;
     align-items: center;
-    margin: 2em;
+    margin: 2em 4em;
     
     &-category{
         margin: 0 auto;
         border-radius: 5px 5px;
         
         &_header{
-            position: relative;
-            padding: .5em 1em;
-            border-radius: 0 5px 5px 0;
         
             &-icon{
-                display: flex;
-                place-items: center;
-                place-content: center;
-                position: absolute;
-                top: -.25em;
-                left: -0.8em;
-                width: 2em;
-                height: 2em;
-                font-size: 1.5em;
-                border-radius: 50%;
             }
             &-name{
-                margin: 0 1.5em;
             }
         }
+        
         &_body{
             &-articles{
                 display: flex;
@@ -42,6 +29,7 @@
                 &-article{
                     width: 200px;
                     height: 200px;
+                    background-color: #fff;
                     
                     &_image{
                         width: 100%;

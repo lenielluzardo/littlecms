@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="form-group">
-		@include('admin.partial.ckeditor', ['content' => $viewModel->model->content])
+		@include('admin.partial.ckeditor', ['editorId' => 'entry-editor' ,'content' => $viewModel->model->content])
 	</div>
 
 	<div class="form-group">

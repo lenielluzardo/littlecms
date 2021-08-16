@@ -2,28 +2,18 @@
 
 namespace App\Mappers;
 
-use App\DTO\UserFieldDTO;
+use App\DTO\UserDTO;
 use App\Models\User;
 
 class UserMapper
 {
     static function MapToDTO($model)
     {   
-        $dto = new UserFieldDTO();
+        $dto = new UserDTO();
 
-        $dto->name = $model->name;
+        $dto->name = $model->first_name.' '.$model->last_name;
         $dto->thumbnail = $model->thumbnail;
         $dto->description = $model->description;
-        
-        $dto->fields = collect([
-            'experience' => $model->experience,
-            'studies' => $model->studies,
-            'stack' => $model->stack,
-            'interests' => $model->interests,
-            'hobbies' => $model->hobbies
-        ]);
-
-        $dto->miscellaneous = $model->miscellaneous;
         
         return $dto;
     }

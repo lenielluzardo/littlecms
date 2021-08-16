@@ -9,7 +9,7 @@ class Entry extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'thumbnail', 'content', 'user_id', 'category_id', 'module_id', 'published_at'];
+    protected $fillable = ['title', 'thumbnail', 'content', 'user_id', 'category_id', 'module_id', 'published_at', 'icon'];
     protected $primaryKey = 'id';
 
     public function tags()

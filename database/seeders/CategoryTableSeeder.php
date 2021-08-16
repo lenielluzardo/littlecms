@@ -55,5 +55,12 @@ class CategoryTableSeeder extends Seeder
         ]);
         $category->save();
 
+        $category = new \App\Models\Category([
+            'name' => 'about',
+            'icon' => 'fa fa-user-astronaut',
+            'module_id' => 4,
+        ]);
+        $category->save();
+
     }
 }

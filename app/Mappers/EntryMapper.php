@@ -30,9 +30,10 @@ class EntryMapper
         $entryDto->published_at = Carbon::parse($entry->published_at)->format('F j, Y');
         $entryDto->title = $entry->title;
         $entryDto->content = $entry->content;
-        $entryDto->author = UserField::find($entry->user->id)->name;
+        $entryDto->author = $entry->user->first_name.' '.$entry->user->last_name;
         $entryDto->category = $entry->category->name;
         $entryDto->module = $entry->module->name;
+        $entryDto->icon = $entry->icon;
 
         return $entryDto;
     }

@@ -90,5 +90,61 @@ class EntryTableSeeder extends Seeder
             ]);
             $entry->save();
         }
+
+        $entry = new \App\Models\Entry([
+            'title' => "Experience",
+            'thumbnail' => 'https://via.placeholder.com/600/51ebff',
+            'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
+            'published_at' => \Carbon\Carbon::now(),
+            'active' => true,
+            'user_id' => 1,
+            'category_id' => 7,
+            'module_id' => 3,
+            'icon' => 'fa fa-briefcase'
+        ]);
+        $entry->save();
+
+        $entry = new \App\Models\Entry([
+            'title' => "Stack",
+            'thumbnail' => 'https://via.placeholder.com/600/51ebff',
+            'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
+            'published_at' => \Carbon\Carbon::now(),
+            'active' => true,
+            'user_id' => 1,
+            'category_id' => 7,
+            'module_id' => 3,
+            'icon' => 'fa fa-cubes'
+        ]);
+        $entry->save();
+
+        $entry = new \App\Models\Entry([
+            'title' => "Studies",
+            'thumbnail' => 'https://via.placeholder.com/600/51ebff',
+            'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
+            'published_at' => \Carbon\Carbon::now(),
+            'active' => true,
+            'user_id' => 1,
+            'category_id' => 7,
+            'module_id' => 3,
+            'icon' => 'fa fa-graduation-cap'
+        ]);
+        $entry->save();
+
+        $entry = new \App\Models\Entry([
+            'title' => "Hobbies",
+            'thumbnail' => 'https://via.placeholder.com/600/51ebff',
+            'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
+            'published_at' => \Carbon\Carbon::now(),
+            'active' => true,
+            'user_id' => 1,
+            'category_id' => 7,
+            'module_id' => 3,
+            'icon' => 'fa fa-gamepad'
+        ]);
+        $entry->save();
+
+        
+
+       
     }
 }

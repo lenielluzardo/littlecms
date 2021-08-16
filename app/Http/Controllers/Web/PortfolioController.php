@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\Web\EntryService;
+use App\ViewModels\Web\EntryViewModel;
 
 
 class PortfolioController extends Controller
@@ -13,6 +14,7 @@ class PortfolioController extends Controller
 
     public function __construct(EntryService $service)
     {
+        $service->viewModel = new EntryViewModel();
         $this->service = $service;
     }
 

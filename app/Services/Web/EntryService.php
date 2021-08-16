@@ -7,15 +7,16 @@ use App\Mappers\EntryMapper;
 use App\Models\Module;
 use App\Models\Category;
 use App\Models\Entry;
-use App\ViewModels\Web\EntryViewModel;
+use App\ViewModels\ViewModel;
+// use App\ViewModels\Web\AboutViewModel;
 
 class EntryService
 {
     public $viewModel;
 
-    public function __construct(EntryViewModel $viewModel) 
+    public function __construct() 
     {
-        $this->viewModel = $viewModel;
+        // $this->viewModel = $viewModel;
     }
 
     public function GetBlogIndexModel($module)
@@ -129,4 +130,21 @@ class EntryService
 
     }
 
+    public function GetAboutIndexModel($module)
+    {
+        $entries = Module::where('name', $module)->first()->entries;
+        $entriesDto = collect();
+
+        foreach($entries as $entry)
+        {
+            $entryDto = EntryMapper::MapToEntryDTO($entry);
+            $entriesDto->add($entryDto);
+        }
+
+        // $this->viewModel->author = 
+        // dd($this->viewModel->author);
+        $this->viewModel->model = $entriesDto;
+
+        return $this->viewModel->SetViewModelProperties($module);
+    }
 }

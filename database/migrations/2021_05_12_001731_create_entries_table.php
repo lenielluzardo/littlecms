@@ -25,6 +25,7 @@ class CreateEntriesTable extends Migration
             $table->timestamp('published_at')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
+            $table->string('icon')->nullable();
         });
     }
 

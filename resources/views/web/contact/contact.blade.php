@@ -13,18 +13,9 @@
 @section('module')
 
     <!-- ===== I N D E X ===== -->
-    <main id="main" class="">
+    @include('web.partial.errors')
 
-        @include('web.partial.errors')
-
-        {{-- <section class="index-content-container content-container"> --}}
-
-            @include('web.contact.form')
-
-        {{-- </section> --}}
-
-    </main>
-
+    @include('web.contact.form')
 
 @endsection
 

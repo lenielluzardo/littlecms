@@ -11,42 +11,38 @@
 @extends('web.layout')
 
 @section('module')
-
     <!-- ===== A B O U T ===== -->
-    <section class="{{$viewModel->viewModule}}">
-
-        <header class="{{ $viewModel->viewModule }}_header">
-
-            <div class="{{ $viewModel->viewModule }}_header-image">
-            
-                <img src="{{ $viewModel->model->thumbnail }}" 
-                alt="{{ $viewModel->model->name.' profile picture' }}" />
-            
-            </div>
-
-            <div class="{{ $viewModel->viewModule }}_header-description">
-                   
-                {!! $viewModel->model->description !!}
-            
-            </div>
+    <section class="about">
         
-        </header>
+        <article class="about-author"> 
+            @include('web.partial.author') </article>
 
-       <section class="{{ $viewModel->viewModule }}_body">
-            @foreach($viewModel->model->fields as $key => $value)
+        @foreach ($viewModel->model as $section)
+            <article class="about-section">
                 
-                <div id="{{ $viewModel->viewModule}}_body-{{$key}}"
-                     class="{{ $viewModel->viewModule}}_body-section"
-                    > {!! $value !!} </div>
+                <header class="section_header"
+                        style="background-image: url('{{ $section->thumbnail }}');">
+                    
+                    <div class="section_header-icon">
+                        <i class="{{ $section->icon }}"></i>
+                    </div>
 
-            @endforeach
-       </section>
-
-       <footer class="{{ $viewModel->viewModule }}_footer">
-
-       </footer>
-      
+                    <h3 class="section_header-name">
+                        {{ $section->title}}
+                    </h3>
+                    
+                </header>
+                
+                <section class="about-section_body"> 
+                    {!! $section->content !!}
+                </section>
+                        
+                <footer class="about-section_footer">
+                            
+                </footer>
+                    
+            </article>
+        @endforeach
+        
     </section>
 @endsection
-
-

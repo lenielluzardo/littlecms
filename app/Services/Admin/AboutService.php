@@ -26,12 +26,9 @@ class AboutService extends Service
     */
     public function GetIndexModel($module)
     {
-        $user = $this->userModel->where('username', config('app.admin.username'))->first();
-        $userFields = $user->fields()->first();
+        $entries = Module::where('name', $module)->first()->entries;
 
-        $dto = UserMapper::MapToDTO($userFields);
-        $dto->id = $userFields->id;
-        $this->viewModel->model = $dto;                               
+        $this->viewModel->model = $entries;                               
         
         return $this->viewModel->SetViewModelProperties('About');
     }

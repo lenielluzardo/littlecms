@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
-use App\Services\Web\AboutService;
+use App\ViewModels\Web\AboutViewModel;
+use App\Services\Web\EntryService;
 
 use App\Http\Controllers\Controller;
 
@@ -11,14 +12,16 @@ class AboutController extends Controller
 {
     private $service;
     
-    public function __construct(AboutService $service)
+    public function __construct(EntryService $service)
     {
+     
+        $service->viewModel = new AboutViewModel();
         $this->service = $service;
     }
 
     public function Index()
     {
-        $viewModel = $this->service->GetIndexModel('about');
+        $viewModel = $this->service->GetAboutIndexModel('about');
         
         if(!$viewModel->success)
         {

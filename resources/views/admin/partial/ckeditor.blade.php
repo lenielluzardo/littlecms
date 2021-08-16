@@ -1,4 +1,4 @@
-<textarea id="{{$editorId}}" name="{{$editorId}}"> 
+<textarea id="{{$editorId}}" name="content"> 
 	{{ $content }}
 </textarea>
 

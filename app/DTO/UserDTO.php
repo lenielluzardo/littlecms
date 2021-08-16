@@ -2,13 +2,11 @@
 
 namespace App\DTO;
 
-class UserFieldDTO
+class UserDTO
 {
     public $name;
     public $thumbnail;
     public $description;
-    public $fields;
-    public $miscellaneous;
 }
 
 

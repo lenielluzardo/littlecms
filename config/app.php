@@ -234,11 +234,15 @@ return [
 
     'admin' => [
 
-        'username' => env('ADMIN_USER_NICKNAME'),
-        'primary_email' => env('ADMIN_USER_PRIMARY_EMAIL'),
+        'first_name' => env('ADMIN_USER_FIRST_NAME'),
+        'last_name' => env('ADMIN_USER_LAST_NAME'),
+        'description' => env('ADMIN_USER_DESCRIPTION'),
+        'thumbnail' => env('ADMIN_USER_THUMBNAIL'),
+        'username' => env('ADMIN_USER_USERNAME'),
+        'email' => env('ADMIN_USER_EMAIL'),
+        'password' => env('ADMIN_USER_PASSWORD'),
         'secondary_email' => env('ADMIN_USER_SECONDARY_EMAIL'),
         'recovery_email' => env('ADMIN_USER_RECOVERY_EMAIL'),
-        'password' => env('ADMIN_USER_PASS'),
 
         'social' => [
 

@@ -29,6 +29,6 @@ class ComposerServiceProvider extends ServiceProvider
 
         View::composer('web.navigation.header', \App\Composers\Web\HeaderModulesComposer::class);
         View::composer('web.partial.socialmedia', \App\Composers\Web\SocialMediaComposer::class);
-        View::composer('web.about.author', \App\Composers\Web\AuthorComposer::class);
+        View::composer('web.partial.author', \App\Composers\Web\AuthorComposer::class);
     }
 }

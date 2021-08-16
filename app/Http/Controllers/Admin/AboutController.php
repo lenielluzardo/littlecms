@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Services\Admin\AboutService;
+use App\Services\Admin\EntryService;
 
 class AboutController extends Controller
 {
     private $_service;
 
-    public function __construct(AboutService $service)
+    public function __construct(EntryService $service)
     {
         $this->_service = $service;
     }
@@ -42,7 +42,8 @@ class AboutController extends Controller
         // dd(' *** Entries Controller / Get Edit()  *** ');
 
         $viewModel = $this->_service->GetEditModel($id, 'About');
-        return view('admin.about.about', ['viewModel'=> $viewModel]);
+
+        return view('admin.entries.entry', ['viewModel'=> $viewModel]);
     }
 
     public function Save(Request $request)

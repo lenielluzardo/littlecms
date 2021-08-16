@@ -3,8 +3,6 @@
 namespace App\Mappers;
 
 use App\DTO\CategoryDTO;
-use App\DTO\EntryDTO;
-use App\Models\Category;
 
 class CategoryMapper
 {
@@ -13,6 +11,7 @@ class CategoryMapper
         $categoryDto = new CategoryDTO();
         $categoryDto->name = $category->name;
         $categoryDto->icon = $category->icon;
+        $categoryDto->thumbnail = $category->thumbnail;
         $categoryDto->description = $category->description;
         $categoryDto->entries = collect([]);
 
