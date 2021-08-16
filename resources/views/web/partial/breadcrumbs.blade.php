@@ -1,17 +1,14 @@
 <!-- ===== B R E A D C R U M B S ===== -->
 <nav id="breadcrumbs" class="breadcrumbs">
-
-    {{-- <div id="previous-button" class="previous-button box-container" onclick="location.href= '{{URL::previous()}}'">
-        <div class="previous-button-arrow"  ><< </div>
-        <div class="previous-button-label">Previous</div>
-    </div> --}}
-
     <ol class="path">
-        @yield('path')
+        @foreach ($paths as $path)
+            <li> /
+                {{-- {{dd($path['route_values'])}} --}}
+                <a href="{{ route($path['route_name'], $path['route_values']) }}">
+                    {{$path['path_name']}}
+                </a> 
+            </li>
+        @endforeach
     </ol>
-
-
-    {{-- @include('auth.session') --}}
-
 </nav>
 

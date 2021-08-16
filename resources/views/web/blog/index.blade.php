@@ -9,7 +9,11 @@
     @endphp 
 @endsection
 
-@section('path') <li>{{ $module  }}</li> @endsection
+@section('breadcrumbs')
+
+    @include('web.partial.breadcrumbs', ['paths' => $viewModel->viewPath])
+
+@endsection
 
 @section('module')
 
@@ -45,7 +49,7 @@
                         $articleName = urlencode(str_replace(' ', '_', strtolower($article->title)));
                     @endphp
 
-                    <a href="{{ route('web.blog.article', ['category' => $categoryName, 'article' => $articleName ]) }}">
+                    <a href="{{ route('web.blog.entry', ['category' => $categoryName, 'entry' => $articleName ]) }}">
 
                         <li class="blog-category_body-articles-article card">
                             

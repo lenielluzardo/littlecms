@@ -13,7 +13,8 @@
         <!-- ===== D E S K T O P ===== -->
         <section id="desktop" class="desktop-container">
             
-            @include('web.partial.breadcrumbs')
+            @yield('breadcrumbs')
+            {{-- @include('web.partial.breadcrumbs') --}}
 
             <main class="module">
 

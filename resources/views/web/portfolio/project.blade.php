@@ -7,23 +7,10 @@
     @endphp 
 @endsection
 
-@section('path')
-    <li>
-        <a href="{{ route( "web.$viewModel->viewModule.index") }}">
-            {{ ucfirst($viewModel->viewModule) }} 
-        </a> / 
-    </li>
-    <li>
-        @php
-            $categoryName = $viewModel->model->category;
-        @endphp
-        <a href="{{ route("web.$viewModel->viewModule.category", ['category' => $categoryName ]) }}">
-            {{ $categoryName }}
-        </a> /
-    </li>
-    <li>
-        {{ $viewModel->model->title }}
-    </li>
+@section('breadcrumbs')
+
+    @include('web.partial.breadcrumbs', ['paths' => $viewModel->viewPath])
+
 @endsection
 
 

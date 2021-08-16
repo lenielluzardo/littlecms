@@ -20,8 +20,8 @@ Route::group(['prefix' => '/'], function(){
         Route::get('/{category}', 'App\Http\Controllers\Web\BlogController@GetByCategory')
         ->name('web.blog.category');
 
-        Route::get('/{category}/{article}', 'App\Http\Controllers\Web\BlogController@GetByName')
-        ->name('web.blog.article');
+        Route::get('/{category}/{entry}', 'App\Http\Controllers\Web\BlogController@GetByName')
+        ->name('web.blog.entry');
     });
 
     Route::group(['prefix' => 'portfolio'], function () {
@@ -31,15 +31,13 @@ Route::group(['prefix' => '/'], function(){
         Route::get('', 'App\Http\Controllers\Web\PortfolioController@Index')
         ->name('web.portfolio.index');
 
-        Route::get('/{projectName}', 'App\Http\Controllers\Web\PortfolioController@GetByName')
-        ->name('web.portfolio.project');
+        Route::get('/{entry}', 'App\Http\Controllers\Web\PortfolioController@GetByName')
+        ->name('web.portfolio.entry');
 
         Route::get('/{category}', 'App\Http\Controllers\Web\BlogController@GetByCategory')
         ->name('web.portfolio.category');
     });
    
-    
-
     // dd("**** Web About ****");
     Route::get('about', 'App\Http\Controllers\Web\AboutController@Index')
     ->name('web.about.index');

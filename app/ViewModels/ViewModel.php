@@ -20,6 +20,8 @@ class ViewModel
     {
         $this->viewTitle = "$module Management";
         $this->viewModule = strtolower($module);
+        
+       
         return $this;
     }
 

@@ -8,8 +8,12 @@
 
     @endphp 
 @endsection
+@section('breadcrumbs')
 
-@section('path')
+@include('web.partial.breadcrumbs', ['paths' => $viewModel->viewPath])
+
+@endsection
+{{-- @section('path')
     <li>
         <a href="{{ route( "web.$viewModel->viewModule.index") }}">
             {{ ucfirst($viewModel->viewModule) }} 
@@ -26,7 +30,7 @@
     <li>
         {{ $viewModel->model->title }}
     </li>
-@endsection
+@endsection --}}
 
 
 @section('module')

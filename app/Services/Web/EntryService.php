@@ -31,6 +31,7 @@ class EntryService
             return $this->viewModel->SetViewModelProperties($module);
         }
 
+
         $categories = $module->categories()->with('entries')->where('active', true)->get();
        
         $categoriesDto = collect([]);
@@ -53,7 +54,17 @@ class EntryService
         $this->viewModel->title = 'Blog';
         $this->viewModel->path = 'Blog / posts';
 
-        return $this->viewModel->SetViewModelProperties($module->name);
+        $module = strtolower($module->name);
+
+        $this->viewModel->viewPath = collect([
+            [
+             'path_name' => $module ,
+             'route_name' => "web.$module.index", 
+             'route_values' => [ 'model' => '']
+            ]
+         ]);
+
+        return $this->viewModel->SetViewModelProperties($module);
     }
 
     public function GetPortfolioIndexModel($module)
@@ -72,8 +83,18 @@ class EntryService
         $this->viewModel->model = $entries;
         $this->viewModel->title = 'Blog';
         $this->viewModel->path = 'Portfolio / posts';
+       
+        $module = strtolower($module->name);
 
-        return $this->viewModel->SetViewModelProperties($module->name);
+        $this->viewModel->viewPath = collect([
+            [
+             'path_name' => $module ,
+             'route_name' => "web.$module.index", 
+             'route_values' => [ 'model' => '']
+            ]
+         ]);
+
+        return $this->viewModel->SetViewModelProperties($module);
     }
 
     public function GetModelByName($name, $module)
@@ -94,6 +115,25 @@ class EntryService
         $entryDto = EntryMapper::MapToEntryDTO($entry);
         
         $this->viewModel->model = $entryDto;
+
+        $this->viewModel->viewPath = collect([
+            [
+             'path_name' => "$module" ,
+             'route_name' => "web.$module.index", 
+             'route_values' => [ 'module' => "$module"]
+            ],
+            [
+                'path_name' => "$entryDto->category" ,
+                'route_name' => "web.$module.category", 
+                'route_values' => [ 'category' =>  $entryDto->category]
+            ],
+            [
+                'path_name' => "$entryDto->title" ,
+                'route_name' => "web.$module.entry", 
+                'route_values' => [ 'category' => $entryDto->category, 'entry' => $entryDto->title]
+            ]
+         ]);
+
         return $this->viewModel->SetViewModelProperties($module);
 
     }
