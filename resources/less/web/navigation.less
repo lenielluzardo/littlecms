@@ -1,32 +1,36 @@
-/* ===== N A V I G A T I O N ===== */
-// .mobile-nav-button{
-//     .fixed-widh-height(40px,40px);
-//     .no-margin-padding;
-//     .flex-center-content;
-//     .round-border(2px, solid, 10px);
-//     .box-container-mixin(10%, 0px, @primary);
-//     transform: rotateZ(90deg);
-//     font-weight: bold;
-//     position: sticky;
-//     z-index: @header_nav_index;
-
-//     .transition(all, .5s, ease-out);
-
-
-//     &:hover{
-//         background-color: fade(@shade_two, 1%);
-//     }
-//     &:active{
-//         .fixed-widh-height(45px,45px);
-//         background-color: fade(@shade_two, 2%);
-//     }
-// }
+.header{
+    &_heading{
+        display: grid;
+        grid-template: auto / 1fr auto;
+        grid-auto-flow: column;
+        background: #fff;
+        padding: .6em;
+        border-bottom: solid 0.1px #d7d7d7;
+        box-shadow: 0px 1.5px 9px 1px #00000033;
+    
+        &-navicon{
+            display: flex;
+            place-items: center;
+            padding: 10px;
+            font-size: 1.2em;
+            border: solid 1px;
+            border-radius: .5em;
+    
+           &:hover{ cursor: pointer; }
+        }
+    }
+}
 
 .navigation{
- 
+//    padding-bottom: 1em;
+   border-radius: 0 0 .5em .5em;
+   border-bottom: solid 1px   #b1b1b17c;
+
+   
     &-modules{
         // list-style: none;
-        // display: grid;
+        display: none;
+        padding-bottom: 1em;
         // grid-template: auto / 1fr;
         // justify-content: center;
 
@@ -54,8 +58,37 @@
         }
     }
 }
-@media screen and (min-width: 860px){
-    .mobile-nav-button{
-        display: none;
-    }
+@media @desktop{
+    .navigation{
+        margin: 1em 0;
+           &-modules{
+               // list-style: none;
+               // display: grid;
+               // grid-template: auto / 1fr;
+               // justify-content: center;
+       
+               &-module{
+                   display: grid;
+                   grid-template: auto / auto 1fr;
+                   place-items: center;
+                   padding: 0.5em 2em;
+                   
+                   &:hover{
+                       background-color: fade(#000, 10%);
+                   }
+       
+                   &:active{
+                       background-color: fade(#000, 20%);
+                   }
+                   
+                   &_icon{
+                       margin: 0 0 0 .5em
+           
+                   }
+                   &_name{
+           
+                   }
+               }
+           }
+       }
 }

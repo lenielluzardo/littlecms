@@ -21,22 +21,22 @@
           
     <a href="{{ route("web.blog.category", ['category' => urlencode($viewModel->model->name)]) }}">
   
-        <header class="blog-category_header section_header"
+        <header class="category_header section_header"
                 style="background-image: url('{{ $viewModel->model->thumbnail }}');">
         
-            <div class="blog-category_header-icon section_header-icon" >
+            <div class="category_header-icon section_header-icon" >
                 <i class="{{ $viewModel->model->icon }}"></i>
             </div>
 
-            <h3 class="blog-category_header-name section_header-name">
+            <h3 class="category_header-name section_header-name">
                 {{ ucfirst($viewModel->model->name) }}
             </h3>  
             
         </header>
     </a>
     
-    <section class="blog-category_body">
-        <ul class="blog-category_body-articles">
+    <section class="category_body">
+        <ul class="category_body-articles">
 
             @foreach ($viewModel->model->entries as $article)
 
@@ -47,12 +47,12 @@
 
             <a href="{{ route('web.blog.entry', ['category' => $categoryName, 'entry' => $articleName ]) }}">
 
-                <li class="blog-category_body-articles-article card">
+                <li class="category_body-articles-article card">
                     
-                    <img class="blog-category_body-articles-article_image" 
+                    <img class="category_body-articles-article_image" 
                     src="{{ $article->thumbnail }}" alt="{{ $article->title.' Image' }}"/>
                     
-                    <h4 class="blog-category_body-articles-article_title" >
+                    <h4 class="category_body-articles-article_title" >
                         {{ $article->title }}
                     </h4>
 

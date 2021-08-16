@@ -1,3 +1,40 @@
+.module{
+
+    .section{
+        margin: 2em;
+
+        &_header{
+            position: relative;
+            padding: .5em 1em;
+            border-radius: 0 5px 5px 0;
+            background-position: center;
+            background-size: fill;
+            background-repeat: no-repeat;
+            
+
+            &-icon{
+                position: absolute;
+                top: -.25em;
+                left: -0.8em;
+                display: flex;
+                place-items: center;
+                place-content: center;
+                width: 2em;
+                height: 2em;
+                background: linear-gradient(45deg, #cccccc 0%, #f7f7f7 10% 90%, #cccccc 100%);
+                color: #363232;
+                font-size: 1.5em;
+                border-radius: 50%;
+                border: solid 1.5px #cccccc;
+            }
+            &-name{
+                margin: 0 1.5em;
+            }
+        }
+    }
+}
+
+
 .card{
     overflow: hidden;
     min-width: 1em;
@@ -27,6 +64,8 @@
     text-align: justify;
     padding: 10px 0;
 }
+@media @desktop{
+
 
 .module{
 
@@ -63,4 +102,5 @@
             }
         }
     }
+}
 }

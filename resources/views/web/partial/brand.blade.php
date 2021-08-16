@@ -1,6 +1,6 @@
 <!-- ===== L O G O T Y P E ===== -->
 
-<a id="logotype" class="brand" href= '{{ route('web.home')}}'">
+<a class="brand" href= '{{ route('web.home')}}'">
 
     <img class="brand-logo" alt="Home"
          src="{{ asset('/assets/icons/site-logo.svg') }}" >

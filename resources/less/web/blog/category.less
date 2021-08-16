@@ -1,3 +1,35 @@
 .category{
-    margin: 2em 4em;
+    flex-wrap: wrap;
+    margin: 2em;
+
+    &_body{
+        &-articles{
+            display: flex;
+            flex-wrap: wrap;
+            overflow-x: scroll;
+            width: 100%;
+
+            &-article{
+                margin: 1em;
+                width: 150px;
+                height: 150px;
+                background-color: #fff;
+
+                &_image{
+                    width: 100%;
+                    object-fit: cover;
+                    aspect-ratio: 16 / 9;
+                }
+                &_title{
+                    margin: 10px;
+                    text-align: center;
+                }
+            }
+        }   
+    }
+}
+@media @desktop{
+    .category{
+        margin: 2em 4em;
+    }
 }

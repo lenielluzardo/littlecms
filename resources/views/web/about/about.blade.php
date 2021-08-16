@@ -16,21 +16,20 @@
         
         <article class="about-author"
                  style="background-image: url('https://via.placeholder.com/1200x200')"> 
-                 {{-- style="background-image: url('{{ asset('/assets/images/background.jpg') }}')">  --}}
             @include('web.partial.author') 
         </article>
 
         @foreach ($viewModel->model as $section)
             <article class="about-section">
                 
-                <header class="section_header"
+                <header class="about-section_header section_header"
                         style="background-image: url('{{ $section->thumbnail }}');">
                     
-                    <div class="section_header-icon">
+                    <div class="about-section_header-icon section_header-icon">
                         <i class="{{ $section->icon }}"></i>
                     </div>
 
-                    <h3 class="section_header-name">
+                    <h3 class="about-section_header-name section_header-name">
                         {{ $section->title}}
                     </h3>
                     

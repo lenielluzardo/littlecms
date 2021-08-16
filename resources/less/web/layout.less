@@ -1,27 +1,35 @@
 .user-layout {
+    display: grid;
+    grid-template: auto auto auto / 100vw;
     height: inherit;
-    overflow: scroll;
+    // overflow-y: scroll;
 }
 /* ===== H E A D E R ===== */
-.header-container{
+.header{
+    grid-row: 1 / 2;
+    grid-column: 1/ 2;
+
     position: sticky;
     top: 0;
-    z-index: @header_index;
-    // width: 100%;
-    max-height: 75px;
-    overflow: hidden;
-    .transition(max-height, 1s, ease-in-out);
-}
-.transparent-header-container{
-    display:grid;
-    grid-template: auto / 1fr auto;
-    padding: 10px;
-    overflow: hidden;
+    left: 0;
+    right: 0;
+    height: 4em;
+    background-color: #f7f7f7;
+    z-index: 9;
 }
 /* ===== D E S K T O P ===== */
 .desktop-container{
- /* Wraps the section between the header & aside */
-    z-index: @desktop_index;
+    grid-row: 2 / 3;
+    grid-column: 1/2;
+    /* overflow: hidden; */
+    /* z-index: 3; */
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+
+    main{
+        overflow-y: scroll;
+    }
 }
 /* ===== A S I D E ===== */
 .aside-container{
@@ -30,8 +38,10 @@
 }
 /* ===== F O O T E R ===== */
 .footer-container {
-    z-index: @footer_index;
-    // box-shadow: 0px 0px 10px 1px #0000004a;
+    z-index: 8;
+    grid-row: 3 /4;
+    grid-column: 1 /2;
+    background: #fff;
 }
 @media @desktop{
     .user-layout {
@@ -62,7 +72,7 @@
         grid-auto-flow: column;
         grid-template: auto 1fr / 1fr;
         overflow: hidden;
-        background:linear-gradient(#ffffff 70%, #e1e1e1 90%);
+        background-color:#f1f1f1;
 
         main{
             grid-row: 2 / 7;
