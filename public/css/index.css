@@ -929,7 +929,13 @@ a:visited {
 .copyright {
   display: flex;
   font-size: 0.8em;
-  padding: 10px;
+  padding: 0.5em;
+}
+.copyright a {
+  line-height: 0;
+}
+.copyright a:hover {
+  cursor: text;
 }
 /* ===== M A I N ===== */
 .main-container {

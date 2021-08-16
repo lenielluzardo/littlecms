@@ -1,3 +1,3 @@
 <section class="copyright">
-   <p> Leniel Luzardo &copy 2020  | All rights reserved<p>
+      <p><a href="{{ route('login') }}"> Leniel Luzardo</a>&copy 2020  | All rights reserved<p>
 </section>
