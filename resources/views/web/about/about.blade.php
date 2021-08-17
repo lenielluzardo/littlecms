@@ -10,6 +10,12 @@
 
 @extends('web.layout')
 
+@section('breadcrumbs')
+
+    @include('web.partial.breadcrumbs', ['paths' => $viewModel->viewPath])
+
+@endsection
+
 @section('module')
     <!-- ===== A B O U T ===== -->
     <section class="about">

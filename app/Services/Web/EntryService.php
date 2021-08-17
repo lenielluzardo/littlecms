@@ -97,10 +97,11 @@ class EntryService
         return $this->viewModel->SetViewModelProperties($module);
     }
 
-    public function GetModelByName($name, $module)
+    public function GetModelByName($name, $category, $module)
     {
         $name = ucwords(str_replace('_', ' ', $name));
-        $entry = Entry::where('title', $name)->first();
+        $category = Category::where('name', $category)->first();
+        $entry = Entry::where('title', $name)->where('category_id', $category->id)->first();
 
         if($entry == null)
         {
@@ -199,6 +200,15 @@ class EntryService
         // $this->viewModel->author = 
         // dd($this->viewModel->author);
         $this->viewModel->model = $entriesDto;
+
+        $this->viewModel->viewPath = collect([
+            [
+             'path_name' => $module ,
+             'route_name' => "web.$module.index", 
+             'route_values' => [ 'model' => '']
+            ]
+         ]);
+
 
         return $this->viewModel->SetViewModelProperties($module);
     }
