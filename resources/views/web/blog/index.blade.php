@@ -18,7 +18,7 @@
 @section('module')
 
     <!-- ===== B L O G ===== -->
-    <section class="blog section">
+    <section class="blog">
 
         @foreach ($viewModel->model as $category)
         <section class="blog-category">

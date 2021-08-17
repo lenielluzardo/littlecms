@@ -492,6 +492,7 @@ body {
   font-size: 15px;
   font-family: 'Quicksand';
   font-weight: 500;
+  background-color: #f1f1f1;
 }
 body,
 h1,
@@ -514,7 +515,10 @@ a {
   color: #1d1d1d;
 }
 a:visited {
-  color: #1d1d1d;
+  color: #4f4f4f;
+}
+.module {
+  max-width: 1600px;
 }
 .module .section {
   margin: 2em;

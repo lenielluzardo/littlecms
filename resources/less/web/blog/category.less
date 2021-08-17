@@ -6,13 +6,15 @@
         &-articles{
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             overflow-x: scroll;
             width: 100%;
 
+            a{ margin: .5em;}
+
             &-article{
-                margin: 1em;
-                width: 150px;
-                height: 150px;
+                width: 9em;
+                // height: 9em;
                 background-color: #fff;
 
                 &_image{
@@ -21,8 +23,10 @@
                     aspect-ratio: 16 / 9;
                 }
                 &_title{
-                    margin: 10px;
+                    margin: .5em;
                     text-align: center;
+                    word-wrap: break-word;
+                    font-size: .9em;
                 }
             }
         }   
@@ -30,6 +34,37 @@
 }
 @media @desktop{
     .category{
-        margin: 2em 4em;
+        margin: 2em auto;
+        width: 80%;
+
+        &_body{
+            &-articles{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                overflow-x: scroll;
+                width: 100%;
+    
+                a{margin: 1em;}
+                
+                &-article{
+                    width: 200px;
+                    height: 200px;
+                    background-color: #fff;
+    
+                    &_image{
+                        width: 100%;
+                        object-fit: cover;
+                        aspect-ratio: 16 / 9;
+                    }
+                    &_title{
+                        margin: .5em;
+                        text-align: center;
+                        word-wrap: break-word;
+                        font-size: 1em;
+                    }
+                }
+            }   
+        }
     }
 }

@@ -1,9 +1,10 @@
 .blog{
     // display: grid;
-    // grid-template: auto / auto;
-    // grid-row-gap: 2em;
+    // grid-template: auto / 100vw;
+    // grid-row-gap: 1em;
     align-items: center;
-    // margin: 2em 4em;
+    margin: 2em;
+
 
     &-category{
         margin-bottom: 2em;
@@ -11,13 +12,15 @@
        &_body{
             &-articles{
                 display: flex;
-                overflow-x: scroll;
+                justify-content: center;
                 width: 100%;
+                overflow-x: scroll;
+                
+                a{ margin: .5em;}
 
                 &-article{
-                    margin: 1em;
-                    width: 150px;
-                    height: 150px;
+                    width: 9em;
+                    // height: 9em;
                     background-color: #fff;
                     
                     &_image{
@@ -26,8 +29,10 @@
                         aspect-ratio: 16 / 9;
                     }
                     &_title{
-                        margin: 10px;
+                        margin: .5em;
                         text-align: center;
+                        word-wrap: break-word;
+                        font-size: .9em;
                     }
                 }
             }   
@@ -40,11 +45,12 @@
         grid-template: auto / auto;
         grid-row-gap: 2em;
         align-items: center;
-        margin: 2em 4em;
+        margin: 2em auto;
+        width: 80%;
         
         &-category{
             border-radius: 5px 5px;
-            
+            margin-bottom: 0;
             &_header{
             
                 &-icon{
@@ -55,15 +61,14 @@
             
             &_body{
                 &-articles{
-                    // display: flex;
                     flex-flow: wrap;
                     width: 100%;
                     
                     a{ margin: 1em; }
     
                     &-article{
-                        // width: 200px;
-                        // height: 200px;
+                        width: 200px;
+                        height: 200px;
                         
                         &_image{
                             width: 100%;
@@ -71,6 +76,7 @@
                             aspect-ratio: 16 / 9;
                         }
                         &_title{
+                            font-size: 1em;
                             margin: 10px;
                             text-align: center;
                         }

@@ -1,17 +1,17 @@
 <nav class="socialmedia" >
-
-    <h4 class="socialmedia_title">Socialmedia:</h3>
-    <section class="socialmedia_links">
-        
+    <h4 class="socialmedia-title">Socialmedia:</h3>
+    
+    <ul class="socialmedia_links">
         @foreach ($links as $link)
         
-        <a class="socialmedia_links-link" target="_blank"
-            href="{{ $link->url }}">
+        <li>
+            <a target="_blank" href="{{ $link->url }}">
+               
+               <i class="socialmedia_links-icon
+                        fab fa-{{ strtolower($link->name) }}"></i>
+            </a>
+        </li>
             
-            <i class="fab fa-{{ strtolower($link->name) }}"></i>
-        </a>
-
         @endforeach
-
-    </section>
+    </ul>
 </nav>

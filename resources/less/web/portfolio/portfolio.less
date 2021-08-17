@@ -1,47 +1,81 @@
-.project-list-container{
-    // max-height: 70vh;
+.portfolio{
+    margin: 2em;
 
-    ul{
-        // max-height: inherit;
-        flex-direction: column !important;
+    &-projects{
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
 
-        li{
-            background-repeat: no-repeat !important;
-            background-size: cover;
+        a{ margin: .5em; }
+
+        &-project{
+            width: 9em;
+            height: 9em;
+            // margin: .6em;
+            display: flex;
+            place-items: center;
+            text-align: center;
+
+
             background-position: center;
-            min-height: 30vh;
+            background-size: contain;
 
-            a{
-                position: absolute;
-                top:0;
-                left: 0;
-                bottom: 0;
-                right:0;
-                // background: linear-gradient(fade(@complementary_two ,80%), fade(@complementary_three, 80%));
-                min-height: inherit;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-                text-align: center;
-                font-family: 'Zilla Slab Highlight', sans-serif;
-                // color: @light_neutral;
+            &_title{
             }
         }
     }
 }
+
+.project{
+    display:grid;
+    grid-row-gap: 1em;
+    margin: 2em;
+
+    background-color: #fff;
+    box-shadow: 0em 0.2em 0.4em 0em #00000033;
+    border-radius: 0 0 .5em .5em;
+
+    &_header{
+        display:grid;
+        grid-row-gap: 1em;
+
+        &-hero{
+            height: 150px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            place-items: center;
+            place-content: center;
+
+            &_title{
+                text-align: center;
+            }
+        }
+        &-meta{
+            padding:0 1em;
+        }
+    }
+    &_body{
+       padding:0 1em;
+
+    }
+    &_footer{
+
+    }
+}
 @media @desktop{
     .portfolio{
-        margin: 2em 4em;
-
+        margin: 2em auto;
+        width: 80%;
+        
         &-projects{
             display: flex;
             flex-flow: wrap;
             justify-content: center;
 
-            a{
-                margin: 1em;
-            }
+            a{ margin: 1em; }
+
             &-project{
                 width: 200px;
                 height: 200px;

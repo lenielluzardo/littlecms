@@ -4,10 +4,11 @@
         grid-template: auto / 1fr auto;
         grid-auto-flow: column;
         background: #fff;
-        padding: .6em;
+        padding: .5em;
         border-bottom: solid 0.1px #d7d7d7;
         box-shadow: 0px 1.5px 9px 1px #00000033;
-    
+        border-radius: 0 0 .9em .9em;
+        
         &-navicon{
             display: flex;
             place-items: center;
@@ -22,7 +23,6 @@
 }
 
 .navigation{
-//    padding-bottom: 1em;
    border-radius: 0 0 .5em .5em;
    border-bottom: solid 1px   #b1b1b17c;
 
@@ -30,7 +30,7 @@
     &-modules{
         // list-style: none;
         display: none;
-        padding-bottom: 1em;
+        margin: 1em 0;
         // grid-template: auto / 1fr;
         // justify-content: center;
 
@@ -59,36 +59,70 @@
     }
 }
 @media @desktop{
+    .header{
+        border-radius: 0 2em 0 0;
+    
+        &_heading{
+            display: grid;
+            grid-template: auto / 1fr auto;
+            grid-auto-flow: column;
+            background: #fff;
+            padding: .5em;
+            border-bottom: solid 0.1px #d7d7d7;
+            box-shadow: 0px 1.5px 9px 1px #00000033;
+            border-radius: 0 2em 0 0;
+            &-navicon{
+                display: flex;
+                place-items: center;
+                padding: 10px;
+                font-size: 1.2em;
+                border: solid 1px;
+                border-radius: .5em;
+        
+               &:hover{ cursor: pointer; }
+            }
+        }
+    }
     .navigation{
-        margin: 1em 0;
-           &-modules{
-               // list-style: none;
-               // display: grid;
-               // grid-template: auto / 1fr;
-               // justify-content: center;
+        // margin: 1em 0;
+
+        border-bottom: none;
+
+        &-modules{
+            display: grid;
+            grid-template: auto / 1fr;
+            justify-content: center;
+            
+            &-module{
+                display: grid;
+                grid-template: auto / auto 1fr;
+                place-items: center;
+                padding: 0.5em 2em;
+                
+                &:hover{
+                    background-color: fade(#000, 10%);
+                }
        
-               &-module{
-                   display: grid;
-                   grid-template: auto / auto 1fr;
-                   place-items: center;
-                   padding: 0.5em 2em;
-                   
-                   &:hover{
-                       background-color: fade(#000, 10%);
-                   }
-       
-                   &:active{
-                       background-color: fade(#000, 20%);
-                   }
-                   
-                   &_icon{
-                       margin: 0 0 0 .5em
-           
-                   }
-                   &_name{
-           
-                   }
-               }
-           }
-       }
+                &:active{
+                    background-color: fade(#000, 20%);
+                }
+                
+                &_icon{
+                    margin: 0 0 0 .5em
+        
+                }
+                &_name{}
+            }
+        }
+    }
+   
+    .header{
+        
+        &_heading{
+        
+            &-navicon{
+                display: none;
+            }
+        }
+    }       
 }

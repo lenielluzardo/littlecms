@@ -15,7 +15,7 @@
     <section class="about">
         
         <article class="about-author"
-                 style="background-image: url('https://via.placeholder.com/1200x200')"> 
+                 style="background-image: url('https://via.placeholder.com/1200x600')"> 
             @include('web.partial.author') 
         </article>
 

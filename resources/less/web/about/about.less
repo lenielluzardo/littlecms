@@ -1,5 +1,54 @@
 @import '../../partial/author.less';
 
+.about{
+    display: grid;
+    grid-template: auto / 1fr;
+    grid-column-gap: 2em;
+    grid-row-gap: 2em;
+    margin: 2em;
+
+    &-author{
+        border-radius: 5em 5em 1em 1em;
+        background-repeat: no-repeat;
+        background-size: fill;
+        background-position: center;
+        color: #fff;
+        font-weight: 600;
+        text-align: justify;
+        padding: 1em 0;
+    }
+
+    &-section{
+        
+        display: grid;
+        grid-template: auto 1fr auto / auto;
+        grid-row-gap: 1em;
+        background-color: #fff;
+        border: solid 1px   #b1b1b17c;
+        border-radius: .5em;
+        box-shadow: 0em 0.2em 0.4em 0em #00000033;
+
+        
+
+        &_header{
+            border-radius: 0 .5em 0 0 !important;
+            
+            &-icon{
+            }
+            &-name{
+            }
+        }
+    
+        &_body{
+            padding: 1em;
+        }
+
+        &_footer{
+            
+        }
+    }
+}
+
 @media @desktop {
     .about{
         display: grid;
@@ -16,6 +65,8 @@
             background-position: center;
             color: #fff;
             font-weight: 600;
+            padding: 0;
+
         }
     
         &-section{

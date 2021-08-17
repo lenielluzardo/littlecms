@@ -60,7 +60,7 @@ class EntryService
             [
              'path_name' => $module ,
              'route_name' => "web.$module.index", 
-             'route_values' => [ 'model' => '']
+             'route_values' => [ '']
             ]
          ]);
 
