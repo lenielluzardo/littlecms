@@ -1,5 +1,5 @@
 .module{
-    max-width: 1600px;
+    // max-width: 1600px;
     // margin: auto;
 
     .section{
@@ -7,12 +7,11 @@
 
         &_header{
             position: relative;
-            padding: .5em 1em;
-            border-radius: 0 5px 5px 0;
+            padding: .3em 1em;
+            border-radius: 0 .5em .5em 0;
             background-position: center;
             background-size: fill;
             background-repeat: no-repeat;
-            
 
             &-icon{
                 position: absolute;
@@ -28,9 +27,15 @@
                 font-size: 1.5em;
                 border-radius: 50%;
                 border: solid 1.5px #cccccc;
+
             }
             &-name{
-                margin: 0 1.5em;
+                display: inline-block;
+                background-color: #0000009e;
+                padding: .2em .5em .2em 1.2em;
+                border-radius: .5em;
+                color: #fff;
+                margin: 0 1em;
             }
         }
     }
@@ -41,7 +46,7 @@
     overflow: hidden;
     min-width: 1em;
     min-height: 1em;
-    
+
     border-radius: .4em;
     box-shadow: 0em 0.2em 0.2em rgb(0 0 0 / 30%)
 }
@@ -77,30 +82,34 @@
 
         &_header{
             position: relative;
-            padding: .5em 1em;
-            border-radius: 0 5px 5px 0;
+            padding: 0.5em 1em;
+            border-radius: 1em .5em .5em 1em;
             background-position: center;
-            background-size: fill;
+            background-size: 100%;
             background-repeat: no-repeat;
-            
 
             &-icon{
                 position: absolute;
-                top: -.25em;
-                left: -0.8em;
+                top: -0.25em;
+                left: -0.2em;
                 display: flex;
                 place-items: center;
                 place-content: center;
-                width: 2em;
-                height: 2em;
+                width: 2.5em;
+                height: 2.5em;
                 background: linear-gradient(45deg, #cccccc 0%, #f7f7f7 10% 90%, #cccccc 100%);
                 color: #363232;
                 font-size: 1.5em;
                 border-radius: 50%;
                 border: solid 1.5px #cccccc;
+
             }
             &-name{
-                margin: 0 1.5em;
+                display: inline-block;
+                background-color: #0000009e;
+                padding: .2em 1.5em;
+                border-radius: .5em;
+                color: #fff;
             }
         }
     }

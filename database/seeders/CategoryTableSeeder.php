@@ -16,6 +16,7 @@ class CategoryTableSeeder extends Seeder
         $category = new \App\Models\Category([
             'name' => 'software',
             'icon' => 'fa fa-code',
+            'thumbnail' => 'assets/images/category-software.png',
             'module_id' => 1,
         ]);
         $category->save();
@@ -23,6 +24,7 @@ class CategoryTableSeeder extends Seeder
         $category = new \App\Models\Category([
             'name' => 'animation',
             'icon' => 'fa fa-film',
+            'thumbnail' => 'assets/images/category-animation.png',
             'module_id' => 1,
         ]);
         $category->save();
@@ -30,6 +32,7 @@ class CategoryTableSeeder extends Seeder
         $category = new \App\Models\Category([
             'name' => 'illustration',
             'icon' => 'fa fa-paint-brush',
+            'thumbnail' => 'assets/images/category-illustration.png',
             'module_id' => 1,
         ]);
         $category->save();
@@ -37,6 +40,7 @@ class CategoryTableSeeder extends Seeder
         $category = new \App\Models\Category([
             'name' => 'software',
             'icon' => 'fa fa-code',
+            'thumbnail' => 'assets/images/category-software.png',
             'module_id' => 2,
         ]);
         $category->save();
@@ -44,6 +48,7 @@ class CategoryTableSeeder extends Seeder
         $category = new \App\Models\Category([
             'name' => 'animation',
             'icon' => 'fa fa-film',
+            'thumbnail' => 'assets/images/category-animation.png',
             'module_id' => 2,
         ]);
         $category->save();
@@ -51,6 +56,7 @@ class CategoryTableSeeder extends Seeder
         $category = new \App\Models\Category([
             'name' => 'illustration',
             'icon' => 'fa fa-paint-brush',
+            'thumbnail' => 'assets/images/category-illustration.png',
             'module_id' => 2,
         ]);
         $category->save();

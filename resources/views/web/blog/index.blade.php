@@ -1,12 +1,12 @@
 @extends('web.layout')
 
-@section('title') 
+@section('title')
     @php
-    
-    $module = ucfirst($viewModel->viewModule); 
+
+    $module = ucfirst($viewModel->viewModule);
     print("$module")
-    
-    @endphp 
+
+    @endphp
 @endsection
 
 @section('breadcrumbs')
@@ -22,23 +22,23 @@
 
         @foreach ($viewModel->model as $category)
         <section class="blog-category">
-          
+
             <a href="{{ route("web.blog.category", ['category' => urlencode($category->name)]) }}">
-          
+
                 <header class="blog-category_header section_header"
-                        style="background-image: url('{{ $category->thumbnail }}');">
-                
+                        style="background-image: url('{{ asset($category->thumbnail) }}');">
+
                     <div class="blog-category_header-icon section_header-icon" >
                         <i class="{{ $category->icon }}"></i>
                     </div>
 
                     <h3 class="blog-category_header-name section_header-name">
                         {{ ucfirst($category->name) }}
-                    </h3>  
-                    
+                    </h3>
+
                 </header>
             </a>
-            
+
             <section class="blog-category_body">
                 <ul class="blog-category_body-articles">
 
@@ -52,10 +52,10 @@
                     <a href="{{ route('web.blog.entry', ['category' => $categoryName, 'entry' => $articleName ]) }}">
 
                         <li class="blog-category_body-articles-article card">
-                            
-                            <img class="blog-category_body-articles-article_image" 
+
+                            <img class="blog-category_body-articles-article_image"
                             src="{{ $article->thumbnail }}" alt="{{ $article->title.' Image' }}"/>
-                            
+
                             <h4 class="blog-category_body-articles-article_title" >
                                 {{ $article->title }}
                             </h4>

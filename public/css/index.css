@@ -457,16 +457,13 @@ a {
 a:visited {
   color: #4f4f4f;
 }
-.module {
-  max-width: 1600px;
-}
 .module .section {
   margin: 2em;
 }
 .module .section_header {
   position: relative;
-  padding: 0.5em 1em;
-  border-radius: 0 5px 5px 0;
+  padding: 0.3em 1em;
+  border-radius: 0 0.5em 0.5em 0;
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -487,7 +484,12 @@ a:visited {
   border: solid 1.5px #cccccc;
 }
 .module .section_header-name {
-  margin: 0 1.5em;
+  display: inline-block;
+  background-color: #0000009e;
+  padding: 0.2em 0.5em 0.2em 1.2em;
+  border-radius: 0.5em;
+  color: #fff;
+  margin: 0 1em;
 }
 .card {
   overflow: hidden;
@@ -521,20 +523,20 @@ a:visited {
   .module .section_header {
     position: relative;
     padding: 0.5em 1em;
-    border-radius: 0 5px 5px 0;
+    border-radius: 1em 0.5em 0.5em 1em;
     background-position: center;
-    background-size: fill;
+    background-size: 100%;
     background-repeat: no-repeat;
   }
   .module .section_header-icon {
     position: absolute;
     top: -0.25em;
-    left: -0.8em;
+    left: -0.2em;
     display: flex;
     place-items: center;
     place-content: center;
-    width: 2em;
-    height: 2em;
+    width: 2.5em;
+    height: 2.5em;
     background: linear-gradient(45deg, #cccccc 0%, #f7f7f7 10% 90%, #cccccc 100%);
     color: #363232;
     font-size: 1.5em;
@@ -542,7 +544,11 @@ a:visited {
     border: solid 1.5px #cccccc;
   }
   .module .section_header-name {
-    margin: 0 1.5em;
+    display: inline-block;
+    background-color: #0000009e;
+    padding: 0.2em 1.5em;
+    border-radius: 0.5em;
+    color: #fff;
   }
 }
 .user-layout {
@@ -804,7 +810,7 @@ a:visited {
     grid-row-gap: 2em;
     align-items: center;
     margin: 2em auto;
-    width: 80%;
+    width: 70%;
   }
   .blog-category {
     border-radius: 5px 5px;
@@ -1022,7 +1028,7 @@ a:visited {
 @media only screen and (min-width: 810px) and (min-height: 630px) {
   .portfolio {
     margin: 2em auto;
-    width: 80%;
+    width: 70%;
   }
   .portfolio-projects {
     display: flex;
@@ -1090,6 +1096,9 @@ a:visited {
   display: flex;
   place-items: center;
   padding: 1em;
+  margin: 0 1em;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5em;
 }
 @media only screen and (min-width: 810px) and (min-height: 630px) {
   .author {
@@ -1122,7 +1131,7 @@ a:visited {
 .about-author {
   border-radius: 5em 5em 1em 1em;
   background-repeat: no-repeat;
-  background-size: fill;
+  background-size: 100% 200%;
   background-position: center;
   color: #fff;
   font-weight: 600;
@@ -1150,13 +1159,14 @@ a:visited {
     grid-template: auto / 1fr 1fr;
     grid-column-gap: 2em;
     grid-row-gap: 2em;
-    margin: 2em 4em;
+    margin: 2em auto;
+    width: 70%;
   }
   .about-author {
     grid-column: span 2;
     border-radius: 5em 1em 1em 5em;
     background-repeat: no-repeat;
-    background-size: fill;
+    background-size: 100%;
     background-position: center;
     color: #fff;
     font-weight: 600;
@@ -1168,11 +1178,14 @@ a:visited {
     grid-row-gap: 1em;
     background-color: #fff;
     border: solid 1px #b1b1b17c;
-    border-radius: 0.5em;
+    border-radius: 1em 0.5em 0.5em 0.5em;
     box-shadow: 0em 0.2em 0.4em 0em #00000033;
   }
   .about-section_header {
-    border-radius: 0 0.5em 0 0 !important;
+    border-radius: 1em 0.5em 0 0 !important;
+  }
+  .about-section_header-icon {
+    left: -0.3em !important;
   }
   .about-section_body {
     padding: 1em;
