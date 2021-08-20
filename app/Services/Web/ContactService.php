@@ -3,6 +3,7 @@
 namespace App\Services\Web;
 
 use App\Services\Service;
+use App\Models\Module;
 use App\ViewModels\Web\ContactViewModel;
 
 class ContactService extends Service
@@ -14,6 +15,17 @@ class ContactService extends Service
 
     public function GetIndexModel()
     {
+
+        $module = Module::where('name', 'contact')->first();
+        
+        if(!$module->active)
+        {
+            $this->viewModel->success = false;
+            $this->viewModel->errors = "The Module is not active";
+
+            return $this->viewModel->SetViewModelProperties($module);
+        }
+
 
         $this->viewModel->viewPath = collect([
             [

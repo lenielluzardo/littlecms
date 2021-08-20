@@ -21,7 +21,12 @@
         <ul class="portfolio-projects">
         @foreach ($viewModel->model as $project)
         
-            <a href="{{ route('web.portfolio.entry', ['entry' => urlencode(str_replace(' ', '_', strtolower($project->title)))]) }}">
+        @php
+            $categoryName = urlencode(strtolower($project->category->name));
+            $projectName = urlencode(str_replace(' ', '_', strtolower($project->title)));
+        @endphp
+
+            <a href="{{ route('web.portfolio.entry', ['category' => $categoryName,'entry' => $projectName]) }}">
                
                 <li class="portfolio-projects-project card" 
                     style="background-image: url('{{ $project->thumbnail }}')">

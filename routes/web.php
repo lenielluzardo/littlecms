@@ -31,7 +31,7 @@ Route::group(['prefix' => '/'], function(){
         Route::get('', 'App\Http\Controllers\Web\PortfolioController@Index')
         ->name('web.portfolio.index');
 
-        Route::get('/{entry}', 'App\Http\Controllers\Web\PortfolioController@GetByName')
+        Route::get('{category}/{entry}', 'App\Http\Controllers\Web\PortfolioController@GetByName')
         ->name('web.portfolio.entry');
 
         Route::get('/{category}', 'App\Http\Controllers\Web\BlogController@GetByCategory')

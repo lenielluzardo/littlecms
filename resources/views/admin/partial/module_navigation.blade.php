@@ -2,6 +2,10 @@
          
     <a href="{{url('/')}}"> Web </a>
     <a href="{{url('/admin')}}"> Admin </a> 
+    <form method="POST" action="{{route('logout')}}">
+        {{ csrf_field() }}
+        <button >Logout </button> 
+    </form>
 
     @foreach($modules as $module)
 

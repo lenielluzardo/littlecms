@@ -30,14 +30,15 @@ class PortfolioController extends Controller
         return view('web.portfolio.index', ['viewModel' => $viewModel]);
     }
 
-    public function GetByName($projectName)
+    public function GetByName($category, $project)
     {
-        $viewModel = $this->service->GetModelByName($projectName, 'portfolio');
+        $viewModel = $this->service->GetModelByName('portfolio', $category, $project);
 
         if(!$viewModel->success)
         {
             return redirect()->back()->withErrors($viewModel->errors);
         }
+
         return view('web.portfolio.project', ['viewModel' => $viewModel]);
     }
 

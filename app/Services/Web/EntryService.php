@@ -97,12 +97,16 @@ class EntryService
         return $this->viewModel->SetViewModelProperties($module);
     }
 
-    public function GetModelByName($name, $category, $module)
+    public function GetModelByName($moduleName, $category, $name)
     {
+        // dd($category);
+        $module = Module::where('name', $moduleName)->first();
+        $category = Category::where('name', $category)->where('module_id', $module->id)->first();
         $name = ucwords(str_replace('_', ' ', $name));
-        $category = Category::where('name', $category)->first();
-        $entry = Entry::where('title', $name)->where('category_id', $category->id)->first();
-
+        // dd($category);
+        // dd($name);.
+        $entry = Entry::where('title', $name)->where('module_id', $module->id)->where('category_id', $category->id)->first();
+// dd($entry);
         if($entry == null)
         {
             $this->viewModel->success = false;
@@ -119,23 +123,23 @@ class EntryService
 
         $this->viewModel->viewPath = collect([
             [
-             'path_name' => "$module" ,
-             'route_name' => "web.$module.index", 
-             'route_values' => [ 'module' => "$module"]
+             'path_name' => "$moduleName" ,
+             'route_name' => "web.$moduleName.index", 
+             'route_values' => [ 'module' => "$moduleName"]
             ],
             [
                 'path_name' => "$entryDto->category" ,
-                'route_name' => "web.$module.category", 
+                'route_name' => "web.$moduleName.category", 
                 'route_values' => [ 'category' =>  $entryDto->category]
             ],
             [
                 'path_name' => "$entryDto->title" ,
-                'route_name' => "web.$module.entry", 
+                'route_name' => "web.$moduleName.entry", 
                 'route_values' => [ 'category' => $entryDto->category, 'entry' => $entryDto->title]
             ]
          ]);
 
-        return $this->viewModel->SetViewModelProperties($module);
+        return $this->viewModel->SetViewModelProperties($moduleName);
 
     }
 
@@ -186,9 +190,19 @@ class EntryService
 
     }
 
-    public function GetAboutIndexModel($module)
+    public function GetAboutIndexModel($moduleName)
     {
-        $entries = Module::where('name', $module)->first()->entries;
+        $module = Module::where('name', $moduleName)->first();
+        
+        if(!$module->active)
+        {
+            $this->viewModel->success = false;
+            $this->viewModel->errors = "The Module is not active";
+
+            return $this->viewModel->SetViewModelProperties($module);
+        }
+
+        $entries = $module->entries;
         $entriesDto = collect();
 
         foreach($entries as $entry)
@@ -197,19 +211,17 @@ class EntryService
             $entriesDto->add($entryDto);
         }
 
-        // $this->viewModel->author = 
-        // dd($this->viewModel->author);
         $this->viewModel->model = $entriesDto;
 
         $this->viewModel->viewPath = collect([
             [
-             'path_name' => $module ,
-             'route_name' => "web.$module.index", 
+             'path_name' => $moduleName ,
+             'route_name' => "web.$moduleName.index", 
              'route_values' => [ 'model' => '']
             ]
          ]);
 
 
-        return $this->viewModel->SetViewModelProperties($module);
+        return $this->viewModel->SetViewModelProperties($moduleName);
     }
 }
