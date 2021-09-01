@@ -78,7 +78,7 @@ public function DeleteModel($id, $module)
             }
             else
             {
-                dd($request->input());
+                // dd($request->input());
 
                 $userToSave = User::find($request['id']);
             }
