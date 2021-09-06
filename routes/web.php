@@ -12,7 +12,7 @@ Route::group(['prefix' => '/'], function(){
 
     Route::group(['prefix' => 'blog'], function () {
 
-         // dd("**** Web Blog ****");
+        //  dd("**** Web Blog ****");
 
         Route::get('', 'App\Http\Controllers\Web\BlogController@Index')
         ->name('web.blog.index');
