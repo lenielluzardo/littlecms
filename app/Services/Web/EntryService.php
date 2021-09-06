@@ -31,7 +31,6 @@ class EntryService
             return $this->viewModel->SetViewModelProperties($module);
         }
 
-
         $categories = $module->categories()->with('entries')->where('active', true)->get();
        
         $categoriesDto = collect([]);
@@ -192,17 +191,21 @@ class EntryService
 
     public function GetAboutIndexModel($moduleName)
     {
+        // dd('NIVEL 2 ENTRY SERVICE');
+        // dd($moduleName);
         $module = Module::where('name', $moduleName)->first();
         
         if(!$module->active)
         {
+            // dd('NIVEL 2 ENTRY SERVICE MODULO INACTIVO');
             $this->viewModel->success = false;
             $this->viewModel->errors = "The Module is not active";
 
             return $this->viewModel->SetViewModelProperties($module);
         }
 
-        $entries = $module->entries;
+        // dd('NIVEL 2 ENTRY SERVICE MODULO ACTIVO');
+        $entries = $module->entries()->where('active', true)->get();
         $entriesDto = collect();
 
         foreach($entries as $entry)
