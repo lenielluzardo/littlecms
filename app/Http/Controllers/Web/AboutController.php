@@ -21,10 +21,13 @@ class AboutController extends Controller
 
     public function Index()
     {
+        // dd('NIVEL CONTROLADOR ABOUT');
         $viewModel = $this->service->GetAboutIndexModel('about');
         
         if(!$viewModel->success)
         {
+            // dd('NIVEL 1 CONTROLLER NO REGRESA VISTA HTML');
+
             return redirect()->back();
         }
 
