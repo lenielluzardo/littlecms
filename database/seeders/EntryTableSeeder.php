@@ -92,7 +92,7 @@ class EntryTableSeeder extends Seeder
         }
 
         $entry = new \App\Models\Entry([
-            'title' => "Experience",
+            'title' => "headline",
             'thumbnail' => 'assets/images/about-section-header.png',
             'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
             'published_at' => \Carbon\Carbon::now(),
@@ -105,13 +105,82 @@ class EntryTableSeeder extends Seeder
         $entry->save();
 
         $entry = new \App\Models\Entry([
-            'title' => "Stack",
+            'title' => "reassurance",
             'thumbnail' => 'assets/images/about-section-header.png',
             'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
             'published_at' => \Carbon\Carbon::now(),
             'active' => true,
             'user_id' => 1,
             'category_id' => 7,
+            'module_id' => 3,
+            'icon' => 'fa fa-briefcase'
+        ]);
+        $entry->save();
+
+
+        $entry = new \App\Models\Entry([
+            'title' => "credentials",
+            'thumbnail' => 'assets/images/about-section-header.png',
+            'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
+            'published_at' => \Carbon\Carbon::now(),
+            'active' => true,
+            'user_id' => 1,
+            'category_id' => 7,
+            'module_id' => 3,
+            'icon' => 'fa fa-briefcase'
+        ]);
+        $entry->save();
+
+        $entry = new \App\Models\Entry([
+            'title' => "tidbit",
+            'thumbnail' => 'assets/images/about-section-header.png',
+            'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
+            'published_at' => \Carbon\Carbon::now(),
+            'active' => true,
+            'user_id' => 1,
+            'category_id' => 7,
+            'module_id' => 3,
+            'icon' => 'fa fa-briefcase'
+        ]);
+        $entry->save();
+
+        $entry = new \App\Models\Entry([
+            'title' => "call-to-action",
+            'thumbnail' => 'assets/images/about-section-header.png',
+            'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
+            'published_at' => \Carbon\Carbon::now(),
+            'active' => true,
+            'user_id' => 1,
+            'category_id' => 7,
+            'module_id' => 3,
+            'icon' => 'fa fa-briefcase'
+        ]);
+        $entry->save();
+
+
+
+
+        $entry = new \App\Models\Entry([
+            'title' => "Experience",
+            'thumbnail' => 'assets/images/about-section-header.png',
+            'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
+            'published_at' => \Carbon\Carbon::now(),
+            'active' => true,
+            'user_id' => 1,
+            'category_id' => 8,
+            'module_id' => 3,
+            'icon' => 'fa fa-briefcase'
+        ]);
+        $entry->save();
+
+        $entry = new \App\Models\Entry([
+            'title' => "Stack",
+            'thumbnail' => 'assets/images/about-section-header.png',
+            'content' => 'Incididunt voluptate amet laborum esse est Lorem elit et laborum commodo laborum. Mollit cupidatat et ad pariatur occaecat sit. Duis aute nisi tempor sint qui est qui et. Aliquip nulla ex nulla reprehenderit esse cillum anim amet. Consequat tempor ea non do officia eu.',
+            'published_at' => \Carbon\Carbon::now(),
+            'active' => true,
+            'user_id' => 1,
+            'category_id' => 8,
             'module_id' => 3,
             'icon' => 'fa fa-cubes'
         ]);
@@ -124,7 +193,7 @@ class EntryTableSeeder extends Seeder
             'published_at' => \Carbon\Carbon::now(),
             'active' => true,
             'user_id' => 1,
-            'category_id' => 7,
+            'category_id' => 8,
             'module_id' => 3,
             'icon' => 'fa fa-graduation-cap'
         ]);
@@ -137,7 +206,7 @@ class EntryTableSeeder extends Seeder
             'published_at' => \Carbon\Carbon::now(),
             'active' => true,
             'user_id' => 1,
-            'category_id' => 7,
+            'category_id' => 8,
             'module_id' => 3,
             'icon' => 'fa fa-gamepad'
         ]);

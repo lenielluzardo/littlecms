@@ -20,11 +20,10 @@
     <!-- ===== A B O U T ===== -->
     <section class="about">
 
-        {{-- <article class="about-author"
+        <article class="about-author"
                  style="background-image: url('{{ asset('assets/images/about-author-header.png')}}')">
             @include('web.partial.author')
-        </article> --}}
-
+        </article>
 
         @foreach ($viewModel->model as $section)
             <article class="about-section">

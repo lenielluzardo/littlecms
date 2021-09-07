@@ -205,7 +205,9 @@ class EntryService
         }
 
         // dd('NIVEL 2 ENTRY SERVICE MODULO ACTIVO');
-        $entries = $module->entries()->where('active', true)->get();
+        $entries = $module->categories('about')->first()->entries()->where('active', true)->get();;
+        // dd($entries);
+        // 
         $entriesDto = collect();
 
         foreach($entries as $entry)

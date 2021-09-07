@@ -76,8 +76,5 @@ class ModuleTableSeeder extends Seeder
             'admin_route' => 'module',
         ]);
         $module->save();
-
-        
-
     }
 }

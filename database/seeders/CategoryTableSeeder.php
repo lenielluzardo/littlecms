@@ -64,9 +64,17 @@ class CategoryTableSeeder extends Seeder
         $category = new \App\Models\Category([
             'name' => 'about',
             'icon' => 'fa fa-user-astronaut',
-            'module_id' => 4,
+            'module_id' => 3,
         ]);
         $category->save();
+        
+        $category = new \App\Models\Category([
+            'name' => 'resume',
+            'icon' => 'fa fa-user-astronaut',
+            'module_id' => 3,
+        ]);
+        $category->save();
+
 
     }
 }

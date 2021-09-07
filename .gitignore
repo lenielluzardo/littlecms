@@ -5,6 +5,7 @@
 /vendor
 /_graphics
 /resources/js/admin-app/config.json
+/public/phpmyadmin
 .env
 .phpunit.result.cache
 docker-compose.override.yml
